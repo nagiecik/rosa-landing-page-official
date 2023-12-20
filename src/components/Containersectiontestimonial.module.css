@@ -1,39 +1,47 @@
-.textspan,
-.textstrong {
+.textHeaderWhite {
+  font-size: var(--font-size-32);
+  line-height: var(--line-height-48);
+  color: var(--colorWhite);
+}
+
+.textHeaderGreen {
+  font-size: var(--font-size-64);
+  line-height: var(--line-height-56);
+  color: var(--colorFootballRulesGreen);
+}
+.textHeaderWhite,
+.textHeaderGreen {
   position: relative;
-  line-height: 32px;
   text-transform: uppercase;
   display: inline-block;
-  font-weight: 900;
-  width: 368px;
+  font-weight: var(--font-black);
+  max-width: 368px;
 }
-.textstrong {
-  font-size: var(--header-bold-h1-size);
-  line-height: 56px;
-  color: var(--laws-light-green-200);
-}
-.containerdivheader {
+.textHeader {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   font-family: var(--font-roag);
 }
-.textblockquote,
-.texth6 {
+.textQuoteContent,
+.textQuoteTitle {
   align-self: stretch;
   position: relative;
 }
-.texth6 {
-  letter-spacing: -0.04em;
-  line-height: 40px;
+.textQuoteTitle {
+  letter-spacing: var(--letter-spacing-default);
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-40);
+  color: var(--colorWhite);
+  font-weight: var(--font-bold);
 }
-.textblockquote {
+.textQuoteContent {
   font-size: var(--font-size-20);
-  line-height: 36px;
-  color: var(--texts-textdisabledsubtle);
+   line-height: var(--line-height-40);
+  color: var(--colorSubtle);
 }
-.containerdivtext {
+.containerQuoteContent {
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -42,59 +50,62 @@
   gap: var(--spacing-16);
   font-size: var(--header-bold-h6-size);
 }
-.imagepersonIcon {
+.imagePerson {
   position: relative;
   border-radius: 50%;
-  width: 80px;
-  height: 80px;
+  width: var(--size-80);
+  height: var(--size-80);
   object-fit: cover;
 }
-.textlabel,
-.texts {
-  align-self: stretch;
+.imageLogoIFAB {
+  height: 72px;
+  width: auto;
   position: relative;
-  line-height: 36px;
+  object-fit: contain;
 }
-.texts {
-  font-size: var(--font-size-1rem);
-  line-height: 32px;
-  color: var(--texts-textdisabledsubtle);
+.textPersonName{
+  font-size: var(--font-size-20);
+  line-height: var(--line-height-40);
+  color: var(--colorWhite);
+  font-weight: var(--font-bold);
 }
-.containerdivpersonDetails,
-.containerdivtext1 {
+.textPersonOccupation {
+  font-size: var(--font-size-16);
+  line-height: var(--line-height-32);
+  color: var(--colorSubtle);
+}
+.containerPersonImage,
+.containerPersonDetails {
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.containerdivpersonDetails {
+.containerPersonImage {
   flex-direction: row;
   align-items: center;
   gap: var(--spacing-16);
 }
-.containerdivtestimonials {
+.containerPerson {
   align-self: stretch;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
   justify-content: space-between;
   font-size: var(--font-size-20);
 }
-.containerdivcontent {
-  width: 100%;
+.containerTestimonialContent {
+  max-width: 55%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--spacing-64);
-  max-width: 800px;
   z-index: 0;
 }
-.imagemockup1Icon,
-.imagemockup2Icon {
+.imageDeviceSecondary {
   position: absolute;
-  margin: 0 !important;
   top: calc(50% - 280px);
   right: 25px;
   width: 350px;
@@ -102,16 +113,19 @@
   object-fit: cover;
   z-index: 1;
 }
-.imagemockup1Icon {
+.imageDevicePrimary {
+  position: absolute;
   top: calc(50% - 322px);
   right: 200px;
   width: 400px;
   height: 640px;
+  object-fit: cover;
   z-index: 2;
 }
-.containerdivfootballRules {
-  border-radius: var(--gap-48);
-  width: 1520px;
+.containerTestimonial {
+  border-radius: var(--spacing-48);
+  width: 100%;
+  max-width: 1520px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -120,12 +134,12 @@
   padding: var(--spacing-64);
   box-sizing: border-box;
   position: relative;
-  background-image: url(/public/containerdivfootballrules@3x.png);
+  background-image: url(/public/testimonialsFootballRules.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
-.containersectiontestimonial {
+.containerSection {
   background-color: var(--colorWhite);
   display: flex;
   flex-direction: column;
@@ -134,8 +148,6 @@
   padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);
   box-sizing: border-box;
   text-align: left;
-  font-size: var(--header-bold-h5-size);
-  color: var(--colorWhite);
   font-family: var(--font-main);
   align-self: stretch;
 }

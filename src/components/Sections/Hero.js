@@ -1,55 +1,19 @@
 import { useMemo } from "react";
-import Header from "../Header";
 import HeroArticle from "../Contents/HeroArticle";
+import Header from "../Header";
 import styles from "./Hero.module.css";
 
-const Containersectionhero = ({
-  imagelogo,
-  imageappstore,
-  imagegoogleplay,
-  containersectionheroZIndex,
-  imagelogoIconObjectFit,
-  imageappstoreIconObjectFit,
-  imagegoogleplayIconObjectFit,
-  textlabelCursor,
-  showContainerDivLinks,
-  showButtonMenu,
-  showButtonCta,
-}) => {
-  const containersectionheroStyle = useMemo(() => {
+const Containersectionhero = ({ sectionZIndex }) => {
+  const containerSectionHeroStyle = useMemo(() => {
     return {
-      zIndex: containersectionheroZIndex,
+      zIndex: sectionZIndex,
     };
-  }, [containersectionheroZIndex]);
-
-  const imagelogoIconStyle = useMemo(() => {
-    return {
-      objectFit: imagelogoIconObjectFit,
-    };
-  }, [imagelogoIconObjectFit]);
-
-  const imageappstoreIconStyle = useMemo(() => {
-    return {
-      objectFit: imageappstoreIconObjectFit,
-    };
-  }, [imageappstoreIconObjectFit]);
-
-  const imagegoogleplayIconStyle = useMemo(() => {
-    return {
-      objectFit: imagegoogleplayIconObjectFit,
-    };
-  }, [imagegoogleplayIconObjectFit]);
-
-  const textlabelStyle = useMemo(() => {
-    return {
-      cursor: textlabelCursor,
-    };
-  }, [textlabelCursor]);
+  }, [sectionZIndex]);
 
   return (
     <section
       className={styles.containerSectionHero}
-      style={containersectionheroStyle}
+      style={containerSectionHeroStyle}
     >
       <div className={styles.containerContent}>
         <Header

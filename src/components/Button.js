@@ -1,68 +1,55 @@
 import { useMemo } from "react";
 import styles from "./Button.module.css";
+import { useHover } from "@uidotdev/usehooks";
 
 const Button = ({
-  iconarrowleft,
   buttonText = "Button Text",
-  iconarrowright,
-  showIconarrowleft,
-  showIconarrowright,
-  buttonFill,
+  iconLeft,
+  iconRight,
+  showIconLeft,
+  showIconRight,
   buttonTextColor,
-  typeFillStateEnabledSizeAlignSelf,
-  typeFillStateEnabledSizeBorder,
-  typeFillStateEnabledSizeBoxSizing,
-  typeFillStateEnabledSizeCursor,
-  textstrongFontSize,
-  textstrongLineHeight,
-  textstrongFontWeight,
-  textstrongDisplay,
-}) => {
-  const typeFillStateEnabledSizeStyle = useMemo(() => {
-    return {
-      backgroundColor: buttonFill,
-      alignSelf: typeFillStateEnabledSizeAlignSelf,
-      border: typeFillStateEnabledSizeBorder,
-      boxSizing: typeFillStateEnabledSizeBoxSizing,
-      cursor: typeFillStateEnabledSizeCursor,
-    };
-  }, [
-    buttonFill,
-    typeFillStateEnabledSizeAlignSelf,
-    typeFillStateEnabledSizeBorder,
-    typeFillStateEnabledSizeBoxSizing,
-    typeFillStateEnabledSizeCursor,
-  ]);
+  buttonFontTextSize,
+  buttonTextLineHeight,
+  buttonTextFontWeight,
+  altTextIconLeft,
+  altTextIconRight,
 
-  const textstrongStyle = useMemo(() => {
+}) => {
+  const buttonTextControl = useMemo(() => {
     return {
       color: buttonTextColor,
-      fontSize: textstrongFontSize,
-      lineHeight: textstrongLineHeight,
-      fontWeight: textstrongFontWeight,
-      display: textstrongDisplay,
+      fontSize: buttonFontTextSize,
+      lineHeight: buttonTextLineHeight,
+      fontWeight: buttonTextFontWeight,
     };
   }, [
     buttonTextColor,
-    textstrongFontSize,
-    textstrongLineHeight,
-    textstrongFontWeight,
-    textstrongDisplay,
+    buttonFontTextSize,
+    buttonTextLineHeight,
+    buttonTextFontWeight,
   ]);
+
+  const [ref, hovering] = useHover();
+
+  const backgroundColor = hovering
+    ? `var(--colorWhite)`
+    : "var(--colorAccentVivid)";
 
   return (
     <div
-      className={styles.typefillStateenabledSize}
-      style={typeFillStateEnabledSizeStyle}
+    ref={ref}
+      className={styles.button}
+      style={{backgroundColor}}
     >
-      {showIconarrowleft && (
-        <img className={styles.iconarrowleft} alt="" src={iconarrowleft} />
+      {showIconLeft && (
+        <img className={styles.buttonIcon} alt={altTextIconLeft} src={iconLeft} />
       )}
-      <b className={styles.textstrong} style={textstrongStyle}>
+      <p className={styles.text} style={buttonTextControl}>
         {buttonText}
-      </b>
-      {showIconarrowright && (
-        <img className={styles.iconarrowleft} alt="" src={iconarrowright} />
+      </p>
+      {showIconRight && (
+        <img className={styles.buttonIcon} alt={altTextIconRight} src={iconRight} />
       )}
     </div>
   );

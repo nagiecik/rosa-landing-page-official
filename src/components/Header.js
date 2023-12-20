@@ -31,30 +31,35 @@ const Header = ({
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
+            linkUrl="#"
           />
           <NavbarLink
             linkText="Features"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
+            linkUrl="#"
           />
           <NavbarLink
             linkText="Use Cases"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
+            linkUrl="#"
           />
           <NavbarLink
             linkText="Testimonials"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
+            linkUrl="#"
           />
           <NavbarLink
             linkText="Pricing"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
+            linkUrl="#"
           />
         </div>
       )}
@@ -73,23 +78,19 @@ const Header = ({
           />
         </div>
       )}
+      {showButtonCta && (
       <Button
-        iconarrowleft="/iconarrowleft.svg"
         buttonText="Get your app"
-        iconarrowright="/iconarrowright.svg"
-        showIconarrowleft={false}
-        showIconarrowright={false}
-        buttonFill="#fab300"
+        iconLeft="/iconarrowleft.svg"
+        iconRight="/iconarrowright.svg"
+        showIconLeft={false}
+        showIconRight={true}
         buttonTextColor="#181f4e"
-        typeFillStateEnabledSizeAlignSelf="unset"
-        typeFillStateEnabledSizeBorder="unset"
-        typeFillStateEnabledSizeBoxSizing="border-box"
-        typeFillStateEnabledSizeCursor="pointer"
-        textstrongFontSize="16px"
-        textstrongLineHeight="32px"
-        textstrongFontWeight="700"
-        textstrongDisplay="inline-block"
-      />
+        buttonFontTextSize="16px"
+        buttonTextLineHeight="32px"
+        buttonTextFontWeight="900"
+        altTextIconRight="Icon Arrow Right"
+      />)}
     </nav>
   );
 };

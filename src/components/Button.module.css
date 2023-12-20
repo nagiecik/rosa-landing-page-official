@@ -1,27 +1,43 @@
-.iconarrowleft {
+.buttonIcon {
   position: relative;
-  width: 24px;
-  height: 24px;
+  width: var(--size-icon-default);
+  height: var(--size-icon-default);
   overflow: hidden;
   flex-shrink: 0;
 }
-.textstrong {
+
+
+.buttonText {
   position: relative;
   line-height: 32px;
+  font-family: var(--font-main);
 }
-.typefillStateenabledSize {
-  border-radius: var(--spacing-16);
-  background-color: var(--surfaces-default-surfaceprimary);
+.button {
+  border-radius: var(--spacing-12);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--button-padding-top-bottom) var(--button-padding-left-right);
-  box-sizing: border-box;
-  gap: var(--button-padding-row-gap);
+  padding: var(--spacing-16) var(--spacing-32);
+  gap: var(--gap-16);
   text-align: center;
-  font-size: var(--font-size-1rem);
+  font-size: var(--font-size-16);
   color: var(--colorWhite);
-  font-family: var(--font-main);
-  align-self: stretch;
+  cursor: pointer;
+  transition: .5s ease;
+}
+
+.button:hover {
+  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
+  transition: .5s ease;
+  border-radius: var(--spacing-24);
+}
+
+
+.button > .buttonIcon {
+  transition: .5s ease;
+}
+.button:hover > .buttonIcon{
+  transform: rotate(-45deg);
+  transition: .5s ease;
 }

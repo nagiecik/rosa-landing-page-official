@@ -1,10 +1,7 @@
 import { useMemo } from "react";
 import styles from "./HeroArticle.module.css";
 
-const ArticleCard = ({
-  buttonGooglePlay,
-  buttonAppStore,
-}) => {
+const ArticleCard = ({ buttonGooglePlay, buttonAppStore }) => {
   return (
     <article className={styles.containerArticle}>
       <div className={styles.containerTitle}>
@@ -19,22 +16,22 @@ const ArticleCard = ({
         the imperative to ensure their effective dissemination.
       </p>
       <div className={styles.containerStoreButtons}>
-        <img
-          className={styles.buttonGooglePlay}
-          alt="Google Play Button"
-          src={buttonGooglePlay}
-        />
-        <img
+        <a href="#">
+          <img
+            className={styles.buttonGooglePlay}
+            alt="Google Play Button"
+            src={buttonGooglePlay}
+          />
+        </a>
+        <a href="#"><img
           className={styles.buttonAppStore}
           alt="App Store Button"
           src={buttonAppStore}
-        />
+        /></a>
       </div>
       <div className={styles.containerRating}>
         <div className={styles.containerRatingText}>
-          <label className={styles.textRatingLabel}>
-            Excellent
-          </label>
+          <label className={styles.textRatingLabel}>Excellent</label>
           <b className={styles.textRatingBold}>4.9 out of 5</b>
         </div>
         <div className={styles.containerIcons}>

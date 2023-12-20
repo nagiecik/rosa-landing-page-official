@@ -3,8 +3,9 @@
   position: relative;
   max-width: 50%;
   overflow: hidden;
-  height: auto;
-  object-fit: contain;
+  height: 1024px;
+  object-fit: cover;
+  background-repeat: no-repeat;
 }
 .content {
   align-self: stretch;
@@ -27,7 +28,7 @@
   max-width: 1520px;
 }
 .containerSectionHero {
-  height: 100vh;
+  height: 1080px;
   align-items: center;
   padding: 0 var(--gap-200);
   box-sizing: border-box;

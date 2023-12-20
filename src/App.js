@@ -5,7 +5,7 @@ import {
   useNavigationType,
   useLocation,
 } from "react-router-dom";
-import Containermain from "./pages/Containermain";
+import Main from "./pages/Main";
 
 function App() {
   const action = useNavigationType();
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Containermain />} />
+      <Route path="/" element={<Main />} />
     </Routes>
   );
 }

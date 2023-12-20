@@ -1,5 +1,5 @@
 import Containersectionhero from "../components/Sections/Hero";
-import Containersectiontestimonial from "../components/Containersectiontestimonial";
+import Containersectiontestimonial from "../components/Sections/Testimonials";
 import ContextContainer from "../components/ContextContainer";
 import ContainerCard from "../components/ContainerCard";
 import Containersectionfeature1 from "../components/Containersectionfeature1";
@@ -7,33 +7,13 @@ import Containersectionfeature2 from "../components/Containersectionfeature2";
 import ChooseYourContainer from "../components/ChooseYourContainer";
 import SportContainer from "../components/SportContainer";
 import FormFooter from "../components/FormFooter";
-import styles from "./Containermain.module.css";
+import styles from "./Main.module.css";
 
-const Containermain = () => {
+const Main = () => {
   return (
-    <div className={styles.containermain}>
-      <Containersectionhero
-        imagelogo="/imagelogo@2x.png"
-        imageappstore="/imageappstore@2x.png"
-        imagegoogleplay="/imagegoogleplay@2x.png"
-        containersectionheroZIndex="10"
-        imagelogoIconObjectFit="cover"
-        imageappstoreIconObjectFit="cover"
-        imagegoogleplayIconObjectFit="cover"
-        textlabelCursor="pointer"
-        showContainerDivLinks
-        showButtonMenu={false}
-        showButtonCta
-      />
-      <Containersectiontestimonial
-        dimensionCode="/imagelogoifab@2x.png"
-        containersectiontestimoniBoxSizing="border-box"
-        containersectiontestimoniZIndex="9"
-        texth6Margin="0"
-        texth6FontWeight="700"
-        textblockquoteMargin="0"
-        containersectiontestimoniObjectFit="cover"
-      />
+    <div className={styles.main}>
+      <Containersectionhero sectionZIndex="10" />
+      <Containersectiontestimonial sectionZIndex="9" />
       <ContextContainer />
       <ContainerCard />
       <Containersectionfeature1
@@ -85,4 +65,4 @@ const Containermain = () => {
   );
 };
 
-export default Containermain;
+export default Main;

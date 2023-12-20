@@ -37,7 +37,7 @@
   font-size: var(--font-size-20);
   line-height: 36px;
   font-style: italic;
-  color: var(--texts-textdisabledsubtle);
+  color: var(--colorSubtle);
 }
 .containerdivtext {
   align-self: stretch;
@@ -64,7 +64,7 @@
 .texts {
   font-size: var(--font-size-1rem);
   line-height: 32px;
-  color: var(--texts-textdisabledsubtle);
+  color: var(--colorSubtle);
 }
 .containerdivpersonDetails,
 .containerdivtext1 {

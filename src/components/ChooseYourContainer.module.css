@@ -8,14 +8,14 @@
   gap: var(--gap-29xl);
 }
 .containersectionpricing {
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);
   gap: var(--gap-109xl);
   z-index: 2;
   text-align: left;
-  font-size: var(--text-regular-headline-size);
+  font-size: var(--font-size-20);
   color: var(--texts-textaccentsubtle);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
 }

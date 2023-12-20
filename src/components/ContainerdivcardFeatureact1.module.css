@@ -28,7 +28,7 @@
   color: var(--surfaces-default-surfaceprimary);
 }
 .textp {
-  font-size: var(--text-italic-body-size);
+  font-size: var(--font-size-1rem);
   line-height: 32px;
   font-weight: 600;
   color: var(--texts-textaccentsubtle1);
@@ -47,15 +47,15 @@
 .containerdivcardFeatureact {
   flex: 1;
   border-radius: var(--spacing-16);
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   box-shadow: var(--shadow-card-feature);
   align-items: flex-end;
-  padding: var(--spacing-24) var(--spacing-24) var(--spacing-32);
+  padding: var(--gap-24) var(--gap-24) var(--spacing-32);
   box-sizing: border-box;
   gap: var(--spacing-16);
   min-width: 356px;
   text-align: left;
   font-size: var(--header-bold-h6-size);
   color: var(--surfaces-default-surfacetertiary);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
 }

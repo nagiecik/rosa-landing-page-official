@@ -56,7 +56,7 @@
   gap: var(--spacing-128);
   z-index: 0;
   text-align: right;
-  font-size: var(--text-italic-body-size);
-  color: var(--texts-textprimary);
-  font-family: var(--text-regular-headline);
+  font-size: var(--font-size-1rem);
+  color: var(--colorWhite);
+  font-family: var(--font-main);
 }

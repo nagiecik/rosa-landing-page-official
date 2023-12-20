@@ -1,10 +1,10 @@
 import { useMemo } from "react";
-import NavbarLink from "./NavbarLink";
+import NavbarLink from "./Elements/NavbarLink";
 import Button from "./Button";
 import styles from "./Header.module.css";
 
 const Header = ({
-  dimensionCode,
+  logoURL,
   showContainerDivLinks = true,
   showButtonMenu = false,
   showButtonCta = true,
@@ -17,51 +17,44 @@ const Header = ({
   }, [linkObjectFit]);
 
   return (
-    <nav className={styles.containernav2}>
-      <div className={styles.containerdiv}>
+    <nav className={styles.containerNav}>
         <img
-          className={styles.imagelogoIcon}
-          alt=""
-          src={dimensionCode}
+        className={styles.containerNavLogo}
+          alt="ROSA logotype"
+          src={logoURL}
           style={imagelogoIconStyle}
         />
-      </div>
       {showContainerDivLinks && (
-        <div className={styles.containerdivlinks}>
+        <div className={styles.containerNavLinks}>
           <NavbarLink
             linkText="Start"
-            linkTextColor="#fff"
-            linkTextCursor="pointer"
-            typeNavbarStateDefaultFoFlex="1"
-            typeNavbarStateDefaultFoTextDecoration="none"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
           />
           <NavbarLink
             linkText="Features"
-            linkTextColor="#fff"
-            linkTextCursor="pointer"
-            typeNavbarStateDefaultFoFlex="1"
-            typeNavbarStateDefaultFoTextDecoration="none"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
           />
           <NavbarLink
             linkText="Use Cases"
-            linkTextColor="#fff"
-            linkTextCursor="pointer"
-            typeNavbarStateDefaultFoFlex="1"
-            typeNavbarStateDefaultFoTextDecoration="none"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
           />
           <NavbarLink
             linkText="Testimonials"
-            linkTextColor="#fff"
-            linkTextCursor="pointer"
-            typeNavbarStateDefaultFoFlex="1"
-            typeNavbarStateDefaultFoTextDecoration="none"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
           />
           <NavbarLink
             linkText="Pricing"
-            linkTextColor="#fff"
-            linkTextCursor="pointer"
-            typeNavbarStateDefaultFoFlex="1"
-            typeNavbarStateDefaultFoTextDecoration="none"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
           />
         </div>
       )}
@@ -91,7 +84,7 @@ const Header = ({
         typeFillStateEnabledSizeAlignSelf="unset"
         typeFillStateEnabledSizeBorder="unset"
         typeFillStateEnabledSizeBoxSizing="border-box"
-        typeFillStateEnabledSizeCursor="unset"
+        typeFillStateEnabledSizeCursor="pointer"
         textstrongFontSize="16px"
         textstrongLineHeight="32px"
         textstrongFontWeight="700"

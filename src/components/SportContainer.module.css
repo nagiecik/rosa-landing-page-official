@@ -24,7 +24,7 @@
   width: 800px;
 }
 .imagegoogleplayIcon {
-  border-radius: var(--spacing-8);
+  border-radius: var(--gap-8);
   max-width: 100%;
   overflow: hidden;
   max-height: 100%;
@@ -52,7 +52,7 @@
   justify-content: flex-start;
 }
 .containerdivcontent {
-  border-radius: var(--spacing-48);
+  border-radius: var(--gap-48);
   width: 1520px;
   overflow: hidden;
   align-items: flex-start;
@@ -66,12 +66,12 @@
 }
 .containersectionstores {
   align-self: stretch;
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   align-items: flex-end;
   padding: var(--spacing-128) var(--spacing-200);
   z-index: 1;
   text-align: left;
   font-size: var(--header-bold-h6-size);
-  color: var(--texts-textprimary);
-  font-family: var(--text-regular-headline);
+  color: var(--colorWhite);
+  font-family: var(--font-main);
 }

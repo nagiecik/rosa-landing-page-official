@@ -20,7 +20,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  font-size: var(--text-regular-headline-size);
+  font-size: var(--font-size-20);
   color: var(--texts-textaccentsubtle);
 }
 .texth1,
@@ -38,7 +38,7 @@
 .texth5 {
   font-size: var(--header-bold-h5-size);
   line-height: 48px;
-  color: var(--texts-textprimary);
+  color: var(--colorWhite);
 }
 .containerdivheader,
 .containerdivprice {
@@ -53,7 +53,7 @@
 .containerdivheader {
   gap: var(--gap-xl);
   font-size: var(--header-semi-bold-h4-size);
-  color: var(--texts-textprimary);
+  color: var(--colorWhite);
 }
 .containerdivfeatureListEle1 {
   width: 656px;
@@ -64,7 +64,7 @@
 }
 .containerdivfeatures {
   align-self: stretch;
-  gap: var(--spacing-24);
+  gap: var(--gap-24);
 }
 .containerdivfeatures,
 .containerdivnumbers,
@@ -83,11 +83,11 @@
   border-radius: var(--spacing-32);
   background-color: var(--surfaces-default-surfaceprimary);
   box-shadow: var(--shadow-card-feature);
-  padding: var(--spacing-48) var(--spacing-40);
+  padding: var(--gap-48) var(--spacing-40);
   gap: var(--spacing-40);
   z-index: 0;
   text-align: left;
-  font-size: var(--text-regular-headline-size);
+  font-size: var(--font-size-20);
   color: var(--texts-textaccentsubtle);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
 }

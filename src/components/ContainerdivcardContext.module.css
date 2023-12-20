@@ -50,7 +50,7 @@
 }
 .containerdivcardContext {
   border-radius: var(--spacing-16);
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   box-shadow: var(--shadow-card-feature);
   border: 1px solid var(--surfaces-default-surfaceprimary);
   box-sizing: border-box;
@@ -59,6 +59,6 @@
   gap: var(--gap-29xl);
   text-align: center;
   font-size: var(--header-semi-bold-h4-size);
-  color: var(--texts-textprimary);
-  font-family: var(--text-regular-headline);
+  color: var(--colorWhite);
+  font-family: var(--font-main);
 }

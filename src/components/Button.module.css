@@ -20,8 +20,8 @@
   box-sizing: border-box;
   gap: var(--button-padding-row-gap);
   text-align: center;
-  font-size: var(--text-italic-body-size);
-  color: var(--texts-textprimary);
-  font-family: var(--text-regular-headline);
+  font-size: var(--font-size-1rem);
+  color: var(--colorWhite);
+  font-family: var(--font-main);
   align-self: stretch;
 }

@@ -50,7 +50,7 @@ const Containersectionfeature2 = ({
           showPrimaryText
           showSecondaryText
           distributionVerticalAlignSelf="stretch"
-          distributionVerticalGap="var(--spacing-24) var(--spacing-24) var(--spacing-24)"
+          distributionVerticalGap="var(--gap-24) var(--gap-24) var(--gap-24)"
           texth1lightColor="#181f4e"
           texth1lightMargin="unset"
           texth1boldColor="#181f4e"

@@ -1,51 +1,51 @@
-.imageheroIcon {
+.imageHero {
   flex: 1;
   position: relative;
-  max-width: 700px;
+  max-width: 50%;
   overflow: hidden;
-  height: 1066px;
-  object-fit: cover;
+  height: auto;
+  object-fit: contain;
 }
-.containerdiv1 {
+.content {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--section-hero-column-gap);
+  gap: var(--gap-64);
 }
-.containerdiv,
-.containersectionhero {
+.containerContent,
+.containerSectionHero {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.containerdiv {
+.containerContent {
   width: 100%;
   align-items: flex-start;
-  gap: var(--section-hero-column-gap);
+  gap: var(--gap-96);
   max-width: 1520px;
 }
-.containersectionhero {
-  height: 1080px;
+.containerSectionHero {
+  height: 100vh;
   align-items: center;
-  padding: var(--spacing-200) var(--spacing-200);
+  padding: 0 var(--gap-200);
   box-sizing: border-box;
-  background-image: url(/public/containersectionhero@3x.png);
+  background-image: url(/public/backgroundHero.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   align-self: stretch;
 }
 @media screen and (max-width: 1200px) {
-  .imageheroIcon {
+  .imageHero {
     width: 400px;
     height: 100%;
   }
-  .containerdiv {
+  .containerContent {
     gap: var(--section-hero-column-gap);
   }
-  .containersectionhero {
+  .containerSectionHero {
     width: 1200px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -53,27 +53,27 @@
   }
 }
 @media screen and (max-width: 960px) {
-  .imageheroIcon {
+  .imageHero {
     width: 100%;
     height: 400px;
     flex: unset;
     align-self: stretch;
   }
-  .containerdiv,
-  .containerdiv1 {
+  .containerContent,
+  .content {
     align-items: center;
     justify-content: flex-start;
   }
-  .containerdiv1 {
+  .content {
     flex-direction: column;
   }
-  .containerdiv {
+  .containerContent {
     gap: var(--section-hero-column-gap);
     padding-left: 0;
     padding-right: 0;
     box-sizing: border-box;
   }
-  .containersectionhero {
+  .containerSectionHero {
     width: 960px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -81,17 +81,17 @@
   }
 }
 @media screen and (max-width: 420px) {
-  .containerdiv1 {
+  .content {
     align-items: flex-start;
     justify-content: center;
   }
-  .containerdiv {
+  .containerContent {
     gap: var(--section-hero-column-gap);
     padding-left: 0;
     padding-right: 0;
     box-sizing: border-box;
   }
-  .containersectionhero {
+  .containerSectionHero {
     width: 420px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -99,12 +99,12 @@
   }
 }
 @media screen and (max-width: 350px) {
-  .containerdiv {
+  .containerContent {
     gap: var(--section-hero-column-gap);
     align-items: center;
     justify-content: flex-start;
   }
-  .containersectionhero {
+  .containerSectionHero {
     width: 350px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);

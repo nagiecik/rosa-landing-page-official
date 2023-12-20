@@ -20,6 +20,6 @@
   text-align: left;
   font-size: var(--header-bold-h6-size);
   color: var(--surfaces-default-surfaceprimary);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
   align-self: stretch;
 }

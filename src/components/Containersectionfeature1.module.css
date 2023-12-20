@@ -19,7 +19,7 @@
   object-fit: cover;
 }
 .containersectionfeature1 {
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -30,6 +30,6 @@
   text-align: left;
   font-size: var(--header-bold-h6-size);
   color: var(--surfaces-default-surfaceprimary);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
   align-self: stretch;
 }

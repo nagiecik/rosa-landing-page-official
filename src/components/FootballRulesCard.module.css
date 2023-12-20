@@ -34,7 +34,7 @@
   font-family: inherit;
 }
 .textblockquote {
-  font-size: var(--text-regular-headline-size);
+  font-size: var(--font-size-20);
   line-height: 36px;
   font-style: italic;
   color: var(--texts-textdisabledsubtle);
@@ -62,7 +62,7 @@
   line-height: 36px;
 }
 .texts {
-  font-size: var(--text-italic-body-size);
+  font-size: var(--font-size-1rem);
   line-height: 32px;
   color: var(--texts-textdisabledsubtle);
 }
@@ -85,7 +85,7 @@
   flex-direction: row;
   align-items: flex-end;
   justify-content: space-between;
-  font-size: var(--text-regular-headline-size);
+  font-size: var(--font-size-20);
 }
 .containerdivcontent {
   width: 100%;
@@ -116,7 +116,7 @@
   z-index: 2;
 }
 .containerdivfootballRules {
-  border-radius: var(--spacing-48);
+  border-radius: var(--gap-48);
   width: 1520px;
   overflow: hidden;
   display: flex;
@@ -132,6 +132,6 @@
   background-position: top;
   text-align: left;
   font-size: var(--header-bold-h5-size);
-  color: var(--texts-textprimary);
-  font-family: var(--text-regular-headline);
+  color: var(--colorWhite);
+  font-family: var(--font-main);
 }

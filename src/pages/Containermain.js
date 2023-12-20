@@ -1,4 +1,4 @@
-import Containersectionhero from "../components/Containersectionhero";
+import Containersectionhero from "../components/Sections/Hero";
 import Containersectiontestimonial from "../components/Containersectiontestimonial";
 import ContextContainer from "../components/ContextContainer";
 import ContainerCard from "../components/ContainerCard";

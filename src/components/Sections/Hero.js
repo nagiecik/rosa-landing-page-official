@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import Header from "./Header";
-import ArticleCard from "./ArticleCard";
-import styles from "./Containersectionhero.module.css";
+import Header from "../Header";
+import HeroArticle from "../Contents/HeroArticle";
+import styles from "./Hero.module.css";
 
 const Containersectionhero = ({
   imagelogo,
@@ -48,29 +48,27 @@ const Containersectionhero = ({
 
   return (
     <section
-      className={styles.containersectionhero}
+      className={styles.containerSectionHero}
       style={containersectionheroStyle}
     >
-      <div className={styles.containerdiv}>
+      <div className={styles.containerContent}>
         <Header
-          dimensionCode="/imagelogo21.svg"
+          logoURL="/imagelogorosa.svg"
+          alt="ROSA logo"
           showContainerDivLinks
           showButtonMenu={false}
           showButtonCta
           linkObjectFit="unset"
         />
-        <div className={styles.containerdiv1}>
-          <ArticleCard
-            dimensionCode="/imageappstore21.svg"
-            dimensionCodeImageUrl="/imagegoogleplay21.svg"
-            propObjectFit="unset"
-            propObjectFit1="unset"
-            propCursor="unset"
+        <div className={styles.content}>
+          <HeroArticle
+            buttonAppStore="/buttonAppStore.svg"
+            buttonGooglePlay="/buttonGooglePlay.svg"
           />
           <img
-            className={styles.imageheroIcon}
-            alt=""
-            src="/imagehero@2x.png"
+            className={styles.imageHero}
+            alt="ROSA double mobile screen"
+            src="/imagehero.png"
           />
         </div>
       </div>

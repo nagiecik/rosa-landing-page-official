@@ -1,5 +1,5 @@
 .containersectiontestimonial {
-  background-color: var(--texts-textprimary);
+  background-color: var(--colorWhite);
   width: 1920px;
   display: flex;
   flex-direction: column;

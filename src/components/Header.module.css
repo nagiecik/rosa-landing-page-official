@@ -1,17 +1,9 @@
-.imagelogoIcon {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 112px;
-  height: 32px;
-  object-fit: cover;
-}
-.containerdiv {
+.containerNavLogo {
   position: relative;
-  width: 165px;
+  width: auto;
   height: 32px;
 }
-.containerdivlinks {
+.containerNavLinks {
   flex: 1;
   flex-shrink: 0;
   display: flex;
@@ -34,7 +26,7 @@
   display: none;
 }
 .buttonmenu,
-.containernav2 {
+.containerNav {
   flex-direction: row;
   align-items: center;
 }
@@ -49,19 +41,19 @@
   box-sizing: border-box;
   gap: var(--button-padding-row-gap);
 }
-.containernav2 {
+.containerNav {
+  padding-top: var(--spacing-24);
   margin: 0;
   align-self: stretch;
   display: flex;
   justify-content: space-between;
-  padding: var(--spacing-24) var(--spacing-24) var(--spacing-24);
   text-align: center;
-  font-size: var(--text-italic-body-size);
+  font-size: var(--font-size-1rem);
   color: var(--surfaces-default-surfaceprimary);
-  font-family: var(--text-regular-headline);
+  font-family: var(--font-main);
 }
 @media screen and (max-width: 960px) {
-  .containerdivlinks {
+  .containerNavLinks {
     display: none;
   }
   .buttonmenu {
@@ -69,7 +61,7 @@
   }
 }
 @media screen and (max-width: 350px) {
-  .containerdivlinks {
+  .containerNavLinks {
     display: none;
   }
   .buttonmenu {

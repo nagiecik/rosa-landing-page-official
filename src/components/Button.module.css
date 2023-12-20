@@ -1,0 +1,27 @@
+.iconarrowleft {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.textstrong {
+  position: relative;
+  line-height: 32px;
+}
+.typefillStateenabledSize {
+  border-radius: var(--spacing-16);
+  background-color: var(--surfaces-default-surfaceprimary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-top-bottom) var(--button-padding-left-right);
+  box-sizing: border-box;
+  gap: var(--button-padding-row-gap);
+  text-align: center;
+  font-size: var(--text-italic-body-size);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+  align-self: stretch;
+}

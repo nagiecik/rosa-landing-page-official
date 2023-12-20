@@ -1,0 +1,62 @@
+.imagescrollUpIcon {
+  position: relative;
+  width: 191.1px;
+  height: 193.3px;
+  object-fit: cover;
+}
+.containerheaderfooter {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-32);
+}
+.imagelogoIcon {
+  position: relative;
+  width: 146.6px;
+  height: 41.9px;
+  object-fit: cover;
+}
+.containerdivcontent,
+.containerdivlinks {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+.containerdivlinks {
+  flex-shrink: 0;
+  justify-content: flex-end;
+  gap: var(--spacing-128);
+}
+.containerdivcontent {
+  align-self: stretch;
+  justify-content: space-between;
+}
+.textp {
+  margin: 0;
+  flex: 1;
+  position: relative;
+  line-height: 32px;
+}
+.containerdivcopyright,
+.containerfooter {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.containerfooter {
+  background-color: var(--surfacegray);
+  border-top: 2px solid var(--surfaces-default-surfacetertiary);
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: var(--spacing-128) var(--spacing-200);
+  gap: var(--spacing-128);
+  z-index: 0;
+  text-align: right;
+  font-size: var(--text-italic-body-size);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+}

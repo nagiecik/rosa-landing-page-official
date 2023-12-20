@@ -1,0 +1,78 @@
+.imagelogoIcon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 112px;
+  height: 32px;
+  object-fit: cover;
+}
+.containerdiv {
+  position: relative;
+  width: 165px;
+  height: 32px;
+}
+.containerdivlinks {
+  flex: 1;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  max-width: 800px;
+}
+.iconline3horizontal {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: none;
+}
+.textstrong {
+  position: relative;
+  line-height: 32px;
+  display: none;
+}
+.buttonmenu,
+.containernav2 {
+  flex-direction: row;
+  align-items: center;
+}
+.buttonmenu {
+  border-radius: var(--spacing-16);
+  background-color: var(--surfaces-default-surfacetertiary);
+  width: 64px;
+  height: 64px;
+  display: none;
+  justify-content: center;
+  padding: var(--button-padding-top-bottom);
+  box-sizing: border-box;
+  gap: var(--button-padding-row-gap);
+}
+.containernav2 {
+  margin: 0;
+  align-self: stretch;
+  display: flex;
+  justify-content: space-between;
+  padding: var(--spacing-24) var(--spacing-24) var(--spacing-24);
+  text-align: center;
+  font-size: var(--text-italic-body-size);
+  color: var(--surfaces-default-surfaceprimary);
+  font-family: var(--text-regular-headline);
+}
+@media screen and (max-width: 960px) {
+  .containerdivlinks {
+    display: none;
+  }
+  .buttonmenu {
+    display: flex;
+  }
+}
+@media screen and (max-width: 350px) {
+  .containerdivlinks {
+    display: none;
+  }
+  .buttonmenu {
+    display: flex;
+  }
+}

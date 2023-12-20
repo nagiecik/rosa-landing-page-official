@@ -1,0 +1,63 @@
+.iconhouse {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.imageicon {
+  border-radius: var(--spacing-16);
+  background-color: var(--surfaces-default-surfaceprimary);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--padding-5xs);
+}
+.texth6 {
+  letter-spacing: -0.04em;
+  line-height: 40px;
+}
+.texth6,
+.texth61,
+.textp {
+  align-self: stretch;
+  position: relative;
+}
+.texth61 {
+  letter-spacing: -0.04em;
+  line-height: 40px;
+  color: var(--surfaces-default-surfaceprimary);
+}
+.textp {
+  font-size: var(--text-italic-body-size);
+  line-height: 32px;
+  font-weight: 600;
+  color: var(--texts-textaccentsubtle1);
+}
+.containerdivcardFeatureact,
+.containerdivtext {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.containerdivtext {
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--spacing-12);
+}
+.containerdivcardFeatureact {
+  border-radius: var(--spacing-16);
+  background-color: var(--texts-textprimary);
+  box-shadow: var(--shadow-card-feature);
+  align-items: flex-end;
+  padding: var(--spacing-24) var(--spacing-24) var(--spacing-32);
+  box-sizing: border-box;
+  gap: var(--spacing-16);
+  min-width: 356px;
+  text-align: left;
+  font-size: var(--header-bold-h6-size);
+  color: var(--surfaces-default-surfacetertiary);
+  font-family: var(--text-regular-headline);
+  flex: 1;
+}

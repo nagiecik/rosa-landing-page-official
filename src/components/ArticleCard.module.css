@@ -1,0 +1,201 @@
+.texth1,
+.texth11 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.04em;
+  line-height: 96px;
+  font-weight: 100;
+  font-family: inherit;
+}
+.texth11 {
+  font-weight: 600;
+}
+.containerdivheader {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-24);
+}
+.textp {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: var(--text-regular-headline-size);
+  line-height: 36px;
+  font-weight: 300;
+}
+.imageappstoreIcon,
+.imagegoogleplayIcon {
+  position: relative;
+  width: 207.7px;
+  height: 60px;
+  object-fit: cover;
+}
+.imagegoogleplayIcon {
+  width: 207.4px;
+}
+.containerdivstorebuttons {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-32);
+}
+.textlabel,
+.textspan {
+  position: relative;
+  line-height: 40px;
+}
+.textlabel {
+  cursor: pointer;
+}
+.textspan {
+  color: var(--surfaces-default-surfacetertiary);
+}
+.containerdivtext {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--spacing-8);
+}
+.imageiconstar {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  overflow: hidden;
+  flex-shrink: 0;
+  object-fit: cover;
+}
+.containerdivstars {
+  flex-shrink: 0;
+  flex-direction: row;
+  align-items: center;
+}
+.containerarticle,
+.containerdivrating,
+.containerdivstars {
+  display: flex;
+  justify-content: flex-start;
+}
+.containerdivrating {
+  align-self: stretch;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--spacing-16);
+  font-size: var(--header-bold-h6-size);
+}
+.containerarticle {
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--spacing-48);
+  max-width: 700px;
+  text-align: left;
+  font-size: var(--font-size-77xl);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+}
+@media screen and (max-width: 1200px) {
+  .texth1,
+  .texth11 {
+    font-size: var(--header-bold-h1-size);
+    line-height: 80px;
+  }
+  .textp {
+    font-size: var(--text-italic-body-size);
+    line-height: 32px;
+  }
+  .containerarticle {
+    gap: var(--spacing-48);
+  }
+}
+@media screen and (max-width: 960px) {
+  .texth1,
+  .texth11 {
+    text-align: center;
+  }
+  .containerdivheader {
+    gap: var(--spacing-24);
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    box-sizing: border-box;
+  }
+  .textp {
+    text-align: center;
+  }
+  .containerdivrating,
+  .containerdivstorebuttons {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .containerarticle {
+    gap: var(--spacing-48);
+    align-items: center;
+    justify-content: flex-start;
+    flex: unset;
+    align-self: stretch;
+  }
+}
+@media screen and (max-width: 420px) {
+  .texth1,
+  .texth11 {
+    font-size: var(--font-size-29xl);
+    line-height: 64px;
+  }
+  .texth11 {
+    letter-spacing: -0.04em;
+  }
+  .containerdivheader {
+    gap: var(--spacing-24);
+    padding-left: 0;
+    box-sizing: border-box;
+  }
+  .containerdivrating,
+  .containerdivstorebuttons {
+    flex-direction: column;
+  }
+  .containerarticle {
+    gap: var(--spacing-48);
+  }
+}
+@media screen and (max-width: 350px) {
+  .texth1,
+  .texth11 {
+    font-size: var(--header-semi-bold-h4-size);
+    line-height: 56px;
+    text-align: center;
+  }
+  .containerdivheader {
+    align-items: center;
+    justify-content: flex-start;
+  }
+  .textp {
+    font-size: var(--font-size-sm);
+    line-height: 28px;
+    text-align: center;
+  }
+  .containerdivstorebuttons {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .containerdivrating {
+    flex-direction: column;
+  }
+  .containerarticle {
+    gap: var(--spacing-48);
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 0;
+    box-sizing: border-box;
+  }
+}

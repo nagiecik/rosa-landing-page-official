@@ -1,0 +1,64 @@
+.textlabelnumber {
+  position: relative;
+  letter-spacing: -0.04em;
+  line-height: 56px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+}
+.containerdivnumber {
+  border-radius: var(--spacing-16);
+  background-color: var(--surfaces-default-surfaceprimary);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--spacing-16);
+}
+.texth5,
+.textp {
+  align-self: stretch;
+  position: relative;
+}
+.texth5 {
+  letter-spacing: -0.04em;
+  line-height: 48px;
+}
+.textp {
+  font-size: var(--header-bold-h6-size);
+  line-height: 40px;
+  font-weight: 600;
+  color: var(--texts-textaccentsubtle1);
+}
+.containerdivcardContext,
+.containerdivtext {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.containerdivtext {
+  align-self: stretch;
+  gap: var(--spacing-16);
+  text-align: left;
+  font-size: var(--header-bold-h5-size);
+  color: var(--surfaces-default-surfaceprimary);
+}
+.containerdivcardContext {
+  border-radius: var(--spacing-16);
+  background-color: var(--texts-textprimary);
+  box-shadow: var(--shadow-card-feature);
+  border: 1px solid var(--surfaces-default-surfaceprimary);
+  box-sizing: border-box;
+  width: 640px;
+  padding: var(--spacing-32);
+  gap: var(--gap-29xl);
+  text-align: center;
+  font-size: var(--header-semi-bold-h4-size);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+}

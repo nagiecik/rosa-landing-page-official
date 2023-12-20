@@ -1,0 +1,93 @@
+.texth4 {
+  margin: 0;
+  align-self: stretch;
+  position: relative;
+  font-size: inherit;
+  letter-spacing: -0.04em;
+  line-height: 56px;
+  font-weight: 700;
+  font-family: inherit;
+}
+.textsmall {
+  flex: 1;
+  position: relative;
+  line-height: 36px;
+  font-weight: 600;
+}
+.containerdivfeatureListEle {
+  width: 656px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--text-regular-headline-size);
+  color: var(--texts-textaccentsubtle);
+}
+.texth1,
+.texth5 {
+  margin: 0;
+  position: relative;
+  letter-spacing: -0.04em;
+  font-weight: 700;
+  font-family: inherit;
+}
+.texth1 {
+  font-size: inherit;
+  line-height: 80px;
+}
+.texth5 {
+  font-size: var(--header-bold-h5-size);
+  line-height: 48px;
+  color: var(--texts-textprimary);
+}
+.containerdivheader,
+.containerdivprice {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-size: var(--header-bold-h1-size);
+  color: var(--surfaces-default-surfacetertiary);
+}
+.containerdivheader {
+  gap: var(--gap-xl);
+  font-size: var(--header-semi-bold-h4-size);
+  color: var(--texts-textprimary);
+}
+.containerdivfeatureListEle1 {
+  width: 656px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.containerdivfeatures {
+  align-self: stretch;
+  gap: var(--spacing-24);
+}
+.containerdivfeatures,
+.containerdivnumbers,
+.containerdivpricing {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.containerdivnumbers {
+  align-self: stretch;
+  gap: var(--gap-5xl);
+}
+.containerdivpricing {
+  flex: 1;
+  border-radius: var(--spacing-32);
+  background-color: var(--surfaces-default-surfaceprimary);
+  box-shadow: var(--shadow-card-feature);
+  padding: var(--spacing-48) var(--spacing-40);
+  gap: var(--spacing-40);
+  z-index: 0;
+  text-align: left;
+  font-size: var(--text-regular-headline-size);
+  color: var(--texts-textaccentsubtle);
+  font-family: var(--text-regular-headline);
+}

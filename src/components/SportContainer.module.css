@@ -1,0 +1,77 @@
+.imagemockup1Icon,
+.imagemockup2Icon {
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 278px);
+  right: 25.5px;
+  width: 350px;
+  height: 560px;
+  object-fit: cover;
+  z-index: 0;
+}
+.imagemockup1Icon {
+  top: calc(50% - 318px);
+  right: 200.5px;
+  width: 400px;
+  height: 640px;
+  z-index: 1;
+}
+.textp {
+  margin: 0;
+  position: relative;
+  line-height: 40px;
+  display: inline-block;
+  width: 800px;
+}
+.imagegoogleplayIcon {
+  border-radius: var(--spacing-8);
+  max-width: 100%;
+  overflow: hidden;
+  max-height: 100%;
+  object-fit: cover;
+}
+.containerdivbuttons {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-11xl);
+}
+.containerdivarticle {
+  width: 100%;
+  align-items: flex-start;
+  gap: var(--spacing-64);
+  max-width: 800px;
+  z-index: 2;
+}
+.containerdivarticle,
+.containerdivcontent,
+.containersectionstores {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.containerdivcontent {
+  border-radius: var(--spacing-48);
+  width: 1520px;
+  overflow: hidden;
+  align-items: flex-start;
+  padding: var(--spacing-64);
+  box-sizing: border-box;
+  position: relative;
+  background-image: url(/public/containerdivcontent@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.containersectionstores {
+  align-self: stretch;
+  background-color: var(--texts-textprimary);
+  align-items: flex-end;
+  padding: var(--spacing-128) var(--spacing-200);
+  z-index: 1;
+  text-align: left;
+  font-size: var(--header-bold-h6-size);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+}

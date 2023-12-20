@@ -1,0 +1,33 @@
+.texth5bold {
+  align-self: stretch;
+  position: relative;
+  font-size: var(--header-bold-h5-size);
+  letter-spacing: -0.04em;
+  line-height: 48px;
+  color: var(--texts-textprimary);
+}
+.textlabel {
+  flex: 1;
+  position: relative;
+  line-height: 32px;
+  font-weight: 600;
+}
+.link1 {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.containerdivlinkscolumn {
+  width: 240px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-16);
+  text-align: left;
+  font-size: var(--text-italic-body-size);
+  color: var(--texts-textaccentsubtle);
+  font-family: var(--text-regular-headline);
+}

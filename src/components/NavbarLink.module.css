@@ -1,0 +1,15 @@
+.textlabel {
+  position: relative;
+  line-height: 36px;
+  font-weight: 600;
+}
+.typenavbarStatedefaultFo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  font-size: var(--text-regular-headline-size);
+  color: var(--surfaces-default-surfaceprimary);
+  font-family: var(--text-regular-headline);
+}

@@ -1,0 +1,21 @@
+.containerdivcontent,
+.containersectionpricing {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--gap-29xl);
+}
+.containersectionpricing {
+  background-color: var(--texts-textprimary);
+  flex-direction: column;
+  align-items: center;
+  padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);
+  gap: var(--gap-109xl);
+  z-index: 2;
+  text-align: left;
+  font-size: var(--text-regular-headline-size);
+  color: var(--texts-textaccentsubtle);
+  font-family: var(--text-regular-headline);
+}

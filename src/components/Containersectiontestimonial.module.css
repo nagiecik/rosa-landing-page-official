@@ -1,0 +1,141 @@
+.textspan,
+.textstrong {
+  position: relative;
+  line-height: 32px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 900;
+  width: 368px;
+}
+.textstrong {
+  font-size: var(--header-bold-h1-size);
+  line-height: 56px;
+  color: var(--laws-light-green-200);
+}
+.containerdivheader {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: var(--font-roag);
+}
+.textblockquote,
+.texth6 {
+  align-self: stretch;
+  position: relative;
+}
+.texth6 {
+  letter-spacing: -0.04em;
+  line-height: 40px;
+}
+.textblockquote {
+  font-size: var(--text-regular-headline-size);
+  line-height: 36px;
+  color: var(--texts-textdisabledsubtle);
+}
+.containerdivtext {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-16);
+  font-size: var(--header-bold-h6-size);
+}
+.imagepersonIcon {
+  position: relative;
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+.textlabel,
+.texts {
+  align-self: stretch;
+  position: relative;
+  line-height: 36px;
+}
+.texts {
+  font-size: var(--text-italic-body-size);
+  line-height: 32px;
+  color: var(--texts-textdisabledsubtle);
+}
+.containerdivpersonDetails,
+.containerdivtext1 {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.containerdivpersonDetails {
+  flex-direction: row;
+  align-items: center;
+  gap: var(--spacing-16);
+}
+.containerdivtestimonials {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: space-between;
+  font-size: var(--text-regular-headline-size);
+}
+.containerdivcontent {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-64);
+  max-width: 800px;
+  z-index: 0;
+}
+.imagemockup1Icon,
+.imagemockup2Icon {
+  position: absolute;
+  margin: 0 !important;
+  top: calc(50% - 280px);
+  right: 25px;
+  width: 350px;
+  height: 560px;
+  object-fit: cover;
+  z-index: 1;
+}
+.imagemockup1Icon {
+  top: calc(50% - 322px);
+  right: 200px;
+  width: 400px;
+  height: 640px;
+  z-index: 2;
+}
+.containerdivfootballRules {
+  border-radius: var(--spacing-48);
+  width: 1520px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: var(--spacing-64);
+  box-sizing: border-box;
+  position: relative;
+  background-image: url(/public/containerdivfootballrules@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.containersectiontestimonial {
+  background-color: var(--texts-textprimary);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);
+  box-sizing: border-box;
+  text-align: left;
+  font-size: var(--header-bold-h5-size);
+  color: var(--texts-textprimary);
+  font-family: var(--text-regular-headline);
+  align-self: stretch;
+}

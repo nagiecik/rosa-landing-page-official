@@ -1,0 +1,35 @@
+.textp {
+  align-self: stretch;
+  position: relative;
+  line-height: 40px;
+}
+.containerarticlefeature {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: var(--spacing-32);
+}
+.imagemockupIcon {
+  position: relative;
+  border-radius: var(--spacing-64);
+  width: 696px;
+  height: 1181px;
+  object-fit: cover;
+}
+.containersectionfeature1 {
+  background-color: var(--texts-textprimary);
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--spacing-256) var(--spacing-200) var(--spacing-200);
+  box-sizing: border-box;
+  gap: var(--spacing-128);
+  text-align: left;
+  font-size: var(--header-bold-h6-size);
+  color: var(--surfaces-default-surfaceprimary);
+  font-family: var(--text-regular-headline);
+  align-self: stretch;
+}

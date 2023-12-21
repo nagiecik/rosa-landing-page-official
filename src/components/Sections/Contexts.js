@@ -1,7 +1,7 @@
 import { useMemo } from "react";
 import SectionTextContent from "../Elements/SectionTextContent";
 import CardContext from "../Elements/CardContext";
-import styles from "./Slider.module.css";
+import styles from "./Contexts.module.css";
 
 const ContextContainer = ({ sectionZIndex }) => {
   const sectionSliderStyle = useMemo(() => {
@@ -10,7 +10,7 @@ const ContextContainer = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
   return (
-    <section className={styles.containerSection} style={sectionSliderStyle}>
+    <section id="features" className={styles.containerSection} style={sectionSliderStyle}>
       <SectionTextContent
         sectionTextContentZIndex="0"
         textParagraph="ROSA (Rules Of Sports App) is a gamechanger in the way you manage, update and distribute the rules of your sport."

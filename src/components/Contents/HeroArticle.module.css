@@ -1,3 +1,15 @@
+@keyframes container {
+  0% {
+    transform: translate(-100px, 0);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
+
 .bold {
   font-weight: var(--font-semibold);
 }
@@ -91,6 +103,9 @@
   text-align: left;
   color: var(--surface-primary);
   font-family: var(--font-main);
+  animation-name: container;
+  animation-duration: 2s;
+  animation-timing-function: calc(var(--d) * 2) var(--e);
 }
 @media screen and (max-width: 1200px) {
   .texth1,

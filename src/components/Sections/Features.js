@@ -1,13 +1,13 @@
-import Containerheader from "./Elements/SectionTextContent";
-import ContainerdivcardFeatureact from "./ContainerdivcardFeatureact";
-import CardFeatureForm from "./CardFeatureForm";
-import ContainerdivcardFeatureact1 from "./ContainerdivcardFeatureact1";
-import styles from "./ContainerCard.module.css";
+import SectionTextContent from "../Elements/SectionTextContent";
+import ContainerdivcardFeatureact from "../ContainerdivcardFeatureact";
+import CardFeatureForm from "../CardFeatureForm";
+import ContainerdivcardFeatureact1 from "../ContainerdivcardFeatureact1";
+import styles from "./Features.module.css";
 
 const ContainerCard = () => {
   return (
-    <section className={styles.containersectionfeatures}>
-      <Containerheader
+    <section id="features" className={styles.containersectionfeatures}>
+      <SectionTextContent
         texth1light="All Provided"
         texth1bold="Features"
         textp="Doing your best to get the message across globally, most often you work with PDF files and printouts. They are difficult to personalize and user-unfriendly. It would be nice to make tracking changes, giving feedback and browsing easier, and mobile-optimised."

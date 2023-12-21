@@ -2,7 +2,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roag:ital,wght@1,900&display=swap");
 
 :root {
-
   --d: 700ms;
   --e: cubic-bezier(0.19, 1, 0.22, 1);
 
@@ -15,6 +14,7 @@
 
   /* font weights */
   --font-thin: 100;
+  --font-regular: 400;
   --font-medium: 500;
   --font-semibold: 600;
   --font-bold: 700;
@@ -150,6 +150,7 @@
 
 html {
   font-size: 16px;
+  scroll-behavior: smooth;
 }
 body {
   margin: 0;
@@ -166,7 +167,12 @@ a {
   color: inherit;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   margin: 0;
   align-self: stretch;
   position: relative;

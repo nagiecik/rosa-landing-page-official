@@ -21,7 +21,7 @@ const Containersectionhero = ({ sectionZIndex }) => {
           alt="ROSA logo"
           showContainerDivLinks
           showButtonMenu={false}
-          showButtonCta
+          showButtonCta={true}
           linkObjectFit="unset"
         />
         <div className={styles.content}>

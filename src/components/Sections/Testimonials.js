@@ -12,6 +12,7 @@ const Containersectiontestimonial = ({ sectionZIndex }) => {
     <section
       className={styles.containerSection}
       style={containersectiontestimonialStyle}
+      id="testimonials"
     >
       <div className={styles.containerTestimonial}>
         <div className={styles.containerTestimonialContent}>

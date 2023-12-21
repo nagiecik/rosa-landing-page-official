@@ -26,9 +26,9 @@ const NavbarLink = ({
       className={styles.linkState}
       style={navbarLinkContainerStyle}
     >
-      <div data-replace={linkText} className={styles.linkText} style={navbarLinkCursor}>
-        <span><a href={linkUrl}>{linkText}</a></span>
-      </div>
+      <a href={linkUrl}><div data-replace={linkText} className={styles.linkText} style={navbarLinkCursor}>
+        <span>{linkText}</span>
+      </div></a>
     </div>
   );
 };

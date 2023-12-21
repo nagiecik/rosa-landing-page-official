@@ -34,6 +34,20 @@ const Header = ({
             linkUrl="#"
           />
           <NavbarLink
+            linkText="Testimonials"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
+            linkUrl="#testimonials"
+          />
+          <NavbarLink
+            linkText="Context"
+            flexShrinkGrow="1"
+            textDecoration="none"
+            cursor="pointer"
+            linkUrl="#features"
+          />
+          <NavbarLink
             linkText="Features"
             flexShrinkGrow="1"
             textDecoration="none"
@@ -42,13 +56,6 @@ const Header = ({
           />
           <NavbarLink
             linkText="Use Cases"
-            flexShrinkGrow="1"
-            textDecoration="none"
-            cursor="pointer"
-            linkUrl="#"
-          />
-          <NavbarLink
-            linkText="Testimonials"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
@@ -64,17 +71,11 @@ const Header = ({
         </div>
       )}
       {showButtonMenu && (
-        <div className={styles.buttonmenu}>
+        <div className={styles.buttonMenu}>
           <img
-            className={styles.iconline3horizontal}
-            alt=""
-            src="/iconline3horizontal.svg"
-          />
-          <b className={styles.textstrong}>Get your app</b>
-          <img
-            className={styles.iconline3horizontal}
-            alt=""
-            src="/iconarrowright.svg"
+            className={styles.iconMenu}
+            alt="Menu icon"
+            src="/iconMenu.svg"
           />
         </div>
       )}

@@ -1,3 +1,15 @@
+@keyframes image {
+  0% {
+    transform: translate(0, 200px);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: translate(0, 0);
+    opacity: 100%;
+  }
+}
+
 .imageHero {
   flex: 1;
   position: relative;
@@ -6,6 +18,9 @@
   height: 1024px;
   object-fit: cover;
   background-repeat: no-repeat;
+  animation-name: image;
+  animation-duration: 2s;
+  animation-timing-function: calc(var(--d) * 2) var(--e);
 }
 .content {
   align-self: stretch;

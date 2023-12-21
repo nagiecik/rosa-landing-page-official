@@ -5,7 +5,7 @@
   justify-content: center;
   text-align: left;
   font-size: var(--font-size-16);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-family: var(--font-main);
   font-weight: var(--font-medium);
 }
@@ -24,7 +24,7 @@
   left: 0;
 }
 .linkText::before {
-  background-color: var(--colorAccentVivid);
+  background-color: var(--on-surface-accent-active);
   height: 2px;
   bottom: 0;
   transform-origin: 100% 50%;
@@ -38,7 +38,7 @@
   transform-origin: 100% 50%;
   transform: translate3d(200%, 0, 0);
   transition: transform .5s cubic-bezier(0.76, 0, 0.24, 1);
-  color: var(--colorAccentVivid);
+  color: var(--on-surface-accent-active);
 }
 
 .linkText:hover::before {

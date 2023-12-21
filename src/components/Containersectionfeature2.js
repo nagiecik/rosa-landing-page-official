@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import DistributionVertical1 from "./DistributionVertical1";
+import DistributionVertical1 from "./Elements/SectionHeader";
 import styles from "./Containersectionfeature2.module.css";
 
 const Containersectionfeature2 = ({

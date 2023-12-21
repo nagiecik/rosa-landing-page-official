@@ -1,12 +1,12 @@
 .texth2bold,
 .texth2light {
   position: relative;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--letter-spacing-default);
   line-height: 96px;
   font-weight: 100;
 }
 .texth2bold {
-  font-weight: 600;
+  font-weight: var(--font-semibold);
 }
 .distributionvertical {
   display: flex;
@@ -16,6 +16,6 @@
   gap: var(--gap-24);
   text-align: left;
   font-size: var(--font-size-61xl);
-  color: var(--surfaces-default-surfaceprimary);
+  color: var(--surfaces-default-surface-primary);
   font-family: var(--font-main);
 }

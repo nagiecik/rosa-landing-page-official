@@ -1,4 +1,4 @@
-import Containerheader from "./Containerheader";
+import Containerheader from "./Elements/SectionTextContent";
 import PricingCard from "./PricingCard";
 import styles from "./ChooseYourContainer.module.css";
 
@@ -51,7 +51,7 @@ const ChooseYourContainer = () => {
           propColor4="#7e84b5"
           containerdivheaderColor1="#181f4e"
           containerdivheaderColor2="#181f4e"
-          containerdivpricingBorder="2px solid var(--surfaces-default-surfaceprimary)"
+          containerdivpricingBorder="2px solid var(--surfaces-default-surface-primary)"
           containerdivpricingBackgroundColor="transparent"
           texth4FontWeight="bold"
         />

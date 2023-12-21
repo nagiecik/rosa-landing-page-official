@@ -33,8 +33,8 @@ const Button = ({
   const [ref, hovering] = useHover();
 
   const backgroundColor = hovering
-    ? `var(--colorWhite)`
-    : "var(--colorAccentVivid)";
+    ? `var(--surface-primary)`
+    : "var(--on-surface-accent-active)";
 
   return (
     <div

@@ -2,15 +2,15 @@
   align-self: stretch;
   position: relative;
   font-size: var(--header-bold-h5-size);
-  letter-spacing: -0.04em;
-  line-height: 48px;
-  color: var(--colorWhite);
+  letter-spacing: var(--letter-spacing-default);
+  line-height: var(--line-height-48);
+  color: var(--surface-primary);
 }
 .textlabel {
   flex: 1;
   position: relative;
-  line-height: 32px;
-  font-weight: 600;
+  line-height: var(--line-height-32);
+  font-weight: var(--font-semibold);
 }
 .link1 {
   align-self: stretch;

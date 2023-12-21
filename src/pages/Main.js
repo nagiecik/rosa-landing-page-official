@@ -1,6 +1,6 @@
-import Containersectionhero from "../components/Sections/Hero";
-import Containersectiontestimonial from "../components/Sections/Testimonials";
-import ContextContainer from "../components/ContextContainer";
+import SectionHero from "../components/Sections/Hero";
+import SectionTestimonial from "../components/Sections/Testimonials";
+import SectionSlider from "../components/Sections/Slider";
 import ContainerCard from "../components/ContainerCard";
 import Containersectionfeature1 from "../components/Containersectionfeature1";
 import Containersectionfeature2 from "../components/Containersectionfeature2";
@@ -12,9 +12,9 @@ import styles from "./Main.module.css";
 const Main = () => {
   return (
     <div className={styles.main}>
-      <Containersectionhero sectionZIndex="10" />
-      <Containersectiontestimonial sectionZIndex="9" />
-      <ContextContainer />
+      <SectionHero sectionZIndex="10" />
+      <SectionTestimonial sectionZIndex="9" />
+      <SectionSlider sectionZIndex="8"/>
       <ContainerCard />
       <Containersectionfeature1
         texth1light="Official"

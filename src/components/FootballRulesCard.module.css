@@ -1,7 +1,7 @@
 .textspan,
 .textstrong {
   position: relative;
-  line-height: 32px;
+  line-height: var(--line-height-32);
   text-transform: uppercase;
   display: inline-block;
   font-weight: 900;
@@ -9,7 +9,7 @@
 }
 .textstrong {
   font-size: var(--header-bold-h1-size);
-  line-height: 56px;
+  line-height: var(--line-height-56);
   font-style: italic;
   color: var(--laws-light-green-200);
 }
@@ -28,7 +28,7 @@
 }
 .texth6 {
   font-size: inherit;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--letter-spacing-default);
   line-height: 40px;
   font-weight: 700;
   font-family: inherit;
@@ -37,7 +37,7 @@
   font-size: var(--font-size-20);
   line-height: 36px;
   font-style: italic;
-  color: var(--colorSubtle);
+  color: var(--on-surface-accent-disabled);
 }
 .containerdivtext {
   align-self: stretch;
@@ -63,8 +63,8 @@
 }
 .texts {
   font-size: var(--font-size-1rem);
-  line-height: 32px;
-  color: var(--colorSubtle);
+  line-height: var(--line-height-32);
+  color: var(--on-surface-accent-disabled);
 }
 .containerdivpersonDetails,
 .containerdivtext1 {
@@ -132,6 +132,6 @@
   background-position: top;
   text-align: left;
   font-size: var(--header-bold-h5-size);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-family: var(--font-main);
 }

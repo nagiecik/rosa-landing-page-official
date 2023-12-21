@@ -3,8 +3,8 @@
   align-self: stretch;
   position: relative;
   font-size: inherit;
-  letter-spacing: -0.04em;
-  line-height: 56px;
+  letter-spacing: var(--letter-spacing-default);
+  line-height: var(--line-height-56);
   font-weight: 700;
   font-family: inherit;
 }
@@ -12,7 +12,7 @@
   flex: 1;
   position: relative;
   line-height: 36px;
-  font-weight: 600;
+  font-weight: var(--font-semibold);
 }
 .containerdivfeatureListEle {
   width: 656px;
@@ -27,7 +27,7 @@
 .texth5 {
   margin: 0;
   position: relative;
-  letter-spacing: -0.04em;
+  letter-spacing: var(--letter-spacing-default);
   font-weight: 700;
   font-family: inherit;
 }
@@ -37,8 +37,8 @@
 }
 .texth5 {
   font-size: var(--header-bold-h5-size);
-  line-height: 48px;
-  color: var(--colorWhite);
+  line-height: var(--line-height-48);
+  color: var(--surface-primary);
 }
 .containerdivheader,
 .containerdivprice {
@@ -53,7 +53,7 @@
 .containerdivheader {
   gap: var(--gap-xl);
   font-size: var(--header-semi-bold-h4-size);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
 }
 .containerdivfeatureListEle1 {
   width: 656px;
@@ -81,7 +81,7 @@
 .containerdivpricing {
   flex: 1;
   border-radius: var(--spacing-32);
-  background-color: var(--surfaces-default-surfaceprimary);
+  background-color: var(--surfaces-default-surface-primary);
   box-shadow: var(--shadow-card-feature);
   padding: var(--gap-48) var(--spacing-40);
   gap: var(--spacing-40);

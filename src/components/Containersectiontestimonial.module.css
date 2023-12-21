@@ -1,7 +1,7 @@
 .textHeaderWhite {
   font-size: var(--font-size-32);
   line-height: var(--line-height-48);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
 }
 
 .textHeaderGreen {
@@ -33,13 +33,13 @@
   letter-spacing: var(--letter-spacing-default);
   font-size: var(--font-size-24);
   line-height: var(--line-height-40);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-weight: var(--font-bold);
 }
 .textQuoteContent {
   font-size: var(--font-size-20);
    line-height: var(--line-height-40);
-  color: var(--colorSubtle);
+  color: var(--on-surface-accent-disabled);
 }
 .containerQuoteContent {
   align-self: stretch;
@@ -66,13 +66,13 @@
 .textPersonName{
   font-size: var(--font-size-20);
   line-height: var(--line-height-40);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-weight: var(--font-bold);
 }
 .textPersonOccupation {
   font-size: var(--font-size-16);
   line-height: var(--line-height-32);
-  color: var(--colorSubtle);
+  color: var(--on-surface-accent-disabled);
 }
 .containerPersonImage,
 .containerPersonDetails {
@@ -140,7 +140,7 @@
   background-position: top;
 }
 .containerSection {
-  background-color: var(--colorWhite);
+  background-color: var(--surface-primary);
   display: flex;
   flex-direction: column;
   align-items: center;

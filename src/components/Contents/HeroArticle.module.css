@@ -1,5 +1,5 @@
 .bold {
-  font-weight: 600;
+  font-weight: var(--font-semibold);
 }
 
 .light {
@@ -44,7 +44,7 @@
   line-height: var(--line-height-40);
 }
 .textRatingBold {
-  color: var(--colorAccentVivid);
+  color: var(--on-surface-accent-active);
 }
 .containerRatingText {
   flex-shrink: 0;
@@ -89,7 +89,7 @@
   gap: var(--gap-48);
   max-width: 50%;
   text-align: left;
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-family: var(--font-main);
 }
 @media screen and (max-width: 1200px) {
@@ -100,7 +100,7 @@
   }
   .textp {
     font-size: var(--font-size-1rem);
-    line-height: 32px;
+    line-height: var(--line-height-32);
   }
   .containerArticle {
     gap: var(--gap-48);
@@ -138,10 +138,10 @@
   .texth1,
   .texth1 {
     font-size: var(--font-size-29xl);
-    line-height: 64px;
+    line-height: var(--size-64);
   }
   .texth1 {
-    letter-spacing: -0.04em;
+    letter-spacing: var(--letter-spacing-default);
   }
   .containerdivheader {
     gap: var(--gap-24);
@@ -160,7 +160,7 @@
   .texth1,
   .texth1 {
     font-size: var(--header-semi-bold-h4-size);
-    line-height: 56px;
+    line-height: var(--line-height-56);
     text-align: center;
   }
   .containerdivheader {

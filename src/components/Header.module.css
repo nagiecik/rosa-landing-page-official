@@ -22,7 +22,7 @@
 }
 .textstrong {
   position: relative;
-  line-height: 32px;
+  line-height: var(--line-height-32);
   display: none;
 }
 .buttonmenu,
@@ -33,8 +33,8 @@
 .buttonmenu {
   border-radius: var(--spacing-16);
   background-color: var(--surfaces-default-surfacetertiary);
-  width: 64px;
-  height: 64px;
+  width: var(--size-64);
+  height: var(--size-64);
   display: none;
   justify-content: center;
   padding: var(--button-padding-top-bottom);
@@ -49,7 +49,7 @@
   justify-content: space-between;
   text-align: center;
   font-size: var(--font-size-1rem);
-  color: var(--surfaces-default-surfaceprimary);
+  color: var(--surfaces-default-surface-primary);
   font-family: var(--font-main);
 }
 @media screen and (max-width: 960px) {

@@ -7,7 +7,7 @@
 }
 .imageicon {
   border-radius: var(--spacing-16);
-  background-color: var(--surfaces-default-surfaceprimary);
+  background-color: var(--surfaces-default-surface-primary);
   display: flex;
   flex-direction: row;
   align-items: flex-end;
@@ -15,7 +15,7 @@
   padding: var(--padding-5xs);
 }
 .texth6 {
-  letter-spacing: -0.04em;
+  letter-spacing: var(--letter-spacing-default);
   line-height: 40px;
 }
 .texth6,
@@ -25,14 +25,14 @@
   position: relative;
 }
 .texth61 {
-  letter-spacing: -0.04em;
+  letter-spacing: var(--letter-spacing-default);
   line-height: 40px;
-  color: var(--surfaces-default-surfaceprimary);
+  color: var(--surfaces-default-surface-primary);
 }
 .textp {
   font-size: var(--font-size-1rem);
-  line-height: 32px;
-  font-weight: 600;
+  line-height: var(--line-height-32);
+  font-weight: var(--font-semibold);
   color: var(--texts-textaccentsubtle1);
 }
 .containerdivcardFeatureact,
@@ -48,7 +48,7 @@
 }
 .containerdivcardFeatureact {
   border-radius: var(--spacing-16);
-  background-color: var(--colorWhite);
+  background-color: var(--surface-primary);
   box-shadow: var(--shadow-card-feature);
   align-items: flex-end;
   padding: var(--gap-24) var(--gap-24) var(--spacing-32);

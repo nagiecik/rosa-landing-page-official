@@ -66,12 +66,12 @@
 }
 .containersectionstores {
   align-self: stretch;
-  background-color: var(--colorWhite);
+  background-color: var(--surface-primary);
   align-items: flex-end;
   padding: var(--spacing-128) var(--spacing-200);
   z-index: 1;
   text-align: left;
   font-size: var(--header-bold-h6-size);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   font-family: var(--font-main);
 }

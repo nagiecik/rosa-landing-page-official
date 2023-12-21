@@ -1,15 +1,14 @@
 .buttonIcon {
   position: relative;
-  width: var(--size-icon-default);
-  height: var(--size-icon-default);
+  width: var(--size-icon-big);
+  height: var(--size-icon-big);
   overflow: hidden;
   flex-shrink: 0;
 }
 
-
 .buttonText {
   position: relative;
-  line-height: 32px;
+  line-height: var(--line-height-32);
   font-family: var(--font-main);
 }
 .button {
@@ -22,22 +21,21 @@
   gap: var(--gap-16);
   text-align: center;
   font-size: var(--font-size-16);
-  color: var(--colorWhite);
+  color: var(--surface-primary);
   cursor: pointer;
-  transition: .5s ease;
+  transition: calc(var(--d) * 2) var(--e);
 }
 
 .button:hover {
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
-  transition: .5s ease;
+  transition: calc(var(--d) * 2) var(--e);
   border-radius: var(--spacing-24);
 }
 
-
 .button > .buttonIcon {
-  transition: .5s ease;
+  transition: calc(var(--d) * 2) var(--e);
 }
-.button:hover > .buttonIcon{
+.button:hover > .buttonIcon {
   transform: rotate(-45deg);
-  transition: .5s ease;
+  transition: calc(var(--d) * 2) var(--e);
 }

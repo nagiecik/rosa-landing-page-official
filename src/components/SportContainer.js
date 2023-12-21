@@ -1,4 +1,4 @@
-import DistributionVertical1 from "./DistributionVertical1";
+import DistributionVertical1 from "./Elements/SectionHeader";
 import styles from "./SportContainer.module.css";
 
 const SportContainer = () => {

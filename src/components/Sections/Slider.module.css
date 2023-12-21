@@ -1,0 +1,39 @@
+.containerSliderCards {
+  align-self: stretch;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  gap: var(--gap-61xl);
+}
+.containerSlider {
+  max-width: 848px;
+  overflow: visible;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-32);
+}
+.imageMockup {
+  position: absolute;
+  margin: 0 !important;
+  top: 400px;
+  left: 10%;
+  width: 30%;
+  height: auto;
+  object-fit: cover;
+}
+.containerSection {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: var(--spacing-128) var(--spacing-200);
+  position: relative;
+  gap: var(--spacing-128);
+  background-image: url(/public/containersectioncontext@3x.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}

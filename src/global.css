@@ -2,6 +2,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Roag:ital,wght@1,900&display=swap");
 
 :root {
+
+  --d: 700ms;
+  --e: cubic-bezier(0.19, 1, 0.22, 1);
+
   /* alphas */
   --alpha-20: 0.2;
 
@@ -21,6 +25,9 @@
   --font-size-20: 20px;
   --font-size-24: 24px;
   --font-size-32: 32px;
+  --font-size-40: 40px;
+  --font-size-48: 48px;
+  --font-size-56: 56px;
   --font-size-64: 64px;
   --font-size-96: 96px;
 
@@ -37,24 +44,29 @@
   --font-size-29xl: 48px;
 
   /* line heights */
+  --line-height-32: 32px;
   --line-height-40: 40px;
+  --line-height-48: 48px;
   --line-height-56: 56px;
+  --line-height-64: 64px;
+  --line-height-72: 72px;
+  --line-height-80: 80px;
   --line-height-96: 96px;
 
   /* Sizes */
   --size-icon-default: 24px;
   --size-icon-big: 32px;
-
+  --size-64: 4rem;
   --size-80: 5rem;
 
   /* Colors ROSA */
   --surfacegray: #0e1012;
-  --colorAccentVivid: #fab300;
-  --colorWhite: #fff;
+  --on-surface-accent-active: #fab300;
+  --surface-primary: #fff;
   --texts-textaccentsubtle: #c8d2d8;
-  --surfaces-default-surfaceprimary: #181f4e;
-  --texts-textaccentsubtle1: #7e84b5;
-  --colorSubtle: #e9edef;
+  --surface-secondary: #181f4e;
+  --on-surface-accent-inactive: #7e84b5;
+  --on-surface-accent-disabled: #e9edef;
 
   /* Colors ROSA */
   --colorFootballRulesGreen: #00f481;
@@ -85,6 +97,7 @@
   --gap-16: 16px;
   --gap-24: 24px;
   --gap-32: 32px;
+  --gap-40: 40px;
   --gap-48: 48px;
   --gap-64: 64px;
   --gap-96: 96px;
@@ -153,12 +166,40 @@ a {
   color: inherit;
 }
 
-h1 {
+h1, h2, h3, h4, h5, h6 {
   margin: 0;
   align-self: stretch;
   position: relative;
+  letter-spacing: var(--letter-spacing-default);
+  font-family: var(--font-main);
+}
+
+h1 {
   font-size: var(--font-size-96);
-  letter-spacing: -0.04em;
   line-height: var(--line-height-96);
-  font-family: inherit;
+}
+
+h2 {
+  font-size: var(--font-size-64);
+  line-height: var(--line-height-80);
+}
+
+h3 {
+  font-size: var(--font-size-56);
+  line-height: var(--line-height-72);
+}
+
+h4 {
+  font-size: var(--font-size-48);
+  line-height: var(--line-height-64);
+}
+
+h5 {
+  font-size: var(--font-size-40);
+  line-height: var(--line-height-56);
+}
+
+h6 {
+  font-size: var(--font-size-32);
+  line-height: var(--line-height-48);
 }

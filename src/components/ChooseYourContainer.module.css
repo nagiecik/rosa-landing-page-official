@@ -8,7 +8,7 @@
   gap: var(--gap-29xl);
 }
 .containersectionpricing {
-  background-color: var(--colorWhite);
+  background-color: var(--surface-primary);
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);

@@ -11,7 +11,7 @@
   gap: var(--spacing-32);
 }
 .containersectionfeatures {
-  background-color: var(--colorWhite);
+  background-color: var(--surface-primary);
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-400) var(--spacing-200) var(--spacing-128);

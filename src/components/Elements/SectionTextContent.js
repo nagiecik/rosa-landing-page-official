@@ -6,6 +6,19 @@ const SectionTextContent = ({
   sectionTextContentZIndex,
   textParagraph,
   textParagraphColor,
+  firstText = "firstText",
+  secondText = "secondText",
+  showsecondText = true,
+  showfirstText = true,
+  gap,
+  firstTextColor,
+  secondTextColor,
+  firstTextSize,
+  secondTextSize,
+  firstTextWeight,
+  secondTextWeight,
+  firstTextLineHeight,
+  secondTextLineHeight,
 }) => {
   const sectionTextContentStyle = useMemo(() => {
     return {
@@ -22,17 +35,19 @@ const SectionTextContent = ({
   return (
     <div className={styles.sectionContainer} style={sectionTextContentStyle}>
       <SectionHeader
-        firstText="Context"
-        secondText="Selection"
-        showfirstText={true}
-        showsecondText={true}
-        gap="var(--spacing-24)"
-        firstTextColor="var(--surface-primary)"
-        secondTextColor="var(--surface-primary)"
-        firstTextSize="var(--font-size-96)"
-        secondTextSize="var(--font-size-96)"
-        firstTextWeight="var(--font-thin)"
-        secondTextWeight="var(--font-semibold)"
+        showfirstText={showfirstText}
+        firstText={firstText}
+        firstTextColor={firstTextColor}
+        firstTextSize={firstTextSize}
+        firstTextWeight={firstTextWeight}
+        firstTextLineHeight={firstTextLineHeight}
+        showsecondText={showsecondText}
+        secondText={secondText}
+        secondTextColor={secondTextColor}
+        secondTextSize={secondTextSize}
+        secondTextWeight={secondTextWeight}
+        secondTextLineHeight={secondTextLineHeight}
+        gap={gap}
       />
       <div className={styles.textParagraph} style={textParagraphStyle}>
         {textParagraph}

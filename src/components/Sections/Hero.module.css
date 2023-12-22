@@ -31,7 +31,7 @@
   gap: var(--gap-64);
 }
 .containerContent,
-.containerSectionHero {
+.containerHero {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -42,7 +42,7 @@
   gap: var(--gap-96);
   max-width: 1520px;
 }
-.containerSectionHero {
+.containerHero {
   height: 1080px;
   align-items: center;
   padding: 0 var(--gap-200);
@@ -61,7 +61,7 @@
   .containerContent {
     gap: var(--section-hero-column-gap);
   }
-  .containerSectionHero {
+  .containerHero {
     width: 1200px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -89,7 +89,7 @@
     padding-right: 0;
     box-sizing: border-box;
   }
-  .containerSectionHero {
+  .containerHero {
     width: 960px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -107,7 +107,7 @@
     padding-right: 0;
     box-sizing: border-box;
   }
-  .containerSectionHero {
+  .containerHero {
     width: 420px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);
@@ -120,7 +120,7 @@
     align-items: center;
     justify-content: flex-start;
   }
-  .containerSectionHero {
+  .containerHero {
     width: 350px;
     padding-left: var(--spacing-200);
     padding-right: var(--spacing-200);

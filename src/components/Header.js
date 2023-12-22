@@ -31,7 +31,7 @@ const Header = ({
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#"
+            linkUrl="#start"
           />
           <NavbarLink
             linkText="Testimonials"
@@ -45,28 +45,28 @@ const Header = ({
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#features"
+            linkUrl="#context"
           />
           <NavbarLink
             linkText="Features"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#"
+            linkUrl="#features"
           />
           <NavbarLink
             linkText="Use Cases"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#"
+            linkUrl="#use_cases"
           />
           <NavbarLink
             linkText="Pricing"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#"
+            linkUrl="#pricing"
           />
         </div>
       )}

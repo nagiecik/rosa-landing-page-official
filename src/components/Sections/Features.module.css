@@ -1,24 +1,20 @@
-.containerdivgrid,
-.containersectionfeatures {
+.containerFeatures {
   align-self: stretch;
   display: flex;
   justify-content: flex-start;
 }
-.containerdivgrid {
-  flex-direction: row;
-  flex-wrap: wrap;
+.containerGridCards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   align-items: flex-start;
   gap: var(--spacing-32);
 }
-.containersectionfeatures {
-  background-color: var(--surface-primary);
+.containerFeatures {
   flex-direction: column;
   align-items: center;
   padding: var(--spacing-400) var(--spacing-200) var(--spacing-128);
   gap: var(--spacing-128);
-  z-index: 7;
   text-align: left;
-  font-size: var(--header-bold-h6-size);
-  color: var(--surfaces-default-surfacetertiary);
   font-family: var(--font-main);
 }

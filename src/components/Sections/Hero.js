@@ -3,7 +3,7 @@ import HeroArticle from "../Contents/HeroArticle";
 import Header from "../Header";
 import styles from "./Hero.module.css";
 
-const Containersectionhero = ({ sectionZIndex }) => {
+const Hero = ({ sectionZIndex }) => {
   const containerSectionHeroStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
@@ -12,7 +12,8 @@ const Containersectionhero = ({ sectionZIndex }) => {
 
   return (
     <section
-      className={styles.containerSectionHero}
+      id="start"
+      className={styles.containerHero}
       style={containerSectionHeroStyle}
     >
       <div className={styles.containerContent}>
@@ -40,4 +41,4 @@ const Containersectionhero = ({ sectionZIndex }) => {
   );
 };
 
-export default Containersectionhero;
+export default Hero;

@@ -39,7 +39,7 @@
 .textQuoteContent {
   font-size: var(--font-size-20);
    line-height: var(--line-height-40);
-  color: var(--on-surface-accent-disabled);
+  color: var(--on-surface-accent-disabled-light);
 }
 .containerQuoteContent {
   align-self: stretch;
@@ -72,7 +72,7 @@
 .textPersonOccupation {
   font-size: var(--font-size-16);
   line-height: var(--line-height-32);
-  color: var(--on-surface-accent-disabled);
+  color: var(--on-surface-accent-disabled-light);
 }
 .containerPersonImage,
 .containerPersonDetails {

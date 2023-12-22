@@ -61,12 +61,12 @@
 
   /* Colors ROSA */
   --surfacegray: #0e1012;
-  --on-surface-accent-active: #fab300;
   --surface-primary: #fff;
-  --texts-textaccentsubtle: #c8d2d8;
   --surface-secondary: #181f4e;
+  --on-surface-accent-active: #fab300;
   --on-surface-accent-inactive: #7e84b5;
-  --on-surface-accent-disabled: #e9edef;
+  --on-surface-accent-disabled-light: #e9edef;
+  --on-surface-accent-disabled-dark: #c8d2d8;
 
   /* Colors ROSA */
   --colorFootballRulesGreen: #00f481;
@@ -142,7 +142,7 @@
   --br-7xs: 6px;
 
   /* Effects */
-  --shadow-card-feature: -176px 226px 80px rgba(23, 31, 78, 0),
+  --shadow-card: -176px 226px 80px rgba(23, 31, 78, 0),
     -113px 144px 73px rgba(23, 31, 78, 0.01),
     -63px 81px 62px rgba(23, 31, 78, 0.04),
     -28px 36px 46px rgba(23, 31, 78, 0.07), -7px 9px 25px rgba(23, 31, 78, 0.08);

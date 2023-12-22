@@ -2,7 +2,7 @@ import { useMemo } from "react";
 import ColorWhiteTypeExtended from "../ColorWhiteTypeExtended";
 import styles from "../Containersectiontestimonial.module.css";
 
-const Containersectiontestimonial = ({ sectionZIndex }) => {
+const Testimonials = ({ sectionZIndex }) => {
   const containersectiontestimonialStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
@@ -25,7 +25,10 @@ const Containersectiontestimonial = ({ sectionZIndex }) => {
               Revolutized Our Rule Management
             </p>
             <i className={styles.textQuoteContent}>
-            “After analysing and understanding the hassle of using printouts on the field of play, we decided to launch digitalised Laws. It was to give quick and easy access to the Laws, most importantly to the referees, both on- and offline.”
+              “After analysing and understanding the hassle of using printouts
+              on the field of play, we decided to launch digitalised Laws. It
+              was to give quick and easy access to the Laws, most importantly to
+              the referees, both on- and offline.”
             </i>
           </div>
           <div className={styles.containerPerson}>
@@ -37,14 +40,16 @@ const Containersectiontestimonial = ({ sectionZIndex }) => {
               />
               <div className={styles.containerPersonDetails}>
                 <p className={styles.textPersonName}>Lukas Brud</p>
-                <i className={styles.textPersonOccupation}>The IFAB Secretary & CEO</i>
+                <i className={styles.textPersonOccupation}>
+                  The IFAB Secretary & CEO
+                </i>
               </div>
             </div>
             <img
-                className={styles.imageLogoIFAB}
-                alt="Lukas Brud Testimonial Image"
-                src="/logoIFAB.svg"
-              />
+              className={styles.imageLogoIFAB}
+              alt="Lukas Brud Testimonial Image"
+              src="/logoIFAB.svg"
+            />
           </div>
         </div>
         <img
@@ -62,4 +67,4 @@ const Containersectiontestimonial = ({ sectionZIndex }) => {
   );
 };
 
-export default Containersectiontestimonial;
+export default Testimonials;

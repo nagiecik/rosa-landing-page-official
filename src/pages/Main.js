@@ -1,7 +1,7 @@
 import SectionHero from "../components/Sections/Hero";
 import SectionTestimonial from "../components/Sections/Testimonials";
-import SectionSlider from "../components/Sections/Contexts";
-import ContainerCard from "../components/Sections/Features";
+import SectionContexts from "../components/Sections/Contexts";
+import SectionFeatures from "../components/Sections/Features";
 import Containersectionfeature1 from "../components/Containersectionfeature1";
 import Containersectionfeature2 from "../components/Containersectionfeature2";
 import ChooseYourContainer from "../components/ChooseYourContainer";
@@ -14,8 +14,8 @@ const Main = () => {
     <div className={styles.main}>
       <SectionHero sectionZIndex="10" />
       <SectionTestimonial sectionZIndex="9" />
-      <SectionSlider sectionZIndex="8"/>
-      <ContainerCard />
+      <SectionContexts sectionZIndex="8" />
+      <SectionFeatures sectionZIndex="7" />
       <Containersectionfeature1
         texth1light="Official"
         texth1bold="Partners"

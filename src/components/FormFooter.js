@@ -1,5 +1,5 @@
 import DistributionVertical from "./DistributionVertical";
-import ImagedividerIcon from "./ImagedividerIcon";
+import Divider from "./Divider";
 import Containerdivlinkscolumn from "./Containerdivlinkscolumn";
 import styles from "./FormFooter.module.css";
 
@@ -25,7 +25,7 @@ const FormFooter = () => {
           src="/imagescrollup@2x.png"
         />
       </header>
-      <ImagedividerIcon
+      <Divider
         imageDimensions="/imagedivider21@2x.png"
         propAlignSelf="stretch"
         propMaxWidth="100%"

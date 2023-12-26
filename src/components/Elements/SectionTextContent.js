@@ -3,7 +3,7 @@ import SectionHeader from "./SectionHeader";
 import styles from "./SectionTextContent.module.css";
 
 const SectionTextContent = ({
-  sectionTextContentZIndex,
+  sectionZIndex,
   textParagraph,
   textParagraphColor,
   firstText = "firstText",
@@ -19,12 +19,15 @@ const SectionTextContent = ({
   secondTextWeight,
   firstTextLineHeight,
   secondTextLineHeight,
+  sectionWidth,
+  showTextParagraph = true,
 }) => {
   const sectionTextContentStyle = useMemo(() => {
     return {
-      zIndex: sectionTextContentZIndex,
+      width: sectionWidth,
+      zIndex: sectionZIndex,
     };
-  }, [sectionTextContentZIndex]);
+  }, [sectionWidth, sectionZIndex]);
 
   const textParagraphStyle = useMemo(() => {
     return {
@@ -49,9 +52,9 @@ const SectionTextContent = ({
         secondTextLineHeight={secondTextLineHeight}
         gap={gap}
       />
-      <div className={styles.textParagraph} style={textParagraphStyle}>
+      {showTextParagraph && (<div className={styles.textParagraph} style={textParagraphStyle}>
         {textParagraph}
-      </div>
+      </div>)}
     </div>
   );
 };

@@ -8,13 +8,13 @@ const CardFeature = ({
 }) => {
   return (
     <div className={styles.containerCard}>
-      <div className={styles.iconContainer}>
-        <img className={styles.imageIcon} alt="" src={imageIconUrl} />
-      </div>
       <div className={styles.containerText}>
         <p className={styles.textNumber}>{textNumber}</p>
         <p className={styles.textTitle}>{textTitle}</p>
         <p className={styles.textParagraph}>{textParagraph}</p>
+      </div>
+      <div className={styles.containerCorner} href="#">
+        <img className={styles.imageIcon} alt="" src={imageIconUrl} />
       </div>
     </div>
   );

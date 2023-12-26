@@ -1,35 +1,36 @@
-.imagemockupIcon {
-  position: relative;
-  border-radius: var(--br-45xl);
-  width: 696px;
-  height: 1181px;
-  object-fit: cover;
-}
-.textp {
+.textParagraph {
   align-self: stretch;
   position: relative;
-  line-height: 40px;
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-40);
+  color: var(--surface-secondary);
 }
-.containerarticlefeature {
+.containerArticle {
   flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--spacing-32);
+  padding-top: var(--spacing-160)
 }
-.containersectionfeature2 {
+.imageMockup {
+  position: relative;
+  border-radius: var(--spacing-64);
+  width: 696px;
+  height: auto;
+  object-fit: cover;
+}
+.containerContent {
   background-color: var(--surface-primary);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: var(--spacing-256) var(--spacing-200) var(--spacing-200);
+  padding: var(--spacing-64) var(--spacing-200);
   box-sizing: border-box;
   gap: var(--spacing-128);
   text-align: left;
-  font-size: var(--header-bold-h6-size);
-  color: var(--surfaces-default-surface-primary);
   font-family: var(--font-main);
   align-self: stretch;
 }

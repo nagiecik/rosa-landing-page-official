@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./Button.module.css";
+import styles from "./ButtonPrimary.module.css";
 import { useHover } from "@uidotdev/usehooks";
 
 const Button = ({
@@ -14,7 +14,7 @@ const Button = ({
   buttonTextFontWeight,
   altTextIconLeft,
   altTextIconRight,
-
+  buttonWidth,
 }) => {
   const buttonTextControl = useMemo(() => {
     return {
@@ -22,6 +22,7 @@ const Button = ({
       fontSize: buttonFontTextSize,
       lineHeight: buttonTextLineHeight,
       fontWeight: buttonTextFontWeight,
+      width: buttonWidth,
     };
   }, [
     buttonTextColor,
@@ -37,19 +38,23 @@ const Button = ({
     : "var(--on-surface-accent-active)";
 
   return (
-    <div
-    ref={ref}
-      className={styles.button}
-      style={{backgroundColor}}
-    >
+    <div ref={ref} className={styles.button} style={{ backgroundColor }}>
       {showIconLeft && (
-        <img className={styles.buttonIcon} alt={altTextIconLeft} src={iconLeft} />
+        <img
+          className={styles.buttonIcon}
+          alt={altTextIconLeft}
+          src={iconLeft}
+        />
       )}
       <p className={styles.text} style={buttonTextControl}>
         {buttonText}
       </p>
       {showIconRight && (
-        <img className={styles.buttonIcon} alt={altTextIconRight} src={iconRight} />
+        <img
+          className={styles.buttonIcon}
+          alt={altTextIconRight}
+          src={iconRight}
+        />
       )}
     </div>
   );

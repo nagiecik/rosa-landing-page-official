@@ -1,39 +1,38 @@
-.containerSliderCards {
-  align-self: stretch;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--gap-61xl);
-}
-.containerSlider {
-  max-width: 848px;
+.containerCards {
+  width: 70%;
+  object-fit: contain;
   overflow: visible;
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: minmax(100px, max-content) minmax(100px, max-content);
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-48);
 }
 .imageMockup {
-  position: absolute;
-  margin: 0 !important;
-  top: 400px;
-  left: 10%;
+  position: relative;
   width: 30%;
-  height: auto;
-  object-fit: cover;
+  max-height: 800px;
+  object-fit: contain;
 }
 .containerSection {
-  align-self: stretch;
+  align-self: flex-start;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
   padding: var(--spacing-128) var(--spacing-200);
   position: relative;
-  gap: var(--spacing-128);
+  gap: var(--spacing-64);
   background-image: url(/public/containersectioncontext@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+}
+
+.containerContent {
+  width: 1520px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-128);
+  align-items: center;
+  justify-content: space-between;
 }

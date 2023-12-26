@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import NavbarLink from "./Elements/NavbarLink";
-import Button from "./Button";
+import Button from "./ButtonPrimary";
 import styles from "./Header.module.css";
 
 const Header = ({
@@ -18,12 +18,12 @@ const Header = ({
 
   return (
     <nav className={styles.containerNav}>
-        <img
+      <img
         className={styles.containerNavLogo}
-          alt="ROSA logotype"
-          src={logoURL}
-          style={imagelogoIconStyle}
-        />
+        alt="ROSA logotype"
+        src={logoURL}
+        style={imagelogoIconStyle}
+      />
       {showContainerDivLinks && (
         <div className={styles.containerNavLinks}>
           <NavbarLink
@@ -80,18 +80,19 @@ const Header = ({
         </div>
       )}
       {showButtonCta && (
-      <Button
-        buttonText="Get your app"
-        iconLeft="/iconarrowleft.svg"
-        iconRight="/iconarrowright.svg"
-        showIconLeft={false}
-        showIconRight={true}
-        buttonTextColor="#181f4e"
-        buttonFontTextSize="16px"
-        buttonTextLineHeight="32px"
-        buttonTextFontWeight="900"
-        altTextIconRight="Icon Arrow Right"
-      />)}
+        <Button
+          buttonText="Get your app"
+          iconLeft="/iconarrowleft.svg"
+          iconRight="/iconarrowright.svg"
+          showIconLeft={false}
+          showIconRight={true}
+          buttonTextColor="#181f4e"
+          buttonFontTextSize="16px"
+          buttonTextLineHeight="32px"
+          buttonTextFontWeight="900"
+          altTextIconRight="Icon Arrow Right"
+        />
+      )}
     </nav>
   );
 };

@@ -56,8 +56,12 @@
   /* Sizes */
   --size-icon-default: 24px;
   --size-icon-big: 32px;
+  --size-16: 1rem;
+  --size-32: 2rem;
+  --size-48: 3rem;
   --size-64: 4rem;
   --size-80: 5rem;
+  --size-360: 22.5rem;
 
   /* Colors ROSA */
   --surfacegray: #0e1012;
@@ -82,7 +86,10 @@
   --spacing-40: 40px;
   --spacing-48: 48px;
   --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-104: 104px;
   --spacing-128: 128px;
+  --spacing-160: 160px;
   --spacing-200: 200px;
   --spacing-256: 256px;
   --spacing-400: 400px;
@@ -167,6 +174,10 @@ a {
   color: inherit;
 }
 
+hr {
+  margin: 0;
+  line-height: normal;
+}
 h1,
 h2,
 h3,

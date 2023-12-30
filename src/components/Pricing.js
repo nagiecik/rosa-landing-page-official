@@ -4,7 +4,7 @@ import styles from "./Pricing.module.css";
 
 const Pricing = () => {
   return (
-    <section className={styles.containersectionpricing}>
+    <section id="pricing" className={styles.containersectionpricing}>
       <SectionTextContent
         firstText="Choose Your"
         firstTextColor="var(--surface-secondary)"
@@ -17,6 +17,7 @@ const Pricing = () => {
       />
       <div className={styles.containerdivcontent}>
         <CardPricing
+          cardPricingBackgroundColor="var(--surface-primary)"
           textCardTitle="National"
           textColor="var(--surface-secondary)"
           textColorAccent="var(--on-surface-accent-active)"
@@ -33,14 +34,50 @@ const Pricing = () => {
           textBullet4="User-friendly browsing and search"
           textBullet5="Bookmarking (adding to favourites, note-taking)"
           textBulletNumberLeft1="Content/data limits"
-          textBulletNumberRight1="15GB"
+          textBulletNumberRight1="5GB"
           textCardServices="Additional Services"
           textBulletNumberLeft2="Content entering (every 100 pages)"
           textBulletNumberRight2="€350"
           textBulletNumberLeft3="Onboarding fee"
           textBulletNumberRight3="€980"
+          showButtonPrimary={false}
+          buttonPrimaryText="Choose National"
+          showbuttonSecondary={true}
+          buttonSecondaryText="Choose National"
+          buttonWidth="100%"
+          buttonDisplayMode="block"
         />
-        <CardPricing />
+        <CardPricing
+          cardPricingBackgroundColor="var(--surface-secondary)"
+          textCardTitle="International"
+          textColor="var(--surface-primary)"
+          textColorAccent="var(--on-surface-accent-active)"
+          textCardTitleDescription="For international sports organisations in 2023, 40% off on target fee of €1999/ mo from 2024, with new features still under development"
+          textCardDescriptionColor="var(--on-surface-accent-inactive)"
+          textCardPrice="€798"
+          textCardPriceColor="var(--on-surface-accent-active)"
+          dividerBorder="1px solid var(--on-surface-accent-disabled-light)"
+          dividerWidth="100%"
+          textCardFeatures="Everything in National, plus"
+          textBullet1="User data collection"
+          textBullet2="Initial content entering (up to 300 pages)"
+          textBullet3="Multi-language mobile app"
+          textBullet4="Starter-pack promo materials"
+          textBullet5="Dedicated customer service for admins"
+          textBulletNumberLeft1="Content/data limits"
+          textBulletNumberRight1="15GB"
+          textCardServices="Additional Services"
+          textBulletNumberLeft2="Content entering (every 100 pages)"
+          textBulletNumberRight2="€350"
+          textBulletNumberLeft3="Onboarding fee"
+          textBulletNumberRight3="€1500"
+          showButtonPrimary={true}
+          buttonPrimaryText="Choose International"
+          showbuttonSecondary={false}
+          buttonSecondaryText="Choose National"
+          buttonWidth="100%"
+          buttonDisplayMode="block"
+        />
       </div>
     </section>
   );

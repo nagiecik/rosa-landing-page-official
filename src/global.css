@@ -29,6 +29,7 @@
   --font-size-48: 48px;
   --font-size-56: 56px;
   --font-size-64: 64px;
+  --font-size-80: 80px;
   --font-size-96: 96px;
 
   --letter-spacing-default: -0.04rem;
@@ -58,13 +59,14 @@
   --size-icon-big: 32px;
   --size-16: 1rem;
   --size-32: 2rem;
+  --size-40: 2.5rem;
   --size-48: 3rem;
   --size-64: 4rem;
   --size-80: 5rem;
   --size-360: 22.5rem;
 
   /* Colors ROSA */
-  --surfacegray: #0e1012;
+  --surface-tertiary: #0e1012;
   --surface-primary: #fff;
   --surface-secondary: #181f4e;
   --on-surface-accent-active: #fab300;

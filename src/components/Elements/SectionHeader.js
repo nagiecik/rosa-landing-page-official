@@ -4,17 +4,24 @@ import styles from "./SectionHeader.module.css";
 const SectionHeader = ({
   firstText = "firstText",
   secondText = "secondText",
-  showsecondText = true,
-  showfirstText = true,
+  linkText = "linkText",
+  showSecondText = true,
+  showFirstText = true,
+  showLinkText = false,
   gap,
   firstTextColor,
   secondTextColor,
+  linkTextColor,
   firstTextSize,
   secondTextSize,
+  linkTextSize,
   firstTextWeight,
   secondTextWeight,
+  linkTextWeight,
   firstTextLineHeight,
   secondTextLineHeight,
+  linkTextLineHeight,
+  linkTextURL,
 }) => {
   const sectionHeaderGap = useMemo(() => {
     return {
@@ -40,17 +47,31 @@ const SectionHeader = ({
     };
   }, [secondTextColor, secondTextSize, secondTextWeight, secondTextLineHeight]);
 
+  const linkTextStyle = useMemo(() => {
+    return {
+      color: linkTextColor,
+      fontSize: linkTextSize,
+      fontWeight: linkTextWeight,
+      lineHeight: linkTextLineHeight,
+    };
+  }, [linkTextColor, linkTextSize, linkTextWeight, linkTextLineHeight]);
+
   return (
     <div className={styles.sectionContainer} style={sectionHeaderGap}>
-      {showfirstText && (
+      {showFirstText && (
         <div className={styles.firstText} style={firstTextStyle}>
           {firstText}
         </div>
       )}
-      {showsecondText && (
+      {showSecondText && (
         <div className={styles.secondText} style={secondTextStyle}>
           {secondText}
         </div>
+      )}
+      {showLinkText && (
+        <a href={linkTextURL} className={styles.linkText} style={linkTextStyle}>
+          {linkText}
+        </a>
       )}
     </div>
   );

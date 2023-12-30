@@ -2,7 +2,8 @@ import { useMemo } from "react";
 import Divider from "./Divider";
 import BulletCheckmark from "./BulletCheckmark";
 import BulletNumber from "./BulletNumber";
-import Button from "./ButtonPrimary";
+import ButtonPrimary from "./ButtonPrimary";
+import ButtonSecondary from "./ButtonSecondary";
 import styles from "./CardPricing.module.css";
 
 const PricingCard = ({
@@ -29,10 +30,12 @@ const PricingCard = ({
   textBulletNumberLeft3,
   textBulletNumberRight3,
   textColorAccent,
+  showButtonPrimary,
+  buttonPrimaryText,
+  showbuttonSecondary,
+  buttonSecondaryText,
   buttonWidth,
-  buttonText,
-  buttonTextColor,
-  buttonBackground,
+  buttonDisplayMode,
 }) => {
   const cardPricingStyle = useMemo(() => {
     return {
@@ -122,7 +125,7 @@ const PricingCard = ({
           className={styles.textCardTitleDescription}
           style={textDescriptionStyle}
         >
-          Additional services
+          {textCardServices}
         </p>
         <BulletNumber
           textBullet={textBulletNumberLeft2}
@@ -137,7 +140,20 @@ const PricingCard = ({
           textNumberColor={textColorAccent}
         />
       </div>
-      <Button />
+      {showButtonPrimary && (
+        <ButtonPrimary
+          buttonText={buttonPrimaryText}
+          buttonWidth={buttonWidth}
+          buttonDisplayMode={buttonDisplayMode}
+        />
+      )}
+      {showbuttonSecondary && (
+        <ButtonSecondary
+          buttonText={buttonSecondaryText}
+          buttonWidth={buttonWidth}
+          buttonDisplayMode={buttonDisplayMode}
+        />
+      )}
     </div>
   );
 };

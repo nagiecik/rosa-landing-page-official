@@ -8,8 +8,10 @@ const SectionTextContent = ({
   textParagraphColor,
   firstText = "firstText",
   secondText = "secondText",
-  showsecondText = true,
-  showfirstText = true,
+  linkText = "linkText",
+  showSecondText = true,
+  showFirstText = true,
+  showLinkText = false,
   gap,
   firstTextColor,
   secondTextColor,
@@ -17,10 +19,13 @@ const SectionTextContent = ({
   secondTextSize,
   firstTextWeight,
   secondTextWeight,
+  linkTextWeight,
   firstTextLineHeight,
   secondTextLineHeight,
+  linkTextLineHeight,
   sectionWidth,
   showTextParagraph = true,
+  linkTextURL,
 }) => {
   const sectionTextContentStyle = useMemo(() => {
     return {
@@ -38,23 +43,30 @@ const SectionTextContent = ({
   return (
     <div className={styles.sectionContainer} style={sectionTextContentStyle}>
       <SectionHeader
-        showfirstText={showfirstText}
+        showFirstText={showFirstText}
         firstText={firstText}
         firstTextColor={firstTextColor}
         firstTextSize={firstTextSize}
         firstTextWeight={firstTextWeight}
         firstTextLineHeight={firstTextLineHeight}
-        showsecondText={showsecondText}
+        showSecondText={showSecondText}
         secondText={secondText}
         secondTextColor={secondTextColor}
         secondTextSize={secondTextSize}
         secondTextWeight={secondTextWeight}
         secondTextLineHeight={secondTextLineHeight}
+        showLinkText={showLinkText}
+        linkText={linkText}
+        linkTextWeight={linkTextWeight}
+        linkTextLineHeight={linkTextLineHeight}
+        linkTextURL={linkTextURL}
         gap={gap}
       />
-      {showTextParagraph && (<div className={styles.textParagraph} style={textParagraphStyle}>
-        {textParagraph}
-      </div>)}
+      {showTextParagraph && (
+        <div className={styles.textParagraph} style={textParagraphStyle}>
+          {textParagraph}
+        </div>
+      )}
     </div>
   );
 };

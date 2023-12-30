@@ -5,10 +5,9 @@ import SectionFeatures from "../components/Sections/Features";
 import SectionFeatureLeft from "../components/FeatureLeft";
 import SectionFeatureRight from "../components/FeatureRight";
 import SectionPricing from "../components/Pricing";
-import SportContainer from "../components/SportContainer";
-import FormFooter from "../components/FormFooter";
+import SectionSummary from "../components/Summary";
+import SectionFooter from "../components/FormFooter";
 import styles from "./Main.module.css";
-import Pricing from "../components/Pricing";
 
 const Main = () => {
   return (
@@ -65,9 +64,12 @@ const Main = () => {
         imageMockupURL="/featureMockup-4.png"
         sectionWidth="100%"
       />
-      <Pricing />
-      <SportContainer />
-      <FormFooter />
+      <SectionPricing />
+      <SectionSummary
+        buttonAppStore="/buttonAppStore.svg"
+        buttonGooglePlay="/buttonGooglePlay.svg"
+      />
+      <SectionFooter />
     </div>
   );
 };

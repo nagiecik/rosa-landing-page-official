@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import NavbarLink from "./Elements/NavbarLink";
-import Button from "./ButtonPrimary";
+import ButtonPrimary from "./ButtonPrimary";
 import styles from "./Header.module.css";
 
 const Header = ({
@@ -80,16 +80,12 @@ const Header = ({
         </div>
       )}
       {showButtonCta && (
-        <Button
+        <ButtonPrimary
           buttonText="Get your app"
           iconLeft="/iconarrowleft.svg"
           iconRight="/iconarrowright.svg"
           showIconLeft={false}
           showIconRight={true}
-          buttonTextColor="#181f4e"
-          buttonFontTextSize="16px"
-          buttonTextLineHeight="32px"
-          buttonTextFontWeight="900"
           altTextIconRight="Icon Arrow Right"
         />
       )}

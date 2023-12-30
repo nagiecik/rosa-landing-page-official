@@ -1,77 +1,75 @@
-.imagemockup1Icon,
-.imagemockup2Icon {
+.imageDeviceSecondary {
   position: absolute;
-  margin: 0 !important;
-  top: calc(50% - 278px);
-  right: 25.5px;
+  top: calc(50% - 280px);
+  right: 24px;
   width: 350px;
   height: 560px;
   object-fit: cover;
-  z-index: 0;
-}
-.imagemockup1Icon {
-  top: calc(50% - 318px);
-  right: 200.5px;
-  width: 400px;
-  height: 640px;
   z-index: 1;
 }
-.textp {
-  margin: 0;
-  position: relative;
-  line-height: 40px;
-  display: inline-block;
-  width: 800px;
-}
-.imagegoogleplayIcon {
-  border-radius: var(--gap-8);
-  max-width: 100%;
-  overflow: hidden;
-  max-height: 100%;
+.imageDevicePrimary {
+  position: absolute;
+  top: calc(50% - 322px);
+  right: 200px;
+  width: 400px;
+  height: 640px;
   object-fit: cover;
+  z-index: 2;
 }
-.containerdivbuttons {
+.textParagraph {
+  color: var(--surface-primary);
+  font-size: var(--font-size-24);
+  line-height: var(--line-height-40);
+  max-width: 800px;
+}
+.buttonAppStore,
+.buttonGooglePlay {
+  position: relative;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  cursor: pointer;
+}
+.containerStoreButtons {
+  align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-11xl);
+  gap: var(--gap-32);
 }
-.containerdivarticle {
+.containerArticle {
   width: 100%;
   align-items: flex-start;
   gap: var(--spacing-64);
   max-width: 800px;
   z-index: 2;
 }
-.containerdivarticle,
-.containerdivcontent,
-.containersectionstores {
+.containerArticle,
+.containerContent,
+.containerSection {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
 }
-.containerdivcontent {
-  border-radius: var(--gap-48);
+.containerContent {
+  border-radius: var(--spacing-48);
   width: 1520px;
   overflow: hidden;
   align-items: flex-start;
   padding: var(--spacing-64);
   box-sizing: border-box;
   position: relative;
-  background-image: url(/public/containerdivcontent@3x.png);
+  background-image: url(/public/backgroundSummary.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
-.containersectionstores {
+.containerSection {
   align-self: stretch;
   background-color: var(--surface-primary);
   align-items: flex-end;
   padding: var(--spacing-128) var(--spacing-200);
-  z-index: 1;
   text-align: left;
-  font-size: var(--header-bold-h6-size);
-  color: var(--surface-primary);
   font-family: var(--font-main);
 }

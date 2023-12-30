@@ -1,5 +1,6 @@
 .firstText,
-.secondText {
+.secondText,
+.linkText {
   position: relative;
   letter-spacing: var(--letter-spacing-default);
   font-family: var(--font-main);
@@ -7,6 +8,9 @@
   line-height: var(--line-height-96);
   font-weight: var(font-weight-thin);
   color: var(--surface-primary);
+}
+.linkText {
+  text-decoration: underline;
 }
 .sectionContainer {
   display: flex;

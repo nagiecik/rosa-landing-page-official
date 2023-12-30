@@ -1,10 +1,42 @@
-.imagescrollUpIcon {
-  position: relative;
-  width: 191.1px;
-  height: 193.3px;
-  object-fit: cover;
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
 }
-.containerheaderfooter {
+.imageScroll {
+  position: relative;
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  animation-name: rotation;
+  animation-duration: 8000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+.iconScroll {
+  position: absolute;
+  top: 42%;
+  left: 42%;
+  width: var(--size-32);
+  height: var(--size-32);
+}
+.buttonScroll {
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+.buttonScroll:hover > .iconScroll {
+  transform: rotate(45deg);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.buttonScroll > .iconScroll {
+  transition: calc(var(--d) * 2) var(--e);
+}
+.containerHeader {
   align-self: stretch;
   display: flex;
   flex-direction: row;
@@ -12,51 +44,50 @@
   justify-content: flex-start;
   gap: var(--spacing-32);
 }
-.imagelogoIcon {
+.imageLogo {
   position: relative;
-  width: 146.6px;
-  height: 41.9px;
+  width: 128px;
+  height: auto;
   object-fit: cover;
 }
-.containerdivcontent,
-.containerdivlinks {
+.containerCopyright,
+.containerContent,
+.containerLinks {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
 }
-.containerdivlinks {
+.containerLinks {
   flex-shrink: 0;
   justify-content: flex-end;
   gap: var(--spacing-128);
 }
-.containerdivcontent {
+.containerCopyright,
+.containerContent {
   align-self: stretch;
   justify-content: space-between;
 }
-.textp {
-  margin: 0;
+.textParagraph {
   flex: 1;
-  position: relative;
+  font-weight: var(--font-regular);
+  font-size: var(--font-size-16);
   line-height: var(--line-height-32);
+  color: var(--surface-primary);
 }
-.containerdivcopyright,
-.containerfooter {
+.containerCopyright,
+.containerFooter {
   align-self: stretch;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
 }
-.containerfooter {
-  background-color: var(--surfacegray);
-  border-top: 2px solid var(--surfaces-default-surfacetertiary);
+.containerFooter {
+  background-color: var(--surface-tertiary);
   flex-direction: column;
   justify-content: flex-start;
   padding: var(--spacing-128) var(--spacing-200);
-  gap: var(--spacing-128);
-  z-index: 0;
+  gap: var(--spacing-80);
   text-align: right;
-  font-size: var(--font-size-1rem);
-  color: var(--surface-primary);
   font-family: var(--font-main);
 }

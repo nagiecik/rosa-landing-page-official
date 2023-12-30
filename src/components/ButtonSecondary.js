@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import styles from "./ButtonPrimary.module.css";
+import styles from "./ButtonSecondary.module.css";
 
 const Button = ({
   buttonText,

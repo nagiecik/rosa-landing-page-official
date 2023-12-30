@@ -13,7 +13,8 @@
   color: var(--surface-secondary);
 }
 .button {
-  background-color: var(--on-surface-accent-active);
+  background-color: var(--surface-primary);
+  border: 2px solid var(--surface-secondary);
   border-radius: var(--spacing-12);
   display: flex;
   flex-direction: row;
@@ -31,12 +32,19 @@
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
   transition: calc(var(--d) * 2) var(--e);
   border-radius: var(--spacing-24);
-  background-color: var(--surface-primary);
+  background-color: var(--surface-secondary);
 }
 .button > .buttonIcon {
   transition: calc(var(--d) * 2) var(--e);
 }
 .button:hover > .buttonIcon {
   transform: rotate(-45deg);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.button:hover > .buttonText {
+  color: var(--surface-primary);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.button > .buttonText {
   transition: calc(var(--d) * 2) var(--e);
 }

@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import SectionTextContent from "./Elements/SectionTextContent";
-import styles from "./Feature.module.css";
+import SectionTextContent from "../Elements/SectionTextContent";
+import styles from "./FeatureLeft.module.css";
 import Hover from "react-3d-hover";
 
 const FeatureLeft = ({
@@ -39,7 +39,8 @@ const FeatureLeft = ({
         />
         <div className={styles.textParagraph}>{textParagraph}</div>
       </div>
-      <Hover scale={1.05} perspective={1000} speed={2000} max={8}>
+      <div className={styles.imageBackground}></div>
+      <Hover scale={1.05} speed={4000} max={8}>
         <img
           className={styles.imageMockup}
           alt={altText}

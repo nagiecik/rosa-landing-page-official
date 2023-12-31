@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import HeroArticle from "../Contents/HeroArticle";
-import Header from "../Header";
+import Header from "../Elements/Header";
 import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {

@@ -21,8 +21,8 @@
   color: var(--surface-secondary);
 }
 .textParagraph {
-  font-size: var(--font-size-16);
-  font-weight: var(--font-size-32);
+  font-size: var(--font-size-14);
+  line-height: var(--line-height-24);
   font-weight: var(--font-semibold);
   font-family: inherit;
   color: var(--on-surface-accent-inactive);

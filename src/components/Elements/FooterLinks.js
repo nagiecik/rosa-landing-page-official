@@ -1,6 +1,6 @@
 import { useMemo } from "react";
 import styles from "./FooterLinks.module.css";
-import NavbarLink from "./Elements/NavbarLink";
+import NavbarLink from "./NavbarLink";
 
 const FooterLinks = ({
   textTitle,

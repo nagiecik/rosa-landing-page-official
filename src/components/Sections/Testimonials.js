@@ -1,6 +1,5 @@
 import { useMemo } from "react";
-import ColorWhiteTypeExtended from "../ColorWhiteTypeExtended";
-import styles from "../Containersectiontestimonial.module.css";
+import styles from "./Testimonials.module.css";
 
 const Testimonials = ({ sectionZIndex }) => {
   const containersectiontestimonialStyle = useMemo(() => {

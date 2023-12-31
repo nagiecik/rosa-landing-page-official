@@ -1,5 +1,5 @@
-import SectionTextContent from "./Elements/SectionTextContent";
-import CardPricing from "./CardPricing";
+import SectionTextContent from "../Elements/SectionTextContent";
+import CardPricing from "../Elements/CardPricing";
 import styles from "./Pricing.module.css";
 
 const Pricing = () => {

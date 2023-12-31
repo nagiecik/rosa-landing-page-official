@@ -1,4 +1,4 @@
-import SectionTextContent from "./Elements/SectionTextContent";
+import SectionTextContent from "../Elements/SectionTextContent";
 import styles from "./Summary.module.css";
 
 const SportContainer = ({ buttonGooglePlay, buttonAppStore }) => {

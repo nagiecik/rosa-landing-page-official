@@ -8,8 +8,7 @@ const NavbarLink = ({
   cursor,
   linkUrl,
 }) => {
-
-  const navbarLinkCursor = useMemo(()=> {
+  const navbarLinkCursor = useMemo(() => {
     return {
       cursor: cursor,
     };
@@ -22,13 +21,16 @@ const NavbarLink = ({
   }, [flexShrinkGrow, textDecoration]);
 
   return (
-    <div
-      className={styles.linkState}
-      style={navbarLinkContainerStyle}
-    >
-      <a href={linkUrl}><div data-replace={linkText} className={styles.linkText} style={navbarLinkCursor}>
-        <span>{linkText}</span>
-      </div></a>
+    <div className={styles.linkState} style={navbarLinkContainerStyle}>
+      <a href={linkUrl}>
+        <div
+          data-replace={linkText}
+          className={styles.linkText}
+          style={navbarLinkCursor}
+        >
+          <span>{linkText}</span>
+        </div>
+      </a>
     </div>
   );
 };

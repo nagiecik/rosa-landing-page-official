@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import NavbarLink from "./Elements/NavbarLink";
-import ButtonPrimary from "./ButtonPrimary";
+import NavbarLink from "../Elements/NavbarLink";
+import ButtonPrimary from "../Elements/ButtonPrimary";
 import styles from "./Header.module.css";
 
 const Header = ({

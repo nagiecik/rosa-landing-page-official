@@ -1,7 +1,7 @@
-import Divider from "./Divider";
-import SectionTextContent from "./Elements/SectionTextContent";
+import Divider from "../Elements/Divider";
+import SectionTextContent from "../Elements/SectionTextContent";
 import styles from "./FormFooter.module.css";
-import FooterLinks from "./FooterLinks";
+import FooterLinks from "../Elements/FooterLinks";
 
 const FormFooter = () => {
   return (

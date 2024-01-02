@@ -3,11 +3,11 @@
   position: relative;
   line-height: 40px;
   display: inline-block;
-  max-width: 800px;
+  max-width: 640px;
   color: var(--surface-primary);
 }
 .sectionContainer {
-  width: 1520px;
+  max-width: 1520px;
   display: flex;
   flex-direction: row;
   align-items: center;

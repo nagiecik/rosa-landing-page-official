@@ -41,7 +41,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: space-between;
   gap: var(--size-32);
 }
 .imageLogo {
@@ -51,7 +51,7 @@
   object-fit: cover;
 }
 .containerCopyright,
-.containerContent,
+.containerBottom,
 .containerLinks {
   display: flex;
   flex-direction: row;
@@ -63,7 +63,7 @@
   gap: var(--size-128);
 }
 .containerCopyright,
-.containerContent {
+.containerBottom {
   align-self: stretch;
   justify-content: space-between;
 }
@@ -74,20 +74,25 @@
   line-height: var(--size-32);
   color: var(--surface-primary);
 }
-.containerCopyright,
-.containerFooter {
-  align-self: stretch;
+.containerContent {
+  width: 100%;
+  max-width: 1520px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  align-self: center;
+  gap: var(--size-80);
 }
-.containerFooter {
+.containerSection {
+  display: flex;
   background-color: var(--surface-tertiary);
   flex-direction: column;
-  justify-content: flex-start;
   padding: var(--size-128) var(--size-200);
   gap: var(--size-80);
   text-align: right;
   font-family: var(--font-main);
+  width: 100%;
+  box-sizing: border-box;
+  justify-content: center;
 }
+

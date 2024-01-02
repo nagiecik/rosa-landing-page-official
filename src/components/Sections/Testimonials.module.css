@@ -38,7 +38,7 @@
 }
 .textQuoteContent {
   font-size: var(--size-20);
-   line-height: var(--size-40);
+  line-height: var(--size-40);
   color: var(--on-surface-accent-disabled-light);
 }
 .containerQuoteContent {
@@ -63,7 +63,7 @@
   position: relative;
   object-fit: contain;
 }
-.textPersonName{
+.textPersonName {
   font-size: var(--size-20);
   line-height: var(--size-40);
   color: var(--surface-primary);
@@ -108,7 +108,7 @@
   position: absolute;
   top: calc(50% - 280px);
   right: 25px;
-  width: 350px;
+  width: 360px;
   height: 560px;
   object-fit: cover;
   z-index: 1;
@@ -145,9 +145,32 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: var(--size-256) var(--size-200) var(--size-128);
+  padding: var(--size-128) var(--size-200);
   box-sizing: border-box;
   text-align: left;
   font-family: var(--font-main);
   align-self: stretch;
+}
+
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-80);
+  }
+  .imageDeviceSecondary {
+    width: auto;
+    height: 480px;
+    top: calc(50% - 240px);
+  }
+  .imageDevicePrimary {
+    width: auto;
+    height: 560px;
+    top: calc(50% - 280px);
+  }
+  .containerTestimonialContent {
+    gap: var(--size-32);
+  }
+  .textQuoteContent {
+    font-size: var(--size-16);
+    line-height: var(--size-32);
+  }
 }

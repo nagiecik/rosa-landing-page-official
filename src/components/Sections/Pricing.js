@@ -4,8 +4,9 @@ import styles from "./Pricing.module.css";
 
 const Pricing = () => {
   return (
-    <section id="pricing" className={styles.containersectionpricing}>
+    <section id="pricing" className={styles.containerSection}>
       <SectionTextContent
+        sectionWidth="100%"
         firstText="Choose Your"
         firstTextColor="var(--surface-secondary)"
         firstTextWeight="var(--font-thin)"
@@ -15,7 +16,7 @@ const Pricing = () => {
         textParagraph="ROSA provides the tools to streamline rule management, create engaging content, and organize diverse sporting events with precision. Choose a plan that matches your organization's needs and make a lasting impression with a branded home screen, craft informative content effortlessly, and manage events seamlessly."
         textParagraphColor="var(--surface-secondary)"
       />
-      <div className={styles.containerdivcontent}>
+      <div className={styles.containerContent}>
         <CardPricing
           cardPricingBackgroundColor="var(--surface-primary)"
           textCardTitle="National"

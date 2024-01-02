@@ -1,21 +1,34 @@
-.containerdivcontent,
-.containersectionpricing {
-  align-self: stretch;
+.containerContent {
+  width: 100%;
+  max-width: 1520px;
+  gap: var(--size-32);
   display: flex;
   flex-direction: row;
-  align-items: flex-start;
-  justify-content: flex-start;
-  gap: var(--gap-29xl);
+  align-items: center;
+  justify-content: center; 
 }
-.containersectionpricing {
+.containerContent:last-child {
+  order: 1;
+}
+.containerSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  box-sizing: border-box;
   background-color: var(--surface-primary);
   flex-direction: column;
   align-items: center;
   padding: var(--size-256) var(--size-200) var(--size-128);
-  gap: var(--gap-109xl);
-  z-index: 2;
+  gap: var(--size-128);
   text-align: left;
-  font-size: var(--size-20);
-  color: var(--texts-textaccentsubtle);
   font-family: var(--font-main);
+}
+
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-80);
+    gap: var(--size-80);
+  }
 }

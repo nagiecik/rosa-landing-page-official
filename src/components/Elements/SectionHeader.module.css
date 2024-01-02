@@ -6,7 +6,7 @@
   font-family: var(--font-main);
   font-size: var(--size-96);
   line-height: var(--size-96);
-  font-weight: var(font-weight-thin);
+  font-weight: var(--font-thin);
   color: var(--surface-primary);
 }
 .linkText {
@@ -19,4 +19,13 @@
   justify-content: flex-start;
   gap: var(--size-24);
   text-align: left;
+}
+
+@media screen and (max-width: 1440px) {
+  .firstText,
+  .secondText,
+  .linkText {
+    font-size: var(--size-80);
+    line-height: var(--size-80);
+  }
 }

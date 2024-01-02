@@ -24,28 +24,31 @@ const FeatureLeft = ({
   }, [sectionZIndex]);
 
   return (
-    <div className={styles.containerContent} style={containerFeatureLeftStyle}>
-      <div className={styles.containerArticle}>
-        <SectionTextContent
-          sectionTextContentZIndex={sectionZIndex}
-          firstText={firstText}
-          firstTextWeight={firstTextWeight}
-          firstTextColor={firstTextColor}
-          secondText={secondText}
-          secondTextWeight={secondTextWeight}
-          secondTextColor={secondTextColor}
-          showTextParagraph={showTextParagraph}
-          sectionWidth={sectionWidth}
-        />
-        <div className={styles.textParagraph}>{textParagraph}</div>
-      </div>
-      <div className={styles.imageBackground}></div>
-      <div className={styles.imageContainer}>
+    <div id="use_cases" className={styles.containerSection} style={containerFeatureLeftStyle}>
+      <div className={styles.containerContent}>
+        <div className={styles.containerArticle}>
+          <SectionTextContent
+            sectionTextContentZIndex={sectionZIndex}
+            firstText={firstText}
+            firstTextWeight={firstTextWeight}
+            firstTextColor={firstTextColor}
+            secondText={secondText}
+            secondTextWeight={secondTextWeight}
+            secondTextColor={secondTextColor}
+            showTextParagraph={showTextParagraph}
+            sectionWidth={sectionWidth}
+          />
+          <div className={styles.textParagraph}>{textParagraph}</div>
+        </div>
+        
+        <div className={styles.imageContainer}>
           <img
             className={styles.imageMockup}
             alt={altText}
             src={imageMockupURL}
           />
+          <div className={styles.imageBackground}></div>
+        </div>
       </div>
     </div>
   );

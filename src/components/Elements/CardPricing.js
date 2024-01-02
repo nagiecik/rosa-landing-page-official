@@ -84,6 +84,7 @@ const PricingCard = ({
       </div>
       {showButtonPrimary && (
         <ButtonPrimary
+          showButtonText={true}
           buttonText={buttonPrimaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
@@ -91,6 +92,7 @@ const PricingCard = ({
       )}
       {showbuttonSecondary && (
         <ButtonSecondary
+          showButtonText={true}
           buttonText={buttonSecondaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
@@ -158,7 +160,6 @@ const PricingCard = ({
           textNumberColor={textColorAccent}
         />
       </div>
-      
     </div>
   );
 };

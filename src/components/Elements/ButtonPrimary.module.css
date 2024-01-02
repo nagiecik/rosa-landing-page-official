@@ -1,4 +1,5 @@
-.buttonIcon {
+.buttonIconRight,
+.buttonIconLeft {
   position: relative;
   width: var(--size-32);
   height: var(--size-32);
@@ -30,13 +31,15 @@
 .button:hover {
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
   transition: calc(var(--d) * 2) var(--e);
-  border-radius: var(--size-24);
+  border-radius: var(--size-20);
   background-color: var(--surface-primary);
 }
-.button > .buttonIcon {
+.button > .buttonIconRight,
+.buttonIconLeft {
   transition: calc(var(--d) * 2) var(--e);
 }
-.button:hover > .buttonIcon {
+.button:hover > .buttonIconRight,
+.buttonIconLeft {
   transform: rotate(-45deg);
   transition: calc(var(--d) * 2) var(--e);
 }

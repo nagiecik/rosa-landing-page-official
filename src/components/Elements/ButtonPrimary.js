@@ -3,6 +3,7 @@ import styles from "./ButtonPrimary.module.css";
 
 const Button = ({
   buttonText,
+  showButtonText,
   iconLeft,
   iconRight,
   showIconLeft,
@@ -28,12 +29,10 @@ const Button = ({
           src={iconLeft}
         />
       )}
-      <p className={styles.buttonText}>
-        {buttonText}
-      </p>
+      {showButtonText && <p className={styles.buttonText}>{buttonText}</p>}
       {showIconRight && (
         <img
-          className={styles.buttonIcon}
+          className={styles.buttonIconRight}
           alt={altTextIconRight}
           src={iconRight}
         />

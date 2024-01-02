@@ -2,7 +2,7 @@
   position: absolute;
   top: calc(50% - 280px);
   right: 24px;
-  width: 350px;
+  width: 360px;
   height: 560px;
   object-fit: cover;
   z-index: 1;
@@ -20,7 +20,7 @@
   color: var(--surface-primary);
   font-size: var(--size-24);
   line-height: var(--size-40);
-  max-width: 800px;
+  max-width: 640px;
 }
 .buttonAppStore,
 .buttonGooglePlay {
@@ -43,7 +43,6 @@
   align-items: flex-start;
   gap: var(--size-64);
   max-width: 800px;
-  z-index: 2;
 }
 .containerArticle,
 .containerContent,
@@ -54,7 +53,8 @@
 }
 .containerContent {
   border-radius: var(--size-48);
-  width: 1520px;
+  width: 100%;
+  max-width: 1520px;
   overflow: hidden;
   align-items: flex-start;
   padding: var(--size-64);
@@ -66,10 +66,18 @@
   background-position: top;
 }
 .containerSection {
+  width: 100%;
   align-self: stretch;
   background-color: var(--surface-primary);
-  align-items: flex-end;
+  align-items: center;
   padding: var(--size-128) var(--size-200);
   text-align: left;
   font-family: var(--font-main);
+  box-sizing: border-box;
+}
+
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-80);
+  }
 }

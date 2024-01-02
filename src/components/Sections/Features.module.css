@@ -7,8 +7,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  align-items: flex-start;
+  align-items: stretch;
   gap: var(--size-40);
+  max-width: 1520px;
 }
 .containerFeatures {
   flex-direction: column;
@@ -17,4 +18,10 @@
   gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);
+}
+
+@media screen and (max-width: 1440px) {
+  .containerFeatures {
+    padding: var(--size-80);
+  }
 }

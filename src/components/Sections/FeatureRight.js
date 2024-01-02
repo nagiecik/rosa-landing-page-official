@@ -23,28 +23,30 @@ const FeatureRight = ({
   }, [sectionZIndex]);
 
   return (
-    <div className={styles.containerContent} style={containerFeatureLeftStyle}>
-      <div className={styles.imageBackground}></div>
-      <div className={styles.imageContainer}>
-        <img
-          className={styles.imageMockup}
-          alt={altText}
-          src={imageMockupURL}
-        />
-      </div>
-      <div className={styles.containerArticle}>
-        <SectionTextContent
-          sectionTextContentZIndex={sectionZIndex}
-          firstText={firstText}
-          firstTextWeight={firstTextWeight}
-          firstTextColor={firstTextColor}
-          secondText={secondText}
-          secondTextWeight={secondTextWeight}
-          secondTextColor={secondTextColor}
-          showTextParagraph={showTextParagraph}
-          sectionWidth={sectionWidth}
-        />
-        <div className={styles.textParagraph}>{textParagraph}</div>
+    <div className={styles.containerSection} style={containerFeatureLeftStyle}>
+      <div className={styles.containerContent}>
+        <div className={styles.imageBackground}></div>
+        <div className={styles.imageContainer}>
+          <img
+            className={styles.imageMockup}
+            alt={altText}
+            src={imageMockupURL}
+          />
+        </div>
+        <div className={styles.containerArticle}>
+          <SectionTextContent
+            sectionTextContentZIndex={sectionZIndex}
+            firstText={firstText}
+            firstTextWeight={firstTextWeight}
+            firstTextColor={firstTextColor}
+            secondText={secondText}
+            secondTextWeight={secondTextWeight}
+            secondTextColor={secondTextColor}
+            showTextParagraph={showTextParagraph}
+            sectionWidth={sectionWidth}
+          />
+          <div className={styles.textParagraph}>{textParagraph}</div>
+        </div>
       </div>
     </div>
   );

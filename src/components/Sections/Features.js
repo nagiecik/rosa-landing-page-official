@@ -6,6 +6,7 @@ const Features = () => {
   return (
     <section id="features" className={styles.containerFeatures}>
       <SectionTextContent
+        sectionWidth="100%"
         sectionTextContentZIndex="0"
         firstText="All Provided"
         firstTextWeight="var(--font-thin)"

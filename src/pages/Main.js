@@ -6,7 +6,7 @@ import SectionFeatureLeft from "../components/Sections/FeatureLeft";
 import SectionFeatureRight from "../components/Sections/FeatureRight";
 import SectionPricing from "../components/Sections/Pricing";
 import SectionSummary from "../components/Sections/Summary";
-import SectionFooter from "../components/Sections/FormFooter";
+import SectionFooter from "../components/Sections/Footer";
 import styles from "./Main.module.css";
 
 const Main = () => {

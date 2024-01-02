@@ -16,14 +16,15 @@
 }
 .imageMockup {
   position: relative;
-  border-radius: var(--size-64);
   width: auto;
   height: 880px;
   object-fit: cover;
+  z-index: 999;
 }
 .imageBackground {
   position: absolute;
-  right: var(--size-200);
+  top: 16%;
+  right: var(--size-0);
   width: 560px;
   height: 560px;
   background: linear-gradient(
@@ -34,32 +35,64 @@
   border-radius: var(--size-64);
   transition: calc(var(--d) * 2) var(--e);
 }
-.containerContent:hover > .imageBackground {
-  border-radius: var(--size-128);
+.imageContainer {
+  position: relative;
   transition: calc(var(--d) * 2) var(--e);
 }
-.containerContent > .imageBackground {
-  transition: calc(var(--d) * 2) var(--e);
-}
+
 .containerContent {
-  background-color: var(--surface-primary);
+  width: 100%;
+  max-width: 1520px;
+  position: relative;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+}
+
+.imageContainer:hover > .imageMockup {
+  transform: rotate(5deg) scale(1.025);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.imageContainer:hover > .imageBackground {
+  border-radius: var(--size-128);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.imageContainer > .imageBackground,
+.imageContainer > .imageMockup {
+  transition: calc(var(--d) * 2) var(--e);
+}
+.containerSection {
+  width: 100%;
+  background-color: var(--surface-primary);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   padding: var(--size-64) var(--size-200);
   box-sizing: border-box;
   gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);
   align-self: stretch;
+  box-sizing: border-box;
 }
 
-.imageContainer:hover {
-  transform: rotate(5deg) scale(1.025);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.imageContainer {
-  transition: calc(var(--d) * 2) var(--e);
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-80);
+    gap: var(--size-80);
+  }
+  .imageBackground {
+    right: var(--size-80);
+    width: 480px;
+    height: 480px;
+  }
+  .imageMockup {
+    height: 680px;
+  }
+  .textParagraph {
+    font-size: var(--size-20);
+    line-height: var(--size-40);
+  }
 }

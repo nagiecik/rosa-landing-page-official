@@ -17,7 +17,6 @@
 .light {
   font-weight: 100;
 }
-
 .containerTitle {
   align-self: stretch;
   display: flex;
@@ -107,99 +106,79 @@
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
 }
-@media screen and (max-width: 1200px) {
-  .texth1,
-  .texth1 {
-    font-size: var(--header-bold-h1-size);
-    line-height: 80px;
+
+@media screen and (max-width: 1536px) {
+  .light,
+  .bold {
+    font-size: var(--size-80);
+    line-height: var(--size-80);
   }
-  .textp {
-    font-size: var(--font-size-1rem);
+}
+
+@media screen and (max-width: 1440px) {
+  .light,
+  .bold {
+    font-size: var(--size-80);
+    line-height: var(--size-80);
+  }
+  .textHeroParagraph {
+    font-size: var(--size-16);
     line-height: var(--size-32);
   }
   .containerArticle {
-    gap: var(--size-48);
+    gap: var(--size-40);
   }
 }
-@media screen and (max-width: 960px) {
-  .texth1,
-  .texth1 {
-    text-align: center;
-  }
-  .containerdivheader {
-    gap: var(--size-24);
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 0;
-    box-sizing: border-box;
-  }
-  .textp {
-    text-align: center;
-  }
-  .containerRating,
-  .containerButtonStore {
-    align-items: flex-start;
-    justify-content: center;
-  }
-  .containerArticle {
-    gap: var(--size-48);
-    align-items: center;
-    justify-content: flex-start;
-    flex: unset;
-    align-self: stretch;
+
+@media screen and (max-width: 1280px) {
+  .light,
+  .bold {
+    font-size: var(--size-72);
+    line-height: var(--size-72);
   }
 }
-@media screen and (max-width: 420px) {
-  .texth1,
-  .texth1 {
-    font-size: var(--font-size-29xl);
-    line-height: var(--size-64);
-  }
-  .texth1 {
-    letter-spacing: var(--letter-spacing-default);
-  }
-  .containerdivheader {
-    gap: var(--size-24);
-    padding-left: 0;
-    box-sizing: border-box;
-  }
-  .containerRating,
-  .containerButtonStore {
-    flex-direction: column;
-  }
-  .containerArticle {
-    gap: var(--size-48);
-  }
-}
-@media screen and (max-width: 350px) {
-  .texth1,
-  .texth1 {
-    font-size: var(--header-semi-bold-h4-size);
+
+@media screen and (max-width: 1024px) {
+  .light,
+  .bold {
+    font-size: var(--size-56);
     line-height: var(--size-56);
-    text-align: center;
   }
-  .containerdivheader {
-    align-items: center;
-    justify-content: flex-start;
+  .buttonAppStore,
+  .buttonGooglePlay {
+    width: 160px;
   }
-  .textp {
-    font-size: var(--font-size-sm);
-    line-height: 28px;
-    text-align: center;
-  }
-  .containerButtonStore {
-    flex-direction: column;
-    align-items: flex-start;
+}
+
+@media screen and (max-width: 768px) {
+  .containerArticle {
+    max-width: 80%;
     justify-content: center;
   }
+
+  .textHeroParagraph {
+    text-align: center;
+  }
+
+  .bold,
+  .light {
+    text-align: center;
+  }
+
+  .containerStoreButtons {
+    align-items: center;
+    justify-content: center;
+  }
+
   .containerRating {
     flex-direction: column;
+    gap: var(--size-0);
+    justify-content: center;
   }
+}
+
+@media screen and (max-width: 425px) {
   .containerArticle {
-    gap: var(--size-48);
-    align-items: center;
-    justify-content: flex-start;
-    padding-left: 0;
-    box-sizing: border-box;
+    max-width: 100%;
   }
 }

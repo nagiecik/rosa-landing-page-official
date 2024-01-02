@@ -1,7 +1,7 @@
 import SectionTextContent from "../Elements/SectionTextContent";
 import styles from "./Summary.module.css";
 
-const SportContainer = ({ buttonGooglePlay, buttonAppStore }) => {
+const Summary = ({ buttonGooglePlay, buttonAppStore }) => {
   return (
     <section className={styles.containerSection}>
       <div className={styles.containerContent}>
@@ -51,4 +51,4 @@ const SportContainer = ({ buttonGooglePlay, buttonAppStore }) => {
   );
 };
 
-export default SportContainer;
+export default Summary;

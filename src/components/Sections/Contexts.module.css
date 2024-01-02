@@ -13,12 +13,22 @@
   max-height: 800px;
   object-fit: contain;
 }
+.containerContent {
+  width: 100%;
+  max-width: 1520px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-128);
+  align-items: center;
+  justify-content: center;
+}
 .containerSection {
-  align-self: flex-start;
+  width: 100%;
+  align-self: stretch;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  justify-content: flex-start;
+  align-items: center;
+  justify-content: center;
   padding: var(--size-128) var(--size-200);
   position: relative;
   gap: var(--size-64);
@@ -26,13 +36,17 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  box-sizing: border-box;
 }
 
-.containerContent {
-  width: 1520px;
-  display: flex;
-  flex-direction: row;
-  gap: var(--size-128);
-  align-items: center;
-  justify-content: space-between;
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-80);
+  }
+  .containerContent {
+    gap: var(--size-80);
+  }
+  .containerCards {
+    gap: var(--size-32);
+  }
 }

@@ -63,23 +63,27 @@ const Header = ({
         </div>
       )}
       {showButtonMenu && (
-        <div className={styles.buttonMenu}>
-          <img
-            className={styles.iconMenu}
-            alt="Menu icon"
-            src="/iconMenu.svg"
+        <div className={styles.containerMenuVisibility}>
+          <ButtonPrimary
+            showButtonText={false}
+            iconLeft="/icons/menu.svg"
+            showIconLeft={true}
+            altTextIconLeft="Icon Menu"
           />
         </div>
       )}
       {showButtonCta && (
-        <ButtonPrimary
-          buttonText="Get your app"
-          iconLeft="/iconarrowleft.svg"
-          iconRight="/iconarrowright.svg"
-          showIconLeft={false}
-          showIconRight={true}
-          altTextIconRight="Icon Arrow Right"
-        />
+        <div className={styles.containerButtonVisibility}>
+          <ButtonPrimary
+            buttonText="Get your app"
+            showButtonText={true}
+            iconLeft="/icons/arrow.left.svg"
+            iconRight="/icons/arrow.right.svg"
+            showIconLeft={false}
+            showIconRight={true}
+            altTextIconRight="Icon Arrow Right"
+          />
+        </div>
       )}
     </nav>
   );

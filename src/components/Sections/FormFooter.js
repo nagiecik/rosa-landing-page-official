@@ -10,15 +10,15 @@ const FormFooter = () => {
         <SectionTextContent
           firstText="Interested in working with us?"
           firstTextColor="var(--surface-primary)"
-          firstTextSize="var(--font-size-80)"
-          firstTextLineHeight="var(--line-height-96)"
+          firstTextSize="var(--size-80)"
+          firstTextLineHeight="var(--size-96)"
           firstTextWeight="var(--font-thin)"
           showSecondText={false}
           showLinkText={true}
           linkText="hello@rosa.zone"
           linkTextColorTextColor="var(--surface-primary)"
-          linkTextSize="var(--font-size-80)"
-          linktTextLineHeight="var(--line-height-96)"
+          linkTextSize="var(--size-80)"
+          linktTextLineHeight="var(--size-96)"
           linkTextWeight="var(--font-semibold)"
           linkTextURL="mailto:hello.rosa@zone"
         />
@@ -36,7 +36,7 @@ const FormFooter = () => {
         <img
           className={styles.imageLogo}
           alt="ROSA Logo"
-          src="/imagelogorosa.svg"
+          src="/imageLogoRosa.svg"
         />
         <div className={styles.containerLinks}>
           <FooterLinks

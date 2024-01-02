@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   text-align: left;
-  font-size: var(--font-size-16);
+  font-size: var(--size-16);
   color: var(--surface-primary);
   font-family: var(--font-main);
   font-weight: var(--font-medium);

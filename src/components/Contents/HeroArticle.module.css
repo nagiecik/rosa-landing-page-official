@@ -24,14 +24,14 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-24);
+  gap: var(--size-24);
 }
 .textHeroParagraph {
   margin: 0;
   align-self: stretch;
   position: relative;
-  font-size: var(--font-size-20);
-  line-height: var(--line-height-40);
+  font-size: var(--size-20);
+  line-height: var(--size-40);
   font-weight: 300;
 }
 .buttonAppStore,
@@ -48,12 +48,12 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--gap-32);
+  gap: var(--size-32);
 }
 .textRatingLabel,
 .textRatingBold {
   position: relative;
-  line-height: var(--line-height-40);
+  line-height: var(--size-40);
 }
 .textRatingBold {
   color: var(--on-surface-accent-active);
@@ -64,12 +64,12 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--gap-8);
+  gap: var(--size-8);
 }
 .iconStar {
   position: relative;
-  width: var(--size-icon-big);
-  height: var(--size-icon-big);
+  width: var(--size-32);
+  height: var(--size-32);
   overflow: hidden;
   flex-shrink: 0;
   object-fit: cover;
@@ -78,7 +78,7 @@
   flex-shrink: 0;
   flex-direction: row;
   align-items: center;
-  margin-bottom: var(--spacing-2);
+  margin-bottom: var(--size-2);
 }
 .containerArticle,
 .containerRating,
@@ -91,14 +91,14 @@
   flex-direction: row;
   flex-wrap: wrap;
   align-items: center;
-  gap: var(--spacing-16);
+  gap: var(--size-16);
   font-size: var(--header-bold-h6-size);
 }
 .containerArticle {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
-  gap: var(--gap-48);
+  gap: var(--size-48);
   max-width: 50%;
   text-align: left;
   color: var(--surface-primary);
@@ -115,10 +115,10 @@
   }
   .textp {
     font-size: var(--font-size-1rem);
-    line-height: var(--line-height-32);
+    line-height: var(--size-32);
   }
   .containerArticle {
-    gap: var(--gap-48);
+    gap: var(--size-48);
   }
 }
 @media screen and (max-width: 960px) {
@@ -127,7 +127,7 @@
     text-align: center;
   }
   .containerdivheader {
-    gap: var(--gap-24);
+    gap: var(--size-24);
     align-items: center;
     justify-content: flex-start;
     padding-left: 0;
@@ -142,7 +142,7 @@
     justify-content: center;
   }
   .containerArticle {
-    gap: var(--gap-48);
+    gap: var(--size-48);
     align-items: center;
     justify-content: flex-start;
     flex: unset;
@@ -159,7 +159,7 @@
     letter-spacing: var(--letter-spacing-default);
   }
   .containerdivheader {
-    gap: var(--gap-24);
+    gap: var(--size-24);
     padding-left: 0;
     box-sizing: border-box;
   }
@@ -168,14 +168,14 @@
     flex-direction: column;
   }
   .containerArticle {
-    gap: var(--gap-48);
+    gap: var(--size-48);
   }
 }
 @media screen and (max-width: 350px) {
   .texth1,
   .texth1 {
     font-size: var(--header-semi-bold-h4-size);
-    line-height: var(--line-height-56);
+    line-height: var(--size-56);
     text-align: center;
   }
   .containerdivheader {
@@ -196,7 +196,7 @@
     flex-direction: column;
   }
   .containerArticle {
-    gap: var(--gap-48);
+    gap: var(--size-48);
     align-items: center;
     justify-content: flex-start;
     padding-left: 0;

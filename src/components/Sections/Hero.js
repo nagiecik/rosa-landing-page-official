@@ -18,7 +18,7 @@ const Hero = ({ sectionZIndex }) => {
     >
       <div className={styles.containerContent}>
         <Header
-          logoURL="/imagelogorosa.svg"
+          logoURL="/imageLogoRosa.svg"
           alt="ROSA logo"
           showContainerDivLinks
           showButtonMenu={false}
@@ -33,7 +33,7 @@ const Hero = ({ sectionZIndex }) => {
           <img
             className={styles.imageHero}
             alt="ROSA double mobile screen"
-            src="/imagehero.png"
+            src="/imageHero.png"
           />
         </div>
       </div>

@@ -71,13 +71,31 @@ const PricingCard = ({
         >
           {textCardTitleDescription}
         </p>
-        <h4 className={styles.textCardPrice} style={textPriceStyle}>
-          {textCardPrice}
-        </h4>
-        <h6 className={styles.textCardTime} style={textColorStyle}>
-          per month
-        </h6>
+        <div className={styles.containerPrice}>
+          <h4 className={styles.textCardPrice} style={textPriceStyle}>
+            {textCardPrice}
+          </h4>
+          <div>
+            <h6 className={styles.textCardTime} style={textColorStyle}>
+              / mo
+            </h6>
+          </div>
+        </div>
       </div>
+      {showButtonPrimary && (
+        <ButtonPrimary
+          buttonText={buttonPrimaryText}
+          buttonWidth={buttonWidth}
+          buttonDisplayMode={buttonDisplayMode}
+        />
+      )}
+      {showbuttonSecondary && (
+        <ButtonSecondary
+          buttonText={buttonSecondaryText}
+          buttonWidth={buttonWidth}
+          buttonDisplayMode={buttonDisplayMode}
+        />
+      )}
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />
       <div className={styles.containerFeatures}>
         <p
@@ -140,20 +158,7 @@ const PricingCard = ({
           textNumberColor={textColorAccent}
         />
       </div>
-      {showButtonPrimary && (
-        <ButtonPrimary
-          buttonText={buttonPrimaryText}
-          buttonWidth={buttonWidth}
-          buttonDisplayMode={buttonDisplayMode}
-        />
-      )}
-      {showbuttonSecondary && (
-        <ButtonSecondary
-          buttonText={buttonSecondaryText}
-          buttonWidth={buttonWidth}
-          buttonDisplayMode={buttonDisplayMode}
-        />
-      )}
+      
     </div>
   );
 };

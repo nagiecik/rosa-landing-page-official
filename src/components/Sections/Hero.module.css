@@ -15,7 +15,7 @@
   position: relative;
   max-width: 50%;
   overflow: hidden;
-  height: 1024px;
+  height: auto;
   object-fit: cover;
   background-repeat: no-repeat;
   animation-name: image;
@@ -28,7 +28,7 @@
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  gap: var(--gap-64);
+  gap: var(--size-64);
 }
 .containerContent,
 .containerHero {
@@ -39,19 +39,27 @@
 .containerContent {
   width: 100%;
   align-items: flex-start;
-  gap: var(--gap-96);
+  gap: var(--size-96);
   max-width: 1520px;
 }
 .containerHero {
   height: 1080px;
   align-items: center;
-  padding: 0 var(--gap-200);
+  padding: 0 var(--size-200);
   box-sizing: border-box;
   background-image: url(/public/backgroundHero.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   align-self: stretch;
+}
+
+@media screen and (max-width: 1440px) {
+  .containerHero {
+    width: 1440px;
+    padding: 0 var(--size-80);
+    box-sizing: border-box;
+  }
 }
 @media screen and (max-width: 1200px) {
   .imageHero {
@@ -63,8 +71,7 @@
   }
   .containerHero {
     width: 1200px;
-    padding-left: var(--spacing-200);
-    padding-right: var(--spacing-200);
+    padding: 0 var(--size-64);
     box-sizing: border-box;
   }
 }
@@ -91,8 +98,8 @@
   }
   .containerHero {
     width: 960px;
-    padding-left: var(--spacing-200);
-    padding-right: var(--spacing-200);
+    padding-left: var(--size-200);
+    padding-right: var(--size-200);
     box-sizing: border-box;
   }
 }
@@ -109,21 +116,21 @@
   }
   .containerHero {
     width: 420px;
-    padding-left: var(--spacing-200);
-    padding-right: var(--spacing-200);
+    height: 100vh;
+    padding: 0 var(--size-16);
     box-sizing: border-box;
   }
 }
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 360px) {
   .containerContent {
     gap: var(--section-hero-column-gap);
     align-items: center;
     justify-content: flex-start;
   }
   .containerHero {
-    width: 350px;
-    padding-left: var(--spacing-200);
-    padding-right: var(--spacing-200);
+    width: 360px;
+    height: 100vh;
+    padding: 0 var(--size-16);
     box-sizing: border-box;
   }
 }

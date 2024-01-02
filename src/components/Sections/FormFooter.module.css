@@ -42,7 +42,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  gap: var(--spacing-32);
+  gap: var(--size-32);
 }
 .imageLogo {
   position: relative;
@@ -60,7 +60,7 @@
 .containerLinks {
   flex-shrink: 0;
   justify-content: flex-end;
-  gap: var(--spacing-128);
+  gap: var(--size-128);
 }
 .containerCopyright,
 .containerContent {
@@ -70,8 +70,8 @@
 .textParagraph {
   flex: 1;
   font-weight: var(--font-regular);
-  font-size: var(--font-size-16);
-  line-height: var(--line-height-32);
+  font-size: var(--size-16);
+  line-height: var(--size-32);
   color: var(--surface-primary);
 }
 .containerCopyright,
@@ -86,8 +86,8 @@
   background-color: var(--surface-tertiary);
   flex-direction: column;
   justify-content: flex-start;
-  padding: var(--spacing-128) var(--spacing-200);
-  gap: var(--spacing-80);
+  padding: var(--size-128) var(--size-200);
+  gap: var(--size-80);
   text-align: right;
   font-family: var(--font-main);
 }

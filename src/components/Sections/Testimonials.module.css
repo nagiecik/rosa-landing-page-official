@@ -1,12 +1,12 @@
 .textHeaderWhite {
-  font-size: var(--font-size-32);
-  line-height: var(--line-height-48);
+  font-size: var(--size-32);
+  line-height: var(--size-48);
   color: var(--surface-primary);
 }
 
 .textHeaderGreen {
-  font-size: var(--font-size-64);
-  line-height: var(--line-height-56);
+  font-size: var(--size-64);
+  line-height: var(--size-56);
   color: var(--colorFootballRulesGreen);
 }
 .textHeaderWhite,
@@ -31,14 +31,14 @@
 }
 .textQuoteTitle {
   letter-spacing: var(--letter-spacing-default);
-  font-size: var(--font-size-24);
-  line-height: var(--line-height-40);
+  font-size: var(--size-24);
+  line-height: var(--size-40);
   color: var(--surface-primary);
   font-weight: var(--font-bold);
 }
 .textQuoteContent {
-  font-size: var(--font-size-20);
-   line-height: var(--line-height-40);
+  font-size: var(--size-20);
+   line-height: var(--size-40);
   color: var(--on-surface-accent-disabled-light);
 }
 .containerQuoteContent {
@@ -47,7 +47,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--spacing-16);
+  gap: var(--size-16);
   font-size: var(--header-bold-h6-size);
 }
 .imagePerson {
@@ -64,14 +64,14 @@
   object-fit: contain;
 }
 .textPersonName{
-  font-size: var(--font-size-20);
-  line-height: var(--line-height-40);
+  font-size: var(--size-20);
+  line-height: var(--size-40);
   color: var(--surface-primary);
   font-weight: var(--font-bold);
 }
 .textPersonOccupation {
-  font-size: var(--font-size-16);
-  line-height: var(--line-height-32);
+  font-size: var(--size-16);
+  line-height: var(--size-32);
   color: var(--on-surface-accent-disabled-light);
 }
 .containerPersonImage,
@@ -85,7 +85,7 @@
 .containerPersonImage {
   flex-direction: row;
   align-items: center;
-  gap: var(--spacing-16);
+  gap: var(--size-16);
 }
 .containerPerson {
   align-self: stretch;
@@ -93,7 +93,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  font-size: var(--font-size-20);
+  font-size: var(--size-20);
 }
 .containerTestimonialContent {
   max-width: 55%;
@@ -101,7 +101,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--spacing-64);
+  gap: var(--size-64);
   z-index: 0;
 }
 .imageDeviceSecondary {
@@ -123,7 +123,7 @@
   z-index: 2;
 }
 .containerTestimonial {
-  border-radius: var(--spacing-48);
+  border-radius: var(--size-48);
   width: 100%;
   max-width: 1520px;
   overflow: hidden;
@@ -131,7 +131,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  padding: var(--spacing-64);
+  padding: var(--size-64);
   box-sizing: border-box;
   position: relative;
   background-image: url(/public/testimonialsFootballRules.png);
@@ -145,7 +145,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: var(--spacing-256) var(--spacing-200) var(--spacing-128);
+  padding: var(--size-256) var(--size-200) var(--size-128);
   box-sizing: border-box;
   text-align: left;
   font-family: var(--font-main);

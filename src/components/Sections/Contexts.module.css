@@ -5,7 +5,7 @@
   display: grid;
   grid-template-rows: minmax(100px, max-content) minmax(100px, max-content);
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-48);
+  gap: var(--size-48);
 }
 .imageMockup {
   position: relative;
@@ -19,9 +19,9 @@
   flex-direction: column;
   align-items: flex-end;
   justify-content: flex-start;
-  padding: var(--spacing-128) var(--spacing-200);
+  padding: var(--size-128) var(--size-200);
   position: relative;
-  gap: var(--spacing-64);
+  gap: var(--size-64);
   background-image: url(/public/containersectioncontext@3x.png);
   background-size: cover;
   background-repeat: no-repeat;
@@ -32,7 +32,7 @@
   width: 1520px;
   display: flex;
   flex-direction: row;
-  gap: var(--spacing-128);
+  gap: var(--size-128);
   align-items: center;
   justify-content: space-between;
 }

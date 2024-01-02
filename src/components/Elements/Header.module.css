@@ -35,17 +35,17 @@
   align-items: center;
 }
 .buttonMenu {
-  border-radius: var(--spacing-16);
+  border-radius: var(--size-16);
   background-color: var(--on-surface-accent-active);
   width: var(--size-64);
   height: var(--size-64);
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-16);
+  padding: var(--size-16);
   box-sizing: border-box;
 }
 .containerNav {
-  padding-top: var(--spacing-24);
+  padding-top: var(--size-24);
   margin: 0;
   align-self: stretch;
   display: flex;

@@ -1,7 +1,6 @@
 import { useMemo } from "react";
 import SectionTextContent from "../Elements/SectionTextContent";
 import styles from "./FeatureRight.module.css";
-import Hover from "react-3d-hover";
 
 const FeatureRight = ({
   firstText,
@@ -26,13 +25,13 @@ const FeatureRight = ({
   return (
     <div className={styles.containerContent} style={containerFeatureLeftStyle}>
       <div className={styles.imageBackground}></div>
-      <Hover scale={1.05} speed={4000} max={8}>
+      <div className={styles.imageContainer}>
         <img
           className={styles.imageMockup}
           alt={altText}
           src={imageMockupURL}
         />
-      </Hover>
+      </div>
       <div className={styles.containerArticle}>
         <SectionTextContent
           sectionTextContentZIndex={sectionZIndex}

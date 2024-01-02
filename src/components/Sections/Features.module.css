@@ -8,13 +8,13 @@
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
   align-items: flex-start;
-  gap: var(--spacing-40);
+  gap: var(--size-40);
 }
 .containerFeatures {
   flex-direction: column;
   align-items: center;
-  padding: var(--spacing-128) var(--spacing-200);
-  gap: var(--spacing-128);
+  padding: var(--size-128) var(--size-200);
+  gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);
 }

@@ -8,21 +8,13 @@ const Header = ({
   showContainerDivLinks = true,
   showButtonMenu = false,
   showButtonCta = true,
-  linkObjectFit,
 }) => {
-  const imagelogoIconStyle = useMemo(() => {
-    return {
-      objectFit: linkObjectFit,
-    };
-  }, [linkObjectFit]);
-
   return (
     <nav className={styles.containerNav}>
       <img
         className={styles.containerNavLogo}
         alt="ROSA logotype"
         src={logoURL}
-        style={imagelogoIconStyle}
       />
       {showContainerDivLinks && (
         <div className={styles.containerNavLinks}>

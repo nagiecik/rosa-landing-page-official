@@ -1,15 +1,15 @@
 .imageIcon {
-  border-radius: var(--spacing-16);
-  width: var(--spacing-32);
-  height: var(--spacing-32);
+  border-radius: var(--size-16);
+  width: var(--size-32);
+  height: var(--size-32);
   overflow: hidden;
   object-fit: cover;
   color: var(--surface-secondary);
 }
 .textNumber,
 .textTitle {
-  font-size: var(--font-size-24);
-  font-weight: var(--font-size-40);
+  font-size: var(--size-24);
+  font-weight: var(--size-40);
   font-weight: var(--font-bold);
   font-family: inherit;
   letter-spacing: var(--letter-spacing-default);
@@ -21,8 +21,8 @@
   color: var(--surface-secondary);
 }
 .textParagraph {
-  font-size: var(--font-size-14);
-  line-height: var(--line-height-24);
+  font-size: var(--size-14);
+  line-height: var(--size-24);
   font-weight: var(--font-semibold);
   font-family: inherit;
   color: var(--on-surface-accent-inactive);
@@ -33,7 +33,7 @@
   justify-content: flex-start;
   align-self: stretch;
   align-items: flex-start;
-  gap: var(--spacing-12);
+  gap: var(--size-12);
 }
 .containerCorner {
   display: flex;
@@ -46,7 +46,7 @@
   top: 0;
   right: 0;
   background-color: var(--surface-secondary);
-  border-radius: 0 var(--spacing-4) 0 var(--spacing-32);
+  border-radius: 0 var(--size-4) 0 var(--size-32);
 }
 .containerCard {
   display: flex;
@@ -54,14 +54,14 @@
   justify-content: flex-start;
   flex: 1;
   position: relative;
-  gap: var(--spacing-16);
+  gap: var(--size-16);
   width: 100%;
   background-color: var(--surface-primary);
   border: 1px solid var(--on-surface-accent-disabled-dark);
-  border-radius: var(--spacing-16);
+  border-radius: var(--size-16);
   align-items: flex-end;
-  padding: var(--spacing-104) var(--spacing-32) var(--spacing-32)
-    var(--spacing-32);
+  padding: var(--size-104) var(--size-32) var(--size-32)
+    var(--size-32);
   box-sizing: border-box;
   overflow: hidden;
   transition: calc(var(--d) * 2) var(--e);
@@ -99,6 +99,6 @@
   border-left: 1px solid var(--surface-primary);
   box-shadow: 8px 8px 0 0 var(--on-surface-accent-active);
   transition: calc(var(--d) * 2) var(--e);
-  border-radius: var(--spacing-32);
+  border-radius: var(--size-32);
   transform: rotate(2.5deg) scale(1.1, 1.1);
 }

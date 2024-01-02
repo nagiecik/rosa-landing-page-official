@@ -40,13 +40,13 @@ const FeatureLeft = ({
         <div className={styles.textParagraph}>{textParagraph}</div>
       </div>
       <div className={styles.imageBackground}></div>
-      <Hover scale={1.05} speed={4000} max={8}>
-        <img
-          className={styles.imageMockup}
-          alt={altText}
-          src={imageMockupURL}
-        />
-      </Hover>
+      <div className={styles.imageContainer}>
+          <img
+            className={styles.imageMockup}
+            alt={altText}
+            src={imageMockupURL}
+          />
+      </div>
     </div>
   );
 };

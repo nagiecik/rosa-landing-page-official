@@ -1,8 +1,8 @@
 .textParagraph {
   align-self: stretch;
   position: relative;
-  font-size: var(--font-size-24);
-  line-height: var(--line-height-40);
+  font-size: var(--size-24);
+  line-height: var(--size-40);
   color: var(--surface-secondary);
 }
 .containerArticle {
@@ -11,26 +11,26 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--spacing-32);
+  gap: var(--size-32);
   max-width: 50%;
 }
 .imageMockup {
   position: relative;
-  border-radius: var(--spacing-64);
-  width: 560px;
-  height: auto;
+  border-radius: var(--size-64);
+  width: auto;
+  height: 880px;
   object-fit: cover;
 }
 .imageBackground {
   position: absolute;
-  left: var(--spacing-200);
+  left: var(--size-200);
   width: 560px;
   height: 560px;
   background: linear-gradient(315deg, #181f4e 0%, rgba(24, 31, 78, 0.8) 100%);
-  border-radius: var(--spacing-64);
+  border-radius: var(--size-64);
 }
 .containerContent:hover > .imageBackground {
-  border-radius: var(--spacing-128);
+  border-radius: var(--size-128);
   transition: calc(var(--d) * 2) var(--e);
 }
 .containerContent > .imageBackground {
@@ -42,10 +42,18 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: var(--spacing-64) var(--spacing-200);
+  padding: var(--size-64) var(--size-200);
   box-sizing: border-box;
-  gap: var(--spacing-128);
+  gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);
   align-self: stretch;
+}
+.imageContainer:hover {
+  transform: rotate(-5deg) scale(1.025);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.imageContainer {
+  transition: calc(var(--d) * 2) var(--e);
 }

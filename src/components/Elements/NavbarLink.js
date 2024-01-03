@@ -6,7 +6,7 @@ const NavbarLink = ({
   flexShrinkGrow,
   textDecoration,
   cursor,
-  linkUrl,
+  linkURL,
 }) => {
   const navbarLinkCursor = useMemo(() => {
     return {
@@ -22,7 +22,7 @@ const NavbarLink = ({
 
   return (
     <div className={styles.linkState} style={navbarLinkContainerStyle}>
-      <a href={linkUrl}>
+      <a href={linkURL}>
         <div
           data-replace={linkText}
           className={styles.linkText}

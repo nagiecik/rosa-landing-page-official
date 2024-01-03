@@ -1,7 +1,7 @@
 .containerContent {
   width: 100%;
   max-width: 1520px;
-  gap: var(--size-32);
+  gap: var(--size-80);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -20,7 +20,7 @@
   background-color: var(--surface-primary);
   flex-direction: column;
   align-items: center;
-  padding: var(--size-256) var(--size-200) var(--size-128);
+  padding: var(--size-128) var(--size-200);
   gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);

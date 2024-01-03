@@ -23,42 +23,42 @@ const Header = ({
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#start"
+            linkURL="#start"
           />
           <NavbarLink
             linkText="Testimonials"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#testimonials"
+            linkURL="#testimonials"
           />
           <NavbarLink
             linkText="Context"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#context"
+            linkURL="#context"
           />
           <NavbarLink
             linkText="Features"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#features"
+            linkURL="#features"
           />
           <NavbarLink
             linkText="Use Cases"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#use_cases"
+            linkURL="#use_cases"
           />
           <NavbarLink
             linkText="Pricing"
             flexShrinkGrow="1"
             textDecoration="none"
             cursor="pointer"
-            linkUrl="#pricing"
+            linkURL="#pricing"
           />
         </div>
       )}
@@ -82,6 +82,7 @@ const Header = ({
             showIconLeft={false}
             showIconRight={true}
             altTextIconRight="Icon Arrow Right"
+            buttonLink="mailto:hello@rosa.zone"
           />
         </div>
       )}

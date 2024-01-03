@@ -32,7 +32,7 @@ const FooterLinks = ({
           flexShrinkGrow="1"
           textDecoration="none"
           cursor="pointer"
-          linkUrl={linkURL1}
+          linkURL={linkURL1}
         />
       )}
       {showLink2 && (
@@ -41,7 +41,7 @@ const FooterLinks = ({
           flexShrinkGrow="1"
           textDecoration="none"
           cursor="pointer"
-          linkUrl={linkURL2}
+          linkURL={linkURL2}
         />
       )}
       {showLink3 && (
@@ -50,7 +50,7 @@ const FooterLinks = ({
           flexShrinkGrow="1"
           textDecoration="none"
           cursor="pointer"
-          linkUrl={linkURL3}
+          linkURL={linkURL3}
         />
       )}
       {showLink4 && (
@@ -59,7 +59,7 @@ const FooterLinks = ({
           flexShrinkGrow="1"
           textDecoration="none"
           cursor="pointer"
-          linkUrl={linkURL4}
+          linkURL={linkURL4}
         />
       )}
       {showLink5 && (

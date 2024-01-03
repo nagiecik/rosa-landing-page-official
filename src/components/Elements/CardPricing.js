@@ -36,6 +36,7 @@ const PricingCard = ({
   buttonSecondaryText,
   buttonWidth,
   buttonDisplayMode,
+  buttonLink,
 }) => {
   const cardPricingStyle = useMemo(() => {
     return {
@@ -88,6 +89,7 @@ const PricingCard = ({
           buttonText={buttonPrimaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
+          buttonLink={buttonLink}
         />
       )}
       {showbuttonSecondary && (
@@ -96,6 +98,7 @@ const PricingCard = ({
           buttonText={buttonSecondaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
+          buttonLink={buttonLink}
         />
       )}
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />

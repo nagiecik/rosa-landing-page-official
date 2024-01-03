@@ -24,7 +24,11 @@ const FeatureLeft = ({
   }, [sectionZIndex]);
 
   return (
-    <div id="use_cases" className={styles.containerSection} style={containerFeatureLeftStyle}>
+    <div
+      id="use_cases"
+      className={styles.containerSection}
+      style={containerFeatureLeftStyle}
+    >
       <div className={styles.containerContent}>
         <div className={styles.containerArticle}>
           <SectionTextContent
@@ -40,7 +44,6 @@ const FeatureLeft = ({
           />
           <div className={styles.textParagraph}>{textParagraph}</div>
         </div>
-        
         <div className={styles.imageContainer}>
           <img
             className={styles.imageMockup}

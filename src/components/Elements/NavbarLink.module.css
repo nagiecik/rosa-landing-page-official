@@ -5,6 +5,7 @@
   justify-content: center;
   text-align: left;
   font-size: var(--size-16);
+  line-height: var(--size-24);
   color: var(--surface-primary);
   font-family: var(--font-main);
   font-weight: var(--font-medium);

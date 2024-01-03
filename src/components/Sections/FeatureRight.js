@@ -25,13 +25,13 @@ const FeatureRight = ({
   return (
     <div className={styles.containerSection} style={containerFeatureLeftStyle}>
       <div className={styles.containerContent}>
-        <div className={styles.imageBackground}></div>
-        <div className={styles.imageContainer}>
+      <div className={styles.imageContainer}>
           <img
             className={styles.imageMockup}
             alt={altText}
             src={imageMockupURL}
           />
+          <div className={styles.imageBackground}></div>
         </div>
         <div className={styles.containerArticle}>
           <SectionTextContent

@@ -47,6 +47,7 @@ const Pricing = () => {
           buttonSecondaryText="Choose National"
           buttonWidth="100%"
           buttonDisplayMode="block"
+          buttonLink="mailto:hello@rosa.zone?subject=ROSA National"
         />
         <CardPricing
           cardPricingBackgroundColor="var(--surface-secondary)"
@@ -78,6 +79,7 @@ const Pricing = () => {
           buttonSecondaryText="Choose National"
           buttonWidth="100%"
           buttonDisplayMode="block"
+          buttonLink="mailto:hello@rosa.zone?subject=ROSA International"
         />
       </div>
     </section>

@@ -1,3 +1,14 @@
+.imageBackground {
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 17%;
+  left: 5%;
+  width: 90%;
+  height: auto;
+  border-radius: var(--size-64);
+  background: linear-gradient(315deg, #181f4e 0%, rgba(24, 31, 78, 0.8) 100%);
+  transition: calc(var(--d) * 2) var(--e);
+}
 .textParagraph {
   align-self: stretch;
   position: relative;
@@ -6,36 +17,26 @@
   color: var(--surface-secondary);
 }
 .containerArticle {
-  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--size-32);
-  max-width: 50%;
+  width: 50%;
 }
 .imageMockup {
   position: relative;
-  width: auto;
-  height: 880px;
+  width: 100%;
+  height: auto;
   object-fit: cover;
-}
-.imageBackground {
-  position: absolute;
-  left: var(--size-0);
-  width: 560px;
-  height: 560px;
-  background: linear-gradient(315deg, #181f4e 0%, rgba(24, 31, 78, 0.8) 100%);
-  border-radius: var(--size-64);
-}
-.imageContainer:hover {
-  transform: rotate(-5deg) scale(1.025);
-  transition: calc(var(--d) * 2) var(--e);
+  z-index: 999;
 }
 .imageContainer {
+  display: flex;
+  position: relative;
+  width: 40%;
   transition: calc(var(--d) * 2) var(--e);
 }
-
 .containerContent {
   width: 100%;
   max-width: 1520px;
@@ -44,12 +45,19 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  gap: var(--size-128);
 }
-.containerSection:hover > .imageBackground {
+
+.imageContainer:hover > .imageMockup {
+  transform: rotate(-5deg) scale(1.025);
+  transition: calc(var(--d) * 2) var(--e);
+}
+.imageContainer:hover > .imageBackground {
   border-radius: var(--size-128);
   transition: calc(var(--d) * 2) var(--e);
 }
-.containerSection > .imageBackground {
+.imageContainer > .imageBackground,
+.imageContainer > .imageMockup {
   transition: calc(var(--d) * 2) var(--e);
 }
 .containerSection {
@@ -72,14 +80,6 @@
   .containerSection {
     padding: var(--size-64) var(--size-80);
     gap: var(--size-80);
-  }
-  .imageBackground {
-    right: var(--size-80);
-    width: 480px;
-    height: 480px;
-  }
-  .imageMockup {
-    height: 680px;
   }
   .textParagraph {
     font-size: var(--size-20);

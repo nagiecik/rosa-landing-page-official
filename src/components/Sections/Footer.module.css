@@ -17,6 +17,10 @@
   animation-iteration-count: infinite;
   animation-timing-function: linear;
 }
+.buttonScroll:hover {
+  transform: scale(1.1);
+  transition: calc(var(--d) * 2) var(--e);
+}
 .iconScroll {
   position: absolute;
   top: 42%;
@@ -28,6 +32,7 @@
   width: 200px;
   height: 200px;
   position: relative;
+  transition: calc(var(--d) * 2) var(--e);
 }
 .buttonScroll:hover > .iconScroll {
   transform: rotate(45deg);
@@ -95,4 +100,3 @@
   box-sizing: border-box;
   justify-content: center;
 }
-

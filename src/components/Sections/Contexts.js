@@ -1,19 +1,57 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import SectionTextContent from "../Elements/SectionTextContent";
 import CardContext from "../Elements/CardContext";
 import styles from "./Contexts.module.css";
 
 const Contexts = ({ sectionZIndex }) => {
-  const sectionSliderStyle = useMemo(() => {
+  const Contexts = {
+    context1: {
+      img: "/mockups/contextMockup-1.png",
+      alt: "Image Context 1",
+      number: "01",
+      title: "Commercial Partner Content",
+      text: "Elevate brand reach with ROSA's Partner Content. Showcase exclusive insights, promotions, and behind-the-scenes access, creating an immersive experience for your audience"
+    },
+    context2: {
+      img: "/mockups/contextMockup-2.png",
+      alt: "Image Context 2",
+      number: "02",
+      title: "Equipment",
+      text: "Align with integrity through ROSA's Regulations. Support fair play by promoting understanding of internal rules, reinforcing your brand's dedication to the core values of each sport.",
+    },
+    context3: {
+      img: "/mockups/contextMockup-3.png",
+      alt: "Image Context 1",
+      number: "03",
+      title: "Competitions",
+      text: "Align with integrity through ROSA's Regulations. Support fair play by promoting understanding of internal rules, reinforcing your brand's dedication to the core values of each sport.",
+    },
+    context4: {
+      img: "/mockups/contextMockup-4.png",
+      alt: "Image Context 2",
+      number: "04",
+      title: "Internal Regulations",
+      text: "Align with integrity through ROSA's Regulations. Support fair play by promoting understanding of internal rules, reinforcing your brand's dedication to the core values of each sport.",
+    },
+  };
+
+  const [selectedContext, setSelectedContext] = useState(Contexts.context1);
+
+  const handleCardClick = (context) => {
+    setSelectedContext(context);
+  };
+
+  const sectionStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
     };
   }, [sectionZIndex]);
+
   return (
     <section
       id="context"
       className={styles.containerSection}
-      style={sectionSliderStyle}
+      style={sectionStyle}
     >
       <SectionTextContent
         sectionWidth="100%"
@@ -26,29 +64,42 @@ const Contexts = ({ sectionZIndex }) => {
         textParagraphColor="var(--surface-primary)"
       />
       <div className={styles.containerContent}>
-        <img className={styles.imageMockup} alt="" src="/contextMockup.png" />
+        {selectedContext ? (
+          <img
+            className={styles.imageMockup}
+            alt={selectedContext.alt}
+            src={selectedContext.img}
+          />
+        ) : null}
+
         <div className={styles.containerCards}>
           <CardContext
-            textNumber="01"
-            textTitle="Context #1"
-            textParagraph="Simply download and install ROSA to unlock a world of sport-specific rules and regulations at your fingertips."
+            onClick={() => handleCardClick(Contexts.context1)}
+            imageUrl={`/${Contexts.context1.img}.png`}
+            textNumber={Contexts.context1.number}
+            textTitle={Contexts.context1.title}
+            textParagraph={Contexts.context1.text}
           />
           <CardContext
-            textNumber="02"
-            textTitle="Context #2"
-            textParagraph="Simply download and install ROSA to unlock a world of sport-specific rules and regulations at your fingertips."
+            onClick={() => handleCardClick(Contexts.context2)}
+            imageUrl={`/${Contexts.context1.img}.png`}
+            textNumber={Contexts.context2.number}
+            textTitle={Contexts.context2.title}
+            textParagraph={Contexts.context2.text}
           />
           <CardContext
-            textNumber="03"
-            textTitle="Context #3"
-            textParagraph="Simply download and install ROSA to unlock a world of sport-specific rules and regulations at your fingertips."
+            onClick={() => handleCardClick(Contexts.context3)}
+            imageUrl={`/${Contexts.context3.img}.png`}
+            textNumber={Contexts.context3.number}
+            textTitle={Contexts.context3.title}
+            textParagraph={Contexts.context3.text}
           />
           <CardContext
-            textNumber="04"
-            textTitle="Context #4"
-            textParagraph="Simply download and install ROSA to unlock a world of sport-specific rules and regulations at your fingertips."
-            cardBackgroundColor="var(--surface-secondary)"
-            cardBorder="1px solid var(--surface-primary)"
+            onClick={() => handleCardClick(Contexts.context4)}
+            imageUrl={`/${Contexts.context4.img}.png`}
+            textNumber={Contexts.context4.number}
+            textTitle={Contexts.context4.title}
+            textParagraph={Contexts.context4.text}
           />
         </div>
       </div>

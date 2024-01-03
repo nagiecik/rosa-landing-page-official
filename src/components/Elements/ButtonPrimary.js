@@ -12,6 +12,7 @@ const Button = ({
   altTextIconRight,
   buttonWidth,
   buttonDisplayMode,
+  buttonLink,
 }) => {
   const buttonTextStyle = useMemo(() => {
     return {
@@ -29,7 +30,11 @@ const Button = ({
           src={iconLeft}
         />
       )}
-      {showButtonText && <p className={styles.buttonText}>{buttonText}</p>}
+      {showButtonText && (
+        <a href={buttonLink} target="_blank">
+          <p className={styles.buttonText}>{buttonText}</p>
+        </a>
+      )}
       {showIconRight && (
         <img
           className={styles.buttonIconRight}

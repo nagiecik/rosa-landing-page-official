@@ -39,6 +39,18 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+  }
+  .containerContent {
+    gap: var(--size-80);
+  }
+  .containerCards {
+    gap: var(--size-40);
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .containerSection {
     padding: var(--size-80);

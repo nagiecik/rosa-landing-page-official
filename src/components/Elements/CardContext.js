@@ -1,6 +1,12 @@
 import styles from "./CardContext.module.css";
 
-const CardContext = ({ textNumber, textTitle, textParagraph, onClick, imageUrl, }) => {
+const CardContext = ({
+  textNumber,
+  textTitle,
+  textParagraph,
+  onClick,
+  imageUrl,
+}) => {
   return (
     <div className={styles.containerCard} onClick={onClick}>
       <div className={styles.containerCorner} href="#">

@@ -27,7 +27,7 @@
   line-height: var(--size-32);
   font-weight: var(--font-regular);
 }
-.containterText {
+.containerText {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -104,4 +104,12 @@
   right: 0;
   background-color: var(--surface-primary);
   border-radius: 0 var(--size-4) 0 var(--size-32);
+}
+
+@media screen and (max-width: 1536px) {
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-32);
+    font-weight: var(--font-regular);
+  }
 }

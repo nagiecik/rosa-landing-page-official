@@ -9,7 +9,7 @@
 .buttonText {
   position: relative;
   font-size: var(--size-16);
-  line-height: var(--size-24);
+  line-height: var(--size-32);
   font-weight: var(--font-black);
   color: var(--surface-secondary);
 }

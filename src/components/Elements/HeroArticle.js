@@ -29,7 +29,7 @@ const HeroArticle = ({ buttonGooglePlay, buttonAppStore }) => {
           src={buttonAppStore}
         /></a>
       </div>
-      <div className={styles.containerRating}>
+      {/* <div className={styles.containerRating}>
         <div className={styles.containerRatingText}>
           <label className={styles.textRatingLabel}>Excellent</label>
           <b className={styles.textRatingBold}>4.9 out of 5</b>
@@ -61,7 +61,7 @@ const HeroArticle = ({ buttonGooglePlay, buttonAppStore }) => {
             src="/iconStar.png"
           />
         </div>
-      </div>
+      </div> */}
     </article>
   );
 };

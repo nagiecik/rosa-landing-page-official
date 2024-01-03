@@ -80,6 +80,17 @@
   box-sizing: border-box;
 }
 
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+    gap: var(--size-80);
+  }
+  .textParagraph {
+    font-size: var(--size-20);
+    line-height: var(--size-40);
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .containerSection {
     padding: var(--size-64) var(--size-80);

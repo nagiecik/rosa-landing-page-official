@@ -100,3 +100,15 @@
   box-sizing: border-box;
   justify-content: center;
 }
+
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    padding: var(--size-80);
+  }
+}

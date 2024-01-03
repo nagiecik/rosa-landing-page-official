@@ -20,6 +20,15 @@
   font-family: var(--font-main);
 }
 
+@media screen and (max-width: 1536px) {
+  .containerFeatures {
+    padding: var(--size-80) var(--size-104);
+  }
+  .containerGridCards {
+    gap: var(--size-40);
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .containerFeatures {
     padding: var(--size-80);

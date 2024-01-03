@@ -1,9 +1,15 @@
+import { useMemo } from "react";
 import SectionTextContent from "../Elements/SectionTextContent";
 import styles from "./Summary.module.css";
 
-const Summary = ({ buttonGooglePlay, buttonAppStore }) => {
+const Summary = ({ buttonGooglePlay, buttonAppStore, sectionZIndex }) => {
+  const containerSummaryStyle = useMemo(() => {
+    return {
+      zIndex: sectionZIndex,
+    };
+  }, [sectionZIndex]);
   return (
-    <section className={styles.containerSection}>
+    <section className={styles.containerSection} style={containerSummaryStyle}>
       <div className={styles.containerContent}>
         <img
           className={styles.imageDeviceSecondary}

@@ -138,6 +138,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  transition: calc(var(--d) * 2) var(--e);
+}
+.containerTestimonial:hover {
+  border-radius: var(--size-96);
+  transition: calc(var(--d) * 2) var(--e);
 }
 .containerSection {
   background-color: var(--surface-primary);
@@ -152,6 +157,11 @@
   align-self: stretch;
 }
 
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+  }
+}
 @media screen and (max-width: 1440px) {
   .containerSection {
     padding: var(--size-80);

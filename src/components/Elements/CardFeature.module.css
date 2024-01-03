@@ -102,3 +102,9 @@
   border-radius: var(--size-32);
   transform: rotate(2.5deg) scale(1.1, 1.1);
 }
+
+@media screen and (max-width: 1536px) {
+  .textTitle {
+    font-size: var(--size-20);
+  }
+}

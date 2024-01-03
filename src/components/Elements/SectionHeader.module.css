@@ -21,11 +21,18 @@
   text-align: left;
 }
 
+@media screen and (max-width: 1536px) {
+  .firstText, .secondText, .linkText {
+    font-size: var(--size-80);
+    line-height: var(--size-80);
+  }
+}
+
 @media screen and (max-width: 1440px) {
   .firstText,
   .secondText,
   .linkText {
-    font-size: var(--size-80);
-    line-height: var(--size-80);
+    font-size: var(--size-72);
+    line-height: var(--size-72);
   }
 }

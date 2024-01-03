@@ -6,9 +6,7 @@
   flex-direction: row;
   align-items: center;
   justify-content: center; 
-}
-.containerContent:last-child {
-  order: 1;
+  overflow: visible;
 }
 .containerSection {
   display: flex;
@@ -24,6 +22,14 @@
   gap: var(--size-128);
   text-align: left;
   font-family: var(--font-main);
+  overflow: visible;
+}
+
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+    gap: var(--size-80);
+  }
 }
 
 @media screen and (max-width: 1440px) {

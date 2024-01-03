@@ -64,8 +64,9 @@ const Main = () => {
         imageMockupURL="./mockups/useCasesMockup-4.png"
         sectionWidth="100%"
       />
-      <SectionPricing />
+      <SectionPricing sectionZIndex="2" />
       <SectionSummary
+        sectionZIndex="1"
         buttonAppStore="/buttonAppStore.svg"
         buttonGooglePlay="/buttonGooglePlay.svg"
       />

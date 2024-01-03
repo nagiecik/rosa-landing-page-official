@@ -64,6 +64,11 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
+  transition: calc(var(--d) * 2) var(--e);
+}
+.containerContent:hover {
+  border-radius: var(--size-96);
+  transition: calc(var(--d) * 2) var(--e);
 }
 .containerSection {
   width: 100%;
@@ -74,6 +79,12 @@
   text-align: left;
   font-family: var(--font-main);
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+  }
 }
 
 @media screen and (max-width: 1440px) {

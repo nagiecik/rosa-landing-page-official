@@ -9,17 +9,13 @@ const FormFooter = () => {
       <div className={styles.containerContent}>
         <header className={styles.containerHeader}>
           <SectionTextContent
-            firstText="Interested in working with us?"
+            firstText="Interested to join us?"
             firstTextColor="var(--surface-primary)"
-            firstTextSize="var(--size-80)"
-            firstTextLineHeight="var(--size-96)"
             firstTextWeight="var(--font-thin)"
             showSecondText={false}
             showLinkText={true}
             linkText="hello@rosa.zone"
             linkTextColorTextColor="var(--surface-primary)"
-            linkTextSize="var(--size-80)"
-            linktTextLineHeight="var(--size-96)"
             linkTextWeight="var(--font-semibold)"
             linkTextURL="mailto:hello.rosa@zone"
           />

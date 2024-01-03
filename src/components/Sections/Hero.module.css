@@ -20,6 +20,7 @@
   animation-name: image;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
+  filter: drop-shadow(40px 40px 128px rgba(0, 0, 0, 0.80));
 }
 .contentArticle {
   align-self: stretch;
@@ -57,14 +58,12 @@
 @media screen and (max-width: 1536px) {
   .containerSection {
     padding: var(--size-0) var(--size-104) var(--size-80) var(--size-104);
-    height: fit-content;
   }
 }
 
 @media screen and (max-width: 1440px) {
   .containerSection {
     padding: var(--size-0) var(--size-80) var(--size-80) var(--size-80);
-    height: fit-content;
   }
 }
 
@@ -96,11 +95,8 @@
     padding: var(--size-0) var(--size-32) var(--size-32) var(--size-32);
     height: 100vh;
   }
-  .containerContent {
-    gap: var(--size-160);
-  }
-  .imageHero {
-    display: none;
+  .contentArticle {
+    flex-direction: column;
   }
 }
 

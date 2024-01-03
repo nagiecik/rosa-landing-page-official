@@ -1,10 +1,20 @@
+import { useMemo } from "react";
 import SectionTextContent from "../Elements/SectionTextContent";
 import CardPricing from "../Elements/CardPricing";
 import styles from "./Pricing.module.css";
 
-const Pricing = () => {
+const Pricing = ({ sectionZIndex }) => {
+  const containerPricingStyle = useMemo(() => {
+    return {
+      zIndex: sectionZIndex,
+    };
+  }, [sectionZIndex]);
   return (
-    <section id="pricing" className={styles.containerSection}>
+    <section
+      id="pricing"
+      className={styles.containerSection}
+      style={containerPricingStyle}
+    >
       <SectionTextContent
         sectionWidth="100%"
         firstText="Choose Your"

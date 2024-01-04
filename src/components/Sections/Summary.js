@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import SectionTextContent from "../Elements/SectionTextContent";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
 import styles from "./Summary.module.css";
 
 const Summary = ({ buttonGooglePlay, buttonAppStore, sectionZIndex }) => {
@@ -22,7 +22,7 @@ const Summary = ({ buttonGooglePlay, buttonAppStore, sectionZIndex }) => {
           src="/imageSummary-1.png"
         />
         <div className={styles.containerArticle}>
-          <SectionTextContent
+          <ContentTextContent
             firstText="Make Sport"
             firstTextColor="var(--surface-primary)"
             firstTextWeight="var(--font-thin)"

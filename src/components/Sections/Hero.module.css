@@ -1,4 +1,4 @@
-@keyframes image {
+@keyframes containerImage {
   0% {
     transform: translate(0, 200px);
     opacity: 0%;
@@ -9,50 +9,97 @@
     opacity: 100%;
   }
 }
-.imageHero {
-  flex: 1;
+
+@keyframes imageLeft {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--size-16));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes imageRight {
+  0% {
+    transform: translateY(var(--size-16));
+  }
+  50% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(var(--size-16));
+  }
+}
+
+.imageLeft {
+  width: var(--size-400);
+  height: fit-content;
   position: relative;
-  max-width: 50%;
-  overflow: hidden;
+  z-index: 2;
+  filter: drop-shadow(40px 40px 128px rgba(0, 0, 0, 0.8));
+  animation-name: imageLeft;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+ .containerImage:hover {
+  transform: scale(1.05) rotate(5deg);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.imageRight {
+  width: var(--size-400);
   height: auto;
-  object-fit: contain;
-  background-repeat: no-repeat;
-  animation-name: image;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  filter: drop-shadow(40px 40px 128px rgba(0, 0, 0, 0.8));
+  animation-name: imageRight;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.containerImage {
+  display: flex;
+  position: relative;
+  width: 100%;
+  max-width: 48%;
+  height: 800px;
+  animation-name: containerImage;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
-  filter: drop-shadow(40px 40px 128px rgba(0, 0, 0, 0.80));
+  transition: calc(var(--d) * 2) var(--e);
 }
-.contentArticle {
-  align-self: stretch;
+
+.containerContent {
   display: flex;
   flex-direction: row;
+  width: 100%;
+  gap: var(--size-96);
+  max-width: 1520px;
+  display: flex;
   align-items: flex-start;
-  justify-content: center;
-  gap: var(--size-64);
+  justify-content: space-between;
+  padding: var(--size-104) var(--size-200);
 }
-.containerContent,
+
 .containerSection {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-}
-.containerContent {
-  width: 100%;
-  align-items: flex-start;
-  gap: var(--size-96);
-  max-width: 1520px;
-}
-.containerSection {
+  justify-content: center;
   width: 100%;
   height: fit-content;
   align-items: center;
-  padding: var(--size-0) var(--size-200) var(--size-80) var(--size-200);
   box-sizing: border-box;
   background-image: url(/public/backgroundHero.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
-  align-self: stretch;
 }
 
 @media screen and (max-width: 1536px) {

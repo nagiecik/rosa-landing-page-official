@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import styles from "./FooterLinks.module.css";
+import styles from "./NavFooter.module.css";
 import NavbarLink from "./NavbarLink";
 
-const FooterLinks = ({
+const NavFooter = ({
   textTitle,
   showLink1 = true,
   showLink3 = true,
@@ -84,4 +84,4 @@ const FooterLinks = ({
   );
 };
 
-export default FooterLinks;
+export default NavFooter;

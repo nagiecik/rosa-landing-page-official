@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import styles from "./HeroArticle.module.css";
+import styles from "./ContentArticle.module.css";
 
-const HeroArticle = ({ buttonGooglePlay, buttonAppStore }) => {
+const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
   return (
     <article className={styles.containerArticle}>
       <div className={styles.containerTitle}>
@@ -66,4 +66,4 @@ const HeroArticle = ({ buttonGooglePlay, buttonAppStore }) => {
   );
 };
 
-export default HeroArticle;
+export default ContentArticle;

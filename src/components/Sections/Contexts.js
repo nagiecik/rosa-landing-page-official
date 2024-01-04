@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
-import SectionTextContent from "../Elements/SectionTextContent";
-import CardContext from "../Elements/CardContext";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import CardContext from "../Elements/Cards/CardContext";
 import styles from "./Contexts.module.css";
 
 const Contexts = ({ sectionZIndex }) => {
@@ -53,7 +53,7 @@ const Contexts = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={sectionStyle}
     >
-      <SectionTextContent
+      <ContentTextContent
         sectionWidth="100%"
         sectionTextContentZIndex="0"
         firstText="Context"

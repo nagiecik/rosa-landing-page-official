@@ -1,7 +1,7 @@
 import { useMemo } from "react";
-import styles from "./SectionHeader.module.css";
+import styles from "./ContentHeader.module.css";
 
-const SectionHeader = ({
+const ContentHeader = ({
   firstText = "firstText",
   secondText = "secondText",
   linkText = "linkText",
@@ -77,4 +77,4 @@ const SectionHeader = ({
   );
 };
 
-export default SectionHeader;
+export default ContentHeader;

@@ -1,7 +1,6 @@
 import { useMemo } from "react";
-import SectionTextContent from "../Elements/SectionTextContent";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
 import styles from "./FeatureLeft.module.css";
-import Hover from "react-3d-hover";
 
 const FeatureLeft = ({
   firstText,
@@ -31,7 +30,7 @@ const FeatureLeft = ({
     >
       <div className={styles.containerContent}>
         <div className={styles.containerArticle}>
-          <SectionTextContent
+          <ContentTextContent
             sectionTextContentZIndex={sectionZIndex}
             firstText={firstText}
             firstTextWeight={firstTextWeight}

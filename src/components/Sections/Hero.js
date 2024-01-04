@@ -1,6 +1,6 @@
 import { useMemo } from "react";
-import HeroArticle from "../Elements/HeroArticle";
-import Header from "../Elements/Header";
+import ContentArticle from "../Elements/Contents/ContentArticle";
+import Nav from "../Elements/Navigation/Nav";
 import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {
@@ -16,24 +16,29 @@ const Hero = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={containerSectionHeroStyle}
     >
+      <Nav
+        logoURL="/imageLogoRosa.svg"
+        alt="ROSA logo"
+        showContainerDivLinks={true}
+        showButtonMenu={true}
+        showButtonCta={true}
+        linkObjectFit="unset"
+      />
       <div className={styles.containerContent}>
-        <Header
-          logoURL="/imageLogoRosa.svg"
-          alt="ROSA logo"
-          showContainerDivLinks={true}
-          showButtonMenu={true}
-          showButtonCta={true}
-          linkObjectFit="unset"
+        <ContentArticle
+          buttonAppStore="/buttonAppStore.svg"
+          buttonGooglePlay="/buttonGooglePlay.svg"
         />
-        <div className={styles.contentArticle}>
-          <HeroArticle
-            buttonAppStore="/buttonAppStore.svg"
-            buttonGooglePlay="/buttonGooglePlay.svg"
+        <div className={styles.containerImage}>
+          <img
+            className={styles.imageRight}
+            alt=""
+            src="/mockups/heroMockup-1.png"
           />
           <img
-            className={styles.imageHero}
-            alt="ROSA double mobile screen"
-            src="/imageHero.png"
+            className={styles.imageLeft}
+            alt=""
+            src="/mockups/heroMockup-2.png"
           />
         </div>
       </div>

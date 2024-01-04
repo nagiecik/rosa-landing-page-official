@@ -1,14 +1,14 @@
-import Divider from "../Elements/Divider";
-import SectionTextContent from "../Elements/SectionTextContent";
+import Divider from "../Elements/Other/Divider";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import NavFooter from "../Elements/Navigation/NavFooter";
 import styles from "./Footer.module.css";
-import FooterLinks from "../Elements/FooterLinks";
 
 const FormFooter = () => {
   return (
     <footer className={styles.containerSection}>
       <div className={styles.containerContent}>
         <header className={styles.containerHeader}>
-          <SectionTextContent
+          <ContentTextContent
             firstText="Interested to join us?"
             firstTextColor="var(--surface-primary)"
             firstTextWeight="var(--font-thin)"
@@ -40,7 +40,7 @@ const FormFooter = () => {
             src="/imageLogoRosa.svg"
           />
           <div className={styles.containerLinks}>
-            <FooterLinks
+            <NavFooter
               textTitle="Menu"
               linkText1="Start"
               linkText2="Testimonials"
@@ -55,7 +55,7 @@ const FormFooter = () => {
               linkURL5="#use_cases"
               linkURL6="#pricing"
             />
-            <FooterLinks
+            <NavFooter
               textTitle="Support"
               linkText1="Privacy Policy"
               linkText2="Terms & Conditions"

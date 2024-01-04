@@ -1,23 +1,23 @@
 import { useMemo } from "react";
-import NavbarLink from "../Elements/NavbarLink";
-import ButtonPrimary from "../Elements/ButtonPrimary";
-import styles from "./Header.module.css";
+import NavbarLink from "./NavbarLink";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
+import styles from "./Nav.module.css";
 
-const Header = ({
+const Nav = ({
   logoURL,
   showContainerDivLinks = true,
   showButtonMenu = false,
   showButtonCta = true,
 }) => {
   return (
-    <nav className={styles.containerNav}>
+    <nav className={styles.containerSection}>
       <img
-        className={styles.containerNavLogo}
+        className={styles.containerSectionLogo}
         alt="ROSA logotype"
         src={logoURL}
       />
       {showContainerDivLinks && (
-        <div className={styles.containerNavLinks}>
+        <div className={styles.containerSectionLinks}>
           <NavbarLink
             linkText="Start"
             flexShrinkGrow="1"
@@ -90,4 +90,4 @@ const Header = ({
   );
 };
 
-export default Header;
+export default Nav;

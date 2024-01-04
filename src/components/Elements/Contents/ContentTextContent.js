@@ -1,8 +1,8 @@
 import { useMemo } from "react";
-import SectionHeader from "./SectionHeader";
-import styles from "./SectionTextContent.module.css";
+import ContentHeader from "./ContentHeader";
+import styles from "./ContentTextContent.module.css";
 
-const SectionTextContent = ({
+const ContentTextContent = ({
   sectionZIndex,
   textParagraph,
   textParagraphColor,
@@ -42,7 +42,7 @@ const SectionTextContent = ({
 
   return (
     <div className={styles.sectionContainer} style={sectionTextContentStyle}>
-      <SectionHeader
+      <ContentHeader
         showFirstText={showFirstText}
         firstText={firstText}
         firstTextColor={firstTextColor}
@@ -71,4 +71,4 @@ const SectionTextContent = ({
   );
 };
 
-export default SectionTextContent;
+export default ContentTextContent;

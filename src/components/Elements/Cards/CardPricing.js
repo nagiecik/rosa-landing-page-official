@@ -1,9 +1,9 @@
 import { useMemo } from "react";
-import Divider from "./Divider";
-import BulletCheckmark from "./BulletCheckmark";
-import BulletNumber from "./BulletNumber";
-import ButtonPrimary from "./ButtonPrimary";
-import ButtonSecondary from "./ButtonSecondary";
+import Divider from "../Other/Divider";
+import BulletCheckmark from "../Bullets/BulletCheckmark";
+import BulletNumber from "../Bullets/BulletNumber";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 import styles from "./CardPricing.module.css";
 
 const PricingCard = ({

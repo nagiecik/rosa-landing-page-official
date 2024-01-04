@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import SectionTextContent from "../Elements/SectionTextContent";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
 import styles from "./FeatureRight.module.css";
 
 const FeatureRight = ({
@@ -34,7 +34,7 @@ const FeatureRight = ({
           <div className={styles.imageBackground}></div>
         </div>
         <div className={styles.containerArticle}>
-          <SectionTextContent
+          <ContentTextContent
             sectionTextContentZIndex={sectionZIndex}
             firstText={firstText}
             firstTextWeight={firstTextWeight}

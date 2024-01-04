@@ -1,11 +1,11 @@
-import SectionTextContent from "../Elements/SectionTextContent";
-import CardFeature from "../Elements/CardFeature";
+import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import CardFeature from "../Elements/Cards/CardFeature";
 import styles from "./Features.module.css";
 
 const Features = () => {
   return (
     <section id="features" className={styles.containerFeatures}>
-      <SectionTextContent
+      <ContentTextContent
         sectionWidth="100%"
         sectionTextContentZIndex="0"
         firstText="All Provided"

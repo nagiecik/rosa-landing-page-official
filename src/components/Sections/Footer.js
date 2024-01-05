@@ -1,5 +1,5 @@
 import Divider from "../Elements/Other/Divider";
-import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import ContextText from "../Elements/Contents/ContentText";
 import NavFooter from "../Elements/Navigation/NavFooter";
 import styles from "./Footer.module.css";
 
@@ -8,16 +8,17 @@ const FormFooter = () => {
     <footer className={styles.containerSection}>
       <div className={styles.containerContent}>
         <header className={styles.containerHeader}>
-          <ContentTextContent
-            firstText="Interested to join us?"
-            firstTextColor="var(--surface-primary)"
-            firstTextWeight="var(--font-thin)"
-            showSecondText={false}
-            showLinkText={true}
-            linkText="hello@rosa.zone"
-            linkTextColorTextColor="var(--surface-primary)"
-            linkTextWeight="var(--font-semibold)"
-            linkTextURL="mailto:hello.rosa@zone"
+          <ContextText
+            showTextHeaderLight={true}
+            textHeaderLight="Interested to join us?"
+            textHeaderLightColor="var(--surface-primary)"
+            textHeaderLightWeight="var(--font-thin)"
+            showtextHeaderBold={false}
+            showTextHeaderLink={true}
+            textHeaderLink="hello@rosa.zone"
+            textHeaderLinkColor="var(--surface-primary)"
+            textHeaderLinkWeight="var(--font-semibold)"
+            textHeaderLinkURL="mailto:hello.rosa@zone"
           />
           <a href="#start" className={styles.buttonScroll}>
             <img

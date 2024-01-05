@@ -1,9 +1,6 @@
-.containerFeatures {
-  align-self: stretch;
-  display: flex;
-  justify-content: flex-start;
-}
-.containerGridCards {
+/* Main Containers */
+
+.containerContent {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -11,26 +8,60 @@
   gap: var(--size-40);
   max-width: 1520px;
 }
-.containerFeatures {
+
+.containerSection {
+  display: flex;
+  justify-content: flex-start;
   flex-direction: column;
   align-items: center;
   padding: var(--size-128) var(--size-200);
   gap: var(--size-128);
   text-align: left;
-  font-family: var(--font-main);
+  
 }
 
 @media screen and (max-width: 1536px) {
-  .containerFeatures {
+  .containerSection {
     padding: var(--size-80) var(--size-104);
+    gap: var(--size-80);
   }
-  .containerGridCards {
+  .containerContent {
     gap: var(--size-40);
   }
 }
 
-@media screen and (max-width: 1440px) {
-  .containerFeatures {
-    padding: var(--size-80);
+@media screen and (max-width: 1366px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-80);
+  }
+
+  .containerContent {
+    gap: var(--size-32);
   }
 }
+
+@media screen and (max-width: 1366px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-64);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-48);
+  }
+
+  .containerContent {
+    gap: var(--size-24);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerContent {
+    gap: var(--size-24);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  
+}
+

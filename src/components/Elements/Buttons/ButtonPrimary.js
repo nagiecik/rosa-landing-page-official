@@ -4,17 +4,17 @@ import styles from "./ButtonPrimary.module.css";
 const Button = ({
   buttonText,
   showButtonText,
-  iconLeft,
-  iconRight,
   showIconLeft,
+  iconLeftURL,
+  altIconLeftText,
   showIconRight,
-  altTextIconLeft,
-  altTextIconRight,
+  iconRightURL,
+  altIconRightText,
   buttonWidth,
   buttonDisplayMode,
   buttonLink,
 }) => {
-  const buttonTextStyle = useMemo(() => {
+  const buttonStyle = useMemo(() => {
     return {
       width: buttonWidth,
       display: buttonDisplayMode,
@@ -22,24 +22,24 @@ const Button = ({
   }, [buttonWidth, buttonDisplayMode]);
 
   return (
-    <div className={styles.button} style={buttonTextStyle}>
+    <div className={styles.containerButton} style={buttonStyle}>
       {showIconLeft && (
         <img
-          className={styles.buttonIcon}
-          alt={altTextIconLeft}
-          src={iconLeft}
+          className={styles.iconLeft}
+          alt={altIconLeftText}
+          src={iconLeftURL}
         />
       )}
       {showButtonText && (
         <a href={buttonLink} target="_blank">
-          <p className={styles.buttonText}>{buttonText}</p>
+          <p className={styles.textButton}>{buttonText}</p>
         </a>
       )}
       {showIconRight && (
         <img
-          className={styles.buttonIconRight}
-          alt={altTextIconRight}
-          src={iconRight}
+          className={styles.iconRight}
+          alt={altIconRightText}
+          src={iconRightURL}
         />
       )}
     </div>

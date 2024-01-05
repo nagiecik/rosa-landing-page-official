@@ -2,75 +2,68 @@ import { useMemo } from "react";
 import styles from "./ContentHeader.module.css";
 
 const ContentHeader = ({
-  firstText = "firstText",
-  secondText = "secondText",
-  linkText = "linkText",
-  showSecondText = true,
-  showFirstText = true,
-  showLinkText = false,
-  gap,
-  firstTextColor,
-  secondTextColor,
-  linkTextColor,
-  firstTextSize,
-  secondTextSize,
-  linkTextSize,
-  firstTextWeight,
-  secondTextWeight,
-  linkTextWeight,
-  firstTextLineHeight,
-  secondTextLineHeight,
-  linkTextLineHeight,
-  linkTextURL,
+  showTextHeaderLight,
+  textHeaderLight,
+  textHeaderLightColor,
+  textHeaderLightSize,
+  textHeaderLightWeight,
+  textHeaderLightLineHeight,
+  showTextHeaderBold,
+  textHeaderBold,
+  textHeaderBoldColor,
+  textHeaderBoldSize,
+  textHeaderBoldWeight,
+  textHeaderBoldLineHeight,
+  showTextHeaderLink,
+  textHeaderLink,
+  textHeaderLinkColor,
+  textHeaderLinkSize,
+  textHeaderLinkWeight,
+  textHeaderLinkLineHeight,
+  textHeaderLinkURL,
 }) => {
-  const sectionHeaderGap = useMemo(() => {
+  const textHeaderLightStyle = useMemo(() => {
     return {
-      gap: gap,
+      color: textHeaderLightColor,
+      fontSize: textHeaderLightSize,
+      fontWeight: textHeaderLightWeight,
+      lineHeight: textHeaderLightLineHeight,
     };
-  }, [gap]);
+  }, [textHeaderLightColor, textHeaderLightSize, textHeaderLightWeight, textHeaderLightLineHeight]);
 
-  const firstTextStyle = useMemo(() => {
+  const textHeaderBoldStyle = useMemo(() => {
     return {
-      color: firstTextColor,
-      fontSize: firstTextSize,
-      fontWeight: firstTextWeight,
-      lineHeight: firstTextLineHeight,
+      color: textHeaderBoldColor,
+      fontSize: textHeaderBoldSize,
+      fontWeight: textHeaderBoldWeight,
+      lineHeight: textHeaderBoldLineHeight,
     };
-  }, [firstTextColor, firstTextSize, firstTextWeight, firstTextLineHeight]);
+  }, [textHeaderBoldColor, textHeaderBoldSize, textHeaderBoldWeight, textHeaderBoldLineHeight]);
 
-  const secondTextStyle = useMemo(() => {
+  const textHeaderLinkStyle = useMemo(() => {
     return {
-      color: secondTextColor,
-      fontSize: secondTextSize,
-      fontWeight: secondTextWeight,
-      lineHeight: secondTextLineHeight,
+      color: textHeaderLinkColor,
+      fontSize: textHeaderLinkSize,
+      fontWeight: textHeaderLinkWeight,
+      lineHeight: textHeaderLinkLineHeight,
     };
-  }, [secondTextColor, secondTextSize, secondTextWeight, secondTextLineHeight]);
-
-  const linkTextStyle = useMemo(() => {
-    return {
-      color: linkTextColor,
-      fontSize: linkTextSize,
-      fontWeight: linkTextWeight,
-      lineHeight: linkTextLineHeight,
-    };
-  }, [linkTextColor, linkTextSize, linkTextWeight, linkTextLineHeight]);
+  }, [textHeaderLinkColor, textHeaderLinkSize, textHeaderLinkWeight, textHeaderLinkLineHeight]);
 
   return (
-    <div className={styles.sectionContainer} style={sectionHeaderGap}>
-      {showFirstText && (
-        <div className={styles.firstText} style={firstTextStyle}>
-          {firstText}
+    <div className={styles.containerContent}>
+      {showTextHeaderLight && (
+        <div className={styles.textHeaderLight} style={textHeaderLightStyle}>
+          {textHeaderLight}
         </div>
       )}
-      {showSecondText && (
-        <div className={styles.secondText} style={secondTextStyle}>
-          {secondText}
+      {showTextHeaderBold && (
+        <div className={styles.textHeaderBold} style={textHeaderBoldStyle}>
+          {textHeaderBold}
         </div>
       )}
-      {showLinkText && (
-        <a href={linkTextURL} className={styles.linkText} style={linkTextStyle}>
-          {linkText}
+      {showTextHeaderLink && (
+        <a href={textHeaderLinkURL} className={styles.textHeaderLink} style={textHeaderLinkStyle}>
+          {textHeaderLink}
         </a>
       )}
     </div>

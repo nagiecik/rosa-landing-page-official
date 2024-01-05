@@ -1,3 +1,5 @@
+/* Animations */
+
 @keyframes container {
   0% {
     transform: translate(-100px, 0);
@@ -10,14 +12,9 @@
   }
 }
 
-.bold {
-  font-weight: var(--font-semibold);
-}
+/* Header */
 
-.light {
-  font-weight: 100;
-}
-.containerTitle {
+.containerHeader {
   align-self: stretch;
   display: flex;
   flex-direction: column;
@@ -25,146 +22,130 @@
   justify-content: flex-start;
   gap: var(--size-24);
 }
-.textHeroParagraph {
-  margin: 0;
-  align-self: stretch;
-  position: relative;
+
+.textHeaderBold {
+  font-weight: var(--font-semibold);
+  color: var(--surface-primary);
+}
+
+.textHeaderLight {
+  font-weight: var(--font-thin);
+  color: var(--surface-primary);
+}
+
+.textParagraph {
   font-size: var(--size-20);
   line-height: var(--size-40);
-  font-weight: 300;
+  font-weight: var(--font-light);
+  color: var(--surface-primary);
 }
-.buttonAppStore,
-.buttonGooglePlay {
-  position: relative;
-  width: 200px;
-  height: auto;
-  object-fit: cover;
-  cursor: pointer;
-}
-.containerStoreButtons {
-  align-self: stretch;
+
+/* Buttons */
+
+.containerButtons {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: flex-start;
   gap: var(--size-32);
 }
-.textRatingLabel,
-.textRatingBold {
-  position: relative;
-  line-height: var(--size-40);
-}
-.textRatingBold {
-  color: var(--on-surface-accent-active);
-}
-.containerRatingText {
-  flex-shrink: 0;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  gap: var(--size-8);
-}
-.iconStar {
-  position: relative;
-  width: var(--size-32);
-  height: var(--size-32);
-  overflow: hidden;
-  flex-shrink: 0;
+
+.buttonAppStore,
+.buttonGooglePlay {
+  width: var(--size-200);
+  height: auto;
   object-fit: cover;
+  cursor: pointer;
 }
-.containerIcons {
-  flex-shrink: 0;
-  flex-direction: row;
-  align-items: center;
-  margin-bottom: var(--size-2);
-}
-.containerArticle,
-.containerRating,
-.containerIcons {
+
+/* Main Containers */
+
+.containerContent {
   display: flex;
   justify-content: flex-start;
-}
-.containerRating {
-  align-self: stretch;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: var(--size-16);
-  font-size: var(--header-bold-h6-size);
-}
-.containerArticle {
   flex: 1;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--size-48);
   max-width: 50%;
   text-align: left;
-  color: var(--surface-primary);
-  font-family: var(--font-main);
   animation-name: container;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
 }
 
-@media screen and (max-width: 1536px) {
-  .light,
-  .bold {
-    font-size: var(--size-80);
-    line-height: var(--size-80);
-  }
-}
+/* Media Queries */
 
-@media screen and (max-width: 1440px) {
-  .light,
-  .bold {
-    font-size: var(--size-80);
-    line-height: var(--size-80);
+@media screen and (max-width: 1536px) {
+  .textHeaderLight,
+  .textHeaderBold {
+    font-size: var(--size-72);
+    line-height: var(--size-72);
   }
-  .textHeroParagraph {
+
+  .textParagraph {
     font-size: var(--size-16);
     line-height: var(--size-32);
   }
-  .containerArticle {
+
+  .buttonAppStore,
+  .buttonGooglePlay {
+    width: var(--size-160);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .textHeaderLight,
+  .textHeaderBold {
+    font-size: var(--size-64);
+    line-height: var(--size-64);
+  }
+
+  .textParagraph {
+    font-size: var(--size-16);
+    line-height: var(--size-32);
+  }
+
+  .buttonAppStore,
+  .buttonGooglePlay {
+    width: var(--size-160);
+  }
+
+  .containerContent {
     gap: var(--size-40);
   }
 }
 
 @media screen and (max-width: 1280px) {
-  .light,
-  .bold {
-    font-size: var(--size-72);
-    line-height: var(--size-72);
+  .textHeaderLight,
+  .textHeaderBold {
+    font-size: var(--size-56);
+    line-height: var(--size-56);
+  }
+
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-32);
+  }
+
+  .containerContent {
+    gap: var(--size-32);
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .light,
-  .bold {
-    font-size: var(--size-56);
-    line-height: var(--size-56);
-  }
-  .buttonAppStore,
-  .buttonGooglePlay {
-    width: 160px;
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .containerArticle {
+  .containerContent {
     max-width: 100%;
-    justify-content: flex-start;
+    width: 100%;
+    align-items: center;
   }
 
-  .containerRating {
-    flex-direction: column;
-    gap: var(--size-0);
-    justify-content: center;
+  .textHeaderLight,
+  .textHeaderBold {
+    text-align: center;
   }
-}
 
-@media screen and (max-width: 425px) {
-  .containerArticle {
-    max-width: 100%;
+  .textParagraph {
+    text-align: center;
   }
 }

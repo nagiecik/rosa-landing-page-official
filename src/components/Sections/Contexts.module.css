@@ -1,18 +1,23 @@
-.containerCards {
-  width: 70%;
-  object-fit: contain;
-  overflow: visible;
-  display: grid;
-  grid-template-rows: minmax(100px, max-content) minmax(100px, max-content);
-  grid-template-columns: 1fr 1fr;
-  gap: var(--size-48);
-}
-.imageMockup {
+/* Images */
+
+.imageLeft {
   position: relative;
   width: 30%;
   max-height: 800px;
   object-fit: contain;
 }
+
+/* Main Containers */
+
+.containerCards {
+  width: 70%;
+  object-fit: contain;
+  display: grid;
+  grid-template-rows: minmax(100px, max-content) minmax(100px, max-content);
+  grid-template-columns: 1fr 1fr;
+  gap: var(--size-48);
+}
+
 .containerContent {
   width: 100%;
   max-width: 1520px;
@@ -22,6 +27,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .containerSection {
   width: 100%;
   align-self: stretch;
@@ -32,33 +38,78 @@
   padding: var(--size-128) var(--size-200);
   position: relative;
   gap: var(--size-64);
-  background-image: url(/public/containersectioncontext@3x.png);
+  background-image: url(/public/backgrounds/backgroundContext.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
   box-sizing: border-box;
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1536px) {
   .containerSection {
     padding: var(--size-80) var(--size-104);
   }
+
   .containerContent {
     gap: var(--size-80);
   }
+
   .containerCards {
     gap: var(--size-40);
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1366px) {
   .containerSection {
     padding: var(--size-80);
   }
+
   .containerContent {
-    gap: var(--size-80);
+    gap: var(--size-64);
   }
+
   .containerCards {
     gap: var(--size-32);
+  }
+
+  .imageLeft {
+    max-height: 640px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-64);
+  }
+
+  .containerCards {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-48);
+  }
+
+  .imageLeft {
+    max-height: 560px;
+  }
+
+  .containerCards {
+    gap: var(--size-24);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerContent {
+    gap: var(--size-40);
+  }
+
+  .containerCards {
+    grid-template-columns: 1fr;
+    gap: var(--size-24);
   }
 }

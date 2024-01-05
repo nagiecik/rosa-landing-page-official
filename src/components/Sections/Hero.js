@@ -1,10 +1,20 @@
-import { useMemo } from "react";
+import { useMemo, useEffect, useState } from "react";
 import ContentArticle from "../Elements/Contents/ContentArticle";
 import Nav from "../Elements/Navigation/Nav";
 import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {
-  const containerSectionHeroStyle = useMemo(() => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
+  const containerSectionStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
     };
@@ -14,16 +24,9 @@ const Hero = ({ sectionZIndex }) => {
     <section
       id="start"
       className={styles.containerSection}
-      style={containerSectionHeroStyle}
+      style={containerSectionStyle}
     >
-      <Nav
-        logoURL="/imageLogoRosa.svg"
-        alt="ROSA logo"
-        showContainerDivLinks={true}
-        showButtonMenu={true}
-        showButtonCta={true}
-        linkObjectFit="unset"
-      />
+      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" />
       <div className={styles.containerContent}>
         <ContentArticle
           buttonAppStore="/buttonAppStore.svg"
@@ -42,6 +45,16 @@ const Hero = ({ sectionZIndex }) => {
           />
         </div>
       </div>
+      <a href="#testimonials">
+        {!matches && (
+          <div className={styles.containerScroll}>
+            <span className={styles.containerMouse}>
+              <span className={styles.containerMove}></span>
+            </span>
+            <h2 className={styles.textScroll}>Scroll down</h2>
+          </div>
+        )}
+      </a>
     </section>
   );
 };

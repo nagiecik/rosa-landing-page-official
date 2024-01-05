@@ -1,24 +1,26 @@
-import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import ContextText from "../Elements/Contents/ContentText";
 import CardFeature from "../Elements/Cards/CardFeature";
 import styles from "./Features.module.css";
 
 const Features = () => {
   return (
-    <section id="features" className={styles.containerFeatures}>
-      <ContentTextContent
+    <section id="features" className={styles.containerSection}>
+      <ContextText
         sectionWidth="100%"
         sectionTextContentZIndex="0"
-        firstText="All Provided"
-        firstTextWeight="var(--font-thin)"
-        firstTextColor="var(--surface-secondary)"
-        secondText="Features"
-        secondTextWeight="var(--font-semibold)"
-        secondTextColor="var(--surface-secondary)"
+        showTextHeaderLight={true}
+        textHeaderLight="All Provided"
+        textHeaderLightWeight="var(--font-thin)"
+        textHeaderLightColor="var(--surface-secondary)"
+        showTextHeaderBold={true}
+        textHeaderBold="Features"
+        textHeaderBoldWeight="var(--font-semibold)"
+        textHeaderBoldColor="var(--surface-secondary)"
+        showTextParagraph={true}
         textParagraph="Doing your best to get the message across globally, most often you work with PDF files and printouts. They are difficult to personalize and user-unfriendly. It would be nice to make tracking changes, giving feedback and browsing easier, and mobile-optimised."
         textParagraphColor="var(--surface-secondary)"
-        showTextParagraph={true}
       />
-      <div className={styles.containerGridCards}>
+      <div className={styles.containerContent}>
         <CardFeature
           imageIconUrl="/icons/questionmark.app.svg"
           textNumber="01"

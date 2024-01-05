@@ -1,3 +1,14 @@
+/* Text */
+
+.containerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--size-12);
+}
+
 .textNumber {
   position: relative;
   letter-spacing: var(--letter-spacing-default);
@@ -11,30 +22,29 @@
   color: var(--surface-secondary);
   font-size: var(--size-24);
 }
+
 .textTitle,
 .textParagraph {
   align-self: stretch;
   position: relative;
   color: var(--surface-primary);
 }
+
 .textTitle {
   font-weight: var(--font-semibold);
   font-size: var(--size-24);
   line-height: var(--size-40);
 }
+
 .textParagraph {
   font-size: var(--size-16);
   line-height: var(--size-32);
-  font-weight: var(--font-regular);
+  font-weight: var(--font-light);
+  color: var(--on-surface-accent-disabled-light);
 }
-.containerText {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-self: stretch;
-  align-items: flex-start;
-  gap: var(--size-12);
-}
+
+/* Main Containers */
+
 .containerCard {
   display: flex;
   flex-direction: column;
@@ -47,13 +57,12 @@
   border: 1px solid var(--on-surface-accent-disabled-dark);
   border-radius: var(--size-16);
   align-items: flex-end;
-  padding: var(--size-104) var(--size-32) var(--size-32)
-    var(--size-32);
+  padding: var(--size-104) var(--size-32) var(--size-32) var(--size-32);
   box-sizing: border-box;
   overflow: hidden;
   transition: calc(var(--d) * 2) var(--e);
   cursor: pointer;
-  font-family: var(--font-main);
+
   &:before {
     content: "";
     position: absolute;
@@ -106,10 +115,79 @@
   border-radius: 0 var(--size-4) 0 var(--size-32);
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1536px) {
   .textParagraph {
     font-size: var(--size-14);
     line-height: var(--size-32);
-    font-weight: var(--font-regular);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .containerCard {
+    padding: var(--size-64) var(--size-24) var(--size-24) var(--size-24);
+  }
+
+  .textTitle {
+    font-size: var(--size-20);
+    line-height: var(--size-32);
+  }
+
+  .textNumber {
+    font-size: var(--size-20);
+    line-height: var(--size-32);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-28);
+  }
+
+  .containerCard:hover {
+    transform: rotate(2.5deg) scale(1.05, 1.05);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerCard {
+    padding: var(--size-64) var(--size-20) var(--size-20) var(--size-20);
+  }
+
+  .containerCorner {
+    width: var(--size-56);
+    height: var(--size-56);
+  }
+  .textTitle,
+  .textNumber {
+    font-size: var(--size-16);
+    line-height: var(--size-24);
+  }
+
+  .textParagraph {
+    font-size: var(--size-12);
+    line-height: var(--size-24);
+  }
+
+  .containerCard:hover {
+    transform: rotate(2.5deg) scale(1.025, 1.025);
+  }
+
+  .containerCorner {
+    width: var(--size-56);
+    height: var(--size-56);
+    border-radius: var(--size-0) var(--size-4) var(--size-0) var(--size-24);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerCard {
+    padding: var(--size-20);
+  }
+
+  .containerText {
+    max-width: 90%;
   }
 }

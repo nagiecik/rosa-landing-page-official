@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import ContextText from "../Elements/Contents/ContentText";
 import CardPricing from "../Elements/Cards/CardPricing";
 import styles from "./Pricing.module.css";
 
@@ -15,14 +15,17 @@ const Pricing = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={containerPricingStyle}
     >
-      <ContentTextContent
+      <ContextText
         sectionWidth="100%"
-        firstText="Choose Your"
-        firstTextColor="var(--surface-secondary)"
-        firstTextWeight="var(--font-thin)"
-        secondText="Plan"
-        secondTextColor="var(--surface-secondary)"
-        secondTextWeight="var(--font-bold)"
+        showTextHeaderLight={true}
+        textHeaderLight="Choose Your"
+        textHeaderLightColor="var(--surface-secondary)"
+        textHeaderLightWeight="var(--font-thin)"
+        showTextHeaderBold={true}
+        textHeaderBold="Plan"
+        textHeaderBoldColor="var(--surface-secondary)"
+        textHeaderBoldWeight="var(--font-bold)"
+        showTextParagraph={true}
         textParagraph="ROSA provides the tools to streamline rule management, create engaging content, and organize diverse sporting events with precision. Choose a plan that matches your organization's needs and make a lasting impression with a branded home screen, craft informative content effortlessly, and manage events seamlessly."
         textParagraphColor="var(--surface-secondary)"
       />
@@ -58,6 +61,7 @@ const Pricing = ({ sectionZIndex }) => {
           buttonWidth="100%"
           buttonDisplayMode="block"
           buttonLink="mailto:hello@rosa.zone?subject=ROSA National"
+          cardZIndex="2"
         />
         <CardPricing
           cardPricingBackgroundColor="var(--surface-secondary)"
@@ -90,6 +94,7 @@ const Pricing = ({ sectionZIndex }) => {
           buttonWidth="100%"
           buttonDisplayMode="block"
           buttonLink="mailto:hello@rosa.zone?subject=ROSA International"
+          cardZIndex="1"
         />
       </div>
     </section>

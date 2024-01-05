@@ -1,3 +1,5 @@
+/* Main Containers */
+
 .containerContent {
   width: 100%;
   max-width: 1520px;
@@ -5,9 +7,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
   overflow: visible;
 }
+
 .containerSection {
   display: flex;
   flex-direction: column;
@@ -21,20 +24,47 @@
   padding: var(--size-128) var(--size-200);
   gap: var(--size-128);
   text-align: left;
-  font-family: var(--font-main);
   overflow: visible;
 }
+
+/* Media Queries */
 
 @media screen and (max-width: 1536px) {
   .containerSection {
     padding: var(--size-80) var(--size-104);
-    gap: var(--size-80);
+  }
+
+  .containerContent {
+    gap: var(--size-48);
   }
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (max-width: 1366px) {
   .containerSection {
     padding: var(--size-80);
-    gap: var(--size-80);
+  }
+
+  .containerContent {
+    gap: var(--size-48);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-64);
+  }
+
+  .containerContent {
+    gap: var(--size-48);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-48);
+  }
+
+  .containerContent {
+    gap: var(--size-40);
   }
 }

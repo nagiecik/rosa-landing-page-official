@@ -1,29 +1,35 @@
-.textCardTitleDescription {
+/* Text */
+
+.textDescription {
   flex: 1;
   position: relative;
   font-size: var(--size-16);
   line-height: var(--size-32);
   font-weight: var(--font-semibold);
 }
-.textCardPrice,
-.textCardTime {
+
+.textPrice,
+.textTime {
   font-weight: var(--font-bold);
 }
-.containerHeader,
-.containerdivprice {
+
+.textSubtitle {
+  font-size: var(--size-16);
+  line-height: var(--size-16);
+  font-weight: var(--font-semibold);
+}
+
+/* Content Containers */
+
+.containerHeader {
+  gap: var(--size-8);
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
 }
-.containerHeader {
-  gap: var(--size-8);
-}
-.containerFeatures {
-  align-self: stretch;
-  gap: var(--size-24);
-}
+
 .containerFeatures,
 .containerServices,
 .containerCard {
@@ -32,17 +38,27 @@
   align-items: flex-start;
   justify-content: flex-start;
 }
+
+.containerFeatures {
+  align-self: stretch;
+  gap: var(--size-24);
+}
+
 .containerServices {
   align-self: stretch;
   gap: var(--size-24);
 }
+
 .containerPrice {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: var(--size-8)
+  gap: var(--size-8);
 }
+
+/*Main Containers */
+
 .containerCard {
   flex: 1;
   border-radius: var(--size-32);
@@ -51,5 +67,62 @@
   padding: var(--size-40) var(--size-40);
   gap: var(--size-32);
   text-align: left;
-  font-family: var(--font-main);
+}
+
+@media screen and (max-width: 1536px) {
+  .containerCard {
+    border-radius: var(--size-24);
+    padding: var(--size-32) var(--size-32);
+    gap: var(--size-24);
+  }
+
+  .textTitle {
+    font-size: var(--size-40);
+    line-height: var(--size-48);
+  }
+
+  .textPrice {
+    font-size: var(--size-40);
+  }
+
+  .textTime {
+    font-size: var(--size-24);
+  }
+
+  .textSubtitle {
+    font-size: var(--size-14);
+    line-height: var(--size-16);
+    font-weight: var(--font-semibold);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .textTitle {
+    font-size: var(--size-32);
+    line-height: var(--size-40);
+  }
+
+  .textDescription {
+    font-size: var(--size-14);
+    line-height: var(--size-32);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .textTitle {
+    font-size: var(--size-28);
+    line-height: var(--size-36);
+  }
+
+  .textDescription,
+  .textSubtitle {
+    font-size: var(--size-12);
+    line-height: var(--size-24);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerCard {
+    padding: var(--size-24);
+  }
 }

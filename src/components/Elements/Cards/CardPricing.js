@@ -37,12 +37,14 @@ const PricingCard = ({
   buttonWidth,
   buttonDisplayMode,
   buttonLink,
+  cardZIndex,
 }) => {
   const cardPricingStyle = useMemo(() => {
     return {
       backgroundColor: cardPricingBackgroundColor,
+      zIndex: cardZIndex,
     };
-  }, [cardPricingBackgroundColor]);
+  }, [cardPricingBackgroundColor, cardZIndex]);
 
   const textColorStyle = useMemo(() => {
     return {
@@ -65,19 +67,18 @@ const PricingCard = ({
   return (
     <div className={styles.containerCard} style={cardPricingStyle}>
       <div className={styles.containerHeader}>
-        <h4 style={textColorStyle}>{textCardTitle}</h4>
-        <p
-          className={styles.textCardTitleDescription}
-          style={textDescriptionStyle}
-        >
+        <h4 className={styles.textTitle} style={textColorStyle}>
+          {textCardTitle}
+        </h4>
+        <p className={styles.textDescription} style={textDescriptionStyle}>
           {textCardTitleDescription}
         </p>
         <div className={styles.containerPrice}>
-          <h4 className={styles.textCardPrice} style={textPriceStyle}>
+          <h4 className={styles.textPrice} style={textPriceStyle}>
             {textCardPrice}
           </h4>
           <div>
-            <h6 className={styles.textCardTime} style={textColorStyle}>
+            <h6 className={styles.textTime} style={textColorStyle}>
               / mo
             </h6>
           </div>
@@ -104,7 +105,7 @@ const PricingCard = ({
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />
       <div className={styles.containerFeatures}>
         <p
-          className={styles.textCardTitleDescription}
+          className={styles.textSubtitle}
           style={textDescriptionStyle}
         >
           {textCardFeatures}
@@ -145,7 +146,7 @@ const PricingCard = ({
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />
       <div className={styles.containerServices}>
         <p
-          className={styles.textCardTitleDescription}
+          className={styles.textSubtitle}
           style={textDescriptionStyle}
         >
           {textCardServices}

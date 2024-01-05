@@ -1,19 +1,32 @@
 import { useMemo } from "react";
-import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import ContextText from "../Elements/Contents/ContentText";
 import styles from "./FeatureLeft.module.css";
 
 const FeatureLeft = ({
-  firstText,
-  firstTextWeight,
-  firstTextColor,
-  secondText,
-  secondTextWeight,
-  secondTextColor,
-  showTextParagraph,
+  showTextHeaderLight,
+  textHeaderLight,
+  textHeaderLightColor,
+  textHeaderLightSize,
+  textHeaderLightWeight,
+  textHeaderLightLineHeight,
+  showTextHeaderBold,
+  textHeaderBold,
+  textHeaderBoldColor,
+  textHeaderBoldSize,
+  textHeaderBoldWeight,
+  textHeaderBoldLineHeight,
+  showTextHeaderLink,
+  textHeaderLink,
+  textHeaderLinkColor,
+  textHeaderLinkSize,
+  textHeaderLinkWeight,
+  textHeaderLinkLineHeight,
+  textHeaderLinkURL,
   sectionWidth,
+  sectionGap,
+  sectionZIndex,
   textParagraph,
   imageMockupURL,
-  sectionZIndex,
   altText,
 }) => {
   const containerFeatureLeftStyle = useMemo(() => {
@@ -30,22 +43,34 @@ const FeatureLeft = ({
     >
       <div className={styles.containerContent}>
         <div className={styles.containerArticle}>
-          <ContentTextContent
-            sectionTextContentZIndex={sectionZIndex}
-            firstText={firstText}
-            firstTextWeight={firstTextWeight}
-            firstTextColor={firstTextColor}
-            secondText={secondText}
-            secondTextWeight={secondTextWeight}
-            secondTextColor={secondTextColor}
-            showTextParagraph={showTextParagraph}
+          <ContextText
+            showTextHeaderLight={showTextHeaderLight}
+            textHeaderLight={textHeaderLight}
+            textHeaderLightColor={textHeaderLightColor}
+            textHeaderLightSize={textHeaderLightSize}
+            textHeaderLightWeight={textHeaderLightWeight}
+            textHeaderLightLineHeight={textHeaderLightLineHeight}
+            showTextHeaderBold={showTextHeaderBold}
+            textHeaderBold={textHeaderBold}
+            textHeaderBoldColor={textHeaderBoldColor}
+            textHeaderBoldSize={textHeaderBoldSize}
+            textHeaderBoldWeight={textHeaderBoldWeight}
+            textHeaderBoldLineHeight={textHeaderBoldLineHeight}
+            showTextHeaderLink={showTextHeaderLink}
+            textHeaderLink={textHeaderLink}
+            textHeaderLinkColor={textHeaderLinkColor}
+            textHeaderLinkSize={textHeaderLinkSize}
+            textHeaderLinkWeight={textHeaderLinkWeight}
+            textHeaderLinkLineHeight={textHeaderLinkLineHeight}
+            textHeaderLinkURL={textHeaderLinkURL}
+            sectionGap={sectionGap}
             sectionWidth={sectionWidth}
           />
           <div className={styles.textParagraph}>{textParagraph}</div>
         </div>
         <div className={styles.imageContainer}>
           <img
-            className={styles.imageMockup}
+            className={styles.imageLeft}
             alt={altText}
             src={imageMockupURL}
           />

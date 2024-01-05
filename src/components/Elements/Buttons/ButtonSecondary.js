@@ -22,22 +22,22 @@ const Button = ({
   }, [buttonWidth, buttonDisplayMode]);
 
   return (
-    <div className={styles.button} style={buttonTextStyle}>
+    <div className={styles.containerButton} style={buttonTextStyle}>
       {showIconLeft && (
         <img
-          className={styles.buttonIcon}
+          className={styles.iconLeft}
           alt={altTextIconLeft}
           src={iconLeft}
         />
       )}
       {showButtonText && (
         <a href={buttonLink} target="_blank">
-          <p className={styles.buttonText}>{buttonText}</p>
+          <p className={styles.textButton}>{buttonText}</p>
         </a>
       )}
       {showIconRight && (
         <img
-          className={styles.buttonIcon}
+          className={styles.iconRight}
           alt={altTextIconRight}
           src={iconRight}
         />

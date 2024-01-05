@@ -1,5 +1,5 @@
 import { useMemo, useState } from "react";
-import ContentTextContent from "../Elements/Contents/ContentTextContent";
+import ContextText from "../Elements/Contents/ContentText";
 import CardContext from "../Elements/Cards/CardContext";
 import styles from "./Contexts.module.css";
 
@@ -10,14 +10,14 @@ const Contexts = ({ sectionZIndex }) => {
       alt: "Image Context 1",
       number: "01",
       title: "Partner Content",
-      text: "Elevate brand reach with ROSA's Partner Content. Showcase exclusive insights, promotions, and behind-the-scenes access, creating an immersive experience for your audience"
+      text: "Elevate brand reach with ROSA's Partner Content. Showcase exclusive insights, promotions, and behind-the-scenes access, creating an immersive experience for your audience",
     },
     context2: {
       img: "/mockups/contextMockup-2.png",
       alt: "Image Context 2",
       number: "02",
       title: "Equipment",
-      text: "Boost sales with ROSA's Equipment feature. Provide detailed info on sports gear, empowering customers to make informed choices and positioning your brand as the go-to for top-notch equipment.",
+      text: "Elevate sales with ROSA's Equipment feature, providing detailed info on sports gear. Position your brand as the go-to for top-quality equipment.",
     },
     context3: {
       img: "/mockups/contextMockup-3.png",
@@ -53,20 +53,23 @@ const Contexts = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={sectionStyle}
     >
-      <ContentTextContent
+      <ContextText
         sectionWidth="100%"
         sectionTextContentZIndex="0"
-        firstText="Context"
-        firstTextWeight="var(--font-thin)"
-        secondText="Selection"
-        secondTextWeight="var(--font-semibold)"
-        textParagraph="ROSA (Rules Of Sports App) is a gamechanger in the way you manage, update and distribute the rules of your sport."
+        showTextHeaderLight={true}
+        textHeaderLight="Context"
+        textHeaderLightWeight="var(--font-thin)"
+        showTextHeaderBold={true}
+        textHeaderBold="Selection"
+        textHeaderBoldWeight="var(--font-semibold)"
+        showTextParagraph={true}
+        textParagraph="ROSA (Rules Of Sports App) stands out as a groundbreaking tool, fundamentally reshaping the way you manage, update, and seamlessly distribute the rules governing your sport."
         textParagraphColor="var(--surface-primary)"
       />
       <div className={styles.containerContent}>
         {selectedContext ? (
           <img
-            className={styles.imageMockup}
+            className={styles.imageLeft}
             alt={selectedContext.alt}
             src={selectedContext.img}
           />

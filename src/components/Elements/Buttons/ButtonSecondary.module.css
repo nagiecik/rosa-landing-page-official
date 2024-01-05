@@ -1,11 +1,17 @@
-.buttonIcon {
+/* Button Icons */
+
+.iconLeft,
+.iconRight {
   position: relative;
   width: var(--size-32);
   height: var(--size-32);
   overflow: hidden;
   flex-shrink: 0;
 }
-.buttonText {
+
+/* Button Text */
+
+.textButton {
   position: relative;
   font-size: var(--size-16);
   line-height: var(--size-32);
@@ -13,16 +19,11 @@
   color: var(--surface-secondary);
 }
 
-.button:hover .buttonText {
-  color: var(--surface-primary);
-  transition: calc(var(--d) * 2) var(--e);
-}
-.button .buttonText {
-  transition: calc(var(--d) * 2) var(--e);
-}
-.button {
+/* Main Containers */
+
+.containerButton {
   background-color: var(--surface-primary);
-  border: 2px solid var(--surface-secondary);
+  border: var(--size-2) solid var(--surface-secondary);
   border-radius: var(--size-12);
   display: flex;
   flex-direction: row;
@@ -32,21 +33,49 @@
   gap: var(--size-16);
   text-align: center;
   cursor: pointer;
-  font-family: var(--font-main);
   transition: calc(var(--d) * 2) var(--e);
   box-sizing: border-box;
 }
-.button:hover {
+
+.containerButton:hover {
   box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
   transition: calc(var(--d) * 2) var(--e);
   border-radius: var(--size-24);
   color: var(--surface-primary);
   background-color: var(--surface-secondary);
 }
-.button > .buttonIcon {
+
+.containerButton:hover .textButton {
+  color: var(--surface-primary);
   transition: calc(var(--d) * 2) var(--e);
 }
-.button:hover > .buttonIcon {
+
+.containerButton .textButton {
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerButton > .containerButtonIcon {
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerButton:hover > .containerButtonIcon {
   transform: rotate(-45deg);
   transition: calc(var(--d) * 2) var(--e);
+}
+
+/* Media Queries */
+
+@media screen and (max-width: 1366px){
+  .textButton {
+    font-size: var(--size-14);
+    line-height: var(--size-24);
+    font-weight: var(--font-black);
+    color: var(--surface-secondary);
+  }
+}
+
+@media screen and (max-width: 1280px){
+  .containerButton {
+    padding: var(--size-12);
+  }
 }

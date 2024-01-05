@@ -1,3 +1,5 @@
+/* Animations */
+
 @keyframes nav {
   0% {
     transform: translate(0, -32px);
@@ -10,21 +12,16 @@
   }
 }
 
-.containerMenuVisibility {
-  display: none;
-}
+/* Images */
 
-.containerButtonVisibility {
-  display: block;
-}
-
-.containerSectionLogo {
-  position: relative;
+.imageLogo {
   width: auto;
   height: var(--size-32);
 }
 
-.containerSectionLinks {
+/* Main Containers */
+
+.containerContent {
   flex: 1;
   flex-shrink: 0;
   display: flex;
@@ -36,48 +33,58 @@
 
 .containerSection {
   padding-top: var(--size-32);
+  max-width: 1920px;
   width: 100%;
-  max-width: 1520px;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   text-align: center;
-  font-family: var(--font-main);
   animation-name: nav;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
+  padding: var(--size-32) var(--size-200) var(--size-0) var(--size-200);
+  box-sizing: border-box;
 }
 
+/* Media Queries */
+
 @media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-32) var(--size-104) var(--size-0) var(--size-104);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .containerSection {
+    padding: var(--size-32) var(--size-80) var(--size-0) var(--size-80);
+  }
+
+  .imageLogo {
+    height: var(--size-24);
+  }
+
+  .containerContent {
+    max-width: 800px;
+  }
 }
 
 @media screen and (max-width: 1280px) {
-  .containerButtonVisibility {
-    display: none;
-  }
   .containerSection {
-    padding-top: var(--size-32);
+    padding: var(--size-32) var(--size-64) var(--size-0) var(--size-64);
+  }
+
+  .imageLogo {
+    height: var(--size-24);
+  }
+
+  .containerContent {
+    max-width: 720px;
   }
 }
 
 @media screen and (max-width: 1024px) {
-  .containerMenuVisibility {
-    display: none;
-  }
-  .containerButtonVisibility {
-    display: none;
-  }
-  .containerSectionLogo {
-    height: var(--size-24);
-  }
-}
-
-@media screen and (max-width: 768px) {
-  .containerSectionLinks {
-    display: none;
-  }
-  .containerMenuVisibility {
-    display: block;
+  .containerSection {
+    padding: var(--size-32) var(--size-48) var(--size-0) var(--size-48);
   }
 }

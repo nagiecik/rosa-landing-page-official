@@ -3,30 +3,28 @@ import styles from "./NavbarLink.module.css";
 
 const NavbarLink = ({
   linkText = "Link Text",
-  flexShrinkGrow,
-  textDecoration,
-  cursor,
+  linkFlex,
+  linkCursor,
   linkURL,
 }) => {
-  const navbarLinkCursor = useMemo(() => {
+  const linkCursorStyle = useMemo(() => {
     return {
-      cursor: cursor,
+      cursor: linkCursor,
     };
-  }, [cursor]);
-  const navbarLinkContainerStyle = useMemo(() => {
+  }, [linkCursor]);
+  const linkFlexStyle = useMemo(() => {
     return {
-      flex: flexShrinkGrow,
-      textDecoration: textDecoration,
+      flex: linkFlex,
     };
-  }, [flexShrinkGrow, textDecoration]);
+  }, [linkFlex]);
 
   return (
-    <div className={styles.linkState} style={navbarLinkContainerStyle}>
+    <div className={styles.linkState} style={linkFlexStyle}>
       <a href={linkURL}>
         <div
           data-replace={linkText}
           className={styles.linkText}
-          style={navbarLinkCursor}
+          style={linkCursorStyle}
         >
           <span>{linkText}</span>
         </div>

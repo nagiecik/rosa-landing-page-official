@@ -364,6 +364,10 @@
     width: 26%;
     right: var(--size-40);
   }
+
+  .containerContent {
+    pointer-events: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -382,5 +386,64 @@
 
   .containerArticle {
     max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    gap: var(--size-32);
+    padding: var(--size-48) var(--size-24);
+  }
+
+  .containerContent {
+    border-radius: var(--size-32);
+    padding: var(--size-24);
+  }
+
+  .imageLogo {
+    height: var(--size-32);
+  }
+
+  .imagePerson {
+    width: var(--size-48);
+    height: var(--size-48);
+  }
+
+  .textPersonName {
+    line-height: var(--size-24);
+  }
+
+  .containerButtons {
+    gap: var(--size-16);
+  }
+
+  .buttonAppStore {
+    width: 100%;
+  }
+
+  .buttonGooglePlay {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerSection {
+    gap: var(--size-32);
+    padding: var(--size-48) var(--size-16);
+  }
+
+  .containerContent {
+    border-radius: var(--size-24);
+    padding: var(--size-24);
+  }
+
+  .containerContent:hover {
+    border-radius: var(--size-40);
+  }
+
+  .containerPerson {
+    flex-direction: column;
+    gap: var(--size-24);
+    align-items: flex-start;
   }
 }

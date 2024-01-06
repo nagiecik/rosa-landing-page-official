@@ -43,3 +43,20 @@
     width: var(--size-160);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .textTitle {
+    font-size: var(--size-20);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerContent {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .textTitle {
+    text-align: center;
+  }
+}

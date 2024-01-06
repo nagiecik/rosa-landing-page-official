@@ -126,3 +126,15 @@
     padding: var(--size-24);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .containerCard {
+    padding: var(--size-32);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerCard {
+    padding: var(--size-24);
+  }
+}

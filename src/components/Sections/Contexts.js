@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import CardContext from "../Elements/Cards/CardContext";
 import styles from "./Contexts.module.css";
@@ -47,6 +47,16 @@ const Contexts = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 430px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 430px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <section
       id="context"
@@ -67,7 +77,7 @@ const Contexts = ({ sectionZIndex }) => {
         textParagraphColor="var(--surface-primary)"
       />
       <div className={styles.containerContent}>
-        {selectedContext ? (
+        {!matches && selectedContext ? (
           <img
             className={styles.imageLeft}
             alt={selectedContext.alt}

@@ -58,3 +58,21 @@
     line-height: var(--size-56);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .textHeaderLight,
+  .textHeaderBold,
+  .textHeaderLink {
+    font-size: var(--size-48);
+    line-height: var(--size-48);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .textHeaderLight,
+  .textHeaderBold,
+  .textHeaderLink {
+    font-size: var(--size-40);
+    line-height: var(--size-40);
+  }
+}

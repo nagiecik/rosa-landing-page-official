@@ -79,3 +79,15 @@
     padding: var(--size-12);
   }
 }
+
+@media screen and (max-width: 1024px){
+  .containerButton:hover {
+    background-color: var(--surface-primary);
+    border: var(--size-2) solid var(--surface-secondary);
+    border-radius: var(--size-12);
+  }
+
+  .containerButton:hover .textButton {
+    color: var(--surface-secondary);
+  }
+}

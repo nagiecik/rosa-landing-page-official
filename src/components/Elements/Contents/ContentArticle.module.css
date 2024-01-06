@@ -137,6 +137,13 @@
   .containerContent {
     max-width: 100%;
     width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerContent {
+    max-width: 100%;
+    width: 100%;
     align-items: center;
   }
 
@@ -147,5 +154,39 @@
 
   .textParagraph {
     text-align: center;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerHeader {
+    gap: var(--size-16);
+  }
+
+  .textHeaderLight {
+    font-size: var(--size-40);
+    line-height: var(--size-40);
+    text-align: left;
+  }
+
+  .textHeaderBold {
+    font-size: var(--size-40);
+    line-height: var(--size-64);
+    text-align: left;
+  }
+
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-32);
+    text-align: left;
+  }
+
+  .containerContent {
+    gap: var(--size-32);
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+
+  .containerButtons {
+    gap: var(--size-16);
   }
 }

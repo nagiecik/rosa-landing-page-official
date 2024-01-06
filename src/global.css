@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Roag:ital,wght@1,900&display=swap");
+@font-face {
+  font-family: roagBlack;
+  src: url(/public/fonts/ROAG-BLACK.OTF);
+}
 
 :root {
   --d: 700ms;
@@ -10,7 +13,7 @@
 
   /* fonts */
   --font-main: Inter;
-  --font-roag: Roag;
+  --font-roag: roagBlack;
 
   /* font weights */
   --font-thin: 100;
@@ -94,17 +97,17 @@ html {
   font-size: 16px;
   font-family: var(--font-main);
   scroll-behavior: smooth;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  -moz-font-smoothing: antialiased;
-  -o-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
 }
 body {
   margin: 0;
   line-height: normal;
   background-color: var(--surface-primary);
   font-family: var(--font-main);
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-font-smoothing: antialiased;
+  -o-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 p {

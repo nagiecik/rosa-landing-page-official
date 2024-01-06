@@ -2,6 +2,8 @@
 
 .imageContainer {
   display: flex;
+  align-items: center;
+  justify-content: center;
   position: relative;
   width: 40%;
   transition: calc(var(--d) * 2) var(--e);
@@ -23,7 +25,7 @@
 
 .imageRight {
   position: relative;
-  width: 100%;
+  width: 50%;
   height: auto;
   object-fit: cover;
   z-index: 999;
@@ -85,7 +87,7 @@
   box-sizing: border-box;
   gap: var(--size-128);
   text-align: left;
-  
+
   align-self: stretch;
   box-sizing: border-box;
 }
@@ -123,7 +125,7 @@
 
 @media screen and (max-width: 1024px) {
   .containerSection {
-    padding: var(--size-48) var(--size-48);
+    padding: var(--size-48) var(--size-64);
   }
 
   .containerContent {
@@ -133,5 +135,74 @@
   .textParagraph {
     font-size: var(--size-14);
     line-height: var(--size-28);
+  }
+
+  .imageBackground {
+    border-radius: var(--size-48);
+  }
+
+  .imageContainer:hover > .imageBackground {
+    border-radius: var(--size-72);
+  }
+
+  .imageContainer {
+    pointer-events: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerArticle {
+    width: 60%;
+  }
+
+  .containerContent {
+    gap: var(--size-48);
+  }
+
+  .containerSection {
+    padding: var(--size-48) var(--size-48);
+  }
+
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-24);
+  }
+
+  .imageRight {
+    width: 54%;
+  }
+
+  .imageBackground {
+    border-radius: var(--size-40);
+    width: 92%;
+  }
+
+  .imageContainer:hover > .imageBackground {
+    border-radius: var(--size-64);
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    padding: var(--size-48) var(--size-24) var(--size-64) var(--size-24);
+  }
+
+  .containerContent {
+    flex-direction: column-reverse;
+    width: 100%;
+  }
+
+  .containerArticle {
+    width: 100%;
+  }
+
+  .imageContainer {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerSection {
+    padding: var(--size-48) var(--size-16);
   }
 }

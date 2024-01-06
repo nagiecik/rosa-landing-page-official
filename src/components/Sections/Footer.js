@@ -1,37 +1,69 @@
+import { useState, useEffect } from "react";
 import Divider from "../Elements/Other/Divider";
 import ContextText from "../Elements/Contents/ContentText";
 import NavFooter from "../Elements/Navigation/NavFooter";
 import styles from "./Footer.module.css";
 
-const FormFooter = () => {
+const Footer = () => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 430px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 430px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <footer className={styles.containerSection}>
       <div className={styles.containerContent}>
         <header className={styles.containerHeader}>
-          <ContextText
-            showTextHeaderLight={true}
-            textHeaderLight="Interested to join us?"
-            textHeaderLightColor="var(--surface-primary)"
-            textHeaderLightWeight="var(--font-thin)"
-            showtextHeaderBold={false}
-            showTextHeaderLink={true}
-            textHeaderLink="hello@rosa.zone"
-            textHeaderLinkColor="var(--surface-primary)"
-            textHeaderLinkWeight="var(--font-semibold)"
-            textHeaderLinkURL="mailto:hello.rosa@zone"
-          />
-          <a href="#start" className={styles.buttonScroll}>
-            <img
-              className={styles.imageScroll}
-              alt="Scroll Up Image"
-              src="/icons/scroll-up.svg"
+          {matches && (
+            <ContextText
+              containerAlignItems="center"
+              containerJustifyContent="center"
+              sectionWidth="100%"
+              showTextHeaderLight={true}
+              textHeaderLight="Interested to join us?"
+              textHeaderLightColor="var(--surface-primary)"
+              textHeaderLightWeight="var(--font-thin)"
+              showtextHeaderBold={false}
+              showTextHeaderLink={true}
+              textHeaderLink="hello@rosa.zone"
+              textHeaderLinkColor="var(--surface-primary)"
+              textHeaderLinkWeight="var(--font-semibold)"
+              textHeaderLinkURL="mailto:hello.rosa@zone"
             />
-            <img
-              className={styles.iconScroll}
-              alt=""
-              src="/icons/arrow.up.svg"
+          )}
+          {!matches && (
+            <ContextText
+              showTextHeaderLight={true}
+              textHeaderLight="Interested to join us?"
+              textHeaderLightColor="var(--surface-primary)"
+              textHeaderLightWeight="var(--font-thin)"
+              showtextHeaderBold={false}
+              showTextHeaderLink={true}
+              textHeaderLink="hello@rosa.zone"
+              textHeaderLinkColor="var(--surface-primary)"
+              textHeaderLinkWeight="var(--font-semibold)"
+              textHeaderLinkURL="mailto:hello.rosa@zone"
             />
-          </a>
+          )}
+          {!matches && (
+            <a href="#start" className={styles.buttonScroll}>
+              <img
+                className={styles.imageScroll}
+                alt="Scroll Up Image"
+                src="/icons/scroll-up.svg"
+              />
+              <img
+                className={styles.iconScroll}
+                alt=""
+                src="/icons/arrow.up.svg"
+              />
+            </a>
+          )}
         </header>
         <Divider dividerBorder="1px solid var(--surface-primary)" />
         <div className={styles.containerBottom}>
@@ -77,4 +109,4 @@ const FormFooter = () => {
   );
 };
 
-export default FormFooter;
+export default Footer;

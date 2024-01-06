@@ -88,3 +88,15 @@
     padding: var(--size-32) var(--size-48) var(--size-0) var(--size-48);
   }
 }
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    padding: var(--size-24) var(--size-24) var(--size-0) var(--size-24);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerSection {
+    padding: var(--size-24) var(--size-16) var(--size-0) var(--size-16);
+  }
+}

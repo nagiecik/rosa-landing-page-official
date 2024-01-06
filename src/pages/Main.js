@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import SectionHero from "../components/Sections/Hero";
 import SectionShowcase from "../components/Sections/Showcase";
 import SectionContexts from "../components/Sections/Contexts";
@@ -9,6 +10,16 @@ import SectionFooter from "../components/Sections/Footer";
 import styles from "./Main.module.css";
 
 const Main = () => {
+  const [matches, setMatches] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 768px)")
+      .addEventListener("change", (e) => setMatches(e.matches));
+  }, []);
+
   return (
     <div className={styles.main}>
       <SectionHero sectionZIndex="10" />
@@ -82,21 +93,40 @@ const Main = () => {
         sectionWidth="100%"
       />
       <SectionPricing sectionZIndex="2" />
-      <SectionShowcase
-        sectionID="summary"
-        showContentText={false}
-        showArticleSummary={true}
-        showArticleTestimonial={false}
-        sectionZIndex="3"
-        buttonAppStore="/buttonAppStore.svg"
-        buttonGooglePlay="/buttonGooglePlay.svg"
-        sectionMarginTop="var(--size-80)"
-        containerBackgroundImage="url(/backgrounds/backgroundSummary.png)"
-        imageLeftAltText=""
-        imageLeftURL="./mockups/showcaseMockup-3.png"
-        imageRightAltText=""
-        imageRightURL="./mockups/showcaseMockup-4.png"
-      />
+      {!matches && (
+        <SectionShowcase
+          sectionID="summary"
+          showContentText={false}
+          showArticleSummary={true}
+          showArticleTestimonial={false}
+          sectionZIndex="3"
+          buttonAppStore="/buttonAppStore.svg"
+          buttonGooglePlay="/buttonGooglePlay.svg"
+          sectionMarginTop="var(--size-80)"
+          containerBackgroundImage="url(/backgrounds/backgroundSummary.png)"
+          imageLeftAltText=""
+          imageLeftURL="./mockups/showcaseMockup-3.png"
+          imageRightAltText=""
+          imageRightURL="./mockups/showcaseMockup-4.png"
+        />
+      )}
+      {matches && (
+        <SectionShowcase
+          sectionID="summary"
+          showContentText={false}
+          showArticleSummary={true}
+          showArticleTestimonial={false}
+          sectionZIndex="1"
+          buttonAppStore="/buttonAppStore.svg"
+          buttonGooglePlay="/buttonGooglePlay.svg"
+          sectionMarginTop="var(--size-0)"
+          containerBackgroundImage="url(/backgrounds/backgroundSummary.png)"
+          imageLeftAltText=""
+          imageLeftURL="./mockups/showcaseMockup-3.png"
+          imageRightAltText=""
+          imageRightURL="./mockups/showcaseMockup-4.png"
+        />
+      )}
       <SectionFooter />
     </div>
   );

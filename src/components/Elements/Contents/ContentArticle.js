@@ -2,29 +2,45 @@ import { useMemo, useState, useEffect } from "react";
 import styles from "./ContentArticle.module.css";
 
 const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
-  const [matches, setMatches] = useState(
+  const [tablet, setMatches] = useState(
     window.matchMedia("(max-width: 768px)").matches
+  );
+
+  const [mobile, setMatches2] = useState(
+    window.matchMedia("(max-width: 430px)").matches
   );
 
   useEffect(() => {
     window
       .matchMedia("(max-width: 768px)")
       .addEventListener("change", (e) => setMatches(e.matches));
+
+    window
+      .matchMedia("(max-width: 430px)")
+      .addEventListener("change", (e) => setMatches2(e.matches));
   }, []);
 
   return (
     <article className={styles.containerContent}>
-      {!matches && (
+      {!tablet && (
         <div className={styles.containerHeader}>
           <h1 className={styles.textHeaderLight}>Gamechanger</h1>
           <h1 className={styles.textHeaderBold}>In The Way</h1>
           <h1 className={styles.textHeaderLight}>You Manage</h1>
         </div>
       )}
-      {matches && (
+      {tablet && !mobile && (
         <div className={styles.containerHeader}>
           <h1 className={styles.textHeaderLight}>Gamechanger In </h1>
           <h1 className={styles.textHeaderBold}>The Way You Manage</h1>
+        </div>
+      )}
+
+      {mobile && (
+        <div className={styles.containerHeader}>
+          <h1 className={styles.textHeaderLight}>Gamechanger</h1>
+          <h1 className={styles.textHeaderBold}>In The Way</h1>
+          <h1 className={styles.textHeaderLight}>You Manage</h1>
         </div>
       )}
       <p className={styles.textParagraph}>

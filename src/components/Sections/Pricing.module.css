@@ -68,3 +68,27 @@
     gap: var(--size-40);
   }
 }
+
+@media screen and (max-width: 768px) {
+  .containerSection {
+    padding: var(--size-48) var(--size-48);
+    gap: var(--size-48);
+  }
+
+  .containerContent {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-24) var(--size-48) var(--size-24);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerSection {
+    padding: var(--size-48) var(--size-16);
+  }
+}
+

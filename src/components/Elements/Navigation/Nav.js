@@ -58,10 +58,10 @@ const Nav = ({ logoURL }) => {
           />
         </div>
       )}
-      {matches && (
+      {/* {matches && (
         <ButtonMenu iconURL="/icons/menu.svg" altIconText="Icon Menu" />
-      )}
-      {!matches && (
+      )} */}
+      
         <ButtonPrimary
           buttonText="Get your app"
           showButtonText={true}
@@ -72,7 +72,7 @@ const Nav = ({ logoURL }) => {
           altTextIconRight="Icon Arrow Right"
           buttonLink="mailto:hello@rosa.zone"
         />
-      )}
+      
     </nav>
   );
 };

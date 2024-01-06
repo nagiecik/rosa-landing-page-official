@@ -67,7 +67,7 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1366px){
+@media screen and (max-width: 1366px) {
   .textButton {
     font-size: var(--size-14);
     line-height: var(--size-24);
@@ -76,8 +76,21 @@
   }
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 1280px) {
   .containerButton {
     padding: var(--size-12);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerButton:hover {
+    background-color: var(--on-surface-accent-active);
+    border-radius: var(--size-12);
+    border: var(--size-2) solid var(--on-surface-accent-active);
+  }
+
+  .containerButton:hover > .iconRight,
+  .iconLeft {
+    transform: rotate(0deg);
   }
 }

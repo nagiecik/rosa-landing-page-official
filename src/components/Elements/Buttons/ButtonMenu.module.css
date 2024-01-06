@@ -1,7 +1,6 @@
 /* Button Icons */
 
-.iconRight,
-.iconLeft {
+.icon {
   position: relative;
   width: var(--size-24);
   height: var(--size-24);
@@ -45,39 +44,29 @@
   background-color: var(--surface-primary);
 }
 
-.containerButton > .iconRight,
-.iconLeft {
+.containerButton > .icon {
   transition: calc(var(--d) * 2) var(--e);
 }
 
-.containerButton:hover > .iconRight,
-.iconLeft {
+.containerButton:hover > .icon {
   transform: rotate(-45deg);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover .textButton {
-  color: var(--surface-secondary);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton .textButton {
   transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Media Queries */
 
-@media screen and (max-width: 1366px){
-  .textButton {
-    font-size: var(--size-14);
-    line-height: var(--size-24);
-    font-weight: var(--font-black);
-    color: var(--surface-secondary);
+@media screen and (max-width: 768px) {
+  .containerButton {
+    padding: var(--size-12);
   }
 }
 
-@media screen and (max-width: 1280px){
+@media screen and (max-width: 430px) {
   .containerButton {
-    padding: var(--size-12);
+    padding: var(--size-8);
+  }
+  .icon {
+    width: var(--size-32);
+    height: var(--size-32);
   }
 }

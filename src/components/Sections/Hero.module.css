@@ -288,6 +288,10 @@
     width: 56%;
     bottom: 0;
   }
+
+  .containerImage {
+    pointer-events: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -309,5 +313,39 @@
   .imageRight {
     width: 60%;
     bottom: 0;
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    height: fit-content;
+  }
+
+  .containerContent {
+    padding: var(--size-48) var(--size-24);
+    gap: var(--size-40);
+  }
+
+  .containerImage {
+    width: 90%;
+    height: fit-content;
+  }
+
+  .imageLeft {
+    height: var(--size-400)
+  }
+
+  .imageRight {
+    height: var(--size-360);
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .containerSection {
+    height: fit-content;
+  }
+
+  .containerContent {
+    padding: var(--size-32) var(--size-16);
   }
 }

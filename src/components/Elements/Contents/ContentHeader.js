@@ -8,19 +8,24 @@ const ContentHeader = ({
   textHeaderLightSize,
   textHeaderLightWeight,
   textHeaderLightLineHeight,
+  textHeaderLightAlign,
   showTextHeaderBold,
   textHeaderBold,
   textHeaderBoldColor,
   textHeaderBoldSize,
   textHeaderBoldWeight,
   textHeaderBoldLineHeight,
+  textHeaderBoldAlign,
   showTextHeaderLink,
   textHeaderLink,
   textHeaderLinkColor,
   textHeaderLinkSize,
   textHeaderLinkWeight,
   textHeaderLinkLineHeight,
+  textHeaderLinkAlign,
   textHeaderLinkURL,
+  containerAlignItems,
+  containerJustifyContent,
 }) => {
   const textHeaderLightStyle = useMemo(() => {
     return {
@@ -28,8 +33,15 @@ const ContentHeader = ({
       fontSize: textHeaderLightSize,
       fontWeight: textHeaderLightWeight,
       lineHeight: textHeaderLightLineHeight,
+      textAlign: textHeaderLightAlign,
     };
-  }, [textHeaderLightColor, textHeaderLightSize, textHeaderLightWeight, textHeaderLightLineHeight]);
+  }, [
+    textHeaderLightColor,
+    textHeaderLightSize,
+    textHeaderLightWeight,
+    textHeaderLightLineHeight,
+    textHeaderLightAlign,
+  ]);
 
   const textHeaderBoldStyle = useMemo(() => {
     return {
@@ -37,8 +49,15 @@ const ContentHeader = ({
       fontSize: textHeaderBoldSize,
       fontWeight: textHeaderBoldWeight,
       lineHeight: textHeaderBoldLineHeight,
+      textAlign: textHeaderBoldAlign,
     };
-  }, [textHeaderBoldColor, textHeaderBoldSize, textHeaderBoldWeight, textHeaderBoldLineHeight]);
+  }, [
+    textHeaderBoldColor,
+    textHeaderBoldSize,
+    textHeaderBoldWeight,
+    textHeaderBoldLineHeight,
+    textHeaderBoldAlign,
+  ]);
 
   const textHeaderLinkStyle = useMemo(() => {
     return {
@@ -46,11 +65,25 @@ const ContentHeader = ({
       fontSize: textHeaderLinkSize,
       fontWeight: textHeaderLinkWeight,
       lineHeight: textHeaderLinkLineHeight,
+      textAlign: textHeaderLightAlign,
     };
-  }, [textHeaderLinkColor, textHeaderLinkSize, textHeaderLinkWeight, textHeaderLinkLineHeight]);
+  }, [
+    textHeaderLinkColor,
+    textHeaderLinkSize,
+    textHeaderLinkWeight,
+    textHeaderLinkLineHeight,
+    textHeaderLightAlign,
+  ]);
+
+  const containerStyle = useMemo(() => {
+    return {
+      alignItems: containerAlignItems,
+      justifyContent: containerJustifyContent,
+    };
+  }, [containerAlignItems, containerJustifyContent]);
 
   return (
-    <div className={styles.containerContent}>
+    <div className={styles.containerContent} style={containerStyle}>
       {showTextHeaderLight && (
         <div className={styles.textHeaderLight} style={textHeaderLightStyle}>
           {textHeaderLight}
@@ -62,7 +95,11 @@ const ContentHeader = ({
         </div>
       )}
       {showTextHeaderLink && (
-        <a href={textHeaderLinkURL} className={styles.textHeaderLink} style={textHeaderLinkStyle}>
+        <a
+          href={textHeaderLinkURL}
+          className={styles.textHeaderLink}
+          style={textHeaderLinkStyle}
+        >
           {textHeaderLink}
         </a>
       )}

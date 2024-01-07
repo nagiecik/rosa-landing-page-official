@@ -198,6 +198,16 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .imageRight, .imageLeft {
+    max-height: 520px;
+  }
+
+  .imageRight {
+    bottom: 16%;
+  }
+}
+
 @media screen and (max-width: 1366px) {
   @keyframes move {
     0% {

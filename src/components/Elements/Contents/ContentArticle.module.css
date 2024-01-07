@@ -94,6 +94,14 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .textHeaderLight,
+  .textHeaderBold {
+    font-size: var(--size-64);
+    line-height: var(--size-64);
+  }
+}
+
 @media screen and (max-width: 1366px) {
   .textHeaderLight,
   .textHeaderBold {

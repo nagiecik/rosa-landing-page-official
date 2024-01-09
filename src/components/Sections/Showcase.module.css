@@ -225,6 +225,11 @@
   align-self: stretch;
 }
 
+.containerMotion {
+  width: 100%;
+  max-width: 1520px;
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 1536px) {

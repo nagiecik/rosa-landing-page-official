@@ -1,4 +1,5 @@
 import { useMemo, useState, useEffect } from "react";
+import { motion } from "framer-motion";
 import styles from "./ContentArticle.module.css";
 
 const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
@@ -20,8 +21,19 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
       .addEventListener("change", (e) => setMatches2(e.matches));
   }, []);
 
+  const easeSlow = {
+    duration: 2,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
-    <article className={styles.containerContent}>
+    <motion.article
+      initial={{ opacity: 0, transform: `translate(-200px, 0)` }}
+      whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+      transition={easeSlow}
+      viewport={{ once: true }}
+      className={styles.containerContent}
+    >
       {!tablet && (
         <div className={styles.containerHeader}>
           <h1 className={styles.textHeaderLight}>Gamechanger</h1>
@@ -65,7 +77,7 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
           />
         </a>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

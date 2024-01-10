@@ -8,7 +8,6 @@ import SectionFeatureRight from "../components/Sections/FeatureRight";
 import SectionPricing from "../components/Sections/Pricing";
 import SectionFooter from "../components/Sections/Footer";
 import styles from "./Main.module.css";
-import Nav from "../components/Elements/Navigation/Nav";
 
 const Main = () => {
   const [matches, setMatches] = useState(
@@ -23,7 +22,6 @@ const Main = () => {
 
   return (
     <div className={styles.main}>
-      <Nav logoURL="./imagelogorosa.svg" sectionZIndex="1000" />
       <SectionHero sectionZIndex="10" />
       <SectionShowcase
         sectionZIndex="9"

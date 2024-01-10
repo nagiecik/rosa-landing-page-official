@@ -83,18 +83,16 @@
   display: flex;
   position: relative;
   width: 100%;
-  height: fit-content;
-}
-
-.containerHover {
-  display: flex;
-  justify-content: flex-end;
-  width: 100%;
   max-width: 48%;
   height: fit-content;
   animation-name: containerImage;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerImage:hover {
+  transform: scale(1.05) rotate(5deg);
   transition: calc(var(--d) * 2) var(--e);
 }
 
@@ -136,17 +134,17 @@
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  padding: var(--size-200) var(--size-200) var(--size-104) var(--size-200);
+  padding: var(--size-104) var(--size-200);
   box-sizing: border-box;
 }
 
 .containerSection {
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: flex-start;
   width: 100%;
   height: 100vh;
+  align-items: center;
   box-sizing: border-box;
   background-image: url("/public/backgrounds/backgroundHero.png");
   background-size: cover;
@@ -174,8 +172,7 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .imageRight,
-  .imageLeft {
+  .imageRight, .imageLeft {
     max-height: 520px;
   }
 }
@@ -300,7 +297,7 @@
   }
 
   .imageLeft {
-    height: var(--size-400);
+    height: var(--size-400)
   }
 
   .imageRight {

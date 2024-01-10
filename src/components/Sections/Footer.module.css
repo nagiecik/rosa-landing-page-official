@@ -124,6 +124,11 @@
   justify-content: center;
 }
 
+.containerMotion {
+  width: 100%;
+  max-width: 1520px;
+}
+
 @media screen and (max-width: 1536px) {
   .containerContent {
     gap: var(--size-64);

@@ -1,32 +1,5 @@
 /* Animations */
 
-@keyframes move {
-  0% {
-    transform: translate(-50%, var(--size-8));
-    opacity: 0;
-  }
-  50% {
-    transform: translate(-50%, var(--size-24));
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, var(--size-48));
-    opacity: 0;
-  }
-}
-
-@keyframes containerImage {
-  0% {
-    transform: translate(0, 200px);
-    opacity: 0%;
-  }
-
-  100% {
-    transform: translate(0, 0);
-    opacity: 100%;
-  }
-}
-
 @keyframes imageLeft {
   0% {
     transform: translateY(0);
@@ -91,8 +64,7 @@
   height: var(--size-8);
   width: var(--size-8);
   border-radius: var(--size-16);
-  left: 50%;
-  animation: move 2s linear infinite;
+  left: calc(50% - var(--size-4));
 }
 
 .textScroll {
@@ -185,16 +157,17 @@
 
 @media screen and (max-width: 1536px) {
   .containerContent {
-    padding: var(--size-56) var(--size-104);
+    padding: var(--size-160) var(--size-104);
   }
 
   .containerImage {
-    height: 640px;
+    max-height: 640px;
   }
 
   .imageLeft,
   .imageRight {
     filter: drop-shadow(var(--shadow-hero-mockup-big));
+    max-height: 600px;
   }
 }
 
@@ -202,30 +175,11 @@
   .imageRight, .imageLeft {
     max-height: 520px;
   }
-
-  .imageRight {
-    bottom: 16%;
-  }
 }
 
 @media screen and (max-width: 1366px) {
-  @keyframes move {
-    0% {
-      transform: translate(-50%, var(--size-8));
-      opacity: 0;
-    }
-    50% {
-      transform: translate(-50%, var(--size-20));
-      opacity: 1;
-    }
-    100% {
-      transform: translate(-50%, var(--size-40));
-      opacity: 0;
-    }
-  }
-
   .containerContent {
-    padding: var(--size-56) var(--size-80);
+    padding: var(--size-128) var(--size-80);
   }
 
   .containerImage {
@@ -237,11 +191,6 @@
     filter: drop-shadow(var(--shadow-hero-mockup-medium));
   }
 
-  .imageRight {
-    width: 52%;
-    bottom: -4%;
-  }
-
   .containerMouse {
     height: var(--size-48);
     width: var(--size-24);
@@ -251,6 +200,7 @@
   .containerMove {
     height: var(--size-6);
     width: var(--size-6);
+    left: calc(50% - var(--size-3));
   }
 
   .textScroll {
@@ -267,7 +217,7 @@
 
 @media screen and (max-width: 1280px) {
   .containerContent {
-    padding: var(--size-56) var(--size-64);
+    padding: var(--size-128) var(--size-64);
   }
 
   .containerImage {
@@ -287,7 +237,7 @@
 
 @media screen and (max-width: 1024px) {
   .containerContent {
-    padding: var(--size-56) var(--size-48);
+    padding: var(--size-128) var(--size-48);
   }
 
   .containerImage {
@@ -305,6 +255,11 @@
 }
 
 @media screen and (max-width: 768px) {
+  .containerHover {
+    max-width: 100%;
+    justify-content: center;
+  }
+
   .containerContent {
     flex-direction: column;
     gap: var(--size-16);
@@ -332,7 +287,7 @@
   }
 
   .containerContent {
-    padding: var(--size-48) var(--size-24);
+    padding: var(--size-128) var(--size-24) var(--size-48) var(--size-24);
     gap: var(--size-40);
   }
 
@@ -356,6 +311,6 @@
   }
 
   .containerContent {
-    padding: var(--size-32) var(--size-16);
+    padding: var(--size-128) var(--size-16) var(--size-48) var(--size-16);
   }
 }

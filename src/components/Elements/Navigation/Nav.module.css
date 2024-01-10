@@ -50,18 +50,18 @@
 /* Media Queries */
 
 @media screen and (max-width: 1536px) {
-  .containerSection {
-    padding: var(--size-32) var(--size-104) var(--size-0) var(--size-104);
-  }
-}
-
-@media screen and (max-width: 1366px) {
-  .containerSection {
-    padding: var(--size-32) var(--size-80) var(--size-0) var(--size-80);
+  .containerNav {
+    padding: var(--size-16) var(--size-104);
   }
 
   .imageLogo {
     height: var(--size-24);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .containerNav {
+    padding: var(--size-16) var(--size-80);
   }
 
   .containerContent {
@@ -70,12 +70,8 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .containerSection {
-    padding: var(--size-32) var(--size-64) var(--size-0) var(--size-64);
-  }
-
-  .imageLogo {
-    height: var(--size-24);
+  .containerNav {
+    padding: var(--size-16) var(--size-64);
   }
 
   .containerContent {
@@ -84,19 +80,19 @@
 }
 
 @media screen and (max-width: 1024px) {
-  .containerSection {
-    padding: var(--size-32) var(--size-48) var(--size-0) var(--size-48);
+  .containerNav {
+    padding: var(--size-16) var(--size-48);
   }
 }
 
 @media screen and (max-width: 430px) {
-  .containerSection {
-    padding: var(--size-24) var(--size-24) var(--size-0) var(--size-24);
+  .containerNav {
+    padding: var(--size-16) var(--size-24);
   }
 }
 
 @media screen and (max-width: 375px) {
-  .containerSection {
-    padding: var(--size-24) var(--size-16) var(--size-0) var(--size-16);
+  .containerNav {
+    padding: var(--size-16);
   }
 }

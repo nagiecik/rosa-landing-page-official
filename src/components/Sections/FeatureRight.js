@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import ContextText from "../Elements/Contents/ContentText";
+import { motion } from "framer-motion";
 import styles from "./FeatureRight.module.css";
 
 const FeatureRight = ({
@@ -35,10 +36,21 @@ const FeatureRight = ({
     };
   }, [sectionZIndex]);
 
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <div className={styles.containerSection} style={containerFeatureLeftStyle}>
-      <div className={styles.containerContent}>
-      <div className={styles.imageContainer}>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerContent}
+      >
+        <div className={styles.imageContainer}>
           <img
             className={styles.imageRight}
             alt={altText}
@@ -47,7 +59,7 @@ const FeatureRight = ({
           <div className={styles.imageBackground}></div>
         </div>
         <div className={styles.containerArticle}>
-        <ContextText
+          <ContextText
             showTextHeaderLight={showTextHeaderLight}
             textHeaderLight={textHeaderLight}
             textHeaderLightColor={textHeaderLightColor}
@@ -72,7 +84,7 @@ const FeatureRight = ({
           />
           <div className={styles.textParagraph}>{textParagraph}</div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

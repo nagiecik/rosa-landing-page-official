@@ -66,99 +66,106 @@ const Showcase = ({
           textParagraphColor="var(--surface-secondary)"
         />
       )}
-      <div className={styles.containerContent} style={containerContentStyle}>
-        {showArticleTestimonial && (
-          <div className={styles.containerArticle}>
-            <div className={styles.containerHeader}>
-              <i className={styles.textHeaderWhite}>Official</i>
-              <i className={styles.textHeaderGreen}>Football Rules</i>
-            </div>
-            <div className={styles.containerQuote}>
-              <p className={styles.textQuoteTitle}>
-                Revolutized Our Rule Management
-              </p>
-              <i className={styles.textQuoteParagraph}>
-                “After analysing and understanding the hassle of using printouts
-                on the field of play, we decided to launch digitalised Laws. It
-                was to give quick and easy access to the Laws, most importantly
-                to the referees, both on- and offline.”
-              </i>
-            </div>
-            <div className={styles.containerPerson}>
-              <div className={styles.containerPersonImage}>
-                <img
-                  className={styles.imagePerson}
-                  alt="Lukas Brud The IFAB Secretary Testimonial Image"
-                  src="/testimonialPersonImage.png"
-                />
-                <div className={styles.containerPersonDetails}>
-                  <p className={styles.textPersonName}>Lukas Brud</p>
-                  <i className={styles.textPersonOccupation}>
-                    The IFAB Secretary & CEO
-                  </i>
-                </div>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: false }}
+        className={styles.containerMotion}
+      >
+        <div className={styles.containerContent} style={containerContentStyle}>
+          {showArticleTestimonial && (
+            <div className={styles.containerArticle}>
+              <div className={styles.containerHeader}>
+                <i className={styles.textHeaderWhite}>Official</i>
+                <i className={styles.textHeaderGreen}>Football Rules</i>
               </div>
-              <img
-                className={styles.imageLogo}
-                alt="The IFAB Logotype"
-                src="/logoIFAB.svg"
+              <div className={styles.containerQuote}>
+                <p className={styles.textQuoteTitle}>
+                  Revolutized Our Rule Management
+                </p>
+                <i className={styles.textQuoteParagraph}>
+                  “After analysing and understanding the hassle of using
+                  printouts on the field of play, we decided to launch
+                  digitalised Laws. It was to give quick and easy access to the
+                  Laws, most importantly to the referees, both on- and offline.”
+                </i>
+              </div>
+              <div className={styles.containerPerson}>
+                <div className={styles.containerPersonImage}>
+                  <img
+                    className={styles.imagePerson}
+                    alt="Lukas Brud The IFAB Secretary Testimonial Image"
+                    src="/testimonialPersonImage.png"
+                  />
+                  <div className={styles.containerPersonDetails}>
+                    <p className={styles.textPersonName}>Lukas Brud</p>
+                    <i className={styles.textPersonOccupation}>
+                      The IFAB Secretary & CEO
+                    </i>
+                  </div>
+                </div>
+                <img
+                  className={styles.imageLogo}
+                  alt="The IFAB Logotype"
+                  src="/logoIFAB.svg"
+                />
+              </div>
+            </div>
+          )}
+
+          {showArticleSummary && (
+            <div className={styles.containerArticle}>
+              <ContextText
+                showTextHeaderLight={true}
+                textHeaderLight="Make Sport"
+                textHeaderLightColor="var(--surface-primary)"
+                textHeaderLightWeight="var(--font-thin)"
+                showTextHeaderBold={true}
+                textHeaderBold="Rules Move"
+                textHeaderBoldColor="var(--surface-primary)"
+                textHeaderBoldWeight="var(--font-semibold)"
               />
+              <p className={styles.textParagraph}>
+                Join the multitude of organizations that have placed their trust
+                in us. With ROSA, empower your organization to create a custom
+                rule app using our ready-made solution.
+              </p>
+              <div className={styles.containerButtons}>
+                <a href="https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US">
+                  <img
+                    className={styles.buttonGooglePlay}
+                    alt="Google Play Button"
+                    src={buttonGooglePlay}
+                  />
+                </a>
+                <a href="https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179">
+                  <img
+                    className={styles.buttonAppStore}
+                    alt="App Store Button"
+                    src={buttonAppStore}
+                  />
+                </a>
+              </div>
             </div>
-          </div>
-        )}
+          )}
 
-        {showArticleSummary && (
-          <div className={styles.containerArticle}>
-            <ContextText
-              showTextHeaderLight={true}
-              textHeaderLight="Make Sport"
-              textHeaderLightColor="var(--surface-primary)"
-              textHeaderLightWeight="var(--font-thin)"
-              showTextHeaderBold={true}
-              textHeaderBold="Rules Move"
-              textHeaderBoldColor="var(--surface-primary)"
-              textHeaderBoldWeight="var(--font-semibold)"
+          {!matches && (
+            <img
+              className={styles.imageRight}
+              alt={imageRightAltText}
+              src={imageRightURL}
             />
-            <p className={styles.textParagraph}>
-              Join the multitude of organizations that have placed their trust
-              in us. With ROSA, empower your organization to create a custom
-              rule app using our ready-made solution.
-            </p>
-            <div className={styles.containerButtons}>
-              <a href="https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US">
-                <img
-                  className={styles.buttonGooglePlay}
-                  alt="Google Play Button"
-                  src={buttonGooglePlay}
-                />
-              </a>
-              <a href="https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179">
-                <img
-                  className={styles.buttonAppStore}
-                  alt="App Store Button"
-                  src={buttonAppStore}
-                />
-              </a>
-            </div>
-          </div>
-        )}
-
-        {!matches && (
-          <img
-            className={styles.imageRight}
-            alt={imageRightAltText}
-            src={imageRightURL}
-          />
-        )}
-
-        {!matches && (
-          <img
-            className={styles.imageLeft}
-            alt={imageLeftAltText}
-            src={imageLeftURL}
-          />
-        )}
-      </div>
+          )}
+          {!matches && (
+            <img
+              className={styles.imageLeft}
+              alt={imageLeftAltText}
+              src={imageLeftURL}
+            />
+          )}
+        </div>
+      </motion.div>
     </section>
   );
 };

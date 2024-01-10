@@ -1,6 +1,7 @@
 import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import CardContext from "../Elements/Cards/CardContext";
+import { motion } from "framer-motion";
 import styles from "./Contexts.module.css";
 
 const Contexts = ({ sectionZIndex }) => {
@@ -57,26 +58,45 @@ const Contexts = ({ sectionZIndex }) => {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <section
       id="context"
       className={styles.containerSection}
       style={sectionStyle}
     >
-      <ContextText
-        sectionWidth="100%"
-        sectionTextContentZIndex="0"
-        showTextHeaderLight={true}
-        textHeaderLight="Context"
-        textHeaderLightWeight="var(--font-thin)"
-        showTextHeaderBold={true}
-        textHeaderBold="Selection"
-        textHeaderBoldWeight="var(--font-semibold)"
-        showTextParagraph={true}
-        textParagraph="ROSA (Rules Of Sports App) stands out as a groundbreaking tool, fundamentally reshaping the way you manage, update, and seamlessly distribute the rules governing your sport."
-        textParagraphColor="var(--surface-primary)"
-      />
-      <div className={styles.containerContent}>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerMotion}
+      >
+        <ContextText
+          sectionWidth="100%"
+          sectionTextContentZIndex="0"
+          showTextHeaderLight={true}
+          textHeaderLight="Context"
+          textHeaderLightWeight="var(--font-thin)"
+          showTextHeaderBold={true}
+          textHeaderBold="Selection"
+          textHeaderBoldWeight="var(--font-semibold)"
+          showTextParagraph={true}
+          textParagraph="ROSA (Rules Of Sports App) stands out as a groundbreaking tool, fundamentally reshaping the way you manage, update, and seamlessly distribute the rules governing your sport."
+          textParagraphColor="var(--surface-primary)"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerContent}
+      >
         {!matches && selectedContext ? (
           <img
             className={styles.imageLeft}
@@ -115,7 +135,7 @@ const Contexts = ({ sectionZIndex }) => {
             textParagraph={Contexts.context4.text}
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

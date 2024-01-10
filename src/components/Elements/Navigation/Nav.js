@@ -52,7 +52,9 @@ const Nav = ({ logoURL, sectionZIndex }) => {
       style={containerSectionStyle}
     >
       <div className={styles.containerSection}>
-        <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
+        <a href=".">
+          <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
+        </a>
         {!matches && (
           <div className={styles.containerContent}>
             <NavbarLink

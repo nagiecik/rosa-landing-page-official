@@ -1,6 +1,7 @@
 import { useMemo } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import CardPricing from "../Elements/Cards/CardPricing";
+import { motion } from "framer-motion";
 import styles from "./Pricing.module.css";
 
 const Pricing = ({ sectionZIndex }) => {
@@ -9,27 +10,47 @@ const Pricing = ({ sectionZIndex }) => {
       zIndex: sectionZIndex,
     };
   }, [sectionZIndex]);
+
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <section
       id="pricing"
       className={styles.containerSection}
       style={containerPricingStyle}
     >
-      <ContextText
-        sectionWidth="100%"
-        showTextHeaderLight={true}
-        textHeaderLight="Choose Your"
-        textHeaderLightColor="var(--surface-secondary)"
-        textHeaderLightWeight="var(--font-thin)"
-        showTextHeaderBold={true}
-        textHeaderBold="Plan"
-        textHeaderBoldColor="var(--surface-secondary)"
-        textHeaderBoldWeight="var(--font-bold)"
-        showTextParagraph={true}
-        textParagraph="ROSA provides the tools to streamline rule management, create engaging content, and organize diverse sporting events with precision. Choose a plan that matches your organization's needs and make a lasting impression with a branded home screen, craft informative content effortlessly, and manage events seamlessly."
-        textParagraphColor="var(--surface-secondary)"
-      />
-      <div className={styles.containerContent}>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerMotion}
+      >
+        <ContextText
+          sectionWidth="100%"
+          showTextHeaderLight={true}
+          textHeaderLight="Choose Your"
+          textHeaderLightColor="var(--surface-secondary)"
+          textHeaderLightWeight="var(--font-thin)"
+          showTextHeaderBold={true}
+          textHeaderBold="Plan"
+          textHeaderBoldColor="var(--surface-secondary)"
+          textHeaderBoldWeight="var(--font-bold)"
+          showTextParagraph={true}
+          textParagraph="ROSA provides the tools to streamline rule management, create engaging content, and organize diverse sporting events with precision. Choose a plan that matches your organization's needs and make a lasting impression with a branded home screen, craft informative content effortlessly, and manage events seamlessly."
+          textParagraphColor="var(--surface-secondary)"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerContent}
+      >
         <CardPricing
           cardPricingBackgroundColor="var(--surface-primary)"
           textCardTitle="National"
@@ -96,7 +117,7 @@ const Pricing = ({ sectionZIndex }) => {
           buttonLink="mailto:hello@rosa.zone?subject=ROSA International"
           cardZIndex="1"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

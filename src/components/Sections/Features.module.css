@@ -19,6 +19,11 @@
   text-align: left;
 }
 
+.containerMotion {
+  width: 100%;
+  max-width: 1520px;
+}
+
 @media screen and (max-width: 1536px) {
   .containerSection {
     padding: var(--size-80) var(--size-104);

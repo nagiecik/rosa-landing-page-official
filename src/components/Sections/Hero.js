@@ -80,7 +80,15 @@ const Hero = ({ sectionZIndex }) => {
             className={styles.containerScroll}
           >
             <span className={styles.containerMouse}>
-              <span className={styles.containerMove}></span>
+              <motion.div
+                animate={{ opacity: [0, 0.5, 1, 0.5, 0], y: [0, 40] }}
+                transition={{
+                  repeat: Infinity,
+                  repeatType: "loop",
+                  duration: 3,
+                }}
+                className={styles.containerMove}
+              ></motion.div>
             </span>
             <span className={styles.textScroll}>Scroll down</span>
           </motion.div>

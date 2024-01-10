@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import ContextText from "../Elements/Contents/ContentText";
+import { motion } from "framer-motion";
 import styles from "./FeatureLeft.module.css";
 
 const FeatureLeft = ({
@@ -35,13 +36,24 @@ const FeatureLeft = ({
     };
   }, [sectionZIndex]);
 
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <div
       id="use_cases"
       className={styles.containerSection}
       style={containerFeatureLeftStyle}
     >
-      <div className={styles.containerContent}>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerContent}
+      >
         <div className={styles.containerArticle}>
           <ContextText
             showTextHeaderLight={showTextHeaderLight}
@@ -76,7 +88,7 @@ const FeatureLeft = ({
           />
           <div className={styles.imageBackground}></div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

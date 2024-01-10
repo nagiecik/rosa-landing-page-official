@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import Divider from "../Elements/Other/Divider";
 import ContextText from "../Elements/Contents/ContentText";
 import NavFooter from "../Elements/Navigation/NavFooter";
+import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
@@ -15,10 +16,21 @@ const Footer = () => {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <footer className={styles.containerSection}>
       <div className={styles.containerContent}>
-        <header className={styles.containerHeader}>
+        <motion.header
+          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeFast}
+          viewport={{ once: true }}
+          className={styles.containerHeader}
+        >
           {matches && (
             <ContextText
               containerAlignItems="center"
@@ -26,13 +38,17 @@ const Footer = () => {
               sectionWidth="100%"
               showTextHeaderLight={true}
               textHeaderLight="Interested to join us?"
+              textHeaderLightSize="var(--size-34)"
               textHeaderLightColor="var(--surface-primary)"
               textHeaderLightWeight="var(--font-thin)"
+              textHeaderLightAlign="center"
               showtextHeaderBold={false}
               showTextHeaderLink={true}
               textHeaderLink="hello@rosa.zone"
+              textHeaderLinkSize="var(--size-34)"
               textHeaderLinkColor="var(--surface-primary)"
               textHeaderLinkWeight="var(--font-semibold)"
+              textHeaderBoldAlign="center"
               textHeaderLinkURL="mailto:hello.rosa@zone"
             />
           )}
@@ -64,9 +80,23 @@ const Footer = () => {
               />
             </a>
           )}
-        </header>
-        <Divider dividerBorder="1px solid var(--surface-primary)" />
-        <div className={styles.containerBottom}>
+        </motion.header>
+        <motion.div
+          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeFast}
+          viewport={{ once: true }}
+          className={styles.containerMotion}
+        >
+          <Divider dividerBorder="1px solid var(--surface-primary)" />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeFast}
+          viewport={{ once: true }}
+          className={styles.containerBottom}
+        >
           <img
             className={styles.imageLogo}
             alt="ROSA Logo"
@@ -100,10 +130,16 @@ const Footer = () => {
               showLink6={false}
             />
           </div>
-        </div>
-        <div className={styles.containerCopyright}>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, transform: `translate(0, 40px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeFast}
+          viewport={{ once: true }}
+          className={styles.containerCopyright}
+        >
           <p className={styles.textParagraph}>©2023 All rights reserved</p>
-        </div>
+        </motion.div>
       </div>
     </footer>
   );

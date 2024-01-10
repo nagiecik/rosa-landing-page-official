@@ -1,26 +1,46 @@
 import ContextText from "../Elements/Contents/ContentText";
 import CardFeature from "../Elements/Cards/CardFeature";
+import { motion } from "framer-motion";
 import styles from "./Features.module.css";
 
 const Features = () => {
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <section id="features" className={styles.containerSection}>
-      <ContextText
-        sectionWidth="100%"
-        sectionTextContentZIndex="0"
-        showTextHeaderLight={true}
-        textHeaderLight="All Provided"
-        textHeaderLightWeight="var(--font-thin)"
-        textHeaderLightColor="var(--surface-secondary)"
-        showTextHeaderBold={true}
-        textHeaderBold="Features"
-        textHeaderBoldWeight="var(--font-semibold)"
-        textHeaderBoldColor="var(--surface-secondary)"
-        showTextParagraph={true}
-        textParagraph="Doing your best to get the message across globally, most often you work with PDF files and printouts. They are difficult to personalize and user-unfriendly. It would be nice to make tracking changes, giving feedback and browsing easier, and mobile-optimised."
-        textParagraphColor="var(--surface-secondary)"
-      />
-      <div className={styles.containerContent}>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerMotion}
+      >
+        <ContextText
+          sectionWidth="100%"
+          sectionTextContentZIndex="0"
+          showTextHeaderLight={true}
+          textHeaderLight="All Provided"
+          textHeaderLightWeight="var(--font-thin)"
+          textHeaderLightColor="var(--surface-secondary)"
+          showTextHeaderBold={true}
+          textHeaderBold="Features"
+          textHeaderBoldWeight="var(--font-semibold)"
+          textHeaderBoldColor="var(--surface-secondary)"
+          showTextParagraph={true}
+          textParagraph="Doing your best to get the message across globally, most often you work with PDF files and printouts. They are difficult to personalize and user-unfriendly. It would be nice to make tracking changes, giving feedback and browsing easier, and mobile-optimised."
+          textParagraphColor="var(--surface-secondary)"
+        />
+      </motion.div>
+      <motion.div
+        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+        transition={easeFast}
+        viewport={{ once: true }}
+        className={styles.containerContent}
+      >
         <CardFeature
           imageIconUrl="/icons/questionmark.app.svg"
           textNumber="01"
@@ -69,7 +89,7 @@ const Features = () => {
           textTitle="AI Assistant"
           textParagraph="experience seamless support with our ai assistant"
         />
-      </div>
+      </motion.div>
     </section>
   );
 };

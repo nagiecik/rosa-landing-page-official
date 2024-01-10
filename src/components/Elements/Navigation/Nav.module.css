@@ -56,17 +56,17 @@
 
 @media screen and (max-width: 1536px) {
   .containerNav {
-    padding: var(--size-32) var(--size-104) var(--size-0) var(--size-104);
+    padding: var(--size-16) var(--size-104);
+  }
+
+  .imageLogo {
+    height: var(--size-24);
   }
 }
 
 @media screen and (max-width: 1366px) {
   .containerNav {
-    padding: var(--size-32) var(--size-80) var(--size-0) var(--size-80);
-  }
-
-  .imageLogo {
-    height: var(--size-24);
+    padding: var(--size-16) var(--size-80);
   }
 
   .containerContent {
@@ -76,11 +76,7 @@
 
 @media screen and (max-width: 1280px) {
   .containerNav {
-    padding: var(--size-32) var(--size-64) var(--size-0) var(--size-64);
-  }
-
-  .imageLogo {
-    height: var(--size-24);
+    padding: var(--size-16) var(--size-64);
   }
 
   .containerContent {
@@ -90,18 +86,18 @@
 
 @media screen and (max-width: 1024px) {
   .containerNav {
-    padding: var(--size-32) var(--size-48) var(--size-0) var(--size-48);
+    padding: var(--size-16) var(--size-48);
   }
 }
 
 @media screen and (max-width: 430px) {
   .containerNav {
-    padding: var(--size-24) var(--size-24) var(--size-0) var(--size-24);
+    padding: var(--size-16) var(--size-24);
   }
 }
 
 @media screen and (max-width: 375px) {
   .containerNav {
-    padding: var(--size-24) var(--size-16) var(--size-0) var(--size-16);
+    padding: var(--size-16);
   }
 }

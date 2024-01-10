@@ -23,7 +23,7 @@ const Main = () => {
 
   return (
     <div className={styles.main}>
-      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000"/>
+      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000" />
       <SectionHero sectionZIndex="10" />
       <SectionShowcase
         sectionZIndex="9"

@@ -80,19 +80,18 @@
 /* Images */
 
 .containerImage {
+  width: 100%;
+}
+
+.containerMotion {
   display: flex;
   position: relative;
   width: 100%;
   max-width: 48%;
   height: fit-content;
-  animation-name: containerImage;
+  animation-name: containerMotion;
   animation-duration: 2s;
   animation-timing-function: calc(var(--d) * 2) var(--e);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerImage:hover {
-  transform: scale(1.05) rotate(5deg);
   transition: calc(var(--d) * 2) var(--e);
 }
 
@@ -160,7 +159,7 @@
     padding: var(--size-160) var(--size-104);
   }
 
-  .containerImage {
+  .containerMotion {
     max-height: 640px;
   }
 
@@ -182,7 +181,7 @@
     padding: var(--size-128) var(--size-80);
   }
 
-  .containerImage {
+  .containerMotion {
     height: 520px;
   }
 
@@ -220,7 +219,7 @@
     padding: var(--size-128) var(--size-64);
   }
 
-  .containerImage {
+  .containerMotion {
     height: 480px;
   }
 
@@ -240,7 +239,7 @@
     padding: var(--size-128) var(--size-48);
   }
 
-  .containerImage {
+  .containerMotion {
     height: 480px;
   }
 
@@ -249,7 +248,7 @@
     bottom: 0;
   }
 
-  .containerImage {
+  .containerMotion {
     pointer-events: none;
   }
 }
@@ -266,7 +265,7 @@
     align-items: center;
   }
 
-  .containerImage {
+  .containerMotion {
     max-width: 100%;
     width: 64%;
   }
@@ -291,7 +290,7 @@
     gap: var(--size-40);
   }
 
-  .containerImage {
+  .containerMotion {
     width: 90%;
     height: fit-content;
   }

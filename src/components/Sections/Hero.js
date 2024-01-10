@@ -1,7 +1,6 @@
 import { useMemo, useEffect, useState } from "react";
 import ContentArticle from "../Elements/Contents/ContentArticle";
 import Nav from "../Elements/Navigation/Nav";
-import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {
@@ -21,69 +20,39 @@ const Hero = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
-
-  const easeFast = {
-    duration: 0.8,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
-
   return (
     <section
       id="start"
       className={styles.containerSection}
       style={containerSectionStyle}
     >
+      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" />
       <div className={styles.containerContent}>
         <ContentArticle
           buttonAppStore="/buttonAppStore.svg"
           buttonGooglePlay="/buttonGooglePlay.svg"
         />
-        <motion.div
-          whileHover={{
-            scale: 1.05,
-            rotate: "5deg",
-          }}
-          transition={easeFast}
-          className={styles.containerHover}
-        >
-          <motion.div
-            initial={{ opacity: 0, transform: `translate(0, 200px)` }}
-            whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-            transition={easeSlow}
-            viewport={{ once: true }}
-            className={styles.containerImage}
-          >
-            <img
-              className={styles.imageRight}
-              alt=""
-              src="/mockups/heroMockup-1.png"
-            />
-            <img
-              className={styles.imageLeft}
-              alt=""
-              src="/mockups/heroMockup-2.png"
-            />
-          </motion.div>
-        </motion.div>
+        <div className={styles.containerImage}>
+          <img
+            className={styles.imageRight}
+            alt=""
+            src="/mockups/heroMockup-1.png"
+          />
+          <img
+            className={styles.imageLeft}
+            alt=""
+            src="/mockups/heroMockup-2.png"
+          />
+        </div>
       </div>
       <a href="#testimonials">
         {!matches && (
-          <motion.div
-            initial={{ opacity: 0, transform: `translate(0, 40px)` }}
-            whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-            transition={easeSlow}
-            viewport={{ once: true }}
-            className={styles.containerScroll}
-          >
+          <div className={styles.containerScroll}>
             <span className={styles.containerMouse}>
               <span className={styles.containerMove}></span>
             </span>
-            <span className={styles.textScroll}>Scroll down</span>
-          </motion.div>
+            <h2 className={styles.textScroll}>Scroll down</h2>
+          </div>
         )}
       </a>
     </section>

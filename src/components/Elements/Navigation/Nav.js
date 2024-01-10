@@ -1,10 +1,10 @@
-import { useState, useEffect, useMemo } from "react";
+import { useState, useEffect } from "react";
 import NavbarLink from "./NavbarLink";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-import { motion } from "framer-motion";
+import ButtonMenu from "../Buttons/ButtonMenu";
 import styles from "./Nav.module.css";
 
-const Nav = ({ logoURL, sectionZIndex }) => {
+const Nav = ({ logoURL }) => {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 1024px)").matches
   );
@@ -15,84 +15,53 @@ const Nav = ({ logoURL, sectionZIndex }) => {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
-  const containerSectionStyle = useMemo(() => {
-    return {
-      zIndex: sectionZIndex,
-    };
-  }, [sectionZIndex]);
-
-  const [navbar, setNavbar] = useState(false);
-
-  const changeBackground = () => {
-    if (window.scrollY >= 80) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
-  };
-
-  window.addEventListener("scroll", changeBackground);
-
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
-
   return (
-    <motion.nav
-      initial={{ opacity: 0, transform: `translate(0, -40px)` }}
-      whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-      transition={easeSlow}
-      viewport={{ once: true }}
-      className={
-        navbar
-          ? `${styles.containerNav} ${styles.containerNavActive}`
-          : styles.containerNav
-      }
-      style={containerSectionStyle}
-    >
-      <div className={styles.containerSection}>
-        <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
-        {!matches && (
-          <div className={styles.containerContent}>
-            <NavbarLink
-              linkText="Start"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#start"
-            />
-            <NavbarLink
-              linkText="Testimonials"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#testimonials"
-            />
-            <NavbarLink
-              linkText="Context"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#context"
-            />
-            <NavbarLink
-              linkText="Features"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#features"
-            />
-            <NavbarLink
-              linkText="Use Cases"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#use_cases"
-            />
-            <NavbarLink
-              linkText="Pricing"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#pricing"
-            />
-          </div>
-        )}
+    <nav className={styles.containerSection}>
+      <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
+      {!matches && (
+        <div className={styles.containerContent}>
+          <NavbarLink
+            linkText="Start"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#start"
+          />
+          <NavbarLink
+            linkText="Testimonials"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#testimonials"
+          />
+          <NavbarLink
+            linkText="Context"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#context"
+          />
+          <NavbarLink
+            linkText="Features"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#features"
+          />
+          <NavbarLink
+            linkText="Use Cases"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#use_cases"
+          />
+          <NavbarLink
+            linkText="Pricing"
+            linkFlex="1"
+            linkCursor="pointer"
+            linkURL="#pricing"
+          />
+        </div>
+      )}
+      {/* {matches && (
+        <ButtonMenu iconURL="/icons/menu.svg" altIconText="Icon Menu" />
+      )} */}
+      
         <ButtonPrimary
           buttonText="Get your app"
           showButtonText={true}
@@ -103,8 +72,8 @@ const Nav = ({ logoURL, sectionZIndex }) => {
           altTextIconRight="Icon Arrow Right"
           buttonLink="mailto:hello@rosa.zone"
         />
-      </div>
-    </motion.nav>
+      
+    </nav>
   );
 };
 

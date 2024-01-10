@@ -38,6 +38,7 @@
 
   .containerContent {
     gap: var(--size-16);
+    width: 100%;
   }
 }
 

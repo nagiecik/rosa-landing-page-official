@@ -7,7 +7,7 @@ const Showcase = ({
   sectionZIndex,
   showContentText,
   showArticleTestimonial,
-  showArticleSummary,
+  showArticle,
   buttonAppStore,
   buttonGooglePlay,
   sectionMarginTop,
@@ -17,6 +17,7 @@ const Showcase = ({
   imageLeftURL,
   imageRightAltText,
   imageRightURL,
+  ref,
 }) => {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 1024px)").matches,
@@ -78,7 +79,7 @@ const Showcase = ({
         initial={{ opacity: 0, transform: `translate(0, 160px)` }}
         whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
         transition={easeFast}
-        viewport={{ once: false }}
+        viewport={{ once: true }}
         className={styles.containerMotion}
       >
         <div className={styles.containerContent} style={containerContentStyle}>
@@ -122,7 +123,7 @@ const Showcase = ({
             </div>
           )}
 
-          {showArticleSummary && (
+          {showArticle && (
             <div className={styles.containerArticle}>
               <ContextText
                 showTextHeaderLight={true}

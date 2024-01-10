@@ -33,7 +33,7 @@ const Nav = ({ logoURL, sectionZIndex }) => {
       zIndex: sectionZIndex,
     };
   }, [sectionZIndex]);
-
+  
   const easeFast = {
     duration: 1,
     ease: [0.15, 0.85, 0.47, 0.97],

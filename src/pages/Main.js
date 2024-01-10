@@ -99,7 +99,7 @@ const Main = () => {
         <SectionShowcase
           sectionID="summary"
           showContentText={false}
-          showArticleSummary={true}
+          showArticle={true}
           showArticleTestimonial={false}
           sectionZIndex="3"
           buttonAppStore="/buttonAppStore.svg"
@@ -116,7 +116,7 @@ const Main = () => {
         <SectionShowcase
           sectionID="summary"
           showContentText={false}
-          showArticleSummary={true}
+          showArticle={true}
           showArticleTestimonial={false}
           sectionZIndex="1"
           buttonAppStore="/buttonAppStore.svg"

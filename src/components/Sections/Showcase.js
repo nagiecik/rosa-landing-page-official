@@ -1,5 +1,6 @@
 import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
+import { motion } from "framer-motion";
 import styles from "./Showcase.module.css";
 
 const Showcase = ({
@@ -38,11 +39,18 @@ const Showcase = ({
       marginTop: sectionMarginTop,
     };
   }, [sectionZIndex, sectionMarginTop]);
+
   const containerContentStyle = useMemo(() => {
     return {
       backgroundImage: containerBackgroundImage,
     };
   }, [containerBackgroundImage]);
+
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <section
       className={styles.containerSection}

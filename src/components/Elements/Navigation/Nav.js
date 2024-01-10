@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo } from "react";
 import NavbarLink from "./NavbarLink";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import ButtonMenu from "../Buttons/ButtonMenu";
+import { motion } from "framer-motion";
 import styles from "./Nav.module.css";
 
-const Nav = ({ logoURL }) => {
+const Nav = ({ logoURL, sectionZIndex }) => {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 1024px)").matches
   );
@@ -14,6 +15,34 @@ const Nav = ({ logoURL }) => {
       .matchMedia("(max-width: 1024px)")
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
+
+  const [navbar, setNavbar] = useState(false);
+
+  const changeBackground = () => {
+    if (window.scrollY >= 64) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+
+  window.addEventListener("scroll", changeBackground);
+
+  const containerSectionStyle = useMemo(() => {
+    return {
+      zIndex: sectionZIndex,
+    };
+  }, [sectionZIndex]);
+
+  const easeFast = {
+    duration: 1,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
+  const easeSlow = {
+    duration: 2,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
 
   return (
     <motion.nav
@@ -82,8 +111,8 @@ const Nav = ({ logoURL }) => {
           altTextIconRight="Icon Arrow Right"
           buttonLink="mailto:hello@rosa.zone"
         />
-      
-    </nav>
+      </div>
+    </motion.nav>
   );
 };
 

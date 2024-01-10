@@ -100,6 +100,11 @@ html {
   font-family: var(--font-main);
   scroll-behavior: smooth;
 }
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body {
   margin: 0;
   line-height: normal;

@@ -1,6 +1,7 @@
 import { useMemo, useEffect, useState } from "react";
 import ContentArticle from "../Elements/Contents/ContentArticle";
 import Nav from "../Elements/Navigation/Nav";
+import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {
@@ -26,7 +27,6 @@ const Hero = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={containerSectionStyle}
     >
-      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" />
       <div className={styles.containerContent}>
         <ContentArticle
           buttonAppStore="/buttonAppStore.svg"

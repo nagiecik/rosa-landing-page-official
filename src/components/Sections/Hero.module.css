@@ -26,15 +26,18 @@
 
 /* Scroll Down */
 
+.containerScrollMotion {
+  position: absolute;
+  left: calc(50% - var(--size-64));
+  bottom: var(--size-32);
+}
+
 .containerScroll {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: var(--size-8);
-  position: absolute;
-  left: calc(50% - var(--size-64));
-  bottom: var(--size-32);
 }
 
 .containerScroll:hover .containerMouse,
@@ -171,7 +174,8 @@
 }
 
 @media screen and (max-width: 1440px) {
-  .imageRight, .imageLeft {
+  .imageRight,
+  .imageLeft {
     max-height: 520px;
   }
 }
@@ -296,7 +300,7 @@
   }
 
   .imageLeft {
-    height: var(--size-400)
+    height: var(--size-400);
   }
 
   .imageRight {

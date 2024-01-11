@@ -2,10 +2,21 @@ import { useState, useEffect } from "react";
 import Divider from "../Elements/Other/Divider";
 import ContextText from "../Elements/Contents/ContentText";
 import NavFooter from "../Elements/Navigation/NavFooter";
+import ButtonScroll from "../Elements/Buttons/ButtonScroll";
 import { motion } from "framer-motion";
 import styles from "./Footer.module.css";
 
 const Footer = () => {
+  const [tablet, setTablet] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+  );
+
+  useEffect(() => {
+    window
+      .matchMedia("(max-width: 768px)")
+      .addEventListener("change", (e) => setTablet(e.matches));
+  }, []);
+
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 430px)").matches
   );
@@ -66,19 +77,12 @@ const Footer = () => {
               textHeaderLinkURL="mailto:hello.rosa@zone"
             />
           )}
-          {!matches && (
-            <a href="#start" className={styles.buttonScroll}>
-              <img
-                className={styles.imageScroll}
-                alt="Scroll Up Image"
-                src="/icons/scroll-up.svg"
-              />
-              <img
-                className={styles.iconScroll}
-                alt=""
-                src="/icons/arrow.up.svg"
-              />
-            </a>
+          {!tablet && (
+            <ButtonScroll
+              linkScrollURL="#start"
+              imageScrollURL="./icons/scroll-up.svg"
+              iconScrollURL="./icons/arrow.up.svg"
+            />
           )}
         </motion.header>
         <motion.div

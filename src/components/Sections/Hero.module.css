@@ -28,56 +28,8 @@
 
 .containerScrollMotion {
   position: absolute;
-  left: calc(50% - var(--size-64));
-  bottom: var(--size-32);
-}
-
-.containerScroll {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: var(--size-8);
-}
-
-.containerScroll:hover .containerMouse,
-.containerMove {
-  transform: scale(1.1);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerScroll .containerMouse,
-.containerMove {
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerMouse {
-  margin: 0 auto;
-  display: block;
-  border-radius: var(--size-16);
-  border: var(--size-2) solid var(--surface-primary);
-  height: var(--size-64);
-  width: var(--size-32);
-  position: relative;
-}
-
-.containerMove {
-  position: absolute;
-  background-color: var(--surface-primary);
-  height: var(--size-8);
-  width: var(--size-8);
-  border-radius: var(--size-16);
-  left: calc(50% - var(--size-4));
-}
-
-.textScroll {
-  width: var(--size-128);
-  font-size: var(--size-16);
-  line-height: var(--size-32);
-
-  font-weight: var(--font-regular);
-  color: var(--surface-primary);
-  text-align: center;
+  left: calc(50% - var(--size-100));
+  bottom: var(--size-48);
 }
 
 /* Images */
@@ -171,6 +123,11 @@
     filter: drop-shadow(var(--shadow-hero-mockup-big));
     max-height: 600px;
   }
+
+  .containerScrollMotion {
+    left: calc(50% - var(--size-80));
+    bottom: var(--size-32);
+  }
 }
 
 @media screen and (max-width: 1440px) {
@@ -193,29 +150,6 @@
   .imageRight {
     filter: drop-shadow(var(--shadow-hero-mockup-medium));
   }
-
-  .containerMouse {
-    height: var(--size-48);
-    width: var(--size-24);
-    border-radius: var(--size-12);
-  }
-
-  .containerMove {
-    height: var(--size-6);
-    width: var(--size-6);
-    left: calc(50% - var(--size-3));
-  }
-
-  .textScroll {
-    font-size: var(--size-14);
-    line-height: var(--size-24);
-  }
-
-  .containerScroll:hover .containerMouse,
-  .containerMove {
-    transform: scale(1.1);
-    transition: calc(var(--d) * 2) var(--e);
-  }
 }
 
 @media screen and (max-width: 1280px) {
@@ -235,6 +169,11 @@
   .imageRight {
     width: 52%;
     bottom: -8%;
+  }
+
+  .containerScrollMotion {
+    left: calc(50% - var(--size-72));
+    bottom: var(--size-24);
   }
 }
 

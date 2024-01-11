@@ -2,15 +2,16 @@ import { useMemo, useEffect, useState } from "react";
 import ContentArticle from "../Elements/Contents/ContentArticle";
 import { motion } from "framer-motion";
 import styles from "./Hero.module.css";
+import ButtonScroll from "../Elements/Buttons/ButtonScroll";
 
 const Hero = ({ sectionZIndex }) => {
   const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 768px)").matches
+    window.matchMedia("(max-width: 1024px)").matches
   );
 
   useEffect(() => {
     window
-      .matchMedia("(max-width: 768px)")
+      .matchMedia("(max-width: 1024px)")
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
@@ -60,32 +61,22 @@ const Hero = ({ sectionZIndex }) => {
           </motion.div>
         </motion.div>
       </div>
-      <a href="#testimonials">
-        {!matches && (
-          <motion.div
-            initial={{ opacity: 0, transform: `translate(0, 40px)` }}
-            whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-            transition={easeSlow}
-            viewport={{ once: true }}
-            className={styles.containerScrollMotion}
-          >
-            <div className={styles.containerScroll}>
-              <span className={styles.containerMouse}>
-                <motion.div
-                  animate={{ opacity: [0, 0.5, 1, 0.5, 0], y: [0, 40] }}
-                  transition={{
-                    repeat: Infinity,
-                    repeatType: "loop",
-                    duration: 3,
-                  }}
-                  className={styles.containerMove}
-                ></motion.div>
-              </span>
-              <h2 className={styles.textScroll}>Scroll down</h2>
-            </div>
-          </motion.div>
-        )}
-      </a>
+
+      {!matches && (
+        <motion.div
+          initial={{ opacity: 0, transform: `translate(0, 40px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeSlow}
+          viewport={{ once: true }}
+          className={styles.containerScrollMotion}
+        >
+          <ButtonScroll
+            linkScrollURL="#testimonials"
+            imageScrollURL="./icons/scroll-down.svg"
+            iconScrollURL="./icons/arrow.down.svg"
+          />
+        </motion.div>
+      )}
     </section>
   );
 };

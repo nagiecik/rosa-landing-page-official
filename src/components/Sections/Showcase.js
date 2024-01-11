@@ -19,19 +19,24 @@ const Showcase = ({
   imageRightURL,
   ref,
 }) => {
-  const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 1024px)").matches,
-    window.matchMedia("(max-width: 768px)").matches
+  const [desktopSmall, setDesktopSmall] = useState(
+    window.matchMedia("(max-width: 1024px)").matches
   );
 
   useEffect(() => {
     window
       .matchMedia("(max-width: 1024px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
+      .addEventListener("change", (e) => setDesktopSmall(e.matches));
+  }, []);
 
+  const [tablet, setTablet] = useState(
+    window.matchMedia("(max-width: 768px)").matches
+  );
+
+  useEffect(() => {
     window
       .matchMedia("(max-width: 768px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
+      .addEventListener("change", (e) => setTablet(e.matches));
   }, []);
 
   const containerShowcaseStyle = useMemo(() => {
@@ -167,14 +172,14 @@ const Showcase = ({
             </div>
           )}
 
-          {!matches && (
+          {!desktopSmall && (
             <img
               className={styles.imageRight}
               alt={imageRightAltText}
               src={imageRightURL}
             />
           )}
-          {!matches && (
+          {!tablet && (
             <img
               className={styles.imageLeft}
               alt={imageLeftAltText}

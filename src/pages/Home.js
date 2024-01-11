@@ -7,10 +7,10 @@ import SectionFeatureLeft from "../components/Sections/FeatureLeft";
 import SectionFeatureRight from "../components/Sections/FeatureRight";
 import SectionPricing from "../components/Sections/Pricing";
 import SectionFooter from "../components/Sections/Footer";
-import styles from "./Main.module.css";
+import styles from "./Home.module.css";
 import Nav from "../components/Elements/Navigation/Nav";
 
-const Main = () => {
+const Home = () => {
   const [matches, setMatches] = useState(
     window.matchMedia("(max-width: 768px)").matches
   );
@@ -22,7 +22,7 @@ const Main = () => {
   }, []);
 
   return (
-    <div className={styles.main}>
+    <div className={styles.home}>
       <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000" />
       <SectionHero sectionZIndex="10" />
       <SectionShowcase
@@ -134,4 +134,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Home;

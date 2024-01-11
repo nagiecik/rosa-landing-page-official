@@ -1,21 +1,25 @@
+import React from "react";
 import styles from "./ButtonScroll.module.css";
 import { motion } from "framer-motion";
 
 const ButtonScroll = ({
   linkScrollURL,
   imageScrollURL,
-  imageScrollALT,
+  imageScrollAlt,
   iconScrollURL,
   iconScrollAlt,
+  motionConfig = {
+    initial: { rotate: "0deg" },
+    animate: { rotate: "360deg" },
+    transition: { repeat: Infinity, ease: "linear", duration: 8 },
+  },
 }) => {
   return (
     <a href={linkScrollURL} className={styles.containerButton}>
       <motion.img
-        initial={{ rotate: "0deg" }}
-        animate={{ rotate: "360deg" }}
-        transition={{ repeat: Infinity, ease: "linear", duration: 8 }}
+        {...motionConfig}
         className={styles.imageScroll}
-        alt={imageScrollALT}
+        alt={imageScrollAlt}
         src={imageScrollURL}
       />
       <img

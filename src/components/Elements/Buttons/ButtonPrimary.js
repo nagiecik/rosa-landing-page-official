@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import React from "react";
 import styles from "./ButtonPrimary.module.css";
 
 const Button = ({
@@ -14,12 +14,10 @@ const Button = ({
   buttonDisplayMode,
   buttonLink,
 }) => {
-  const buttonStyle = useMemo(() => {
-    return {
-      width: buttonWidth,
-      display: buttonDisplayMode,
-    };
-  }, [buttonWidth, buttonDisplayMode]);
+  const buttonStyle = {
+    width: buttonWidth,
+    display: buttonDisplayMode,
+  };
 
   return (
     <div className={styles.containerButton} style={buttonStyle}>
@@ -31,7 +29,7 @@ const Button = ({
         />
       )}
       {showButtonText && (
-        <a href={buttonLink} target="_blank">
+        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
           <p className={styles.textButton}>{buttonText}</p>
         </a>
       )}

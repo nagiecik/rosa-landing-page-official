@@ -104,10 +104,7 @@ const PricingCard = ({
       )}
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />
       <div className={styles.containerFeatures}>
-        <p
-          className={styles.textSubtitle}
-          style={textDescriptionStyle}
-        >
+        <p className={styles.textSubtitle} style={textDescriptionStyle}>
           {textCardFeatures}
         </p>
         <BulletCheckmark
@@ -145,10 +142,7 @@ const PricingCard = ({
       />
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />
       <div className={styles.containerServices}>
-        <p
-          className={styles.textSubtitle}
-          style={textDescriptionStyle}
-        >
+        <p className={styles.textSubtitle} style={textDescriptionStyle}>
           {textCardServices}
         </p>
         <BulletNumber

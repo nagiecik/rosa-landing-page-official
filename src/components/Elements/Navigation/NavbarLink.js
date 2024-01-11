@@ -1,31 +1,11 @@
 import { useMemo } from "react";
 import styles from "./NavbarLink.module.css";
 
-const NavbarLink = ({
-  linkText = "Link Text",
-  linkFlex,
-  linkCursor,
-  linkURL,
-}) => {
-  const linkCursorStyle = useMemo(() => {
-    return {
-      cursor: linkCursor,
-    };
-  }, [linkCursor]);
-  const linkFlexStyle = useMemo(() => {
-    return {
-      flex: linkFlex,
-    };
-  }, [linkFlex]);
-
+const NavbarLink = ({ linkText = "Link Text", linkCursor, linkURL }) => {
   return (
-    <div className={styles.linkState} style={linkFlexStyle}>
+    <div className={styles.linkState}>
       <a href={linkURL}>
-        <div
-          data-replace={linkText}
-          className={styles.linkText}
-          style={linkCursorStyle}
-        >
+        <div data-replace={linkText} className={styles.linkText}>
           <span>{linkText}</span>
         </div>
       </a>

@@ -2,12 +2,6 @@ import { useMemo } from "react";
 import styles from "./BulletCheckmark.module.css";
 
 const BulletCheckmark = ({ imageIconURL, textBullet, textBulletColor }) => {
-  const textBulletStyle = useMemo(() => {
-    return {
-      color: textBulletColor,
-    };
-  }, [textBulletColor]);
-
   return (
     <div className={styles.containerContent}>
       <img
@@ -15,7 +9,7 @@ const BulletCheckmark = ({ imageIconURL, textBullet, textBulletColor }) => {
         alt="Icon Checkmark"
         src={imageIconURL}
       />
-      <div className={styles.textBullet} style={textBulletStyle}>
+      <div className={styles.textBullet} style={{ color: textBulletColor }}>
         {textBullet}
       </div>
     </div>

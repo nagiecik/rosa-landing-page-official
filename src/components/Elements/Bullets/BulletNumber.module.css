@@ -1,15 +1,17 @@
 /* Text */
+.textBullet,
+.textNumber {
+  position: relative;
+}
 
 .textBullet {
   flex: 1;
-  position: relative;
   font-size: var(--size-20);
   line-height: var(--size-32);
   font-weight: var(--font-semibold);
 }
 
 .textNumber {
-  position: relative;
   font-size: var(--size-32);
   letter-spacing: var(--letter-spacing-default);
   line-height: var(--size-48);
@@ -17,10 +19,8 @@
 }
 
 /* Main Containers */
-
 .containerContent {
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: var(--size-16);
@@ -29,7 +29,6 @@
 }
 
 /* Media Queries */
-
 @media screen and (max-width: 1536px) {
   .textBullet {
     font-size: var(--size-16);

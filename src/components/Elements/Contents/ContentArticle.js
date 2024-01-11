@@ -1,48 +1,46 @@
-import { useMemo, useState, useEffect } from "react";
+import useMediaQuery from "../../../utils/useMediaQuery";
+import { motion } from "framer-motion";
 import styles from "./ContentArticle.module.css";
 
 const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
-  const [tablet, setMatches] = useState(
-    window.matchMedia("(max-width: 768px)").matches
-  );
+  const tablet = useMediaQuery("(max-width: 768px)");
+  const mobile = useMediaQuery("(max-width: 430px)");
 
-  const [mobile, setMatches2] = useState(
-    window.matchMedia("(max-width: 430px)").matches
-  );
-
-  useEffect(() => {
-    window
-      .matchMedia("(max-width: 768px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-
-    window
-      .matchMedia("(max-width: 430px)")
-      .addEventListener("change", (e) => setMatches2(e.matches));
-  }, []);
-
+  const easeSlow = {
+    duration: 2,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
   return (
-    <article className={styles.containerContent}>
-      {!tablet && (
+    <motion.article
+      initial={{ transform: "translate(-100px, 0)", opacity: 0 }}
+      whileInView={{ transform: "translate(0, 0)", opacity: 1 }}
+      transition={easeSlow}
+      viewport={{ once: true }}
+      className={styles.containerContent}
+    >
+      {(tablet && !mobile) || !tablet ? (
         <div className={styles.containerHeader}>
           <h1 className={styles.textHeaderLight}>Gamechanger</h1>
-          <h1 className={styles.textHeaderBold}>In The Way</h1>
-          <h1 className={styles.textHeaderLight}>You Manage</h1>
+          {!tablet && (
+            <>
+              <h1 className={styles.textHeaderBold}>In The Way</h1>
+              <h1 className={styles.textHeaderLight}>You Manage</h1>
+            </>
+          )}
+          {tablet && !mobile && (
+            <h1 className={styles.textHeaderBold}>In The Way You Manage</h1>
+          )}
         </div>
-      )}
-      {tablet && !mobile && (
-        <div className={styles.containerHeader}>
-          <h1 className={styles.textHeaderLight}>Gamechanger In </h1>
-          <h1 className={styles.textHeaderBold}>The Way You Manage</h1>
-        </div>
+      ) : (
+        mobile && (
+          <div className={styles.containerHeader}>
+            <h1 className={styles.textHeaderLight}>Gamechanger</h1>
+            <h1 className={styles.textHeaderBold}>In The Way</h1>
+            <h1 className={styles.textHeaderLight}>You Manage</h1>
+          </div>
+        )
       )}
 
-      {mobile && (
-        <div className={styles.containerHeader}>
-          <h1 className={styles.textHeaderLight}>Gamechanger</h1>
-          <h1 className={styles.textHeaderBold}>In The Way</h1>
-          <h1 className={styles.textHeaderLight}>You Manage</h1>
-        </div>
-      )}
       <p className={styles.textParagraph}>
         In the realm of sports governance, every organization encounters common
         challenges, irrespective of the specific laws and regulations they
@@ -65,7 +63,7 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
           />
         </a>
       </div>
-    </article>
+    </motion.article>
   );
 };
 

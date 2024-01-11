@@ -50,14 +50,14 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
         the imperative to ensure their effective dissemination.
       </p>
       <div className={styles.containerButtons}>
-        <a href="#">
+        <a href="https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US">
           <img
             className={styles.buttonGooglePlay}
             alt="Google Play Button"
             src={buttonGooglePlay}
           />
         </a>
-        <a href="#">
+        <a href="https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179">
           <img
             className={styles.buttonAppStore}
             alt="App Store Button"

@@ -5,6 +5,7 @@ const CardFeature = ({
   textNumber = "textNumber",
   textTitle = "textTitle",
   textParagraph = "textContent",
+  variants,
 }) => {
   return (
     <div className={styles.containerCard}>

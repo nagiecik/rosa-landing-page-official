@@ -38,7 +38,6 @@
 
   .containerContent {
     gap: var(--size-16);
-    width: 100%;
   }
 }
 
@@ -75,5 +74,9 @@
   .textHeaderLink {
     font-size: var(--size-40);
     line-height: var(--size-40);
+  }
+
+  .containerContent {
+    width: 100%;
   }
 }

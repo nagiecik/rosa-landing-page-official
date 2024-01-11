@@ -59,21 +59,29 @@ const Showcase = ({
       id={sectionID}
     >
       {showContentText && (
-        <ContextText
-          sectionWidth="100%"
-          sectionTextContentZIndex="0"
-          showTextHeaderLight={true}
-          textHeaderLight="Our Recent"
-          textHeaderLightWeight="var(--font-thin)"
-          textHeaderLightColor="var(--surface-secondary)"
-          showTextHeaderBold={true}
-          textHeaderBold="Showcase"
-          textHeaderBoldWeight="var(--font-semibold)"
-          textHeaderBoldColor="var(--surface-secondary)"
-          showTextParagraph={true}
-          textParagraph="Recent testimonials highlight the positive impact of ROSA. Users appreciate its user-friendly design, making tasks like tracking changes, giving feedback, and browsing a seamless experience. Unlike traditional methods involving PDFs and printouts, ROSA adds a personalized touch, transforming the way users interact globally."
-          textParagraphColor="var(--surface-secondary)"
-        />
+        <motion.div
+          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
+          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+          transition={easeFast}
+          viewport={{ once: true }}
+          className={styles.containerMotion}
+        >
+          <ContextText
+            sectionWidth="100%"
+            sectionTextContentZIndex="0"
+            showTextHeaderLight={true}
+            textHeaderLight="Our Recent"
+            textHeaderLightWeight="var(--font-thin)"
+            textHeaderLightColor="var(--surface-secondary)"
+            showTextHeaderBold={true}
+            textHeaderBold="Showcase"
+            textHeaderBoldWeight="var(--font-semibold)"
+            textHeaderBoldColor="var(--surface-secondary)"
+            showTextParagraph={true}
+            textParagraph="Recent testimonials highlight the positive impact of ROSA. Users appreciate its user-friendly design, making tasks like tracking changes, giving feedback, and browsing a seamless experience. Unlike traditional methods involving PDFs and printouts, ROSA adds a personalized touch, transforming the way users interact globally."
+            textParagraphColor="var(--surface-secondary)"
+          />
+        </motion.div>
       )}
       <motion.div
         initial={{ opacity: 0, transform: `translate(0, 160px)` }}

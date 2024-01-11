@@ -21,6 +21,11 @@ const Hero = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
+  const easeSlow = {
+    duration: 2,
+    ease: [0.15, 0.85, 0.47, 0.97],
+  };
+
   return (
     <section
       id="start"
@@ -32,18 +37,29 @@ const Hero = ({ sectionZIndex }) => {
           buttonAppStore="/buttonAppStore.svg"
           buttonGooglePlay="/buttonGooglePlay.svg"
         />
-        <div className={styles.containerImage}>
-          <img
-            className={styles.imageRight}
-            alt=""
-            src="/mockups/heroMockup-1.png"
-          />
-          <img
-            className={styles.imageLeft}
-            alt=""
-            src="/mockups/heroMockup-2.png"
-          />
-        </div>
+        <motion.div
+          whileHover={{ scale: 1.05, rotate: "5deg" }}
+          className={styles.containerMotion}
+        >
+          <motion.div
+            initial={{ opacity: 0, transform: `translate(0, 200px)` }}
+            whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
+            transition={easeSlow}
+            viewport={{ once: true }}
+            className={styles.containerImage}
+          >
+            <img
+              className={styles.imageRight}
+              alt=""
+              src="/mockups/heroMockup-1.png"
+            />
+            <img
+              className={styles.imageLeft}
+              alt=""
+              src="/mockups/heroMockup-2.png"
+            />
+          </motion.div>
+        </motion.div>
       </div>
       <a href="#testimonials">
         {!matches && (

@@ -9,6 +9,80 @@ const Features = () => {
     ease: [0.15, 0.85, 0.47, 0.97],
   };
 
+  const cardFeatureData = [
+    {
+      imageIconUrl: "/icons/questionmark.app.svg",
+      textNumber: "01",
+      textTitle: "Competition regulations",
+      textParagraph: "well-organised regulations, easy to upload and access",
+    },
+    {
+      imageIconUrl: "/icons/textformat.alt.svg",
+      textNumber: "02",
+      textTitle: "Language Versions",
+      textParagraph: "entire content available in multiple languages",
+    },
+    {
+      imageIconUrl: "/icons/square.and.pencil.svg",
+      textNumber: "03",
+      textTitle: "Competition regulations",
+      textParagraph: "well-organised regulations, easy to upload and access",
+    },
+    {
+      imageIconUrl: "/icons/doc.badge.ellipsis.svg",
+      textNumber: "04",
+      textTitle: "Rules & Changes",
+      textParagraph: "rules always up-to-date, amendments easy to track",
+    },
+    {
+      imageIconUrl: "/icons/note.text.svg",
+      textNumber: "05",
+      textTitle: "Notes & Favourites",
+      textParagraph:
+        "highlighting passages, adding personal notes, bookmarking favourites",
+    },
+    {
+      imageIconUrl: "/icons/person.icloud.svg",
+      textNumber: "06",
+      textTitle: "Marketing",
+      textParagraph: "building users’ database and sending notifications",
+    },
+    {
+      imageIconUrl: "/icons/doc.text.image.svg",
+      textNumber: "07",
+      textTitle: "Content features",
+      textParagraph: "photo, audio, and video content available for download",
+    },
+    {
+      imageIconUrl: "/icons/brain.head.profile.svg",
+      textNumber: "08",
+      textTitle: "AI Assistant",
+      textParagraph: "experience seamless support with our ai assistant",
+    },
+  ];
+
+  const cardContainer = {
+    hidden: { opacity: 0, transform: `translate(0, 80px)` },
+    show: {
+      opacity: 1,
+      transform: `translate(0, 0)`,
+      transition: {
+        duration: 1,
+        ease: [0.15, 0.85, 0.47, 0.97],
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, transform: `translate(0, 80px)` },
+    show: {
+      opacity: 1,
+      transform: `translate(0, 0)`,
+      transition: { duration: 1, ease: [0.15, 0.85, 0.47, 0.97] },
+    },
+  };
+
   return (
     <section id="features" className={styles.containerSection}>
       <motion.div
@@ -35,60 +109,22 @@ const Features = () => {
         />
       </motion.div>
       <motion.div
-        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-        transition={easeFast}
+        variants={cardContainer}
+        initial="hidden"
+        whileInView="show"
         viewport={{ once: true }}
         className={styles.containerContent}
       >
-        <CardFeature
-          imageIconUrl="/icons/questionmark.app.svg"
-          textNumber="01"
-          textTitle="Competition regulations"
-          textParagraph="well-organised regulations, easy to upload and access"
-        />
-        <CardFeature
-          imageIconUrl="/icons/textformat.alt.svg"
-          textNumber="02"
-          textTitle="Language Versions"
-          textParagraph="entire content available in multiple languages"
-        />
-        <CardFeature
-          imageIconUrl="/icons/square.and.pencil.svg"
-          textNumber="03"
-          textTitle="Competition regulations"
-          textParagraph="well-organised regulations, easy to upload and access"
-        />
-        <CardFeature
-          imageIconUrl="/icons/doc.badge.ellipsis.svg"
-          textNumber="04"
-          textTitle="Rules & Changes"
-          textParagraph="rules always up-to-date, amendments easy to track"
-        />
-        <CardFeature
-          imageIconUrl="/icons/note.text.svg"
-          textNumber="05"
-          textTitle="Notes & Favourites"
-          textParagraph="highlighting passages, adding personal notes, bookmarking favourites"
-        />
-        <CardFeature
-          imageIconUrl="/icons/person.icloud.svg"
-          textNumber="06"
-          textTitle="Marketing"
-          textParagraph="building users’ database and sending notifications"
-        />
-        <CardFeature
-          imageIconUrl="/icons/doc.text.image.svg"
-          textNumber="07"
-          textTitle="Content features"
-          textParagraph="photo, audio, and video content available for download"
-        />
-        <CardFeature
-          imageIconUrl="/icons/brain.head.profile.svg"
-          textNumber="08"
-          textTitle="AI Assistant"
-          textParagraph="experience seamless support with our ai assistant"
-        />
+        {cardFeatureData.map((item, index) => (
+          <motion.div key={index} variants={cardItem}>
+            <CardFeature
+              imageIconUrl={item.imageIconUrl}
+              textNumber={item.textNumber}
+              textTitle={item.textTitle}
+              textParagraph={item.textParagraph}
+            />
+          </motion.div>
+        ))}
       </motion.div>
     </section>
   );

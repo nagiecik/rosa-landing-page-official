@@ -76,7 +76,7 @@
 
 @media screen and (max-width: 1280px) {
   .containerButton {
-    padding: var(--size-12);
+    padding: var(--size-8) var(--size-12);
   }
 }
 

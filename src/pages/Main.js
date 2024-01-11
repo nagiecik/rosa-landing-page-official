@@ -23,7 +23,7 @@ const Main = () => {
 
   return (
     <div className={styles.main}>
-      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000"/>
+      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000" />
       <SectionHero sectionZIndex="10" />
       <SectionShowcase
         sectionZIndex="9"
@@ -99,7 +99,7 @@ const Main = () => {
         <SectionShowcase
           sectionID="summary"
           showContentText={false}
-          showArticleSummary={true}
+          showArticle={true}
           showArticleTestimonial={false}
           sectionZIndex="3"
           buttonAppStore="/buttonAppStore.svg"
@@ -116,7 +116,7 @@ const Main = () => {
         <SectionShowcase
           sectionID="summary"
           showContentText={false}
-          showArticleSummary={true}
+          showArticle={true}
           showArticleTestimonial={false}
           sectionZIndex="1"
           buttonAppStore="/buttonAppStore.svg"

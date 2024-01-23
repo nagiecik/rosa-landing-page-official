@@ -3,14 +3,14 @@ import styles from "./NavFooter.module.css";
 import NavbarLink from "./NavbarLink";
 
 const NavFooter = ({ textTitle, links }) => {
-  const filteredLinks = useMemo(() => {
+  const footerLinks = useMemo(() => {
     return links.filter((link) => link.show);
   }, [links]);
 
   return (
     <div className={styles.containerContent}>
       <b className={styles.textTitle}>{textTitle}</b>
-      {filteredLinks.map((link, index) => (
+      {footerLinks.map((link, index) => (
         <NavbarLink
           key={index}
           linkText={link.linkText}

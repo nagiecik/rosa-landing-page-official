@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import styles from "./NavbarLink.module.css";
 
 const NavbarLink = ({ linkText = "Link Text", linkCursor, linkURL }) => {

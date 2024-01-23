@@ -1,30 +1,36 @@
 import { useMemo, useEffect, useState } from "react";
-import ContentArticle from "../Elements/Contents/ContentArticle";
 import { motion } from "framer-motion";
-import styles from "./Hero.module.css";
+import useMediaQuery from "../../utils/useMediaQuery";
+import {
+  getMotionProperties,
+  easeSlow,
+  easeFast,
+  getHoverProperties,
+} from "../../utils/motionUtils";
+import ContentArticle from "../Elements/Contents/ContentArticle";
 import ButtonScroll from "../Elements/Buttons/ButtonScroll";
+import styles from "./Hero.module.css";
 
 const Hero = ({ sectionZIndex }) => {
-  const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 1024px)").matches
-  );
+  const tabletHorizontal = useMediaQuery("(max-width: 1024px");
 
-  useEffect(() => {
-    window
-      .matchMedia("(max-width: 1024px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-  }, []);
+  const motionImagesContainer = getMotionProperties(
+    "0, 200px",
+    "0, 0",
+    easeSlow
+  );
+  const motionScrollDownContainer = getMotionProperties(
+    "0, 40px",
+    "0, 0",
+    easeSlow
+  );
+  const motionImagesHover = getHoverProperties(1.1, "5deg", easeFast);
 
   const containerSectionStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
     };
   }, [sectionZIndex]);
-
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
 
   return (
     <section
@@ -37,37 +43,27 @@ const Hero = ({ sectionZIndex }) => {
           buttonAppStore="/buttonAppStore.svg"
           buttonGooglePlay="/buttonGooglePlay.svg"
         />
-        <motion.div
-          whileHover={{ scale: 1.05, rotate: "5deg" }}
-          className={styles.containerMotion}
-        >
+        <motion.div {...motionImagesHover} className={styles.containerMotion}>
           <motion.div
-            initial={{ opacity: 0, transform: `translate(0, 200px)` }}
-            whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-            transition={easeSlow}
-            viewport={{ once: true }}
+            {...motionImagesContainer}
             className={styles.containerImage}
           >
             <img
               className={styles.imageRight}
-              alt=""
+              alt="ROSA home screen app 1"
               src="/mockups/heroMockup-1.png"
             />
             <img
               className={styles.imageLeft}
-              alt=""
+              alt="ROSA home screen app 2"
               src="/mockups/heroMockup-2.png"
             />
           </motion.div>
         </motion.div>
       </div>
-
-      {!matches && (
+      {!tabletHorizontal && (
         <motion.div
-          initial={{ opacity: 0, transform: `translate(0, 40px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeSlow}
-          viewport={{ once: true }}
+          {...motionScrollDownContainer}
           className={styles.containerScrollMotion}
         >
           <ButtonScroll

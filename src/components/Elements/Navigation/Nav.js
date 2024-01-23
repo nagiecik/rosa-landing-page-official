@@ -4,6 +4,7 @@ import ButtonPrimary from "../Buttons/ButtonPrimary";
 import useMediaQuery from "../../../utils/useMediaQuery";
 import { motion } from "framer-motion";
 import styles from "./Nav.module.css";
+import { easeSlow, getMotionProperties } from "../../../utils/motionUtils";
 
 const navbarData = [
   { linkText: "Start", linkURL: "#start" },
@@ -15,7 +16,7 @@ const navbarData = [
 ];
 
 const Nav = ({ logoURL, sectionZIndex }) => {
-  const desktopSmall = useMediaQuery("(max-width: 1024px)");
+  const tabletHorizontal = useMediaQuery("(max-width: 1024px)");
 
   const [navbarActive, setNavbarActive] = useState(false);
 
@@ -37,17 +38,11 @@ const Nav = ({ logoURL, sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
+  const motionNav = getMotionProperties("0, -40px", "0, 0", easeSlow);
 
   return (
     <motion.nav
-      initial={{ opacity: 0, transform: `translate(0, -40px)` }}
-      whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-      transition={easeSlow}
-      viewport={{ once: true }}
+      {...motionNav}
       className={`${styles.containerNav} ${
         navbarActive && styles.containerNavActive
       }`}
@@ -57,7 +52,7 @@ const Nav = ({ logoURL, sectionZIndex }) => {
         <a href=".">
           <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
         </a>
-        {!desktopSmall && (
+        {!tabletHorizontal && (
           <div className={styles.containerContent}>
             {navbarData.map((data, index) => (
               <NavbarLink

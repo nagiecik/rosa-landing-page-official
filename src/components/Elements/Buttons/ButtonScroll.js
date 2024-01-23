@@ -1,6 +1,11 @@
 import React from "react";
 import styles from "./ButtonScroll.module.css";
 import { motion } from "framer-motion";
+import {
+  getInfinityRotationProperties,
+  getHoverProperties,
+  easeFast,
+} from "../../../utils/motionUtils";
 
 const ButtonScroll = ({
   linkScrollURL,
@@ -8,26 +13,59 @@ const ButtonScroll = ({
   imageScrollAlt,
   iconScrollURL,
   iconScrollAlt,
-  motionConfig = {
-    initial: { rotate: "0deg" },
-    animate: { rotate: "360deg" },
-    transition: { repeat: Infinity, ease: "linear", duration: 8 },
-  },
 }) => {
+  const motionRotation = getInfinityRotationProperties(
+    "0deg",
+    "360deg",
+    Infinity,
+    "linear",
+    8
+  );
+
+  const motionCircle = {
+    rest: {
+      scale: 1,
+      transition: easeFast,
+    },
+    hover: {
+      scale: 1.1,
+      transition: easeFast,
+    },
+  };
+
+  const motionIcon = {
+    rest: {
+      rotate: "0deg",
+      transition: easeFast,
+    },
+    hover: {
+      rotate: "-45deg",
+      transition: easeFast,
+    },
+  };
+
   return (
-    <a href={linkScrollURL} className={styles.containerButton}>
+    <motion.a
+      variants={motionCircle}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      href={linkScrollURL}
+      className={styles.containerButton}
+    >
       <motion.img
-        {...motionConfig}
+        {...motionRotation}
         className={styles.imageScroll}
         alt={imageScrollAlt}
         src={imageScrollURL}
       />
-      <img
+      <motion.img
+        variants={motionIcon}
         className={styles.iconScroll}
         alt={iconScrollAlt}
         src={iconScrollURL}
       />
-    </a>
+    </motion.a>
   );
 };
 

@@ -1,44 +1,88 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  getMotionProperties,
+  easeFast,
+  easeSlow,
+} from "../../../utils/motionUtils";
 import styles from "./ButtonSecondary.module.css";
 
-const Button = ({
+const ButtonSecondary = ({
+  altIconLeftText,
+  altIconRightText,
+  buttonDisplayMode,
+  buttonLink,
   buttonText,
-  iconLeft,
-  iconRight,
+  buttonWidth,
+  iconLeftURL,
+  iconRightURL,
+  showButtonText,
   showIconLeft,
   showIconRight,
-  altTextIconLeft,
-  altTextIconRight,
-  buttonWidth,
-  buttonDisplayMode,
-  showButtonText,
-  buttonLink,
-  linkTarget = "_blank", // Add a default value for link target
 }) => {
   const buttonStyle = {
     width: buttonWidth,
     display: buttonDisplayMode,
   };
 
+  const buttonMotion = {
+    rest: {
+      backgroundColor: "var(--on-surface-accent-disabled-light)",
+      borderRadius: "var(--size-12)",
+      transition: easeFast,
+    },
+
+    hover: {
+      backgroundColor: "var(--on-surface-accent-disabled-dark)",
+      borderRadius: "var(--size-16)",
+      transition: easeFast,
+    },
+  };
+
+  const motionIcon = {
+    rest: {
+      rotate: "0deg",
+      transition: easeFast,
+    },
+
+    hover: {
+      rotate: "-45deg",
+      transition: easeFast,
+    },
+  };
+
   return (
-    <div className={styles.containerButton} style={buttonStyle}>
+    <motion.div
+      variants={buttonMotion}
+      initial="rest"
+      whileHover="hover"
+      animate="rest"
+      className={styles.containerButton}
+      style={buttonStyle}
+    >
       {showIconLeft && (
-        <img className={styles.iconLeft} alt={altTextIconLeft} src={iconLeft} />
+        <motion.img
+          variants={motionIcon}
+          className={styles.iconLeft}
+          alt={altIconLeftText}
+          src={iconLeftURL}
+        />
       )}
       {showButtonText && (
-        <a href={buttonLink} target={linkTarget} rel="noopener noreferrer">
+        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
           <p className={styles.textButton}>{buttonText}</p>
         </a>
       )}
       {showIconRight && (
-        <img
+        <motion.img
+          variants={motionIcon}
           className={styles.iconRight}
-          alt={altTextIconRight}
-          src={iconRight}
+          alt={altIconRightText}
+          src={iconRightURL}
         />
       )}
-    </div>
+    </motion.div>
   );
 };
 
-export default Button;
+export default ButtonSecondary;

@@ -8,28 +8,11 @@
   transition: calc(var(--d) * 2) var(--e);
 }
 
-.containerButton:hover {
-  transform: scale(1.1);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover > .iconScroll {
-  transform: rotate(45deg);
-  transition: calc(var(--d) * 2) var(--e);
-}
-.containerButton > .iconScroll {
-  transition: calc(var(--d) * 2) var(--e);
-}
-
 .imageScroll {
   position: relative;
   width: var(--size-200);
   height: auto;
   object-fit: cover;
-  animation-name: rotation;
-  animation-duration: 8000ms;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
 }
 
 .iconScroll {
@@ -55,8 +38,8 @@
 }
 
 @media screen and (max-width: 1280px) {
-    .containerButton {
-      width: var(--size-144);
-      height: var(--size-144);
-    }
+  .containerButton {
+    width: var(--size-144);
+    height: var(--size-144);
   }
+}

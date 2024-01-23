@@ -6,7 +6,7 @@ import ButtonPrimary from "../Buttons/ButtonPrimary";
 import ButtonSecondary from "../Buttons/ButtonSecondary";
 import styles from "./CardPricing.module.css";
 
-const PricingCard = ({
+const CardPricing = ({
   textCardTitle,
   textCardTitleDescription,
   textCardPrice,
@@ -39,30 +39,22 @@ const PricingCard = ({
   buttonLink,
   cardZIndex,
 }) => {
-  const cardPricingStyle = useMemo(() => {
-    return {
-      backgroundColor: cardPricingBackgroundColor,
-      zIndex: cardZIndex,
-    };
-  }, [cardPricingBackgroundColor, cardZIndex]);
+  const cardPricingStyle = {
+    backgroundColor: cardPricingBackgroundColor,
+    zIndex: cardZIndex,
+  };
 
-  const textColorStyle = useMemo(() => {
-    return {
-      color: textColor,
-    };
-  }, [textColor]);
+  const textColorStyle = {
+    color: textColor,
+  };
 
-  const textDescriptionStyle = useMemo(() => {
-    return {
-      color: textCardDescriptionColor,
-    };
-  }, [textCardDescriptionColor]);
+  const textDescriptionStyle = {
+    color: textCardDescriptionColor,
+  };
 
-  const textPriceStyle = useMemo(() => {
-    return {
-      color: textCardPriceColor,
-    };
-  }, [textCardPriceColor]);
+  const textPriceStyle = {
+    color: textCardPriceColor,
+  };
 
   return (
     <div className={styles.containerCard} style={cardPricingStyle}>
@@ -162,4 +154,4 @@ const PricingCard = ({
   );
 };
 
-export default PricingCard;
+export default CardPricing;

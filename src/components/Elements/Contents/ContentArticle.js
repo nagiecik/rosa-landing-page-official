@@ -1,23 +1,18 @@
 import useMediaQuery from "../../../utils/useMediaQuery";
 import { motion } from "framer-motion";
+import { getMotionProperties, easeSlow } from "../../../utils/motionUtils";
+import ButtonGoogle from "../Buttons/Stores/ButtonGoogle";
 import styles from "./ContentArticle.module.css";
+import ButtonApple from "../Buttons/Stores/ButtonApple";
 
 const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
   const tablet = useMediaQuery("(max-width: 768px)");
   const mobile = useMediaQuery("(max-width: 430px)");
 
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
+  const motionArticle = getMotionProperties("-100px, 0", "0, 0", easeSlow);
+
   return (
-    <motion.article
-      initial={{ transform: "translate(-100px, 0)", opacity: 0 }}
-      whileInView={{ transform: "translate(0, 0)", opacity: 1 }}
-      transition={easeSlow}
-      viewport={{ once: true }}
-      className={styles.containerContent}
-    >
+    <motion.article {...motionArticle} className={styles.containerContent}>
       {(tablet && !mobile) || !tablet ? (
         <div className={styles.containerHeader}>
           <h1 className={styles.textHeaderLight}>Gamechanger</h1>
@@ -48,20 +43,8 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
         the imperative to ensure their effective dissemination.
       </p>
       <div className={styles.containerButtons}>
-        <a href="https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US">
-          <img
-            className={styles.buttonGooglePlay}
-            alt="Google Play Button"
-            src={buttonGooglePlay}
-          />
-        </a>
-        <a href="https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179">
-          <img
-            className={styles.buttonAppStore}
-            alt="App Store Button"
-            src={buttonAppStore}
-          />
-        </a>
+        <ButtonGoogle />
+        <ButtonApple />
       </div>
     </motion.article>
   );

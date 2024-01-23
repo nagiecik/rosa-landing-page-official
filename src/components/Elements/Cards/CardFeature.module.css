@@ -78,6 +78,7 @@
   overflow: hidden;
   transition: calc(var(--d) * 2) var(--e);
   cursor: default;
+
   &:before {
     content: "";
     position: absolute;
@@ -92,13 +93,16 @@
     transform-origin: 50% 50%;
     transition: calc(var(--d) * 2) var(--e);
   }
+
   &:hover:before {
     transform: scale(28);
   }
+
   &:hover .textTitle {
     color: var(--surface-primary);
     transition: calc(var(--d) * 2) var(--e);
   }
+
   &:hover .textParagraph {
     color: var(--on-surface-accent-disabled-dark);
     transition: calc(var(--d) * 2) var(--e);

@@ -60,7 +60,7 @@ const Pricing = ({ sectionZIndex }) => {
           textCardDescriptionColor="var(--on-surface-accent-inactive)"
           textCardPrice="€398"
           textCardPriceColor="var(--on-surface-accent-active)"
-          dividerBorder="1px solid var(--on-surface-accent-disabled-light)"
+          dividerBorder="1px solid var(--on-surface-accent-disabled-dark)"
           dividerWidth="100%"
           textCardFeatures="Key Features"
           textBullet1="Primary context (rules/regulations of your sport)"

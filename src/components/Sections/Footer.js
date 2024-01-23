@@ -4,22 +4,46 @@ import ContextText from "../Elements/Contents/ContentText";
 import NavFooter from "../Elements/Navigation/NavFooter";
 import ButtonScroll from "../Elements/Buttons/ButtonScroll";
 import { motion } from "framer-motion";
+import useMediaQuery from "../../utils/useMediaQuery";
+import {
+  getMotionProperties,
+  easeFast,
+  easeSlow,
+} from "../../utils/motionUtils";
 import styles from "./Footer.module.css";
 
+const navFooterData = [
+  {
+    textTitle: "Menu",
+    links: [
+      { show: true, linkText: "Start", linkURL: "#start" },
+      { show: true, linkText: "Testimonials", linkURL: "#testimonials" },
+      { show: true, linkText: "Context", linkURL: "#context" },
+      { show: true, linkText: "Features", linkURL: "#features" },
+      { show: true, linkText: "Use Cases", linkURL: "#use_cases" },
+      { show: true, linkText: "Pricing", linkURL: "#pricing" },
+    ],
+  },
+  {
+    textTitle: "Support",
+    links: [
+      { show: true, linkText: "Privacy Policy", linkURL: "#privacy_policy" },
+      {
+        show: true,
+        linkText: "Terms & Conditions",
+        linkURL: "#terms_conditions",
+      },
+      { show: false },
+      { show: false },
+      { show: false },
+      { show: false },
+    ],
+  },
+];
+
 const Footer = () => {
-  const [tablet, setTablet] = useState(
-    window.matchMedia("(max-width: 768px)").matches
-  );
-
-  useEffect(() => {
-    window
-      .matchMedia("(max-width: 768px)")
-      .addEventListener("change", (e) => setTablet(e.matches));
-  }, []);
-
-  const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 430px)").matches
-  );
+  const tablet = useMediaQuery("(max-width: 768px)");
+  const mobile = useMediaQuery("(max-width: 430px)");
 
   useEffect(() => {
     window
@@ -27,22 +51,17 @@ const Footer = () => {
       .addEventListener("change", (e) => setMatches(e.matches));
   }, []);
 
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
+  const motionDefaultFast = getMotionProperties("0, 160px", "0, 0", easeFast);
+  const motionSmallFast = getMotionProperties("0, 40px", "0, 0", easeFast);
 
   return (
     <footer className={styles.containerSection}>
       <div className={styles.containerContent}>
         <motion.header
-          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeFast}
-          viewport={{ once: true }}
+          {...motionDefaultFast}
           className={styles.containerHeader}
         >
-          {matches && (
+          {mobile && (
             <ContextText
               containerAlignItems="center"
               containerJustifyContent="center"
@@ -63,7 +82,7 @@ const Footer = () => {
               textHeaderLinkURL="mailto:hello.rosa@zone"
             />
           )}
-          {!matches && (
+          {!mobile && (
             <ContextText
               showTextHeaderLight={true}
               textHeaderLight="Interested to join us?"
@@ -85,63 +104,22 @@ const Footer = () => {
             />
           )}
         </motion.header>
-        <motion.div
-          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeFast}
-          viewport={{ once: true }}
-          className={styles.containerMotion}
-        >
+        <motion.div {...motionDefaultFast} className={styles.containerMotion}>
           <Divider dividerBorder="1px solid var(--surface-primary)" />
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeFast}
-          viewport={{ once: true }}
-          className={styles.containerBottom}
-        >
+        <motion.div {...motionDefaultFast} className={styles.containerBottom}>
           <img
             className={styles.imageLogo}
             alt="ROSA Logo"
             src="/imageLogoRosa.svg"
           />
           <div className={styles.containerLinks}>
-            <NavFooter
-              textTitle="Menu"
-              linkText1="Start"
-              linkText2="Testimonials"
-              linkText3="Context"
-              linkText4="Features"
-              linkText5="Use Cases"
-              linkText6="Pricing"
-              linkURL1="#start"
-              linkURL2="#testimonials"
-              linkURL3="#context"
-              linkURL4="#features"
-              linkURL5="#use_cases"
-              linkURL6="#pricing"
-            />
-            <NavFooter
-              textTitle="Support"
-              linkText1="Privacy Policy"
-              linkText2="Terms & Conditions"
-              linkURL1="#start"
-              linkURL2="#testimonials"
-              showLink3={false}
-              showLink4={false}
-              showLink5={false}
-              showLink6={false}
-            />
+            {navFooterData.map((data, index) => (
+              <NavFooter key={index} {...data} />
+            ))}
           </div>
         </motion.div>
-        <motion.div
-          initial={{ opacity: 0, transform: `translate(0, 40px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeFast}
-          viewport={{ once: true }}
-          className={styles.containerCopyright}
-        >
+        <motion.div {...motionSmallFast} className={styles.containerCopyright}>
           <p className={styles.textParagraph}>©2023 All rights reserved</p>
         </motion.div>
       </div>

@@ -1,19 +1,4 @@
-/* Animations */
-
-@keyframes container {
-  0% {
-    transform: translate(-100px, 0);
-    opacity: 0%;
-  }
-
-  100% {
-    transform: translate(0, 0);
-    opacity: 100%;
-  }
-}
-
-/* Header */
-
+/* Shared Styles */
 .containerHeader {
   align-self: stretch;
   display: flex;
@@ -41,7 +26,6 @@
 }
 
 /* Buttons */
-
 .containerButtons {
   display: flex;
   flex-direction: row;
@@ -50,16 +34,7 @@
   gap: var(--size-32);
 }
 
-.buttonAppStore,
-.buttonGooglePlay {
-  width: var(--size-200);
-  height: auto;
-  object-fit: cover;
-  cursor: pointer;
-}
-
 /* Main Containers */
-
 .containerContent {
   display: flex;
   justify-content: flex-start;
@@ -69,13 +44,9 @@
   gap: var(--size-48);
   max-width: 50%;
   text-align: left;
-  animation-name: container;
-  animation-duration: 2s;
-  animation-timing-function: calc(var(--d) * 2) var(--e);
 }
 
 /* Media Queries */
-
 @media screen and (max-width: 1536px) {
   .textHeaderLight,
   .textHeaderBold {
@@ -87,38 +58,8 @@
     font-size: var(--size-16);
     line-height: var(--size-32);
   }
-
-  .buttonAppStore,
-  .buttonGooglePlay {
-    width: var(--size-160);
-  }
 }
-
-@media screen and (max-width: 1440px) {
-  .textHeaderLight,
-  .textHeaderBold {
-    font-size: var(--size-64);
-    line-height: var(--size-64);
-  }
-}
-
 @media screen and (max-width: 1366px) {
-  .textHeaderLight,
-  .textHeaderBold {
-    font-size: var(--size-64);
-    line-height: var(--size-64);
-  }
-
-  .textParagraph {
-    font-size: var(--size-16);
-    line-height: var(--size-32);
-  }
-
-  .buttonAppStore,
-  .buttonGooglePlay {
-    width: var(--size-160);
-  }
-
   .containerContent {
     gap: var(--size-40);
   }
@@ -139,12 +80,9 @@
   .containerContent {
     gap: var(--size-32);
   }
-}
 
-@media screen and (max-width: 1024px) {
-  .containerContent {
-    max-width: 100%;
-    width: 100%;
+  .containerButtons {
+    gap: var(--size-24);
   }
 }
 
@@ -156,10 +94,7 @@
   }
 
   .textHeaderLight,
-  .textHeaderBold {
-    text-align: center;
-  }
-
+  .textHeaderBold,
   .textParagraph {
     text-align: center;
   }

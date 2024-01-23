@@ -1,10 +1,10 @@
 /* Button Icons */
 
-.iconLeft,
-.iconRight {
+.iconRight,
+.iconLeft {
   position: relative;
-  width: var(--size-32);
-  height: var(--size-32);
+  width: var(--size-24);
+  height: var(--size-24);
   overflow: hidden;
   flex-shrink: 0;
 }
@@ -12,55 +12,25 @@
 /* Button Text */
 
 .textButton {
-  position: relative;
   font-size: var(--size-16);
   line-height: var(--size-32);
   font-weight: var(--font-black);
-  color: var(--surface-secondary);
+  color: var(--surface-tertiary);
 }
 
 /* Main Containers */
 
 .containerButton {
-  background-color: var(--surface-primary);
-  border: var(--size-2) solid var(--surface-secondary);
-  border-radius: var(--size-12);
+  background-color: var(--on-surface-accent-active);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--size-8) var(--size-16);
+  padding: var(--size-12) var(--size-16);
   gap: var(--size-16);
   text-align: center;
   cursor: pointer;
-  transition: calc(var(--d) * 2) var(--e);
   box-sizing: border-box;
-}
-
-.containerButton:hover {
-  box-shadow: 0 8px 32px 0 rgba(255, 255, 255, 0.1);
-  transition: calc(var(--d) * 2) var(--e);
-  border-radius: var(--size-16);
-  color: var(--surface-primary);
-  background-color: var(--surface-secondary);
-}
-
-.containerButton:hover .textButton {
-  color: var(--surface-primary);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton .textButton {
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton > .containerButtonIcon {
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover > .containerButtonIcon {
-  transform: rotate(-45deg);
-  transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Media Queries */
@@ -70,24 +40,12 @@
     font-size: var(--size-14);
     line-height: var(--size-24);
     font-weight: var(--font-black);
-    color: var(--surface-secondary);
+    color: var(--surface-primary);
   }
 }
 
 @media screen and (max-width: 1280px) {
   .containerButton {
     padding: var(--size-8) var(--size-12);
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .containerButton:hover {
-    background-color: var(--surface-primary);
-    border: var(--size-2) solid var(--surface-secondary);
-    border-radius: var(--size-12);
-  }
-
-  .containerButton:hover .textButton {
-    color: var(--surface-secondary);
   }
 }

@@ -22,47 +22,15 @@
 
 .containerButton {
   background-color: var(--on-surface-accent-active);
-  border-radius: var(--size-12);
-  border: var(--size-2) solid var(--on-surface-accent-active);
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--size-8) var(--size-16);
+  padding: var(--size-12) var(--size-16);
   gap: var(--size-16);
   text-align: center;
   cursor: pointer;
-  transition: calc(var(--d) * 2) var(--e);
   box-sizing: border-box;
-}
-
-.containerButton:hover {
-  border: var(--size-2) solid var(--surface-primary);
-  box-shadow: var(--size-0) var(--size-8) var(--size-32) var(--size-0)
-    rgba(255, 255, 255, 0.1);
-  transition: calc(var(--d) * 2) var(--e);
-  border-radius: var(--size-16);
-  background-color: var(--surface-primary);
-}
-
-.containerButton > .iconRight,
-.iconLeft {
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover > .iconRight,
-.iconLeft {
-  transform: rotate(-45deg);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover .textButton {
-  color: var(--surface-secondary);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton .textButton {
-  transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Media Queries */
@@ -79,18 +47,5 @@
 @media screen and (max-width: 1280px) {
   .containerButton {
     padding: var(--size-8) var(--size-12);
-  }
-}
-
-@media screen and (max-width: 1024px) {
-  .containerButton:hover {
-    background-color: var(--on-surface-accent-active);
-    border-radius: var(--size-12);
-    border: var(--size-2) solid var(--on-surface-accent-active);
-  }
-
-  .containerButton:hover > .iconRight,
-  .iconLeft {
-    transform: rotate(0deg);
   }
 }

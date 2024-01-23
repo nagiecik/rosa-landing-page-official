@@ -1,30 +1,20 @@
 import { useMemo } from "react";
-import ContentHeader from "./ContentHeader";
 import styles from "./ContentText.module.css";
 
-const ContextText = ({
+const ContentText = ({
   sectionGap,
   sectionWidth,
   showTextHeaderLight,
   textHeaderLight,
   textHeaderLightColor,
-  textHeaderLightSize,
-  textHeaderLightWeight,
-  textHeaderLightLineHeight,
   textHeaderLightAlign,
   showTextHeaderBold,
   textHeaderBold,
   textHeaderBoldColor,
-  textHeaderBoldSize,
-  textHeaderBoldWeight,
-  textHeaderBoldLineHeight,
   textHeaderBoldAlign,
   showTextHeaderLink,
   textHeaderLink,
   textHeaderLinkColor,
-  textHeaderLinkSize,
-  textHeaderLinkWeight,
-  textHeaderLinkLineHeight,
   textHeaderLinkAlign,
   textHeaderLinkURL,
   showTextParagraph,
@@ -33,11 +23,39 @@ const ContextText = ({
   containerAlignItems,
   containerJustifyContent,
 }) => {
-  const sectionTextContentStyle = useMemo(() => {
+  const containerStyle = useMemo(() => {
     return {
       width: sectionWidth,
     };
   }, [sectionWidth]);
+
+  const containerHeadersStyle = useMemo(() => {
+    return {
+      alignItems: containerAlignItems,
+      justifyContent: containerJustifyContent,
+    };
+  }, [containerAlignItems, containerJustifyContent]);
+
+  const textHeaderLightStyle = useMemo(() => {
+    return {
+      color: textHeaderLightColor,
+      textAlign: textHeaderLightAlign,
+    };
+  }, [textHeaderLightColor, textHeaderLightAlign]);
+
+  const textHeaderBoldStyle = useMemo(() => {
+    return {
+      color: textHeaderBoldColor,
+      textAlign: textHeaderBoldAlign,
+    };
+  }, [textHeaderBoldColor, textHeaderBoldAlign]);
+
+  const textHeaderLinkStyle = useMemo(() => {
+    return {
+      color: textHeaderLinkColor,
+      textAlign: textHeaderLightAlign,
+    };
+  }, [textHeaderLinkColor, textHeaderLightAlign]);
 
   const textParagraphStyle = useMemo(() => {
     return {
@@ -46,35 +64,28 @@ const ContextText = ({
   }, [textParagraphColor]);
 
   return (
-    <div className={styles.containerContent} style={sectionTextContentStyle}>
-      <ContentHeader
-        showTextHeaderLight={showTextHeaderLight}
-        textHeaderLight={textHeaderLight}
-        textHeaderLightColor={textHeaderLightColor}
-        textHeaderLightSize={textHeaderLightSize}
-        textHeaderLightWeight={textHeaderLightWeight}
-        textHeaderLightLineHeight={textHeaderLightLineHeight}
-        textHeaderLightAlign={textHeaderLightAlign}
-        showTextHeaderBold={showTextHeaderBold}
-        textHeaderBold={textHeaderBold}
-        textHeaderBoldColor={textHeaderBoldColor}
-        textHeaderBoldSize={textHeaderBoldSize}
-        textHeaderBoldWeight={textHeaderBoldWeight}
-        textHeaderBoldLineHeight={textHeaderBoldLineHeight}
-        textHeaderBoldAlign={textHeaderBoldAlign}
-        showTextHeaderLink={showTextHeaderLink}
-        textHeaderLink={textHeaderLink}
-        textHeaderLinkColor={textHeaderLinkColor}
-        textHeaderLinkSize={textHeaderLinkSize}
-        textHeaderLinkWeight={textHeaderLinkWeight}
-        textHeaderLinkLineHeight={textHeaderLinkLineHeight}
-        textHeaderLinkAlign={textHeaderLinkAlign}
-        textHeaderLinkURL={textHeaderLinkURL}
-        sectionGap={sectionGap}
-        sectionWidth={sectionWidth}
-        containerAlignItems={containerAlignItems}
-        containerJustifyContent={containerJustifyContent}
-      />
+    <div className={styles.containerContent} style={containerStyle}>
+      <div className={styles.containerHeaders} style={containerHeadersStyle}>
+        {showTextHeaderLight && (
+          <div className={styles.textHeaderLight} style={textHeaderLightStyle}>
+            {textHeaderLight}
+          </div>
+        )}
+        {showTextHeaderBold && (
+          <div className={styles.textHeaderBold} style={textHeaderBoldStyle}>
+            {textHeaderBold}
+          </div>
+        )}
+        {showTextHeaderLink && (
+          <a
+            href={textHeaderLinkURL}
+            className={styles.textHeaderLink}
+            style={textHeaderLinkStyle}
+          >
+            {textHeaderLink}
+          </a>
+        )}
+      </div>
       {showTextParagraph && (
         <div className={styles.textParagraph} style={textParagraphStyle}>
           {textParagraph}
@@ -84,4 +95,4 @@ const ContextText = ({
   );
 };
 
-export default ContextText;
+export default ContentText;

@@ -1,14 +1,14 @@
-import { useMemo } from "react";
+import React from "react";
 import styles from "./Divider.module.css";
 
-const Divider = ({dividerBorder, dividerWidth }) => {
-  const dividerStyle = useMemo(() => {
-    return {
-      border: dividerBorder,
-      width: dividerWidth,
-    };
-  }, [dividerBorder, dividerWidth]);
-  return <hr className={styles.divider} style={dividerStyle} />;
-};
+const Divider = ({ dividerBorder, dividerWidth }) => (
+  <hr
+    className={styles.containerContent}
+    style={React.useMemo(
+      () => ({ border: dividerBorder, width: dividerWidth }),
+      [dividerBorder, dividerWidth]
+    )}
+  />
+);
 
 export default Divider;

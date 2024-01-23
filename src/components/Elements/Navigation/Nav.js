@@ -1,104 +1,66 @@
 import { useState, useEffect, useMemo } from "react";
 import NavbarLink from "./NavbarLink";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-import ButtonMenu from "../Buttons/ButtonMenu";
+import useMediaQuery from "../../../utils/useMediaQuery";
 import { motion } from "framer-motion";
 import styles from "./Nav.module.css";
+import { easeSlow, getMotionProperties } from "../../../utils/motionUtils";
+
+const navbarData = [
+  { linkText: "Start", linkURL: "#start" },
+  { linkText: "Testimonials", linkURL: "#testimonials" },
+  { linkText: "Context", linkURL: "#context" },
+  { linkText: "Features", linkURL: "#features" },
+  { linkText: "Use Cases", linkURL: "#use_cases" },
+  { linkText: "Pricing", linkURL: "#pricing" },
+];
 
 const Nav = ({ logoURL, sectionZIndex }) => {
-  const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 1024px)").matches
-  );
+  const tabletHorizontal = useMediaQuery("(max-width: 1024px)");
 
-  useEffect(() => {
-    window
-      .matchMedia("(max-width: 1024px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-  }, []);
+  const [navbarActive, setNavbarActive] = useState(false);
 
-  const [navbar, setNavbar] = useState(false);
-
-  const changeBackground = () => {
-    if (window.scrollY >= 64) {
-      setNavbar(true);
-    } else {
-      setNavbar(false);
-    }
+  const handleScroll = () => {
+    setNavbarActive(window.scrollY >= 64);
   };
 
-  window.addEventListener("scroll", changeBackground);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const containerSectionStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
     };
   }, [sectionZIndex]);
-  
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
 
-  const easeSlow = {
-    duration: 2,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
+  const motionNav = getMotionProperties("0, -40px", "0, 0", easeSlow);
 
   return (
     <motion.nav
-      initial={{ opacity: 0, transform: `translate(0, -40px)` }}
-      whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-      transition={easeSlow}
-      viewport={{ once: true }}
-      className={
-        navbar
-          ? `${styles.containerNav} ${styles.containerNavActive}`
-          : styles.containerNav
-      }
+      {...motionNav}
+      className={`${styles.containerNav} ${
+        navbarActive && styles.containerNavActive
+      }`}
       style={containerSectionStyle}
     >
       <div className={styles.containerSection}>
         <a href=".">
           <img className={styles.imageLogo} alt="ROSA logotype" src={logoURL} />
         </a>
-        {!matches && (
+        {!tabletHorizontal && (
           <div className={styles.containerContent}>
-            <NavbarLink
-              linkText="Start"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#start"
-            />
-            <NavbarLink
-              linkText="Testimonials"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#testimonials"
-            />
-            <NavbarLink
-              linkText="Context"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#context"
-            />
-            <NavbarLink
-              linkText="Features"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#features"
-            />
-            <NavbarLink
-              linkText="Use Cases"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#use_cases"
-            />
-            <NavbarLink
-              linkText="Pricing"
-              linkFlex="1"
-              linkCursor="pointer"
-              linkURL="#pricing"
-            />
+            {navbarData.map((data, index) => (
+              <NavbarLink
+                key={index}
+                linkText={data.linkText}
+                linkURL={data.linkURL}
+              />
+            ))}
           </div>
         )}
         <ButtonPrimary

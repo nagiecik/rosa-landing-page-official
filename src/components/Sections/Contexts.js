@@ -2,6 +2,13 @@ import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import CardContext from "../Elements/Cards/CardContext";
 import { motion } from "framer-motion";
+import {
+  getMotionProperties,
+  easeFast,
+  getContainerCardsProperties,
+  getCardProperties,
+} from "../../utils/motionUtils";
+import useMediaQuery from "../../utils/useMediaQuery";
 import styles from "./Contexts.module.css";
 
 const Contexts = ({ sectionZIndex }) => {
@@ -48,42 +55,11 @@ const Contexts = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
-  const [matches, setMatches] = useState(
-    window.matchMedia("(max-width: 430px)").matches
-  );
+  const mobile = useMediaQuery("(max-width: 430px)");
 
-  useEffect(() => {
-    window
-      .matchMedia("(max-width: 430px)")
-      .addEventListener("change", (e) => setMatches(e.matches));
-  }, []);
-
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
-
-  const cardContainer = {
-    hidden: { opacity: 0, transform: `translate(0, 80px)` },
-    show: {
-      opacity: 1,
-      transform: `translate(0, 0)`,
-      transition: {
-        duration: 1,
-        ease: [0.15, 0.85, 0.47, 0.97],
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardItem = {
-    hidden: { opacity: 0, transform: `translate(0, 80px)` },
-    show: {
-      opacity: 1,
-      transform: `translate(0, 0)`,
-      transition: { duration: 1, ease: [0.15, 0.85, 0.47, 0.97] },
-    },
-  };
+  const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
+  const motionContainerCards = getContainerCardsProperties(160, 0.2);
+  const motionCard = getCardProperties(80);
 
   return (
     <section
@@ -91,13 +67,7 @@ const Contexts = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={sectionStyle}
     >
-      <motion.div
-        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-        transition={easeFast}
-        viewport={{ once: true }}
-        className={styles.containerMotion}
-      >
+      <motion.div {...motionContainer} className={styles.containerMotion}>
         <ContextText
           sectionWidth="100%"
           sectionTextContentZIndex="0"
@@ -112,15 +82,14 @@ const Contexts = ({ sectionZIndex }) => {
           textParagraphColor="var(--surface-primary)"
         />
       </motion.div>
-
       <motion.div
-        variants={cardContainer}
+        variants={motionContainerCards}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
         className={styles.containerContent}
       >
-        {!matches && selectedContext ? (
+        {!mobile && selectedContext ? (
           <img
             className={styles.imageLeft}
             alt={selectedContext.alt}
@@ -131,7 +100,7 @@ const Contexts = ({ sectionZIndex }) => {
           {ContextsData.map((context, index) => (
             <motion.div
               key={index}
-              variants={cardItem}
+              variants={motionCard}
               style={{ display: "flex" }}
             >
               <CardContext

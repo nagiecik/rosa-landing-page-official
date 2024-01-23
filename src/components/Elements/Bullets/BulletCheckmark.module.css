@@ -1,23 +1,24 @@
-/* Images */
-
-.imageIcon {
+/* Shared styles for .imageIcon and .textBullet */
+.imageIcon,
+.textBullet {
   position: relative;
+}
+
+/* Images */
+.imageIcon {
   width: var(--size-32);
   height: var(--size-32);
 }
 
 /* Text */
-
 .textBullet {
   flex: 1;
-  position: relative;
   font-size: var(--size-20);
   font-weight: var(--font-semibold);
   line-height: var(--size-32);
 }
 
 /* Main Containers */
-
 .containerContent {
   display: flex;
   flex-direction: row;
@@ -28,6 +29,7 @@
   align-self: stretch;
 }
 
+/* Media Queries */
 @media screen and (max-width: 1536px) {
   .textBullet {
     font-size: var(--size-16);
@@ -35,7 +37,6 @@
   }
 
   .imageIcon {
-    position: relative;
     width: var(--size-24);
     height: var(--size-24);
   }
@@ -48,9 +49,7 @@
   }
 
   .imageIcon {
-    position: relative;
     width: var(--size-20);
     height: var(--size-20);
   }
 }
-

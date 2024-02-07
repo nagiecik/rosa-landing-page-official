@@ -206,7 +206,6 @@
 
 .containerCard.cardHovered {
   transition: calc(var(--d) * 2) var(--e);
-  border-radius: var(--size-16);
   transform: scale(1.05, 1.05);
 }
 

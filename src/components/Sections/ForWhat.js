@@ -32,6 +32,18 @@ const ForWhat = () => {
     setActiveImageIndex(index);
   };
 
+  const getRadius = (currentIndex) => {
+    const isHovered = hoveredIndex === currentIndex;
+    const isActive = activeIndex === currentIndex;
+
+    const borderRadiusX = isActive || isHovered ? 48 : 24;
+    const borderRadiusY = isActive || isHovered ? 12 : 6;
+
+    return {
+      ...radius({ x: borderRadiusX, y: borderRadiusY }),
+    };
+  };
+
   const motionImagesHover = getHoverProperties(1.1, "5deg", easeFast);
   const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
 
@@ -109,8 +121,8 @@ const ForWhat = () => {
           showTextHeaderBold={true}
           showTextHeaderLink={false}
           showTextParagraph={true}
-          showButtonPrimary={false}
-          showButtonSecondary={true}
+          showButtonPrimary={true}
+          showButtonSecondary={false}
           textHeaderLight="Context"
           textHeaderLightColor="var(--surface-primary)"
           textHeaderBold="for (any) Sport"
@@ -192,7 +204,7 @@ const ForWhat = () => {
                 height: index === activeIndex ? "204px" : "80px",
                 transition: easeFast,
               }}
-              style={radius({ x: 48, y: 12 })}
+              style={getRadius(index)}
             >
               <div className={styles.containerCorner} href="#">
                 <p className={styles.textNumber}>{item.number}</p>

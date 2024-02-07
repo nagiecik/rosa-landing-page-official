@@ -2,6 +2,8 @@ import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import { motion } from "framer-motion";
 import styles from "./Showcase.module.css";
+import { radius } from "../../utils/radiusUtils";
+import { easeFast, getMotionProperties } from "../../utils/motionUtils";
 
 const Showcase = ({
   sectionZIndex,
@@ -39,6 +41,8 @@ const Showcase = ({
       .addEventListener("change", (e) => setTablet(e.matches));
   }, []);
 
+  const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
+
   const containerShowcaseStyle = useMemo(() => {
     return {
       zIndex: sectionZIndex,
@@ -52,11 +56,6 @@ const Showcase = ({
     };
   }, [containerBackgroundImage]);
 
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
-
   return (
     <section
       className={styles.containerSection}
@@ -65,10 +64,7 @@ const Showcase = ({
     >
       {showContentText && (
         <motion.div
-          initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-          whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-          transition={easeFast}
-          viewport={{ once: true }}
+          {...motionContainer}
           className={styles.containerMotion}
         >
           <ContextText
@@ -89,10 +85,7 @@ const Showcase = ({
         </motion.div>
       )}
       <motion.div
-        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-        transition={easeFast}
-        viewport={{ once: true }}
+        {...motionContainer}
         className={styles.containerMotion}
       >
         <div className={styles.containerContent} style={containerContentStyle}>

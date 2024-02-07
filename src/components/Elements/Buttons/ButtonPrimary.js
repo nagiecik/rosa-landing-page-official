@@ -29,11 +29,13 @@ const ButtonPrimary = ({
     rest: {
       backgroundColor: "var(--on-surface-accent-active)",
       transition: easeFast,
+      ...radius({ x: 16, y: 4 }),
     },
 
     hover: {
       backgroundColor: "var(--surface-primary)",
       transition: easeFast,
+      ...radius({ x: 32, y: 8 }),
     },
   };
 

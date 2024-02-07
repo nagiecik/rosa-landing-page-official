@@ -186,6 +186,8 @@
   transition: calc(var(--d) * 2) var(--e);
   cursor: pointer;
   position: relative;
+  backdrop-filter: blur(var(--size-12));
+  background-color: rgba(0, 0, 0, 0.2);
   &:before {
     content: "";
     position: absolute;

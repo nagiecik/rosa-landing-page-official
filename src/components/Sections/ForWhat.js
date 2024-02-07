@@ -112,11 +112,11 @@ const ForWhat = () => {
           showButtonPrimary={false}
           showButtonSecondary={true}
           textHeaderLight="Context"
-          textHeaderLightColor="var(--surface-secondary)"
+          textHeaderLightColor="var(--surface-primary)"
           textHeaderBold="for (any) Sport"
-          textHeaderBoldColor="var(--surface-secondary)"
+          textHeaderBoldColor="var(--surface-primary)"
           textParagraph="ROSA is a gamechanger in the way you manage, update and distribute the rules of your sport, but it can be used for so much more! Use it for multiple ForWhat of running your sports business - commercial partner content, competition, internal regulation, or else. You decide!"
-          textParagraphColor="var(--surface-secondary)"
+          textParagraphColor="var(--surface-primary)"
           containerFlexDirection="column"
           containerHeaderFlexDirection="row"
           textParagraphWidth="324%"

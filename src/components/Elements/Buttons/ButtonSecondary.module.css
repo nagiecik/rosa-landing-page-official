@@ -15,13 +15,19 @@
   font-size: var(--size-16);
   line-height: var(--size-32);
   font-weight: var(--font-black);
-  color: var(--surface-tertiary);
+  color: var(--surface-primary);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerButton:hover .textButton {
+  color: var(--surface-secondary);
+  transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Main Containers */
 
 .containerButton {
-  background-color: var(--on-surface-accent-active);
+  background-color: var(--surface-secondary);
   display: flex;
   flex-direction: row;
   align-items: center;

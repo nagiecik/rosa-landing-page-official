@@ -59,6 +59,8 @@ const ContentArticle = ({}) => {
         buttonWidth=""
         iconLeftURL=""
         iconRightURL="/icons/arrow.right.svg"
+        radiusX="16"
+        radiusY="4"
       />
     </motion.article>
   );

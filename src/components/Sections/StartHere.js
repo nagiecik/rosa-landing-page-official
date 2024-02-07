@@ -67,7 +67,7 @@ const StartHere = ({ sectionZIndex }) => {
           className={styles.containerScrollMotion}
         >
           <ButtonScroll
-            linkScrollURL="#testimonials"
+            linkScrollURL="#for_whom"
             imageScrollURL="./icons/scroll-down.svg"
             iconScrollURL="./icons/arrow.down.svg"
           />

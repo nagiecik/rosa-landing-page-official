@@ -6,6 +6,7 @@ import {
   easeSlow,
 } from "../../../utils/motionUtils";
 import styles from "./ButtonSecondary.module.css";
+import { radius } from "../../../utils/radiusUtils";
 
 const ButtonSecondary = ({
   altIconLeftText,
@@ -13,7 +14,6 @@ const ButtonSecondary = ({
   buttonDisplayMode,
   buttonLink,
   buttonText,
-  buttonWidth,
   iconLeftURL,
   iconRightURL,
   showButtonText,
@@ -21,20 +21,18 @@ const ButtonSecondary = ({
   showIconRight,
 }) => {
   const buttonStyle = {
-    width: buttonWidth,
     display: buttonDisplayMode,
+    ...radius({ x: 16, y: 4 }),
   };
 
   const buttonMotion = {
     rest: {
-      backgroundColor: "var(--on-surface-accent-disabled-light)",
-      borderRadius: "var(--size-12)",
+      backgroundColor: "var(--surface-secondary)",
       transition: easeFast,
     },
 
     hover: {
-      backgroundColor: "var(--on-surface-accent-disabled-dark)",
-      borderRadius: "var(--size-16)",
+      backgroundColor: "var(--on-surface-accent-active)",
       transition: easeFast,
     },
   };

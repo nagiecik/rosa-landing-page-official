@@ -1,13 +1,15 @@
 import { useMemo } from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
 import styles from "./ContentText.module.css";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 
 const ContentText = ({
   showTextHeaderLight,
   showTextHeaderBold,
   showTextHeaderLink,
   showTextParagraph,
-  showButtonCTA,
+  showButtonPrimary,
+  showButtonSecondary,
   textHeaderLight,
   textHeaderLightColor,
   textHeaderLightAlign,
@@ -113,8 +115,18 @@ const ContentText = ({
           {textParagraph}
         </div>
       )}
-      {showButtonCTA && (
+      {showButtonPrimary && (
         <ButtonPrimary
+          showButtonText={true}
+          showIconLeft={false}
+          showIconRight={false}
+          buttonLink={buttonLink}
+          buttonText={buttonText}
+          buttonWidth={buttonWidth}
+        />
+      )}
+      {showButtonSecondary && (
+        <ButtonSecondary
           showButtonText={true}
           showIconLeft={false}
           showIconRight={false}

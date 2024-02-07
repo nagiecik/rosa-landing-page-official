@@ -1,3 +1,79 @@
+@keyframes containerOrnamentWhite {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--size-32));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes containerOrnamentOrange {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--size-32));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes containerOrnamentBlue {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(var(--size-128));
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.containerOrnamentWhite,
+.containerOrnamentBlue,
+.containerOrnamentOrange {
+  animation-duration: 8s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+
+.containerOrnamentWhite {
+  background-color: var(--surface-primary);
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: var(--size-40);
+  right: var(--size-40);
+  animation-name: containerOrnamentWhite;
+  z-index: -1;
+}
+
+.containerOrnamentOrange {
+  background-color: var(--on-surface-accent-active);
+  width: 560px;
+  height: 560px;
+  position: absolute;
+  margin: auto auto;
+  animation-name: containerOrnamentOrange;
+  z-index: -2;
+}
+
+.containerOrnamentBlue {
+  background-color: var(--on-surface-accent-inactive);
+  width: 48px;
+  height: 48px;
+  position: absolute;
+  bottom: var(--size-160);
+  left: var(--size-40);
+  animation-name: containerOrnamentBlue;
+  z-index: -1;
+}
+
 .textNumber {
   position: relative;
   letter-spacing: var(--letter-spacing-default);
@@ -38,6 +114,10 @@
   line-height: var(--size-24);
   font-weight: var(--font-bold);
   color: var(--on-surface-accent-disabled-light);
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 /* Main Containers */
@@ -52,32 +132,47 @@
 }
 
 .containerImage {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   max-height: 724px;
   width: 50%;
-  background-image: url(/public/backgrounds/backgroundContextsOrnament.png);
+  transition: calc(var(--d) * 2) var(--e);
+  &:hover {
+    transform: scale(1.025) rotate(-2.5deg);
+    transition: calc(var(--d) * 2) var(--e);
+  }
 }
 
 .containerMockup {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  height: 724px;
-  max-height: 724px;
+  width: 324px;
+  height: 720px;
+  max-height: 720px;
+  overflow: hidden;
+  border-radius: var(--size-48);
 }
 
 .containerDevice {
   position: absolute;
   margin: 0 auto;
+  z-index: 999;
 }
 
 .image {
-  max-height: 724px;
-  max-width: 100%;
+  height: 700px;
+  width: auto;
+  margin: auto auto;
+}
+
+.containerMask {
+  height: 720px;
+  width: 324px;
+  border-radius: var(--size-48);
 }
 
 .containerCard {
@@ -90,8 +185,6 @@
   overflow: hidden;
   transition: calc(var(--d) * 2) var(--e);
   cursor: pointer;
-  border: 1px solid var(--on-surface-accent-disabled-dark);
-  border-radius: var(--size-12);
   position: relative;
   &:before {
     content: "";

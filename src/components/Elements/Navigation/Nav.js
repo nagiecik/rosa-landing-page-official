@@ -72,6 +72,8 @@ const Nav = ({ logoURL, sectionZIndex }) => {
           showIconRight={true}
           altTextIconRight="Icon Arrow Right"
           buttonLink="mailto:hello@rosa.zone"
+          radiusX="24"
+          radiusY="4"
         />
       </div>
     </motion.nav>

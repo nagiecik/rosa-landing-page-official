@@ -35,9 +35,8 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1536px) {
   .textButton {
-    font-size: var(--size-14);
     line-height: var(--size-24);
     font-weight: var(--font-black);
     color: var(--surface-secondary);
@@ -45,7 +44,7 @@
 }
 
 @media screen and (max-width: 1280px) {
-  .containerButton {
-    padding: var(--size-8) var(--size-12);
+  .textButton {
+    font-size: 14px;
   }
 }

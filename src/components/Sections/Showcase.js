@@ -104,13 +104,15 @@ const Showcase = ({
               </div>
               <div className={styles.containerQuote}>
                 <p className={styles.textQuoteTitle}>
-                  Revolutized Our Rule Management
+                  Made Launching Our New App Fast and Easy
                 </p>
                 <i className={styles.textQuoteParagraph}>
-                  “After analysing and understanding the hassle of using
-                  printouts on the field of play, we decided to launch
-                  digitalised Laws. It was to give quick and easy access to the
-                  Laws, most importantly to the referees, both on- and offline.”
+                  “We were very happy with the speed and ease of launching our
+                  new Football Rules app using ROSA/ Rules of Sports App. From
+                  the very beginning, we had a clear understanding of what was
+                  attainable, which made the process incredibly smooth. Our new
+                  app was fully operational and accessible to our users within a
+                  matter of weeks, without the need for any custom development.”
                 </i>
               </div>
               <div className={styles.containerPerson}>

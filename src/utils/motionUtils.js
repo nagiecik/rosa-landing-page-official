@@ -3,6 +3,12 @@ export const easeFast = {
   ease: [0.15, 0.85, 0.47, 0.97],
 };
 
+export const easeFastStagger = {
+  duration: 1,
+  ease: [0.15, 0.85, 0.47, 0.97],
+  staggerChildren: 0.2,
+};
+
 export const easeSlow = {
   duration: 2,
   ease: [0.15, 0.85, 0.47, 0.97],

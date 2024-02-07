@@ -1,40 +1,54 @@
 import { useMemo } from "react";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
 import styles from "./ContentText.module.css";
 
 const ContentText = ({
-  sectionGap,
-  sectionWidth,
   showTextHeaderLight,
+  showTextHeaderBold,
+  showTextHeaderLink,
+  showTextParagraph,
+  showButtonCTA,
   textHeaderLight,
   textHeaderLightColor,
   textHeaderLightAlign,
-  showTextHeaderBold,
   textHeaderBold,
   textHeaderBoldColor,
   textHeaderBoldAlign,
-  showTextHeaderLink,
   textHeaderLink,
   textHeaderLinkColor,
-  textHeaderLinkAlign,
   textHeaderLinkURL,
-  showTextParagraph,
   textParagraph,
   textParagraphColor,
-  containerAlignItems,
-  containerJustifyContent,
+  textParagraphWidth,
+  textParagraphMaxWidth,
+  textParagraphAlign,
+  containerWidth,
+  containerFlexDirection,
+  containerHeaderAlignItems,
+  containerHeaderJustifyContent,
+  containerHeaderFlexDirection,
+  buttonLink,
+  buttonText,
+  buttonWidth,
 }) => {
   const containerStyle = useMemo(() => {
     return {
-      width: sectionWidth,
+      width: containerWidth,
+      flexDirection: containerFlexDirection,
     };
-  }, [sectionWidth]);
+  }, [containerWidth, containerFlexDirection]);
 
   const containerHeadersStyle = useMemo(() => {
     return {
-      alignItems: containerAlignItems,
-      justifyContent: containerJustifyContent,
+      flexDirection: containerHeaderFlexDirection,
+      alignItems: containerHeaderAlignItems,
+      justifyContent: containerHeaderJustifyContent,
     };
-  }, [containerAlignItems, containerJustifyContent]);
+  }, [
+    containerHeaderAlignItems,
+    containerHeaderJustifyContent,
+    containerHeaderFlexDirection,
+  ]);
 
   const textHeaderLightStyle = useMemo(() => {
     return {
@@ -60,8 +74,16 @@ const ContentText = ({
   const textParagraphStyle = useMemo(() => {
     return {
       color: textParagraphColor,
+      width: textParagraphWidth,
+      maxWidth: textParagraphMaxWidth,
+      textAlign: textParagraphAlign,
     };
-  }, [textParagraphColor]);
+  }, [
+    textParagraphColor,
+    textParagraphWidth,
+    textParagraphMaxWidth,
+    textParagraphAlign,
+  ]);
 
   return (
     <div className={styles.containerContent} style={containerStyle}>
@@ -90,6 +112,16 @@ const ContentText = ({
         <div className={styles.textParagraph} style={textParagraphStyle}>
           {textParagraph}
         </div>
+      )}
+      {showButtonCTA && (
+        <ButtonPrimary
+          showButtonText={true}
+          showIconLeft={false}
+          showIconRight={false}
+          buttonLink={buttonLink}
+          buttonText={buttonText}
+          buttonWidth={buttonWidth}
+        />
       )}
     </div>
   );

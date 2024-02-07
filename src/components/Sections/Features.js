@@ -1,12 +1,26 @@
 import ContextText from "../Elements/Contents/ContentText";
 import CardFeature from "../Elements/Cards/CardFeature";
 import { motion } from "framer-motion";
+import { easeFast, easeSlow, easeFastStagger } from "../../utils/motionUtils";
 import styles from "./Features.module.css";
 
 const Features = () => {
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
+  const cardContainer = {
+    hidden: { opacity: 0, transform: `translate(0, 80px)` },
+    show: {
+      opacity: 1,
+      transform: `translate(0, 0)`,
+      transition: easeFastStagger,
+    },
+  };
+
+  const cardItem = {
+    hidden: { opacity: 0, transform: `translate(0, 80px)` },
+    show: {
+      opacity: 1,
+      transform: `translate(0, 0)`,
+      transition: easeFast,
+    },
   };
 
   const cardFeatureData = [
@@ -60,28 +74,6 @@ const Features = () => {
       textParagraph: "experience seamless support with our ai assistant",
     },
   ];
-
-  const cardContainer = {
-    hidden: { opacity: 0, transform: `translate(0, 80px)` },
-    show: {
-      opacity: 1,
-      transform: `translate(0, 0)`,
-      transition: {
-        duration: 1,
-        ease: [0.15, 0.85, 0.47, 0.97],
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const cardItem = {
-    hidden: { opacity: 0, transform: `translate(0, 80px)` },
-    show: {
-      opacity: 1,
-      transform: `translate(0, 0)`,
-      transition: { duration: 1, ease: [0.15, 0.85, 0.47, 0.97] },
-    },
-  };
 
   return (
     <section id="features" className={styles.containerSection}>

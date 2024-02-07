@@ -2,30 +2,29 @@
 
 .textHeaderLight,
 .textHeaderBold,
-.textHeaderLink,
-.textParagraph {
+.textHeaderLink {
   position: relative;
-  letter-spacing: var(--letter-spacing-default);
+  letter-spacing: var(--letter-spacing-header);
 }
 
 .textHeaderLight {
-  font-size: var(--size-96);
-  line-height: var(--size-96);
+  font-size: var(--size-72);
+  line-height: var(--size-72);
   font-weight: var(--font-thin);
   color: var(--surface-primary);
 }
 
 .textHeaderBold {
-  font-size: var(--size-96);
-  line-height: var(--size-96);
+  font-size: var(--size-72);
+  line-height: var(--size-72);
   font-weight: var(--font-semibold);
   color: var(--surface-primary);
 }
 
 .textHeaderLink {
   text-decoration: underline;
-  font-size: var(--size-96);
-  line-height: var(--size-96);
+  font-size: var(--size-72);
+  line-height: var(--size-72);
   font-weight: var(--font-semibold);
   color: var(--surface-primary);
 }
@@ -36,6 +35,7 @@
   font-size: var(--size-20);
   line-height: var(--size-40);
   color: var(--surface-primary);
+  letter-spacing: var(--letter-spacing-default);
 }
 
 /* Main Containers */
@@ -84,7 +84,7 @@
   }
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1272px) {
   .textHeaderLight,
   .textHeaderBold,
   .textHeaderLink {
@@ -100,7 +100,7 @@
 
 @media screen and (max-width: 1024px) {
   .textParagraph {
-    max-width: 480px;
+    max-width: 472px;
   }
 }
 

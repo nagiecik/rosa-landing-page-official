@@ -27,6 +27,7 @@
 
   /* letter spacing */
   --letter-spacing-default: -0.04rem;
+  --letter-spacing-header: -0.25rem;
 
   /* Sizes */
   --size-0: 0rem;
@@ -144,8 +145,8 @@ h6 {
 }
 
 h1 {
-  font-size: var(--size-96);
-  line-height: var(--size-96);
+  font-size: var(--size-80);
+  line-height: var(--size-80);
 }
 
 h2 {

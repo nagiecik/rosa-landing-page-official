@@ -1,11 +1,11 @@
 import useMediaQuery from "../../../utils/useMediaQuery";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { getMotionProperties, easeSlow } from "../../../utils/motionUtils";
-import ButtonGoogle from "../Buttons/Stores/ButtonGoogle";
+import ButtonPrimary from "../Buttons/ButtonPrimary";
 import styles from "./ContentArticle.module.css";
-import ButtonApple from "../Buttons/Stores/ButtonApple";
 
-const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
+const ContentArticle = ({}) => {
   const tablet = useMediaQuery("(max-width: 768px)");
   const mobile = useMediaQuery("(max-width: 430px)");
 
@@ -37,15 +37,29 @@ const ContentArticle = ({ buttonGooglePlay, buttonAppStore }) => {
       )}
 
       <p className={styles.textParagraph}>
-        In the realm of sports governance, every organization encounters common
-        challenges, irrespective of the specific laws and regulations they
-        oversee. These challenges include the constant evolution of rules and
-        the imperative to ensure their effective dissemination.
+        No matter what laws and regulations you are in charge of, every sports
+        organization faces similar issues: rules constantly change, they must be
+        distributed, and the numerous sources and versions need to be managed.
+        If we add to it the multiple tools and the necessity to communicate
+        globally with a message that is both clear and always current, a
+        significant challenge arises.
+        <br />
+        <br />
+        Now imagine a solution to this problem, a true gamechanger!
       </p>
-      <div className={styles.containerButtons}>
-        <ButtonGoogle />
-        <ButtonApple />
-      </div>
+      <ButtonPrimary
+        showButtonText={true}
+        showIconLeft={false}
+        showIconRight={true}
+        altIconLeftText=""
+        altIconRightText="Icon Arrow Right"
+        buttonDisplayMode=""
+        buttonLink="mailto:hello@rosa.zone"
+        buttonText="Get your own App"
+        buttonWidth=""
+        iconLeftURL=""
+        iconRightURL="/icons/arrow.right.svg"
+      />
     </motion.article>
   );
 };

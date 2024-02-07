@@ -7,11 +7,11 @@ import styles from "./Nav.module.css";
 import { easeSlow, getMotionProperties } from "../../../utils/motionUtils";
 
 const navbarData = [
-  { linkText: "Start", linkURL: "#start" },
-  { linkText: "Testimonials", linkURL: "#testimonials" },
-  { linkText: "Context", linkURL: "#context" },
+  { linkText: "Start here", linkURL: "#start_here" },
+  { linkText: "For Whom", linkURL: "#for_whom" },
+  { linkText: "For What", linkURL: "#for_what" },
+  { linkText: "Showcases", linkURL: "#showcases" },
   { linkText: "Features", linkURL: "#features" },
-  { linkText: "Use Cases", linkURL: "#use_cases" },
   { linkText: "Pricing", linkURL: "#pricing" },
 ];
 

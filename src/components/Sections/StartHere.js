@@ -9,9 +9,9 @@ import {
 } from "../../utils/motionUtils";
 import ContentArticle from "../Elements/Contents/ContentArticle";
 import ButtonScroll from "../Elements/Buttons/ButtonScroll";
-import styles from "./Hero.module.css";
+import styles from "./StartHere.module.css";
 
-const Hero = ({ sectionZIndex }) => {
+const StartHere = ({ sectionZIndex }) => {
   const tabletHorizontal = useMediaQuery("(max-width: 1024px");
 
   const motionImagesContainer = getMotionProperties(
@@ -34,7 +34,7 @@ const Hero = ({ sectionZIndex }) => {
 
   return (
     <section
-      id="start"
+      id="start_here"
       className={styles.containerSection}
       style={containerSectionStyle}
     >
@@ -77,4 +77,4 @@ const Hero = ({ sectionZIndex }) => {
   );
 };
 
-export default Hero;
+export default StartHere;

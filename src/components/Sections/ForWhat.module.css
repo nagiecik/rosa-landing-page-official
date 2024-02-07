@@ -1,0 +1,180 @@
+.textNumber {
+  position: relative;
+  letter-spacing: var(--letter-spacing-default);
+  font-weight: var(--font-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--size-40);
+  height: var(--size-40);
+  flex-shrink: 0;
+  color: var(--surface-secondary);
+  font-size: var(--size-20);
+  line-height: var(--size-40);
+}
+
+.textTitle,
+.textParagraph .textTags {
+  align-self: stretch;
+  position: relative;
+  color: var(--surface-primary);
+}
+
+.textTitle {
+  font-weight: var(--font-semibold);
+  font-size: var(--size-20);
+  line-height: var(--size-40);
+}
+
+.textParagraph {
+  font-size: var(--size-16);
+  line-height: var(--size-32);
+  font-weight: var(--font-regular);
+  color: var(--on-surface-accent-disabled-light);
+}
+
+.textTags {
+  font-size: var(--size-14);
+  line-height: var(--size-24);
+  font-weight: var(--font-bold);
+  color: var(--on-surface-accent-disabled-light);
+}
+
+/* Main Containers */
+
+.containerText {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: stretch;
+  align-items: flex-start;
+  gap: var(--size-12);
+}
+
+.containerImage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 724px;
+  width: 50%;
+  background-image: url(/public/backgrounds/backgroundContextsOrnament.png);
+}
+
+.containerMockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 724px;
+  max-height: 724px;
+}
+
+.containerDevice {
+  position: absolute;
+  margin: 0 auto;
+}
+
+.image {
+  max-height: 724px;
+  max-width: 100%;
+}
+
+.containerCard {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-24);
+  align-items: flex-start;
+  padding: var(--size-20);
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: calc(var(--d) * 2) var(--e);
+  cursor: pointer;
+  border: 1px solid var(--on-surface-accent-disabled-dark);
+  border-radius: var(--size-12);
+  position: relative;
+  &:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -32px;
+    right: -32px;
+    background: var(--surface-primary);
+    height: var(--size-32);
+    width: var(--size-32);
+    border-radius: var(--size-32);
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: calc(var(--d) * 2) var(--e);
+  }
+}
+
+.containerCard.cardHovered {
+  transition: calc(var(--d) * 2) var(--e);
+  border-radius: var(--size-16);
+  transform: scale(1.05, 1.05);
+}
+
+.containerCard.cardHovered:before {
+  transform: scale(52);
+}
+
+.containerCard.cardHovered .textTitle,
+.containerCard.cardHovered .textParagraph,
+.containerCard.cardHovered .textTags {
+  color: var(--surface-secondary);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerCorner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  width: var(--size-56);
+  height: var(--size-56);
+  overflow: hidden;
+  top: 0;
+  right: 0;
+  background-color: var(--surface-primary);
+  border-radius: 0 var(--size-4) 0 var(--size-24);
+}
+
+.containerCards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-24);
+  max-width: 50%;
+}
+
+.containerMotion {
+  width: 100%;
+  max-width: 1520px;
+}
+
+.containerContent {
+  width: 100%;
+  max-width: 1520px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-80);
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.containerSection {
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size-128) var(--size-200);
+  position: relative;
+  gap: var(--size-128);
+  background-image: url(/public/backgrounds/backgroundContext.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+  box-sizing: border-box;
+}

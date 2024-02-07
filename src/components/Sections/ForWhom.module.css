@@ -1,0 +1,38 @@
+/* Main Containers */
+
+.containerIcons {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--size-64);
+}
+
+.containerContent {
+  width: 100%;
+  max-width: 1520px;
+  display: flex;
+  flex-direction: row;
+  gap: var(--size-128);
+  align-items: center;
+  justify-content: center;
+}
+
+.containerSection {
+  width: 100%;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--size-128) var(--size-200);
+  position: relative;
+  gap: var(--size-128);
+  box-sizing: border-box;
+}
+
+.containerMotion {
+  width: 100%;
+  max-width: 1520px;
+}

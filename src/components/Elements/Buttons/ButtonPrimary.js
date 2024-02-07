@@ -28,13 +28,13 @@ const ButtonPrimary = ({
   const buttonMotion = {
     rest: {
       backgroundColor: "var(--on-surface-accent-active)",
-      borderRadius: "var(--size-12)",
+      borderRadius: "var(--size-8)",
       transition: easeFast,
     },
 
     hover: {
       backgroundColor: "var(--surface-primary)",
-      borderRadius: "var(--size-16)",
+      borderRadius: "var(--size-12)",
       transition: easeFast,
     },
   };

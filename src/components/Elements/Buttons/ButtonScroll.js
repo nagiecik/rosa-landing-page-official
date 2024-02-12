@@ -1,11 +1,11 @@
 import React from "react";
-import styles from "./ButtonScroll.module.css";
 import { motion } from "framer-motion";
 import {
   getInfinityRotationProperties,
   getHoverProperties,
   easeFast,
 } from "../../../utils/motionUtils";
+import styles from "./ButtonScroll.module.css";
 
 const ButtonScroll = ({
   linkScrollURL,

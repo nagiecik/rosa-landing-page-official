@@ -1,9 +1,9 @@
 import { useMemo, useState, useEffect } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import { motion } from "framer-motion";
-import styles from "./Showcase.module.css";
 import { radius } from "../../utils/radiusUtils";
 import { easeFast, getMotionProperties } from "../../utils/motionUtils";
+import styles from "./Showcase.module.css";
 
 const Showcase = ({
   sectionZIndex,
@@ -20,6 +20,9 @@ const Showcase = ({
   imageRightAltText,
   imageRightURL,
   ref,
+  buttonGooglePlayLink,
+  buttonAppStoreLink,
+  containerPaddingBottom,
 }) => {
   const [desktopSmall, setDesktopSmall] = useState(
     window.matchMedia("(max-width: 1024px)").matches
@@ -53,8 +56,9 @@ const Showcase = ({
   const containerContentStyle = useMemo(() => {
     return {
       backgroundImage: containerBackgroundImage,
+      paddingBottom: containerPaddingBottom,
     };
-  }, [containerBackgroundImage]);
+  }, [containerBackgroundImage, containerPaddingBottom]);
 
   return (
     <section
@@ -63,10 +67,7 @@ const Showcase = ({
       id={sectionID}
     >
       {showContentText && (
-        <motion.div
-          {...motionContainer}
-          className={styles.containerMotion}
-        >
+        <motion.div {...motionContainer} className={styles.containerMotion}>
           <ContextText
             sectionWidth="100%"
             sectionTextContentZIndex="0"
@@ -84,16 +85,31 @@ const Showcase = ({
           />
         </motion.div>
       )}
-      <motion.div
-        {...motionContainer}
-        className={styles.containerMotion}
-      >
+      <motion.div {...motionContainer} className={styles.containerMotion}>
         <div className={styles.containerContent} style={containerContentStyle}>
           {showArticleTestimonial && (
             <div className={styles.containerArticle}>
               <div className={styles.containerHeader}>
-                <i className={styles.textHeaderWhite}>Official</i>
-                <i className={styles.textHeaderGreen}>Football Rules</i>
+                <div className={styles.containerTextHeaders}>
+                  <i className={styles.textHeaderSmall}>Official</i>
+                  <i className={styles.textHeaderBig}>Football Rules</i>
+                </div>
+                <div className={styles.containerButtons}>
+                  <a href={buttonGooglePlayLink}>
+                    <img
+                      className={styles.buttonGooglePlay}
+                      alt="Google Play Button"
+                      src={buttonGooglePlay}
+                    />
+                  </a>
+                  <a href={buttonAppStoreLink}>
+                    <img
+                      className={styles.buttonAppStore}
+                      alt="App Store Button"
+                      src={buttonAppStore}
+                    />
+                  </a>
+                </div>
               </div>
               <div className={styles.containerQuote}>
                 <p className={styles.textQuoteTitle}>
@@ -113,7 +129,11 @@ const Showcase = ({
                   <img
                     className={styles.imagePerson}
                     alt="Lukas Brud The IFAB Secretary Testimonial Image"
-                    src="/testimonialPersonImage.png"
+                    src="showcase/showcase-person-image.png"
+                    style={radius({
+                      x: 6,
+                      y: 6,
+                    })}
                   />
                   <div className={styles.containerPersonDetails}>
                     <p className={styles.textPersonName}>Lukas Brud</p>
@@ -135,11 +155,11 @@ const Showcase = ({
             <div className={styles.containerArticle}>
               <ContextText
                 showTextHeaderLight={true}
-                textHeaderLight="Make Sport"
+                textHeaderLight="Make Sports"
                 textHeaderLightColor="var(--surface-primary)"
                 textHeaderLightWeight="var(--font-thin)"
                 showTextHeaderBold={true}
-                textHeaderBold="Rules Move"
+                textHeaderBold="Rules Live"
                 textHeaderBoldColor="var(--surface-primary)"
                 textHeaderBoldWeight="var(--font-semibold)"
               />
@@ -148,25 +168,34 @@ const Showcase = ({
                 in us. With ROSA, empower your organization to create a custom
                 rule app using our ready-made solution.
               </p>
-              <div className={styles.containerButtons}>
-                <a href="https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US">
-                  <img
-                    className={styles.buttonGooglePlay}
-                    alt="Google Play Button"
-                    src={buttonGooglePlay}
-                  />
-                </a>
-                <a href="https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179">
-                  <img
-                    className={styles.buttonAppStore}
-                    alt="App Store Button"
-                    src={buttonAppStore}
-                  />
-                </a>
+              <div className={styles.containerDownload}>
+                <div>
+                  <p className={styles.textDownloadLight}>
+                    Download
+                    <span className={styles.textDownloadBold}>
+                      The Demo App
+                    </span>
+                  </p>
+                </div>
+                <div className={styles.containerButtons}>
+                  <a href={buttonGooglePlayLink}>
+                    <img
+                      className={styles.buttonGooglePlay}
+                      alt="Google Play Button"
+                      src={buttonGooglePlay}
+                    />
+                  </a>
+                  <a href={buttonAppStoreLink}>
+                    <img
+                      className={styles.buttonAppStore}
+                      alt="App Store Button"
+                      src={buttonAppStore}
+                    />
+                  </a>
+                </div>
               </div>
             </div>
           )}
-
           {!desktopSmall && (
             <img
               className={styles.imageRight}

@@ -12,27 +12,35 @@ const ButtonSecondary = ({
   altIconLeftText,
   altIconRightText,
   buttonDisplayMode,
-  buttonLink,
-  buttonText,
+  buttonSecondaryLink,
+  buttonSecondaryText,
   iconLeftURL,
   iconRightURL,
   showButtonText,
   showIconLeft,
   showIconRight,
+  buttonWidth,
+  radiusX,
+  radiusY,
+  radiusXHover,
+  radiusYHover,
 }) => {
   const buttonStyle = {
     display: buttonDisplayMode,
-    ...radius({ x: 16, y: 4 }),
+    width: buttonWidth,
+    ...radius({ x: radiusX, y: radiusY }),
   };
 
   const buttonMotion = {
     rest: {
-      backgroundColor: "var(--surface-secondary)",
+      backgroundColor: "var(--on-surface-accent-active)",
+      ...radius({ x: radiusX, y: radiusY }),
       transition: easeFast,
     },
 
     hover: {
-      backgroundColor: "var(--on-surface-accent-active)",
+      backgroundColor: "var(--surface-secondary)",
+      ...radius({ x: radiusXHover, y: radiusYHover }),
       transition: easeFast,
     },
   };
@@ -45,6 +53,18 @@ const ButtonSecondary = ({
 
     hover: {
       rotate: "-45deg",
+      transition: easeFast,
+    },
+  };
+
+  const motionText = {
+    rest: {
+      color: "var(--surface-secondary)",
+      transition: easeFast,
+    },
+
+    hover: {
+      color: "var(--surface-primary)",
       transition: easeFast,
     },
   };
@@ -67,8 +87,10 @@ const ButtonSecondary = ({
         />
       )}
       {showButtonText && (
-        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
-          <p className={styles.textButton}>{buttonText}</p>
+        <a href={buttonSecondaryLink} target="_blank" rel="noopener noreferrer">
+          <motion.p variants={motionText} className={styles.textButton}>
+            {buttonSecondaryText}
+          </motion.p>
         </a>
       )}
       {showIconRight && (

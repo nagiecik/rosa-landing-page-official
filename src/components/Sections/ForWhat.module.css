@@ -3,7 +3,7 @@
     transform: translateY(0);
   }
   50% {
-    transform: translateY(var(--size-32));
+    transform: translateY(var(--size-64));
   }
   100% {
     transform: translateY(0);
@@ -44,8 +44,8 @@
 
 .containerOrnamentWhite {
   background-color: var(--surface-primary);
-  width: 80px;
-  height: 80px;
+  width: var(--size-80);
+  height: var(--size-80);
   position: absolute;
   top: var(--size-40);
   right: var(--size-40);
@@ -55,8 +55,8 @@
 
 .containerOrnamentOrange {
   background-color: var(--on-surface-accent-active);
-  width: 560px;
-  height: 560px;
+  width: var(--size-560);
+  height: var(--size-560);
   position: absolute;
   margin: auto auto;
   animation-name: containerOrnamentOrange;
@@ -65,8 +65,8 @@
 
 .containerOrnamentBlue {
   background-color: var(--on-surface-accent-inactive);
-  width: 48px;
-  height: 48px;
+  width: var(--size-48);
+  height: var(--size-48);
   position: absolute;
   bottom: var(--size-160);
   left: var(--size-40);
@@ -107,6 +107,7 @@
   line-height: var(--size-32);
   font-weight: var(--font-regular);
   color: var(--on-surface-accent-disabled-light);
+  height: var(--size-64);
 }
 
 .textTags {
@@ -115,9 +116,6 @@
   font-weight: var(--font-bold);
   color: var(--on-surface-accent-disabled-light);
   width: 100%;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
 
 /* Main Containers */
@@ -137,7 +135,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  max-height: 724px;
+  height: var(--size-720);
+  max-height: var(--size-720);
   width: 50%;
   transition: calc(var(--d) * 2) var(--e);
   &:hover {
@@ -150,29 +149,30 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 324px;
-  height: 720px;
-  max-height: 720px;
+  width: var(--size-320);
+  height: calc(var(--size-720) * 0.99);
   overflow: hidden;
   border-radius: var(--size-48);
 }
 
 .containerDevice {
+  width: 348px;
   position: absolute;
   margin: 0 auto;
   z-index: 999;
 }
 
 .image {
-  height: 700px;
-  width: auto;
+  aspect-ratio: auto;
+  height: auto;
   margin: auto auto;
 }
 
 .containerMask {
-  height: 720px;
-  width: 324px;
+  height: calc(var(--size-720) * 0.99);
+  width: var(--size-320);
   border-radius: var(--size-48);
+  overflow: hidden;
 }
 
 .containerCard {
@@ -226,7 +226,8 @@
   justify-content: center;
   position: absolute;
   width: var(--size-56);
-  height: var(--size-56);
+  height: auto;
+  aspect-ratio: 1/1;
   overflow: hidden;
   top: 0;
   right: 0;
@@ -271,4 +272,303 @@
   background-repeat: no-repeat;
   background-position: top;
   box-sizing: border-box;
+}
+
+@media screen and (max-width: 1536px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-104);
+    gap: var(--size-96);
+  }
+
+  .containerCard {
+    gap: var(--size-16);
+  }
+
+  .textTitle {
+    font-weight: var(--font-semibold);
+    font-size: var(--size-18);
+    line-height: var(--size-32);
+  }
+
+  .containerImage {
+    height: calc(var(--size-720) * 0.94);
+    max-height: calc(var(--size-720) * 0.94);
+  }
+
+  .containerMockup {
+    height: calc(var(--size-720) * 0.94);
+  }
+
+  .containerDevice {
+    aspect-ratio: auto;
+    width: auto;
+    height: calc(var(--size-720) * 0.94);
+  }
+
+  .containerMask {
+    width: 307px;
+    height: calc(var(--size-720) * 0.94);
+  }
+
+  .containerOrnamentBlue {
+    width: calc(var(--size-48) * 0.94);
+    height: calc(var(--size-48) * 0.94);
+    left: var(--size-8);
+  }
+
+  .containerOrnamentOrange {
+    width: calc(var(--size-560) * 0.94);
+    height: calc(var(--size-560) * 0.94);
+  }
+
+  .containerOrnamentWhite {
+    width: calc(var(--size-80) * 0.94);
+    height: calc(var(--size-80) * 0.94);
+    right: var(--size-8);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .textParagraph {
+    font-size: var(--size-14);
+    line-height: var(--size-28);
+  }
+
+  .textTags {
+    font-size: var(--size-12);
+    width: 100%;
+  }
+
+  .containerOrnamentBlue {
+    left: calc(var(--size-16) * -1);
+  }
+
+  .containerOrnamentWhite {
+    right: calc(var(--size-24) * -1);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .containerSection {
+    padding: var(--size-80);
+  }
+
+  .containerImage {
+    height: calc(var(--size-720) * 0.865);
+    max-height: calc(var(--size-720) * 0.865);
+  }
+
+  .containerMockup {
+    height: calc(var(--size-720) * 0.865);
+  }
+
+  .containerDevice {
+    aspect-ratio: auto;
+    width: auto;
+    height: calc(var(--size-720) * 0.865);
+  }
+
+  .containerMask {
+    width: 282px;
+    height: calc(var(--size-720) * 0.865);
+  }
+
+  .containerOrnamentBlue {
+    width: calc(var(--size-48) * 0.865);
+    height: calc(var(--size-48) * 0.865);
+  }
+
+  .containerOrnamentOrange {
+    width: calc(var(--size-560) * 0.865);
+    height: calc(var(--size-560) * 0.865);
+  }
+
+  .containerOrnamentWhite {
+    width: calc(var(--size-80) * 0.865);
+    height: calc(var(--size-80) * 0.865);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .containerSection {
+    padding: var(--size-80) var(--size-64);
+    gap: var(--size-80);
+  }
+
+  .containerCorner {
+    width: var(--size-48);
+  }
+
+  .textTitle {
+    font-size: var(--size-16);
+    line-height: var(--size-24);
+  }
+
+  .textNumber {
+    font-size: var(--size-16);
+  }
+
+  .containerText {
+    gap: var(--size-8);
+  }
+
+  .textParagraph {
+    font-size: var(--size-12);
+    line-height: var(--size-20);
+    height: var(--size-48);
+  }
+
+  .textTags {
+    line-height: var(--size-20);
+  }
+
+  .containerImage {
+    height: calc(var(--size-720) * 0.78);
+    max-height: calc(var(--size-720) * 0.78);
+  }
+
+  .containerMockup {
+    height: calc(var(--size-720) * 0.78);
+  }
+
+  .containerDevice {
+    aspect-ratio: auto;
+    width: auto;
+    height: calc(var(--size-720) * 0.78);
+  }
+
+  .containerMask {
+    width: 251px;
+    height: calc(var(--size-720) * 0.78);
+  }
+
+  .containerOrnamentBlue {
+    width: calc(var(--size-48) * 0.78);
+    height: calc(var(--size-48) * 0.78);
+    left: var(--size-16);
+  }
+
+  .containerOrnamentOrange {
+    width: calc(var(--size-560) * 0.78);
+    height: calc(var(--size-560) * 0.78);
+  }
+
+  .containerOrnamentWhite {
+    width: calc(var(--size-80) * 0.78);
+    height: calc(var(--size-80) * 0.78);
+    right: var(--size-0);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerSection {
+    padding: var(--size-64) var(--size-48);
+    gap: var(--size-64);
+  }
+
+  .containerOrnamentBlue {
+    width: calc(var(--size-48) * 0.78);
+    height: calc(var(--size-48) * 0.78);
+    left: calc(var(--size-24) * -1);
+  }
+
+  .containerOrnamentOrange {
+    width: calc(var(--size-560) * 0.72);
+    height: calc(var(--size-560) * 0.72);
+  }
+
+  .containerOrnamentWhite {
+    width: calc(var(--size-80) * 0.78);
+    height: calc(var(--size-80) * 0.78);
+    right: calc(var(--size-32) * -1);
+  }
+
+  .textParagraph {
+    height: var(--size-64);
+  }
+
+  @keyframes containerOrnamentBlue {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(var(--size-80));
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  .containerSection {
+    padding: var(--size-48) var(--size-16);
+    gap: var(--size-48);
+  }
+
+  .containerContent {
+    flex-direction: column;
+    gap: var(--size-32);
+  }
+
+  .containerImage,
+  .containerCards {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .containerCard.cardHovered {
+    transform: scale(1, 1);
+  }
+
+  .containerImage {
+    pointer-events: none;
+  }
+
+  .containerCorner {
+    width: var(--size-40);
+    border-radius: 0 var(--size-2) 0 var(--size-24);
+  }
+
+  .textTitle,
+  .textNumber {
+    font-size: var(--size-14);
+  }
+
+  .containerImage {
+    height: calc(var(--size-720) * 0.68);
+    max-height: calc(var(--size-720) * 0.68);
+  }
+
+  .containerMockup {
+    height: calc(var(--size-720) * 0.68);
+  }
+
+  .containerDevice {
+    aspect-ratio: auto;
+    width: auto;
+    height: calc(var(--size-720) * 0.68);
+  }
+
+  .containerMask {
+    width: 219px;
+    height: calc(var(--size-720) * 0.68);
+  }
+
+  .containerOrnamentBlue {
+    width: calc(var(--size-48) * 0.68);
+    height: calc(var(--size-48) * 0.68);
+    left: calc(var(--size-8) * -1);
+  }
+
+  .containerOrnamentOrange {
+    width: calc(var(--size-560) * 0.68);
+    height: calc(var(--size-560) * 0.68);
+  }
+
+  .containerOrnamentWhite {
+    width: calc(var(--size-80) * 0.68);
+    height: calc(var(--size-80) * 0.68);
+    right: calc(var(--size-8) * -1);
+  }
 }

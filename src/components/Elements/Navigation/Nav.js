@@ -5,6 +5,7 @@ import useMediaQuery from "../../../utils/useMediaQuery";
 import { motion } from "framer-motion";
 import styles from "./Nav.module.css";
 import { easeSlow, getMotionProperties } from "../../../utils/motionUtils";
+import ButtonSecondary from "../Buttons/ButtonSecondary";
 
 const navbarData = [
   { linkText: "Start here", linkURL: "#start_here" },
@@ -15,13 +16,29 @@ const navbarData = [
   { linkText: "Pricing", linkURL: "#pricing" },
 ];
 
-const Nav = ({ logoURL, sectionZIndex }) => {
+const Nav = ({ sectionZIndex }) => {
   const tabletHorizontal = useMediaQuery("(max-width: 1024px)");
+  const mobile = useMediaQuery("(max-width: 430px)");
 
   const [navbarActive, setNavbarActive] = useState(false);
+  const [logoURL, setLogoURL] = useState("/logoROSA.svg");
+  const [prevScrollY, setPrevScrollY] = useState(0);
 
   const handleScroll = () => {
-    setNavbarActive(window.scrollY >= 64);
+    if (mobile) {
+      return;
+    }
+
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > 80 && !navbarActive) {
+      setNavbarActive(true);
+    } else if (currentScrollY <= 80 && navbarActive) {
+      setNavbarActive(false);
+    }
+
+    setPrevScrollY(currentScrollY);
+    setLogoURL(navbarActive ? "/logoROSADark.svg" : "/logoROSA.svg");
   };
 
   useEffect(() => {
@@ -30,7 +47,7 @@ const Nav = ({ logoURL, sectionZIndex }) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [navbarActive, prevScrollY, mobile]);
 
   const containerSectionStyle = useMemo(() => {
     return {
@@ -59,21 +76,23 @@ const Nav = ({ logoURL, sectionZIndex }) => {
                 key={index}
                 linkText={data.linkText}
                 linkURL={data.linkURL}
+                color={
+                  navbarActive
+                    ? "var(--surface-secondary)"
+                    : "var(--surface-primary)"
+                }
               />
             ))}
           </div>
         )}
-        <ButtonPrimary
-          buttonText="Get your app"
+        <ButtonSecondary
           showButtonText={true}
-          iconLeftURL="/icons/arrow.left.svg"
-          iconRightURL="/icons/arrow.right.svg"
-          showIconLeft={false}
-          showIconRight={true}
-          altTextIconRight="Icon Arrow Right"
-          buttonLink="mailto:hello@rosa.zone"
-          radiusX="24"
+          buttonSecondaryText="Get your app"
+          buttonSecondaryLink="mailto:hello@rosa.zone"
+          radiusX="16"
           radiusY="4"
+          radiusXHover="32"
+          radiusYHover="8"
         />
       </div>
     </motion.nav>

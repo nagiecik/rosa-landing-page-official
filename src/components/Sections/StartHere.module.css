@@ -28,7 +28,7 @@
 
 .containerScrollMotion {
   position: absolute;
-  left: calc(50% - var(--size-100));
+  left: calc(50% - var(--size-80));
   bottom: var(--size-48);
 }
 
@@ -113,10 +113,11 @@
 @media screen and (max-width: 1536px) {
   .containerContent {
     padding: var(--size-160) var(--size-104);
-    gap: var(--size-104);
+    gap: var(--size-128);
   }
 
   .containerMotion {
+    max-width: 50%;
     max-height: 640px;
   }
 
@@ -125,12 +126,17 @@
     filter: drop-shadow(var(--shadow-hero-mockup-big));
   }
 
+  .imageLeft {
+    width: 54%;
+  }
+
   .imageRight {
     width: 50%;
+    right: 8%;
   }
 
   .containerScrollMotion {
-    left: calc(50% - var(--size-80));
+    left: calc(50% - var(--size-72));
     bottom: var(--size-32);
   }
 }
@@ -187,8 +193,7 @@
   }
 
   .containerScrollMotion {
-    left: calc(50% - var(--size-72));
-    bottom: var(--size-24);
+    left: calc(50% - var(--size-64));
   }
 }
 
@@ -252,11 +257,5 @@
 
   .imageRight {
     height: var(--size-360);
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .containerSection {
-    height: fit-content;
   }
 }

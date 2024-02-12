@@ -2,6 +2,8 @@ import { useMemo } from "react";
 import ContextText from "../Elements/Contents/ContentText";
 import CardPricing from "../Elements/Cards/CardPricing";
 import { motion } from "framer-motion";
+import { easeFast, getMotionProperties } from "../../utils/motionUtils";
+import useMediaQuery from "../../utils/useMediaQuery"
 import styles from "./Pricing.module.css";
 
 const Pricing = ({ sectionZIndex }) => {
@@ -11,10 +13,10 @@ const Pricing = ({ sectionZIndex }) => {
     };
   }, [sectionZIndex]);
 
-  const easeFast = {
-    duration: 1,
-    ease: [0.15, 0.85, 0.47, 0.97],
-  };
+  const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
+  
+  const mobile = useMediaQuery("(max-width: 430px)");
+  const getWidth = () => (mobile ? "100%" : "72%");
 
   return (
     <section
@@ -22,26 +24,26 @@ const Pricing = ({ sectionZIndex }) => {
       className={styles.containerSection}
       style={containerPricingStyle}
     >
-      <motion.div
-        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-        transition={easeFast}
-        viewport={{ once: true }}
-        className={styles.containerMotion}
-      >
+      <motion.div {...motionContainer} className={styles.containerMotion}>
         <ContextText
           sectionWidth="100%"
           showTextHeaderLight={true}
-          textHeaderLight="Choose Your"
+          textHeaderLight="Choose"
           textHeaderLightColor="var(--surface-secondary)"
           textHeaderLightWeight="var(--font-thin)"
           showTextHeaderBold={true}
-          textHeaderBold="Plan"
+          textHeaderBold="Your Plan"
           textHeaderBoldColor="var(--surface-secondary)"
           textHeaderBoldWeight="var(--font-bold)"
           showTextParagraph={true}
           textParagraph="ROSA provides the tools to streamline rule management, create engaging content, and organize diverse sporting events with precision. Choose a plan that matches your organization's needs and make a lasting impression with a branded home screen, craft informative content effortlessly, and manage events seamlessly."
           textParagraphColor="var(--surface-secondary)"
+          containerFlexDirection="column"
+          containerAlignItems="flex-start"
+          containerJustifyContent="flex-start"
+          containerHeaderFlexDirection="row"
+          textParagraphWidth={getWidth()}
+          textParagraphMaxWidth="1520px"
         />
       </motion.div>
       <motion.div
@@ -56,7 +58,7 @@ const Pricing = ({ sectionZIndex }) => {
           textCardTitle="National"
           textColor="var(--surface-secondary)"
           textColorAccent="var(--on-surface-accent-active)"
-          textCardTitleDescription="For national sports associations in 2023, 40% off on target fee of €999/ mo from 2024, with new features still under development"
+          textCardTitleDescription="For national sports associations in 2024, 40% off on target fee of €999/ mo, with new features still under development."
           textCardDescriptionColor="var(--on-surface-accent-inactive)"
           textCardPrice="€398"
           textCardPriceColor="var(--on-surface-accent-active)"
@@ -76,11 +78,9 @@ const Pricing = ({ sectionZIndex }) => {
           textBulletNumberLeft3="Onboarding fee"
           textBulletNumberRight3="€980"
           showButtonPrimary={false}
-          buttonPrimaryText="Choose National"
+          buttonSecondaryText="I Choose National"
           showbuttonSecondary={true}
-          buttonSecondaryText="Choose National"
           buttonWidth="100%"
-          buttonDisplayMode="block"
           buttonLink="mailto:hello@rosa.zone?subject=ROSA National"
           cardZIndex="2"
         />
@@ -89,7 +89,7 @@ const Pricing = ({ sectionZIndex }) => {
           textCardTitle="International"
           textColor="var(--surface-primary)"
           textColorAccent="var(--on-surface-accent-active)"
-          textCardTitleDescription="For international sports organisations in 2023, 40% off on target fee of €1999/ mo from 2024, with new features still under development"
+          textCardTitleDescription="For international sports organisations in 2024, 40% off on target fee of €1999/ mo, with new features still under development."
           textCardDescriptionColor="var(--on-surface-accent-disabled-dark)"
           textCardPrice="€798"
           textCardPriceColor="var(--on-surface-accent-active)"
@@ -109,11 +109,9 @@ const Pricing = ({ sectionZIndex }) => {
           textBulletNumberLeft3="Onboarding fee"
           textBulletNumberRight3="€1500"
           showButtonPrimary={true}
-          buttonPrimaryText="Choose International"
           showbuttonSecondary={false}
-          buttonSecondaryText="Choose National"
+          buttonPrimaryText="I Choose International"
           buttonWidth="100%"
-          buttonDisplayMode="block"
           buttonLink="mailto:hello@rosa.zone?subject=ROSA International"
           cardZIndex="1"
         />

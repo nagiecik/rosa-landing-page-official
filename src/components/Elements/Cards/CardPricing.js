@@ -36,7 +36,8 @@ const CardPricing = ({
   buttonSecondaryText,
   buttonWidth,
   buttonDisplayMode,
-  buttonLink,
+  buttonPrimaryLink,
+  buttonSecondaryLink,
   cardZIndex,
 }) => {
   const cardPricingStyle = {
@@ -79,19 +80,27 @@ const CardPricing = ({
       {showButtonPrimary && (
         <ButtonPrimary
           showButtonText={true}
-          buttonText={buttonPrimaryText}
+          buttonPrimaryText={buttonPrimaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
-          buttonLink={buttonLink}
+          buttonPrimaryLink={buttonPrimaryLink}
+          radiusX="64"
+          radiusY="8"
+          radiusXHover="96"
+          radiusYHover="16"
         />
       )}
       {showbuttonSecondary && (
         <ButtonSecondary
           showButtonText={true}
-          buttonText={buttonSecondaryText}
+          buttonSecondaryText={buttonSecondaryText}
           buttonWidth={buttonWidth}
           buttonDisplayMode={buttonDisplayMode}
-          buttonLink={buttonLink}
+          buttonSecondaryLink={buttonSecondaryLink}
+          radiusX="64"
+          radiusY="8"
+          radiusXHover="96"
+          radiusYHover="16"
         />
       )}
       <Divider dividerBorder={dividerBorder} width={dividerWidth} />

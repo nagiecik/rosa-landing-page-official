@@ -2,7 +2,7 @@ import ContentText from "../Elements/Contents/ContentText";
 import { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { getMotionProperties, easeFast } from "../../utils/motionUtils";
-import Parallax from "../Elements/Contents/ContentParallax";
+import ContentParallax from "../Elements/Contents/ContentParallax";
 import styles from "./ForWhom.module.css";
 
 const ForWhom = ({ sectionZIndex }) => {
@@ -32,12 +32,12 @@ const ForWhom = ({ sectionZIndex }) => {
           showTextHeaderBold={true}
           showTextHeaderLink={false}
           showTextParagraph={true}
-          textHeaderLight="ROSA app serves all"
+          textHeaderLight="ROSA serves all"
           textHeaderLightColor="var(--surface-secondary)"
           textHeaderLightAlign=""
-          textHeaderBold="Big or small Entities"
+          textHeaderBold="Large or small"
           textHeaderBoldColor="var(--surface-secondary)"
-          textParagraph="ROSA stands out as an exceptional tool that caters to the diverse needs of various organizations, regardless of their size. While it seamlessly serves the requirements of major sports entities, what makes ROSA truly remarkable is its accessibility and adaptability for small organizations."
+          textParagraph="ROSA caters to diverse needs of sports organisations, regardless of their size and budget. It is fast and easy to launch, accessible and adaptable even for the smallest organisations."
           textParagraphColor="var(--surface-secondary)"
         />
       </motion.div>
@@ -45,9 +45,18 @@ const ForWhom = ({ sectionZIndex }) => {
         {...motionContainer}
         className={`${styles.containerMotion} ${styles.containerIcons}`}
       >
-        <Parallax baseVelocity={5} imageURL="/slider/row-1.png"></Parallax>
-        <Parallax baseVelocity={-5} imageURL="/slider/row-2.png"></Parallax>
-        <Parallax baseVelocity={5} imageURL="/slider/row-3.png"></Parallax>
+        <ContentParallax
+          baseVelocity={5}
+          imageURL="/slider/row-1.png"
+        ></ContentParallax>
+        <ContentParallax
+          baseVelocity={-5}
+          imageURL="/slider/row-2.png"
+        ></ContentParallax>
+        <ContentParallax
+          baseVelocity={5}
+          imageURL="/slider/row-3.png"
+        ></ContentParallax>
       </motion.div>
     </section>
   );

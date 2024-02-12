@@ -16,11 +16,11 @@ const navFooterData = [
   {
     textTitle: "Menu",
     links: [
-      { show: true, linkText: "Start", linkURL: "#start" },
-      { show: true, linkText: "Testimonials", linkURL: "#testimonials" },
-      { show: true, linkText: "Context", linkURL: "#context" },
+      { show: true, linkText: "Start here", linkURL: "#start_here" },
+      { show: true, linkText: "For Whom", linkURL: "#for_whom" },
+      { show: true, linkText: "For What", linkURL: "#for_what" },
+      { show: true, linkText: "Showcases", linkURL: "#showcases" },
       { show: true, linkText: "Features", linkURL: "#features" },
-      { show: true, linkText: "Use Cases", linkURL: "#use_cases" },
       { show: true, linkText: "Pricing", linkURL: "#pricing" },
     ],
   },
@@ -67,7 +67,7 @@ const Footer = () => {
               containerJustifyContent="center"
               sectionWidth="100%"
               showTextHeaderLight={true}
-              textHeaderLight="Interested to join us?"
+              textHeaderLight="Get your own!"
               textHeaderLightSize="var(--size-34)"
               textHeaderLightColor="var(--surface-primary)"
               textHeaderLightWeight="var(--font-thin)"
@@ -85,7 +85,7 @@ const Footer = () => {
           {!mobile && (
             <ContextText
               showTextHeaderLight={true}
-              textHeaderLight="Interested to join us?"
+              textHeaderLight="Get your own!"
               textHeaderLightColor="var(--surface-primary)"
               textHeaderLightWeight="var(--font-thin)"
               showtextHeaderBold={false}
@@ -98,7 +98,7 @@ const Footer = () => {
           )}
           {!tablet && (
             <ButtonScroll
-              linkScrollURL="#start"
+              linkScrollURL="#start_here"
               imageScrollURL="./icons/scroll-up.svg"
               iconScrollURL="./icons/arrow.up.svg"
             />
@@ -111,7 +111,7 @@ const Footer = () => {
           <img
             className={styles.imageLogo}
             alt="ROSA Logo"
-            src="/imageLogoRosa.svg"
+            src="/logoROSA.svg"
           />
           <div className={styles.containerLinks}>
             {navFooterData.map((data, index) => (
@@ -120,7 +120,7 @@ const Footer = () => {
           </div>
         </motion.div>
         <motion.div {...motionSmallFast} className={styles.containerCopyright}>
-          <p className={styles.textParagraph}>©2023 All rights reserved</p>
+          <p className={styles.textParagraph}>©2024 ROSA All rights reserved</p>
         </motion.div>
       </div>
     </footer>

@@ -27,7 +27,8 @@
 
   /* letter spacing */
   --letter-spacing-default: -0.04rem;
-  --letter-spacing-header: -0.25rem;
+  --letter-spacing-header-big: -0.25rem;
+  --letter-spacing-header-small: -0.125rem;
 
   /* Sizes */
   --size-0: 0rem;
@@ -39,6 +40,7 @@
   --size-12: 0.75rem;
   --size-14: 0.875rem;
   --size-16: 1rem;
+  --size-18: 1.125rem;
   --size-20: 1.25rem;
   --size-24: 1.5rem;
   --size-28: 1.75rem;
@@ -62,11 +64,17 @@
   --size-152: 9.5rem;
   --size-160: 10rem;
   --size-200: 12.5rem;
+  --size-208: 13rem;
+  --size-216: 13.5rem;
+  --size-224: 14rem;
   --size-240: 15rem;
   --size-256: 16rem;
+  --size-264: 16.5rem;
   --size-320: 20rem;
   --size-360: 22.5rem;
   --size-400: 25rem;
+  --size-560: 35rem;
+  --size-720: 45rem;
 
   /* Colors ROSA */
   --surface-tertiary: #0e1012;
@@ -90,10 +98,14 @@
   --shadow-mockup-right: -32px 32px 64px rgba(0, 0, 0, 0.24);
   --shadow-mockup-hover-right: -64px 64px 128px rgba(0, 0, 0, 0.48);
 
-  --shadow-hero-mockup-large: var(--size-40) var(--size-40) var(--size-120) rgba(0, 0, 0, 0.8);
-  --shadow-hero-mockup-big: var(--size-32) var(--size-32) var(--size-96) rgba(0, 0, 0, 0.8);
-  --shadow-hero-mockup-medium: var(--size-24) var(--size-24) var(--size-72) rgba(0, 0, 0, 0.8);
-  --shadow-hero-mockup-small: var(--size-16) var(--size-16) var(--size-48) rgba(0, 0, 0, 0.8);
+  --shadow-hero-mockup-large: var(--size-40) var(--size-40) var(--size-120)
+    rgba(0, 0, 0, 0.8);
+  --shadow-hero-mockup-big: var(--size-32) var(--size-32) var(--size-96)
+    rgba(0, 0, 0, 0.8);
+  --shadow-hero-mockup-medium: var(--size-24) var(--size-24) var(--size-72)
+    rgba(0, 0, 0, 0.8);
+  --shadow-hero-mockup-small: var(--size-16) var(--size-16) var(--size-48)
+    rgba(0, 0, 0, 0.8);
 }
 
 html {

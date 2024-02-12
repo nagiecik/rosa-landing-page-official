@@ -110,25 +110,30 @@
 }
 
 .containerCard:hover {
-  border-bottom: 1px solid var(--on-surface-accent-active);
-  border-right: 1px solid var(--on-surface-accent-active);
-  border-top: 1px solid var(--surface-primary);
-  border-left: 1px solid var(--surface-primary);
-  box-shadow: 8px 8px 0 0 var(--on-surface-accent-active);
   transition: calc(var(--d) * 2) var(--e);
   border-radius: var(--size-32);
-  transform: rotate(2.5deg) scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
 }
 
 @media screen and (max-width: 1536px) {
   .containerCard {
-    padding: var(--size-64) var(--size-24) var(--size-24) var(--size-24);
+    padding: var(--size-64) var(--size-20) var(--size-20) var(--size-20);
   }
 
   .textTitle,
   .textNumber {
     font-size: var(--size-20);
     line-height: var(--size-32);
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .textParagraph {
+    font-size: var(--size-12);
+  }
+
+  .containerCard:hover {
+    transform: scale(1.075, 1.075);
   }
 }
 
@@ -140,7 +145,7 @@
 
   .containerCard:hover {
     border-radius: var(--size-24);
-    transform: rotate(2.5deg) scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
   }
 
   .textTitle {
@@ -152,14 +157,6 @@
     gap: var(--size-8);
   }
 
-  .textParagraph {
-    font-size: var(--size-12);
-    line-height: var(--size-20);
-    font-weight: var(--font-semibold);
-    font-family: inherit;
-    color: var(--on-surface-accent-inactive);
-  }
-
   .imageIcon {
     width: var(--size-24);
     height: var(--size-24);
@@ -169,5 +166,19 @@
     width: var(--size-56);
     height: var(--size-56);
     border-radius: var(--size-0) var(--size-4) var(--size-0) var(--size-24);
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .containerCard {
+    height: 100%;
+  }
+  
+  .containerText {
+    gap: var(--size-4);
+  }
+
+  .textParagraph {
+    line-height: var(--size-20);
   }
 }

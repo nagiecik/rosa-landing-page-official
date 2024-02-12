@@ -1,13 +1,14 @@
 import { useMemo } from "react";
 import ButtonPrimary from "../Buttons/ButtonPrimary";
-import styles from "./ContentText.module.css";
 import ButtonSecondary from "../Buttons/ButtonSecondary";
+import styles from "./ContentText.module.css";
 
 const ContentText = ({
   showTextHeaderLight,
   showTextHeaderBold,
   showTextHeaderLink,
   showTextParagraph,
+  showTextBold,
   showButtonPrimary,
   showButtonSecondary,
   textHeaderLight,
@@ -24,21 +25,31 @@ const ContentText = ({
   textParagraphWidth,
   textParagraphMaxWidth,
   textParagraphAlign,
+  textBold,
+  textBoldColor,
+  textBoldWidth,
+  textBoldMaxWidth,
+  textBoldAlign,
   containerWidth,
   containerFlexDirection,
+  containerAlignItems,
+  containerJustifyContent,
   containerHeaderAlignItems,
   containerHeaderJustifyContent,
   containerHeaderFlexDirection,
-  buttonLink,
-  buttonText,
-  buttonWidth,
+  buttonPrimaryLink,
+  buttonPrimaryText,
+  buttonSecondaryLink,
+  buttonSecondaryText,
 }) => {
   const containerStyle = useMemo(() => {
     return {
       width: containerWidth,
       flexDirection: containerFlexDirection,
+      alignItems: containerAlignItems,
+      justifyContent: containerJustifyContent,
     };
-  }, [containerWidth, containerFlexDirection]);
+  }, [containerWidth, containerFlexDirection, containerAlignItems, containerJustifyContent]);
 
   const containerHeadersStyle = useMemo(() => {
     return {
@@ -87,6 +98,15 @@ const ContentText = ({
     textParagraphAlign,
   ]);
 
+  const textBoldStyle = useMemo(() => {
+    return {
+      color: textBoldColor,
+      width: textBoldWidth,
+      maxWidth: textBoldMaxWidth,
+      textAlign: textBoldAlign,
+    };
+  }, [textBoldColor, textBoldWidth, textBoldMaxWidth, textBoldAlign]);
+
   return (
     <div className={styles.containerContent} style={containerStyle}>
       <div className={styles.containerHeaders} style={containerHeadersStyle}>
@@ -115,14 +135,23 @@ const ContentText = ({
           {textParagraph}
         </div>
       )}
+
+      {showTextBold && (
+        <div className={styles.textBold} style={textBoldStyle}>
+          {textBold}
+        </div>
+      )}
       {showButtonPrimary && (
         <ButtonPrimary
           showButtonText={true}
           showIconLeft={false}
           showIconRight={false}
-          buttonLink={buttonLink}
-          buttonText={buttonText}
-          buttonWidth={buttonWidth}
+          buttonPrimaryLink={buttonPrimaryLink}
+          buttonPrimaryText={buttonPrimaryText}
+          radiusX="16"
+          radiusY="4"
+          radiusXHover="32"
+          radiusYHover="8"
         />
       )}
       {showButtonSecondary && (
@@ -130,9 +159,12 @@ const ContentText = ({
           showButtonText={true}
           showIconLeft={false}
           showIconRight={false}
-          buttonLink={buttonLink}
-          buttonText={buttonText}
-          buttonWidth={buttonWidth}
+          buttonSecondaryLink={buttonSecondaryLink}
+          buttonSecondaryText={buttonSecondaryText}
+          radiusX="16"
+          radiusY="4"
+          radiusXHover="32"
+          radiusYHover="8"
         />
       )}
     </div>

@@ -9,25 +9,22 @@
   flex-shrink: 0;
 }
 
+.svg-class:hover path {
+  fill: red;
+}
+
 /* Button Text */
 
 .textButton {
   font-size: var(--size-16);
   line-height: var(--size-32);
   font-weight: var(--font-black);
-  color: var(--surface-primary);
-  transition: calc(var(--d) * 2) var(--e);
-}
-
-.containerButton:hover .textButton {
-  color: var(--surface-secondary);
-  transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Main Containers */
 
 .containerButton {
-  background-color: var(--surface-secondary);
+  background-color: var(--on-surface-accent-active);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -41,17 +38,11 @@
 
 /* Media Queries */
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1536px) {
   .textButton {
     font-size: var(--size-14);
     line-height: var(--size-24);
     font-weight: var(--font-black);
-    color: var(--surface-primary);
-  }
-}
-
-@media screen and (max-width: 1280px) {
-  .containerButton {
-    padding: var(--size-8) var(--size-12);
+    color: var(--surface-secondary);
   }
 }

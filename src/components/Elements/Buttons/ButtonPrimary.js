@@ -4,38 +4,51 @@ import {
   getMotionProperties,
   easeFast,
   easeSlow,
+  easeFastMobile,
 } from "../../../utils/motionUtils";
-import styles from "./ButtonPrimary.module.css";
 import { radius } from "../../../utils/radiusUtils";
+import styles from "./ButtonPrimary.module.css";
 
 const ButtonPrimary = ({
   altIconLeftText,
   altIconRightText,
   buttonDisplayMode,
-  buttonLink,
-  buttonText,
+  buttonPrimaryLink,
+  buttonPrimaryText,
   iconLeftURL,
   iconRightURL,
   showButtonText,
   showIconLeft,
   showIconRight,
+  buttonWidth,
+  radiusX,
+  radiusY,
+  radiusXHover,
+  radiusYHover,
 }) => {
   const buttonStyle = {
     display: buttonDisplayMode,
-    ...radius({ x: 16, y: 4 }),
+    width: buttonWidth,
+    ...radius({ x: radiusX, y: radiusY }),
   };
 
   const buttonMotion = {
     rest: {
       backgroundColor: "var(--on-surface-accent-active)",
       transition: easeFast,
-      ...radius({ x: 16, y: 4 }),
+      ...radius({ x: radiusX, y: radiusY }),
     },
 
     hover: {
       backgroundColor: "var(--surface-primary)",
       transition: easeFast,
-      ...radius({ x: 32, y: 8 }),
+      ...radius({ x: radiusXHover, y: radiusYHover }),
+    },
+
+    tap: {
+      backgroundColor: "var(--surface-primary)",
+      transition: easeFastMobile,
+      ...radius({ x: radiusXHover, y: radiusYHover }),
     },
   };
 
@@ -43,11 +56,19 @@ const ButtonPrimary = ({
     rest: {
       rotate: "0deg",
       transition: easeFast,
+      fill: "var(--surface-secondary)",
     },
 
     hover: {
       rotate: "-45deg",
       transition: easeFast,
+      fill: "var(--surface-primary)",
+    },
+
+    tap: {
+      rotate: "-45deg",
+      transition: easeFastMobile,
+      fill: "var(--surface-primary)",
     },
   };
 
@@ -56,6 +77,7 @@ const ButtonPrimary = ({
       variants={buttonMotion}
       initial="rest"
       whileHover="hover"
+      whileTap="tap" // Add whileTap here
       animate="rest"
       className={styles.containerButton}
       style={buttonStyle}
@@ -69,8 +91,8 @@ const ButtonPrimary = ({
         />
       )}
       {showButtonText && (
-        <a href={buttonLink} target="_blank" rel="noopener noreferrer">
-          <p className={styles.textButton}>{buttonText}</p>
+        <a href={buttonPrimaryLink} target="_blank" rel="noopener noreferrer">
+          <p className={styles.textButton}>{buttonPrimaryText}</p>
         </a>
       )}
       {showIconRight && (

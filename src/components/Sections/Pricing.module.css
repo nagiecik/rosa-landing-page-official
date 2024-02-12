@@ -37,6 +37,7 @@
 @media screen and (max-width: 1536px) {
   .containerSection {
     padding: var(--size-80) var(--size-104);
+    gap: var(--size-96);
   }
 
   .containerContent {
@@ -57,6 +58,7 @@
 @media screen and (max-width: 1280px) {
   .containerSection {
     padding: var(--size-80) var(--size-64);
+    gap: var(--size-80);
   }
 
   .containerContent {
@@ -67,6 +69,7 @@
 @media screen and (max-width: 1024px) {
   .containerSection {
     padding: var(--size-64) var(--size-48);
+    gap: var(--size-64);
   }
 
   .containerContent {
@@ -87,7 +90,8 @@
 
 @media screen and (max-width: 430px) {
   .containerSection {
-    padding: var(--size-64) var(--size-24) var(--size-48) var(--size-24);
+    padding: var(--size-48) var(--size-16);
+    gap: var(--size-48);
   }
 }
 

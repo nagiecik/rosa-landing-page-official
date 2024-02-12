@@ -54,13 +54,15 @@ const ContentArticle = ({}) => {
         altIconLeftText=""
         altIconRightText="Icon Arrow Right"
         buttonDisplayMode=""
-        buttonLink="mailto:hello@rosa.zone"
-        buttonText="Get your own App"
+        // buttonPrimaryLink="mailto:hello@rosa.zone"
+        buttonPrimaryText="Get your App"
         buttonWidth=""
         iconLeftURL=""
         iconRightURL="/icons/arrow.right.svg"
         radiusX="16"
         radiusY="4"
+        radiusXHover="32"
+        radiusYHover="8"
       />
     </motion.article>
   );

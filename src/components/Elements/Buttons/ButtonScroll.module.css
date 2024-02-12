@@ -2,7 +2,8 @@
 
 .containerButton {
   width: var(--size-160);
-  height: var(--size-160);
+  aspect-ratio: 1/1;
+  height: auto;
   display: flex;
   position: relative;
   transition: calc(var(--d) * 2) var(--e);
@@ -23,9 +24,14 @@
   height: var(--size-24);
 }
 
-@media screen and (max-width: 1280px) {
+@media screen and (max-width: 1536px) {
   .containerButton {
     width: var(--size-144);
-    height: var(--size-144);
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .containerButton {
+    width: var(--size-128);
   }
 }

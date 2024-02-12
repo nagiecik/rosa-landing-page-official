@@ -44,19 +44,19 @@ function ContentParallax({ children, baseVelocity = 100, imageURL }) {
     <div className={styles.containerParallax}>
       <motion.div className={styles.containerScroller} style={{ x }}>
         <div className={styles.containerImage}>
-          <img src={imageURL} alt="Image 1" />
+          <img className={styles.image} src={imageURL} alt="Image 1" />
           {children}
         </div>
         <div className={styles.containerImage}>
-          <img src={imageURL} alt="Image 2" />
+          <img className={styles.image} src={imageURL} alt="Image 2" />
           {children}
         </div>
         <div className={styles.containerImage}>
-          <img src={imageURL} alt="Image 3" />
+          <img className={styles.image} src={imageURL} alt="Image 3" />
           {children}
         </div>
         <div className={styles.containerImage}>
-          <img src={imageURL} alt="Image 4" />
+          <img className={styles.image} src={imageURL} alt="Image 4" />
           {children}
         </div>
       </motion.div>

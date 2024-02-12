@@ -4,7 +4,7 @@
 .textHeaderBold,
 .textHeaderLink {
   position: relative;
-  letter-spacing: var(--letter-spacing-header);
+  letter-spacing: var(--letter-spacing-header-big);
 }
 
 .textHeaderLight {
@@ -38,6 +38,16 @@
   letter-spacing: var(--letter-spacing-default);
 }
 
+.textBold {
+  flex: 1;
+  max-width: 640px;
+  font-size: var(--size-20);
+  line-height: var(--size-40);
+  color: var(--surface-primary);
+  font-weight: var(--font-bold);
+  letter-spacing: var(--letter-spacing-default);
+}
+
 /* Main Containers */
 
 .containerHeaders {
@@ -58,16 +68,15 @@
 /* Media Queries */
 
 @media screen and (max-width: 1536px) {
-  .textHeaderLight,
-  .textHeaderBold,
-  .textHeaderLink {
-    font-size: var(--size-72);
-    line-height: var(--size-72);
-  }
-
+  .textBold,
   .textParagraph {
     font-size: var(--size-16);
     line-height: var(--size-32);
+  }
+
+  .textParagraph,
+  .textBold {
+    max-width: 560px;
   }
 
   .containerHeaders {
@@ -75,7 +84,7 @@
   }
 }
 
-@media screen and (max-width: 1366px) {
+@media screen and (max-width: 1440px) {
   .textHeaderLight,
   .textHeaderBold,
   .textHeaderLink {
@@ -84,7 +93,7 @@
   }
 }
 
-@media screen and (max-width: 1272px) {
+@media screen and (max-width: 1280px) {
   .textHeaderLight,
   .textHeaderBold,
   .textHeaderLink {
@@ -92,15 +101,23 @@
     line-height: var(--size-56);
   }
 
-  .textParagraph {
+  .textParagraph,
+  .textBold {
     max-width: 540px;
-    font-size: var(--size-14);
+    font-size: var(--size-16);
   }
 }
 
 @media screen and (max-width: 1024px) {
   .textParagraph {
     max-width: 472px;
+  }
+
+  .textHeaderLight,
+  .textHeaderBold,
+  .textHeaderLink {
+    font-size: var(--size-48);
+    line-height: var(--size-48);
   }
 }
 
@@ -129,10 +146,12 @@
   .textHeaderLink {
     font-size: var(--size-40);
     line-height: var(--size-40);
+    letter-spacing: var(--letter-spacing-header-small);
   }
 
   .containerHeaders {
     width: 100%;
     align-items: flex-start;
+    gap: var(--size-8);
   }
 }

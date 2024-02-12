@@ -1,8 +1,14 @@
-import ContextText from "../Elements/Contents/ContentText";
+import ContentText from "../Elements/Contents/ContentText";
 import CardFeature from "../Elements/Cards/CardFeature";
 import { motion } from "framer-motion";
-import { easeFast, easeSlow, easeFastStagger } from "../../utils/motionUtils";
+import {
+  easeFast,
+  easeSlow,
+  easeFastStagger,
+  getMotionProperties,
+} from "../../utils/motionUtils";
 import styles from "./Features.module.css";
+import useMediaQuery from "../../utils/useMediaQuery";
 
 const Features = () => {
   const cardContainer = {
@@ -25,79 +31,102 @@ const Features = () => {
 
   const cardFeatureData = [
     {
-      imageIconUrl: "/icons/questionmark.app.svg",
+      imageIconUrl: "/features/Question.svg",
       textNumber: "01",
-      textTitle: "Competition regulations",
-      textParagraph: "well-organised regulations, easy to upload and access",
+      textTitle: "Q&A for your rules",
+      textParagraph: "Get quick answers to rule and competition queries.",
     },
     {
-      imageIconUrl: "/icons/textformat.alt.svg",
+      imageIconUrl: "/features/TextAa.svg",
       textNumber: "02",
       textTitle: "Language Versions",
-      textParagraph: "entire content available in multiple languages",
+      textParagraph:
+        "Make your entire content available in multiple languages.",
     },
     {
-      imageIconUrl: "/icons/square.and.pencil.svg",
+      imageIconUrl: "/features/TreeStructure.svg",
       textNumber: "03",
       textTitle: "Competition regulations",
-      textParagraph: "well-organised regulations, easy to upload and access",
+      textParagraph:
+        "Manage and distribute well-organised regulations, easy to upload and access.",
     },
     {
-      imageIconUrl: "/icons/doc.badge.ellipsis.svg",
+      imageIconUrl: "/features/Swap.svg",
       textNumber: "04",
       textTitle: "Rules & Changes",
-      textParagraph: "rules always up-to-date, amendments easy to track",
+      textParagraph:
+        "Make your rules always up-to-date, amendments easy to track.",
     },
     {
-      imageIconUrl: "/icons/note.text.svg",
+      imageIconUrl: "/features/Note.svg",
       textNumber: "05",
       textTitle: "Notes & Favourites",
       textParagraph:
-        "highlighting passages, adding personal notes, bookmarking favourites",
+        "Enable highlighting, adding personal notes, bookmarking favourites.",
     },
     {
-      imageIconUrl: "/icons/person.icloud.svg",
+      imageIconUrl: "/features/Database.svg",
       textNumber: "06",
       textTitle: "Marketing",
-      textParagraph: "building users’ database and sending notifications",
+      textParagraph:
+        "Enable building users database and sending notifications.",
     },
     {
-      imageIconUrl: "/icons/doc.text.image.svg",
+      imageIconUrl: "/features/Images.svg",
       textNumber: "07",
       textTitle: "Content features",
-      textParagraph: "photo, audio, and video content available for download",
+      textParagraph:
+        "Provide photo, audio, and video content available for download.",
     },
     {
-      imageIconUrl: "/icons/brain.head.profile.svg",
+      imageIconUrl: "/features/Brain.svg",
       textNumber: "08",
       textTitle: "AI Assistant",
-      textParagraph: "experience seamless support with our ai assistant",
+      textParagraph:
+        "Our ai assistant will look for answers and data within your content.",
     },
   ];
 
+  const mobile = useMediaQuery("(max-width: 430px)");
+  const getWidth = () => (mobile ? "100%" : "800px");
+
+  const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
+
   return (
     <section id="features" className={styles.containerSection}>
-      <motion.div
-        initial={{ opacity: 0, transform: `translate(0, 160px)` }}
-        whileInView={{ opacity: 1, transform: `translate(0, 0)` }}
-        transition={easeFast}
-        viewport={{ once: true }}
-        className={styles.containerMotion}
-      >
-        <ContextText
-          sectionWidth="100%"
-          sectionTextContentZIndex="0"
+      <motion.div {...motionContainer} className={styles.containerMotion}>
+        <ContentText
           showTextHeaderLight={true}
-          textHeaderLight="All Provided"
-          textHeaderLightWeight="var(--font-thin)"
-          textHeaderLightColor="var(--surface-secondary)"
           showTextHeaderBold={true}
-          textHeaderBold="Features"
-          textHeaderBoldWeight="var(--font-semibold)"
-          textHeaderBoldColor="var(--surface-secondary)"
+          showTextHeaderLink={false}
           showTextParagraph={true}
-          textParagraph="Doing your best to get the message across globally, most often you work with PDF files and printouts. They are difficult to personalize and user-unfriendly. It would be nice to make tracking changes, giving feedback and browsing easier, and mobile-optimised."
+          showTextBold={true}
+          showButtonPrimary={false}
+          showButtonSecondary={true}
+          textHeaderLight="The"
+          textHeaderLightColor="var(--surface-secondary)"
+          textHeaderLightAlign="center"
+          textHeaderBold="Features"
+          textHeaderBoldColor="var(--surface-secondary)"
+          textHeaderBoldAlign="center"
+          textParagraph="Once you know what context(s) you need ROSA for, make use of all the features available to make your rules, partner content, competition regulations, or any other available, timely and easy to distribute and manage."
           textParagraphColor="var(--surface-secondary)"
+          textParagraphWidth={getWidth()}
+          textParagraphMaxWidth={getWidth()}
+          textParagraphAlign="center"
+          textBold="Select your homescreen design, choose your features, layout and structure."
+          textBoldColor="var(--surface-secondary)"
+          textBoldWidth={getWidth()}
+          textBoldMaxWidth={getWidth()}
+          textBoldAlign="center"
+          containerWidth="100%"
+          containerFlexDirection="column"
+          containerAlignItems="center"
+          containerHeaderAlignItems="center"
+          containerHeaderJustifyContent="center"
+          containerHeaderFlexDirection="row"
+          buttonSecondaryLink="mailto:hello@rosa.zone"
+          buttonSecondaryText="Help me choose"
         />
       </motion.div>
       <motion.div

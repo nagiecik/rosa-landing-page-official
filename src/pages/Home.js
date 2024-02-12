@@ -10,7 +10,10 @@ import useMediaQuery from "../utils/useMediaQuery";
 import styles from "./Home.module.css";
 
 const Home = () => {
-  const tablet = useMediaQuery("(max-width: 769px)");
+  const tablet = useMediaQuery("(max-width: 1024px)");
+  const desktopBig = useMediaQuery("(max-width: 1536px)");
+  const desktopSmall = useMediaQuery("(max-width: 1280px)");
+  const mobile = useMediaQuery("(max-width: 430px)");
 
   const sectionsData = [
     {
@@ -19,7 +22,7 @@ const Home = () => {
     },
     {
       component: SectionForWhom,
-      zIndex: "6"
+      zIndex: "6",
     },
     {
       component: SectionForWhat,
@@ -36,6 +39,13 @@ const Home = () => {
       imageLeftURL: "./mockups/showcaseMockup-1.png",
       imageRightAltText: "Showcase Mockup 2",
       imageRightURL: "./mockups/showcaseMockup-2.png",
+      buttonAppStore: "/buttonAppStore.svg",
+      buttonGooglePlay: "/buttonGooglePlay.svg",
+      buttonGooglePlayLink:
+        "https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US",
+      buttonAppStoreLink:
+        "https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179",
+      containerPaddingBottom: desktopBig ? "var(--size-48)" : "var(--size-64)",
     },
     {
       component: SectionFeatures,
@@ -59,6 +69,13 @@ const Home = () => {
       imageLeftURL: "./mockups/showcaseMockup-3.png",
       imageRightAltText: "",
       imageRightURL: "./mockups/showcaseMockup-4.png",
+      buttonGooglePlayLink:
+        "https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US",
+      buttonAppStoreLink:
+        "https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179",
+      containerPaddingBottom: desktopSmall
+        ? "var(--size-216)"
+        : "var(--size-256)",
     },
     {
       component: SectionFooter,
@@ -71,13 +88,14 @@ const Home = () => {
       (section) =>
         section.component === SectionShowcase && section.sectionID === "summary"
     )
+      ? "var(--size-80)"
+      : desktopSmall
       ? "var(--size-0)"
       : "var(--size-80)";
 
   return (
     <div className={styles.home}>
-      <Nav logoURL="/imageLogoRosa.svg" alt="ROSA logo" sectionZIndex="1000" />
-
+      <Nav alt="ROSA logo" sectionZIndex="1000" />
       {sectionsData.map((section, index) => {
         if (
           section.component === SectionShowcase &&

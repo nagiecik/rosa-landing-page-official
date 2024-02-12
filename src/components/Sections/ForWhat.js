@@ -10,12 +10,20 @@ import {
   getHoverProperties,
 } from "../../utils/motionUtils";
 import { radius } from "../../utils/radiusUtils";
+import useMediaQuery from "../../utils/useMediaQuery";
 import styles from "./ForWhat.module.css";
 
 const ForWhat = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+
+  const desktopBig = useMediaQuery("(max-width: 1536px)");
+  const desktopMacbook = useMediaQuery("(max-width: 1440px)");
+  const desktopMedium = useMediaQuery("(max-width: 1366px)");
+  const desktopSmall = useMediaQuery("(max-width: 1280px)");
+  const tabletHorizontal = useMediaQuery("(max-width: 1024px)");
+  const mobile = useMediaQuery("(max-width: 430px)");
 
   const handleHover = (index) => {
     setHoveredIndex(index);
@@ -36,8 +44,8 @@ const ForWhat = () => {
     const isHovered = hoveredIndex === currentIndex;
     const isActive = activeIndex === currentIndex;
 
-    const borderRadiusX = isActive || isHovered ? 48 : 24;
-    const borderRadiusY = isActive || isHovered ? 12 : 6;
+    const borderRadiusX = isActive || isHovered ? 32 : 64;
+    const borderRadiusY = isActive || isHovered ? 8 : 4;
 
     return {
       ...radius({ x: borderRadiusX, y: borderRadiusY }),
@@ -46,6 +54,73 @@ const ForWhat = () => {
 
   const motionImagesHover = getHoverProperties(1.1, "5deg", easeFast);
   const motionContainer = getMotionProperties("0, 160px", "0, 0", easeFast);
+
+  const calculateHeight = (
+    element,
+    isDesktopBig,
+    isDesktopMacbook,
+    isDesktopSmall,
+    isTabletHorizontal
+  ) => {
+    let tagsOneLine = 180;
+    let tagsTwoLine = 204;
+    let tagsThreeLine = 228;
+
+    if (
+      isDesktopBig &&
+      !isDesktopMacbook &&
+      !isDesktopSmall &&
+      !isTabletHorizontal
+    ) {
+      tagsOneLine = 184;
+      tagsTwoLine = 208;
+      tagsThreeLine = 232;
+    } else if (
+      isDesktopMacbook &&
+      isDesktopBig &&
+      !isDesktopSmall &&
+      !isTabletHorizontal
+    ) {
+      tagsOneLine = 180;
+      tagsTwoLine = 204;
+      tagsThreeLine = 228;
+    } else if (
+      isDesktopMacbook &&
+      isDesktopBig &&
+      isDesktopSmall &&
+      !isTabletHorizontal
+    ) {
+      tagsOneLine = 144;
+      tagsTwoLine = 168;
+      tagsThreeLine = 192;
+    } else if (
+      isDesktopMacbook &&
+      isDesktopBig &&
+      isDesktopSmall &&
+      isTabletHorizontal
+    ) {
+      tagsOneLine = 172;
+      tagsTwoLine = 192;
+      tagsThreeLine = 212;
+    }
+
+    if (element) {
+      const lineHeight = parseFloat(getComputedStyle(element).lineHeight);
+      const numLines = element.offsetHeight / lineHeight;
+
+      if (numLines <= 1) {
+        return tagsOneLine;
+      } else if (numLines === 2) {
+        return tagsTwoLine;
+      } else {
+        return tagsThreeLine;
+      }
+    }
+
+    return mobile ? tagsThreeLine : tagsOneLine;
+  };
+
+  const getDirection = () => (mobile ? "column" : "row");
 
   const data = [
     {
@@ -130,12 +205,14 @@ const ForWhat = () => {
           textParagraph="ROSA is a gamechanger in the way you manage, update and distribute the rules of your sport, but it can be used for so much more! Use it for multiple ForWhat of running your sports business - commercial partner content, competition, internal regulation, or else. You decide!"
           textParagraphColor="var(--surface-primary)"
           containerFlexDirection="column"
-          containerHeaderFlexDirection="row"
-          textParagraphWidth="324%"
+          containerAlignItems="center"
+          containerHeaderFlexDirection={getDirection()}
+          containerHeaderAlignItems="center"
+          textParagraphWidth="100%"
           textParagraphMaxWidth="800px"
           textParagraphAlign="center"
-          buttonLink="mailto:hello@rosa.zone"
-          buttonText="What's your context?"
+          buttonPrimaryLink="mailto:hello@rosa.zone"
+          buttonPrimaryText="What's your context?"
         />
       </motion.div>
       <motion.div {...motionContainer} className={styles.containerContent}>
@@ -170,12 +247,48 @@ const ForWhat = () => {
                   style={{
                     position: "absolute",
                     top: "8px",
-                    left: `${index * 324}px`,
-                    width: "325px",
+                    left:
+                      desktopBig && !desktopMedium && !desktopSmall && !mobile
+                        ? `${index * 306}px`
+                        : desktopBig &&
+                          desktopMedium &&
+                          !desktopSmall &&
+                          !mobile
+                        ? `${index * 281}px`
+                        : desktopBig && desktopMedium && desktopSmall && !mobile
+                        ? `${index * 251}px`
+                        : mobile
+                        ? `${index * 219}px`
+                        : `${index * 319}px`,
+                    width:
+                      desktopBig && !desktopMedium && !desktopSmall && !mobile
+                        ? "307px"
+                        : desktopBig &&
+                          desktopMedium &&
+                          !desktopSmall &&
+                          !mobile
+                        ? "282px"
+                        : desktopBig && desktopMedium && desktopSmall && !mobile
+                        ? "252px"
+                        : mobile
+                        ? "220px"
+                        : "320px",
                     zIndex: activeIndex === index ? 1 : 0,
                   }}
                   animate={{
-                    x: -(activeIndex * 324),
+                    x:
+                      desktopBig && !desktopMedium && !desktopSmall && !mobile
+                        ? -(activeIndex * 306)
+                        : desktopBig &&
+                          desktopMedium &&
+                          !desktopSmall &&
+                          !mobile
+                        ? -(activeIndex * 281)
+                        : desktopBig && desktopMedium && desktopSmall && !mobile
+                        ? -(activeIndex * 251)
+                        : mobile
+                        ? -(activeIndex * 219)
+                        : -(activeIndex * 319),
                     transition: easeFast,
                   }}
                   initial={{ x: 0 }}
@@ -201,7 +314,59 @@ const ForWhat = () => {
               onMouseEnter={() => handleHover(index)}
               onMouseLeave={handleMouseLeave}
               animate={{
-                height: index === activeIndex ? "204px" : "80px",
+                height:
+                  desktopBig &&
+                  !desktopMacbook &&
+                  !desktopSmall &&
+                  !tabletHorizontal
+                    ? index === activeIndex
+                      ? calculateHeight(
+                          document.getElementById(`tags_${index}`),
+                          true,
+                          false,
+                          false,
+                          false
+                        ) + "px"
+                      : "72px"
+                    : desktopBig &&
+                      desktopMacbook &&
+                      !desktopSmall &&
+                      !tabletHorizontal
+                    ? index === activeIndex
+                      ? calculateHeight(
+                          document.getElementById(`tags_${index}`),
+                          true,
+                          true,
+                          false,
+                          false
+                        ) + "px"
+                      : "72px"
+                    : desktopBig &&
+                      desktopMacbook &&
+                      desktopSmall &&
+                      !tabletHorizontal
+                    ? index === activeIndex
+                      ? calculateHeight(
+                          document.getElementById(`tags_${index}`),
+                          true,
+                          true,
+                          true,
+                          false
+                        ) + "px"
+                      : "64px"
+                    : tabletHorizontal
+                    ? index === activeIndex
+                      ? calculateHeight(
+                          document.getElementById(`tags_${index}`),
+                          true,
+                          true,
+                          true,
+                          true
+                        ) + "px"
+                      : "64px"
+                    : index === activeIndex
+                    ? "208px"
+                    : "80px",
                 transition: easeFast,
               }}
               style={getRadius(index)}
@@ -212,7 +377,17 @@ const ForWhat = () => {
               <p className={styles.textTitle}>{item.title}</p>
               <div className={styles.containerText}>
                 <p className={styles.textParagraph}>{item.description}</p>
-                <p className={styles.textTags}>{item.tags}</p>
+                <p
+                  id={`tags_${index}`}
+                  ref={(el) => {
+                    if (el) {
+                      const height = calculateHeight(el);
+                    }
+                  }}
+                  className={styles.textTags}
+                >
+                  {item.tags}
+                </p>
               </div>
             </motion.div>
           ))}

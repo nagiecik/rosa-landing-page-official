@@ -2,7 +2,6 @@
 
 .imagePerson {
   position: relative;
-  border-radius: 50%;
   width: var(--size-80);
   height: auto;
   object-fit: cover;
@@ -39,31 +38,36 @@
 
 /* Header */
 
-.containerHeader {
+.containerHeader,
+.containerTextHeaders {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
   font-family: var(--font-roag);
+  gap: var(--size-32);
 }
 
-.textHeaderWhite,
-.textHeaderGreen {
+.containerTextHeaders {
+  gap: var(--size-0);
+}
+
+.textHeaderSmall,
+.textHeaderBig {
   text-transform: uppercase;
   font-weight: var(--font-black);
-  max-width: var(--size-360);
 }
 
-.textHeaderWhite {
+.textHeaderSmall {
   font-size: var(--size-32);
   line-height: var(--size-48);
   color: var(--surface-primary);
 }
 
-.textHeaderGreen {
+.textHeaderBig {
   font-size: var(--size-64);
   line-height: var(--size-56);
-  color: var(--colorFootballRulesGreen);
+  color: var(--surface-primary);
 }
 
 /* Quote */
@@ -102,6 +106,39 @@
 }
 
 /* Buttons */
+
+.containerDownload {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--surface-primary);
+  width: 100%;
+  height: auto;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: var(--size-32) var(--size-64) var(--size-64) var(--size-64);
+  box-sizing: border-box;
+  border-bottom-left-radius: var(--size-48);
+  border-bottom-right-radius: var(--size-48);
+  gap: var(--size-24);
+}
+
+.textDownloadLight,
+.textDownloadBold {
+  font-size: var(--size-40);
+  line-height: var(--size-56);
+  letter-spacing: var(--letter-spacing-header-big);
+  color: var(--surface-secondary);
+}
+
+.textDownloadLight {
+  font-weight: var(--font-light);
+}
+
+.textDownloadBold {
+  font-weight: var(--font-semibold);
+  padding-left: var(--size-8);
+}
 
 .containerButtons {
   align-self: stretch;
@@ -168,7 +205,7 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  gap: var(--size-64);
+  gap: var(--size-48);
   z-index: 0;
 }
 
@@ -178,7 +215,7 @@
   max-width: 1520px;
   overflow: hidden;
   display: inline-block;
-  padding: var(--size-64);
+  padding: var(--size-64) var(--size-64) var(--size-264) var(--size-64);
   box-sizing: border-box;
   position: relative;
   background-image: url(/public/backgrounds/backgroundTestimonials.png);
@@ -187,10 +224,21 @@
   background-position: top;
   transition: calc(var(--d) * 2) var(--e);
   overflow: visible;
+  box-shadow: var(--shadow-card);
 }
 
 .containerContent:hover {
   border-radius: var(--size-80);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerContent:hover .containerDownload {
+  border-bottom-left-radius: var(--size-80);
+  border-bottom-right-radius: var(--size-80);
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerContent .containerDownload {
   transition: calc(var(--d) * 2) var(--e);
 }
 
@@ -243,23 +291,20 @@
     max-width: 50%;
   }
 
+  .containerDownload {
+    padding: var(--size-32) var(--size-48) var(--size-48) var(--size-48);
+  }
+
   .textQuoteParagraph {
     font-size: var(--size-16);
   }
-}
 
-@media screen and (max-width: 1366px) {
-  .containerSection {
-    padding: var(--size-80);
-    gap: var(--size-136);
-  }
-
-  .textHeaderWhite {
+  .textHeaderSmall {
     font-size: var(--size-24);
     line-height: var(--size-32);
   }
 
-  .textHeaderGreen {
+  .textHeaderBig {
     font-size: var(--size-48);
     line-height: var(--size-40);
   }
@@ -277,7 +322,6 @@
   }
 
   .imagePerson {
-    border-radius: 50%;
     width: var(--size-56);
   }
 
@@ -311,10 +355,31 @@
   }
 }
 
+@media screen and (max-width: 1440px) {
+  .containerSection {
+    gap: var(--size-96);
+  }
+
+  .textQuoteParagraph {
+    font-size: var(--size-14);
+  }
+}
+
+@media screen and (max-width: 1366px) {
+  .containerSection {
+    padding: var(--size-80);
+    gap: var(--size-96);
+  }
+}
+
 @media screen and (max-width: 1280px) {
   .containerSection {
     padding: var(--size-80) var(--size-64);
-    gap: var(--size-136);
+    gap: var(--size-80);
+  }
+
+  .containerButtons {
+    gap: var(--size-16);
   }
 
   .containerContent {
@@ -325,9 +390,29 @@
     border-radius: var(--size-72);
   }
 
+  .containerDownload {
+    gap: var(--size-16);
+    padding-top: var(--size-24);
+    border-bottom-left-radius: var(--size-40);
+    border-bottom-right-radius: var(--size-40);
+  }
+
+  .containerArticle {
+    gap: var(--size-24);
+  }
+
+  .containerQuote {
+    gap: var(--size-8);
+  }
+
+  .textHeaderBig {
+    font-size: var(--size-40);
+    line-height: var(--size-32);
+  }
+
   .textQuoteParagraph {
     font-size: var(--size-14);
-    line-height: var(--size-32);
+    line-height: var(--size-28);
   }
 
   .textParagraph {
@@ -345,25 +430,37 @@
     bottom: var(--size-16);
     right: var(--size-200);
   }
+
+  .buttonAppStore,
+  .buttonGooglePlay {
+    width: var(--size-144);
+  }
+
+  .textDownloadBold,
+  .textDownloadLight {
+    font-size: var(--size-32);
+    line-height: var(--size-48);
+    letter-spacing: var(--letter-spacing-header-small);
+  }
 }
 
 @media screen and (max-width: 1024px) {
   .containerSection {
     padding: var(--size-64) var(--size-48);
-    gap: var(--size-112);
+    gap: var(--size-64);
   }
 
   .containerArticle {
     max-width: 60%;
   }
 
-  .textHeaderGreen {
+  .textHeaderBig {
     max-width: 100%;
     font-size: var(--size-40);
   }
 
   .imageLeft {
-    width: 26%;
+    width: 30%;
     right: var(--size-40);
   }
 
@@ -393,13 +490,20 @@
 
 @media screen and (max-width: 430px) {
   .containerSection {
-    gap: var(--size-32);
-    padding: var(--size-48) var(--size-24);
+    gap: var(--size-48);
+    padding: var(--size-48) var(--size-16);
+    margin-top: var(--size-0) !important;
   }
 
   .containerContent {
     border-radius: var(--size-32);
-    padding: var(--size-24);
+    padding: var(--size-32) var(--size-24) var(--size-24) var(--size-24);
+  }
+
+  .containerDownload {
+    padding: var(--size-16) var(--size-16) var(--size-32) var(--size-16);
+    border-bottom-right-radius: var(--size-32);
+    border-bottom-left-radius: var(--size-32);
   }
 
   .imageLogo {
@@ -426,6 +530,17 @@
   .buttonGooglePlay {
     width: 100%;
   }
+
+  .containerPerson {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: var(--size-24);
+  }
+
+  .textDownloadBold, .textDownloadLight {
+    font-size: var(--size-28);
+  }
 }
 
 @media screen and (max-width: 375px) {
@@ -435,17 +550,8 @@
   }
 
   .containerContent {
-    border-radius: var(--size-24);
     padding: var(--size-24);
   }
 
-  .containerContent:hover {
-    border-radius: var(--size-40);
-  }
 
-  .containerPerson {
-    flex-direction: column;
-    gap: var(--size-24);
-    align-items: flex-start;
-  }
 }

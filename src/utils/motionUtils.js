@@ -3,6 +3,11 @@ export const easeFast = {
   ease: [0.15, 0.85, 0.47, 0.97],
 };
 
+export const easeFastMobile = {
+  duration: 0.1,
+  ease: [0.15, 0.85, 0.47, 0.97],
+};
+
 export const easeFastStagger = {
   duration: 1,
   ease: [0.15, 0.85, 0.47, 0.97],

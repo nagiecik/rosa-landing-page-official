@@ -35,15 +35,14 @@
   justify-content: center;
   text-align: center;
   box-sizing: border-box;
-  backdrop-filter: blur(var(--size-0));
   padding: var(--size-20) var(--size-200);
-  transition: background-color 0.6s ease-in-out;
+  transition: calc(var(--d) * 2) var(--e);
 }
 
 .containerNavActive {
-  backdrop-filter: blur(var(--size-24));
-  background-color: rgba(0, 0, 0, 0.2);
-  transition: background-color 0.6s ease-in-out;
+  background-color: var(--surface-primary);
+  box-shadow: var(--shadow-card);
+  transition: calc(var(--d) * 2) var(--e);
 }
 
 /* Media Queries */
@@ -87,6 +86,7 @@
 @media screen and (max-width: 430px) {
   .containerNav {
     padding: var(--size-16) var(--size-24);
+    position: absolute;
   }
 }
 

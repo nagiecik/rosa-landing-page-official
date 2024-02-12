@@ -24,24 +24,24 @@ const Nav = ({ sectionZIndex }) => {
   const [logoURL, setLogoURL] = useState("/logoROSA.svg");
   const [prevScrollY, setPrevScrollY] = useState(0);
 
-  const handleScroll = () => {
-    if (mobile) {
-      return;
-    }
-
-    const currentScrollY = window.scrollY;
-
-    if (currentScrollY > 80 && !navbarActive) {
-      setNavbarActive(true);
-    } else if (currentScrollY <= 80 && navbarActive) {
-      setNavbarActive(false);
-    }
-
-    setPrevScrollY(currentScrollY);
-    setLogoURL(navbarActive ? "/logoROSADark.svg" : "/logoROSA.svg");
-  };
-
   useEffect(() => {
+    const handleScroll = () => {
+      if (mobile) {
+        return;
+      }
+
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > 80 && !navbarActive) {
+        setNavbarActive(true);
+      } else if (currentScrollY <= 80 && navbarActive) {
+        setNavbarActive(false);
+      }
+
+      setPrevScrollY(currentScrollY);
+      setLogoURL(navbarActive ? "/logoROSADark.svg" : "/logoROSA.svg");
+    };
+
     window.addEventListener("scroll", handleScroll);
 
     return () => {

@@ -83,7 +83,7 @@ const Features = () => {
       textNumber: "08",
       textTitle: "AI Assistant",
       textParagraph:
-        "Our ai assistant will look for answers and data within your content.",
+        "Our AI assistant will look for answers and data within your content.",
     },
   ];
 

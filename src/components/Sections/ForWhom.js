@@ -37,7 +37,16 @@ const ForWhom = ({ sectionZIndex }) => {
           textHeaderLightAlign=""
           textHeaderBold="Large or small"
           textHeaderBoldColor="var(--surface-secondary)"
-          textParagraph="ROSA caters to diverse needs of sports organisations, regardless of their size and budget. It is fast and easy to launch, accessible and adaptable even for the smallest organisations."
+          textParagraph={
+            <>
+              ROSA caters to diverse needs of sports organisations, regardless
+              of their size and budget.
+              <br />
+              <br />
+              It is fast and easy to launch, accessible and adaptable even for
+              the smallest organisations.
+            </>
+          }
           textParagraphColor="var(--surface-secondary)"
         />
       </motion.div>

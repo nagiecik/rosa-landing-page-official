@@ -138,7 +138,7 @@ const Showcase = ({
                   <div className={styles.containerPersonDetails}>
                     <p className={styles.textPersonName}>Lukas Brud</p>
                     <i className={styles.textPersonOccupation}>
-                      The IFAB Secretary & CEO
+                      Secretary/CEO The IFAB
                     </i>
                   </div>
                 </div>
@@ -164,9 +164,9 @@ const Showcase = ({
                 textHeaderBoldWeight="var(--font-semibold)"
               />
               <p className={styles.textParagraph}>
-                Join the multitude of organizations that have placed their trust
-                in us. With ROSA, empower your organization to create a custom
-                rule app using our ready-made solution.
+                Join the organizations that have placed their trust in us. With
+                ROSA, empower your organization to create a custom rule app
+                using our ready-made solution.
               </p>
               <div className={styles.containerDownload}>
                 <div>

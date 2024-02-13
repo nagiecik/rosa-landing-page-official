@@ -18,20 +18,20 @@ const ContentArticle = ({}) => {
           <h1 className={styles.textHeaderLight}>Gamechanger</h1>
           {!tablet && (
             <>
-              <h1 className={styles.textHeaderBold}>In The Way</h1>
-              <h1 className={styles.textHeaderLight}>You Manage</h1>
+              <h1 className={styles.textHeaderBold}>For Sports</h1>
+              <h1 className={styles.textHeaderLight}>Governance</h1>
             </>
           )}
           {tablet && !mobile && (
-            <h1 className={styles.textHeaderBold}>In The Way You Manage</h1>
+            <h1 className={styles.textHeaderBold}>For Sports Governance</h1>
           )}
         </div>
       ) : (
         mobile && (
           <div className={styles.containerHeader}>
             <h1 className={styles.textHeaderLight}>Gamechanger</h1>
-            <h1 className={styles.textHeaderBold}>In The Way</h1>
-            <h1 className={styles.textHeaderLight}>You Manage</h1>
+            <h1 className={styles.textHeaderBold}>For Sports</h1>
+            <h1 className={styles.textHeaderLight}>Governance</h1>
           </div>
         )
       )}
@@ -54,8 +54,8 @@ const ContentArticle = ({}) => {
         altIconLeftText=""
         altIconRightText="Icon Arrow Right"
         buttonDisplayMode=""
-        // buttonPrimaryLink="mailto:hello@rosa.zone"
-        buttonPrimaryText="Get your App"
+        buttonPrimaryLink="mailto:hello@rosa.zone"
+        buttonPrimaryText="Get your own App"
         buttonWidth=""
         iconLeftURL=""
         iconRightURL="/icons/arrow.right.svg"

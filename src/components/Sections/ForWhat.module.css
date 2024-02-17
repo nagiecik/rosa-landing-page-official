@@ -521,6 +521,10 @@
     transform: scale(1, 1);
   }
 
+  .containerCard {
+    padding: var(--size-20) var(--size-12);
+  }
+
   .containerImage {
     pointer-events: none;
   }
@@ -556,19 +560,14 @@
   }
 
   .containerOrnamentBlue {
-    width: calc(var(--size-48) * 0.68);
-    height: calc(var(--size-48) * 0.68);
-    left: calc(var(--size-8) * -1);
+    display: none;
   }
 
   .containerOrnamentOrange {
-    width: calc(var(--size-560) * 0.68);
-    height: calc(var(--size-560) * 0.68);
+    display: none;
   }
 
   .containerOrnamentWhite {
-    width: calc(var(--size-80) * 0.68);
-    height: calc(var(--size-80) * 0.68);
-    right: calc(var(--size-8) * -1);
+    display: none;
   }
 }

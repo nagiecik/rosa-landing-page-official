@@ -24,6 +24,7 @@ const ButtonSecondary = ({
   radiusY,
   radiusXHover,
   radiusYHover,
+  onClick,
 }) => {
   const buttonStyle = {
     display: buttonDisplayMode,
@@ -77,6 +78,7 @@ const ButtonSecondary = ({
       animate="rest"
       className={styles.containerButton}
       style={buttonStyle}
+      onClick={onClick}
     >
       {showIconLeft && (
         <motion.img

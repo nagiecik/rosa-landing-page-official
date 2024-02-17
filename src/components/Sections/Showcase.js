@@ -169,14 +169,10 @@ const Showcase = ({
                 using our ready-made solution.
               </p>
               <div className={styles.containerDownload}>
-                <div>
-                  <p className={styles.textDownloadLight}>
-                    Download
-                    <span className={styles.textDownloadBold}>
-                      The Demo App
-                    </span>
-                  </p>
-                </div>
+                <p className={styles.textDownloadLight}>
+                  Download
+                  <span className={styles.textDownloadBold}>The Demo App</span>
+                </p>
                 <div className={styles.containerButtons}>
                   <a href={buttonGooglePlayLink}>
                     <img

@@ -5,6 +5,50 @@
   height: var(--size-32);
 }
 
+/* Button Container */
+.containerMenu {
+  display: flex;
+  position: relative;
+  height: 27px;
+  width: 35px;
+  cursor: pointer;
+  z-index: 100;
+  transition: calc(var(--d) * 2) var(--e);
+}
+
+.containerMenu.active .containerMenuTop {
+  transform: translateY(11px) translateX(0) rotate(45deg);
+  background: var(--surface-primary);
+}
+
+.containerMenu.active .containerMenuMiddle {
+  opacity: 0;
+  background: var(--surface-primary);
+}
+
+.containerMenu.active .containerMenuBottom {
+  transform: translateY(-11px) translateX(0) rotate(-45deg);
+  background: var(--surface-primary);
+}
+
+.containerMenu span {
+  background: var(--surface-primary);
+  border: none;
+  height: var(--size-2);
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: calc(var(--d) * 2) var(--e);
+  cursor: pointer;
+}
+.containerMenu span:nth-of-type(2) {
+  top: 11px;
+}
+.containerMenu span:nth-of-type(3) {
+  top: 22px;
+}
+
 /* Main Containers */
 
 .containerContent {
@@ -79,19 +123,21 @@
 
 @media screen and (max-width: 1024px) {
   .containerNav {
-    padding: var(--size-16) var(--size-48);
+    padding: var(--size-24) var(--size-48);
+    justify-content: center;
+    align-items: center;
   }
 }
 
 @media screen and (max-width: 430px) {
   .containerNav {
-    padding: var(--size-16) var(--size-24);
+    padding: var(--size-24) var(--size-24);
     position: absolute;
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .containerNav {
-    padding: var(--size-16);
+    padding: var(--size-24) var(--size-16);
   }
 }

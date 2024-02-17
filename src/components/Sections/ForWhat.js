@@ -220,7 +220,7 @@ const ForWhat = () => {
           textParagraphWidth="100%"
           textParagraphMaxWidth="800px"
           textParagraphAlign="center"
-          buttonPrimaryLink="mailto:hello@rosa.zone"
+          buttonPrimaryLink="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
           buttonPrimaryText="What's your context?"
         />
       </motion.div>

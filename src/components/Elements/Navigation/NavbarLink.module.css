@@ -56,6 +56,14 @@
   transform: translate3d(-200%, 0, 0);
 }
 
+.linkMobile {
+  text-align: center;
+  font-size: var(--size-24);
+  line-height: var(--size-64);
+  color: var(--surface-primary);
+  font-weight: var(--font-medium);
+}
+
 /* Main Containers */
 
 .linkContainer {

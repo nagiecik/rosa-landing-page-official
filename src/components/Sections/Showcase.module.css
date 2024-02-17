@@ -342,11 +342,7 @@
 
   .buttonAppStore,
   .buttonGooglePlay {
-    position: relative;
     width: var(--size-160);
-    height: auto;
-    object-fit: cover;
-    cursor: pointer;
   }
 
   .textParagraph {
@@ -463,10 +459,6 @@
     width: 30%;
     right: var(--size-40);
   }
-
-  .containerContent {
-    pointer-events: none;
-  }
 }
 
 @media screen and (max-width: 768px) {
@@ -500,6 +492,10 @@
     padding: var(--size-32) var(--size-24) var(--size-24) var(--size-24);
   }
 
+  .containerContent:hover {
+    border-radius: var(--size-32);
+  }
+
   .containerDownload {
     padding: var(--size-16) var(--size-16) var(--size-32) var(--size-16);
     border-bottom-right-radius: var(--size-32);
@@ -507,16 +503,20 @@
   }
 
   .imageLogo {
-    height: var(--size-32);
+    height: var(--size-24);
   }
 
   .imagePerson {
-    width: var(--size-48);
-    height: var(--size-48);
+    width: var(--size-40);
+    height: var(--size-40);
   }
 
   .textPersonName {
     line-height: var(--size-24);
+  }
+
+  .textPersonOccupation {
+    font-size: var(--size-10);
   }
 
   .containerButtons {
@@ -532,18 +532,19 @@
   }
 
   .containerPerson {
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: flex-start;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     gap: var(--size-24);
   }
 
-  .textDownloadBold, .textDownloadLight {
-    font-size: var(--size-28);
+  .textDownloadBold,
+  .textDownloadLight {
+    font-size: var(--size-24);
   }
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 376px) {
   .containerSection {
     gap: var(--size-32);
     padding: var(--size-48) var(--size-16);
@@ -552,6 +553,4 @@
   .containerContent {
     padding: var(--size-24);
   }
-
-
 }

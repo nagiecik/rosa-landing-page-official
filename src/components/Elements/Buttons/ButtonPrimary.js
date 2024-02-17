@@ -29,6 +29,7 @@ const ButtonPrimary = ({
   const buttonStyle = {
     display: buttonDisplayMode,
     width: buttonWidth,
+    paddingRight: showIconRight ? "16px" : "0",
     ...radius({ x: radiusX, y: radiusY }),
   };
 
@@ -77,7 +78,7 @@ const ButtonPrimary = ({
       variants={buttonMotion}
       initial="rest"
       whileHover="hover"
-      whileTap="tap" // Add whileTap here
+      whileTap="tap"
       animate="rest"
       className={styles.containerButton}
       style={buttonStyle}

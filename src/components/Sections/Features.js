@@ -39,7 +39,7 @@ const Features = () => {
     {
       imageIconUrl: "/features/TextAa.svg",
       textNumber: "02",
-      textTitle: "Language Versions",
+      textTitle: "Language versions",
       textParagraph:
         "Make your entire content available in multiple languages.",
     },
@@ -125,7 +125,7 @@ const Features = () => {
           containerHeaderAlignItems="center"
           containerHeaderJustifyContent="center"
           containerHeaderFlexDirection="row"
-          buttonSecondaryLink="mailto:hello@rosa.zone"
+          buttonSecondaryLink="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
           buttonSecondaryText="Help me choose"
         />
       </motion.div>

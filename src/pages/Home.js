@@ -45,7 +45,11 @@ const Home = () => {
         "https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US",
       buttonAppStoreLink:
         "https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179",
-      containerPaddingBottom: desktopBig ? "var(--size-48)" : "var(--size-64)",
+      containerPaddingBottom: mobile
+        ? "var(--size-24)"
+        : desktopBig
+        ? "var(--size-48)"
+        : "var(--size-64)",
     },
     {
       component: SectionFeatures,
@@ -73,7 +77,9 @@ const Home = () => {
         "https://play.google.com/store/apps/details?id=pl.mamf.rosa.example&hl=pl&gl=US",
       buttonAppStoreLink:
         "https://apps.apple.com/pl/app/rosa-rules-of-sports-app/id1622562179",
-      containerPaddingBottom: desktopSmall
+      containerPaddingBottom: mobile
+        ? "var(--size-176)"
+        : desktopSmall
         ? "var(--size-216)"
         : "var(--size-256)",
     },
@@ -95,7 +101,7 @@ const Home = () => {
 
   return (
     <div className={styles.home}>
-      <Nav alt="ROSA logo" sectionZIndex="1000" />
+      <Nav alt="ROSA logo" sectionZIndex="1001" />
       {sectionsData.map((section, index) => {
         if (
           section.component === SectionShowcase &&

@@ -78,10 +78,10 @@ const Pricing = ({ sectionZIndex }) => {
           textBulletNumberLeft3="Onboarding fee"
           textBulletNumberRight3="€980"
           showButtonPrimary={false}
-          buttonSecondaryText="I Choose National"
+          buttonSecondaryText="I choose National"
           showbuttonSecondary={true}
           buttonWidth="100%"
-          buttonLink="mailto:hello@rosa.zone?subject=ROSA National"
+          buttonSecondaryLink="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
           cardZIndex="2"
         />
         <CardPricing
@@ -110,9 +110,9 @@ const Pricing = ({ sectionZIndex }) => {
           textBulletNumberRight3="€1500"
           showButtonPrimary={true}
           showbuttonSecondary={false}
-          buttonPrimaryText="I Choose International"
+          buttonPrimaryText="I choose International"
           buttonWidth="100%"
-          buttonLink="mailto:hello@rosa.zone?subject=ROSA International"
+          buttonPrimaryLink="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
           cardZIndex="1"
         />
       </motion.div>

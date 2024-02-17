@@ -10,6 +10,7 @@ import {
   easeFast,
   easeSlow,
 } from "../../utils/motionUtils";
+import { Link } from 'react-router-dom';
 import styles from "./Footer.module.css";
 
 const navFooterData = [
@@ -27,7 +28,7 @@ const navFooterData = [
   {
     textTitle: "Support",
     links: [
-      { show: true, linkText: "Privacy Policy", linkURL: "#privacy_policy" },
+      { show: true, linkText: "Privacy Policy", linkURL: "/privacy-policy" },
       {
         show: true,
         linkText: "Terms & Conditions",
@@ -79,7 +80,7 @@ const Footer = () => {
               textHeaderLinkColor="var(--surface-primary)"
               textHeaderLinkWeight="var(--font-semibold)"
               textHeaderBoldAlign="center"
-              textHeaderLinkURL="mailto:hello.rosa@zone"
+              textHeaderLinkURL="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
             />
           )}
           {!mobile && (
@@ -93,7 +94,7 @@ const Footer = () => {
               textHeaderLink="hello@rosa.zone"
               textHeaderLinkColor="var(--surface-primary)"
               textHeaderLinkWeight="var(--font-semibold)"
-              textHeaderLinkURL="mailto:hello.rosa@zone"
+              textHeaderLinkURL="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
             />
           )}
           {!tablet && (

@@ -29,11 +29,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  padding: var(--size-12) var(--size-16);
-  gap: var(--size-16);
+  gap: var(--size-8);
   text-align: center;
   cursor: pointer;
   box-sizing: border-box;
+}
+
+.containerButton a {
+  height: 100%;
+  width: 100%;
+  padding: var(--size-12) var(--size-16);
 }
 
 /* Media Queries */

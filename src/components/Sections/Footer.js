@@ -32,7 +32,7 @@ const navFooterData = [
       {
         show: true,
         linkText: "Terms & Conditions",
-        linkURL: "#terms_conditions",
+        linkURL: "/terms",
       },
       { show: false },
       { show: false },

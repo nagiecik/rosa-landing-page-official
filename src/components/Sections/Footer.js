@@ -80,7 +80,7 @@ const Footer = () => {
               textHeaderLinkColor="var(--surface-primary)"
               textHeaderLinkWeight="var(--font-semibold)"
               textHeaderBoldAlign="center"
-              textHeaderLinkURL="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
+              textHeaderLinkURL="mailto:hello@rosa.zone"
             />
           )}
           {!mobile && (
@@ -94,7 +94,7 @@ const Footer = () => {
               textHeaderLink="hello@rosa.zone"
               textHeaderLinkColor="var(--surface-primary)"
               textHeaderLinkWeight="var(--font-semibold)"
-              textHeaderLinkURL="https://outlook.office365.com/owa/calendar/RulesofSportsAppROSAteam@mamf.pl/bookings/"
+              textHeaderLinkURL="mailto:hello@rosa.zone"
             />
           )}
           {!tablet && (

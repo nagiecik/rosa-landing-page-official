@@ -25,21 +25,21 @@ const navFooterData = [
       { show: true, linkText: "Pricing", linkURL: "#pricing" },
     ],
   },
-  {
-    textTitle: "Support",
-    links: [
-      { show: true, linkText: "Privacy Policy", linkURL: "/privacy-policy" },
-      {
-        show: true,
-        linkText: "Terms & Conditions",
-        linkURL: "/terms",
-      },
-      { show: false },
-      { show: false },
-      { show: false },
-      { show: false },
-    ],
-  },
+  // {
+  //   textTitle: "Support",
+  //   links: [
+  //     { show: true, linkText: "Privacy Policy", linkURL: "/privacy-policy" },
+  //     {
+  //       show: true,
+  //       linkText: "Terms & Conditions",
+  //       linkURL: "/terms",
+  //     },
+  //     { show: false },
+  //     { show: false },
+  //     { show: false },
+  //     { show: false },
+  //   ],
+  // },
 ];
 
 const Footer = () => {
